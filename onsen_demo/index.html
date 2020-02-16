@@ -3,16 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <style> 
-    body {
-      color: red !important;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-    }
-    
-    </style>
 
+
+  <!-- ห้ามยุ่ง -->
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" type="text/css" href="theme/onsen-css-components.min.css">
 
 </head>
 
@@ -85,6 +80,21 @@
   </template>
 
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script>
+    window.fn = {};
+
+    window.fn.open = function () {
+      var menu = document.getElementById('menu');
+      menu.open();
+    };
+
+    window.fn.load = function (page) {
+      var content = document.getElementById('content');
+      var menu = document.getElementById('menu');
+      content.load(page)
+        .then(menu.close.bind(menu));
+    };
+  </script>
 </body>
 
 </html>
