@@ -31,7 +31,6 @@
  * limitations under the License.
  *
  */
-@import url("https://fonts.googleapis.com/css?family=Athiti:400,700&display=swap&subset=thai");
 html {
   height: 100%;
   width: 100%;
@@ -175,11 +174,11 @@ h6 {
   font-size: 18px;
 }
 .page {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  background-color: #e6e6e6;
+  background-color: #efeff4;
   position: absolute;
   top: 0;
   left: 0;
@@ -187,7 +186,7 @@ h6 {
   bottom: 0;
   overflow-x: visible;
   overflow-y: hidden;
-  color: #333;
+  color: #1f1f21;
   -ms-overflow-style: none;
   -webkit-font-smoothing: antialiased;
 }
@@ -195,7 +194,7 @@ h6 {
   display: none;
 }
 .page__content {
-  background-color: #e6e6e6;
+  background-color: #efeff4;
   position: absolute;
   top: 0;
   left: 0;
@@ -204,7 +203,7 @@ h6 {
   box-sizing: border-box;
 }
 .page__background {
-  background-color: #e6e6e6;
+  background-color: #efeff4;
   position: absolute;
   top: 0;
   left: 0;
@@ -213,13 +212,13 @@ h6 {
   box-sizing: border-box;
 }
 .page--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  background-color: #e6e6e6;
+  background-color: #eceff1;
 }
 .page--material__content {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-weight: 400;
@@ -229,7 +228,7 @@ h6 {
 .page__content h3,
 .page__content h4,
 .page__content h5 {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-weight: 500;
@@ -250,7 +249,7 @@ h6 {
 .page--material__content h3,
 .page--material__content h4,
 .page--material__content h5 {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-weight: 500;
@@ -267,7 +266,7 @@ h6 {
   font-size: 20px;
 }
 .page--material__background {
-  background-color: #e6e6e6;
+  background-color: #eceff1;
 }
 .switch {
   display: inline-block;
@@ -338,8 +337,8 @@ h6 {
   transition: none;
 }
 :checked + .switch__toggle {
-  box-shadow: inset 0 0 0 2px #5198db;
-  background-color: #5198db;
+  box-shadow: inset 0 0 0 2px #44db5e;
+  background-color: #44db5e;
 }
 :checked + .switch__toggle > .switch__handle {
   left: 21px;
@@ -399,12 +398,13 @@ h6 {
     0 2px 4px -1px rgba(0, 0, 0, 0.4);
 }
 :checked + .switch--material__toggle {
-  background-color: #77c2bb;
+  background-color: #37474f;
+  background-color: rgba(55, 71, 79, 0.5);
   box-shadow: none;
 }
 :checked + .switch--material__toggle > .switch--material__handle {
   left: 16px;
-  background-color: #009688;
+  background-color: #37474f;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
@@ -428,7 +428,7 @@ h6 {
   box-shadow: 0 0 0 14px rgba(0, 0, 0, 0.12);
 }
 :checked + .switch--material__toggle > .switch--active__handle:before {
-  box-shadow: 0 0 0 14px rgba(0, 150, 136, 0.2);
+  box-shadow: 0 0 0 14px rgba(55, 71, 79, 0.2);
 }
 .switch--material__touch {
   position: absolute;
@@ -465,7 +465,7 @@ h6 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: linear-gradient(#1d617a, #1d617a);
+  background-image: linear-gradient(#0076ff, #0076ff);
   background-position: left center;
   background-size: 0 2px;
   background-repeat: no-repeat;
@@ -534,7 +534,7 @@ h6 {
 }
 .range__input::-ms-fill-lower {
   height: 2px;
-  background-color: #1d617a;
+  background-color: #0076ff;
 }
 .range__input::-ms-tooltip {
   display: none;
@@ -579,7 +579,7 @@ h6 {
   background-image: linear-gradient(#bdbdbd, #bdbdbd);
 }
 .range--material__input {
-  background-image: linear-gradient(#009688, #009688);
+  background-image: linear-gradient(#31313a, #31313a);
   background-position: center left;
   background-size: 0 2px;
 }
@@ -592,8 +592,8 @@ h6 {
   width: 14px;
   height: 14px;
   border: none;
-  box-shadow: 0 0 0 9px #009688;
-  background-color: #009688;
+  box-shadow: 0 0 0 9px #31313a;
+  background-color: #31313a;
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.25s ease-out, -webkit-transform 0.25s ease-out;
@@ -618,8 +618,8 @@ h6 {
   box-shadow: none;
   background-image: radial-gradient(
     circle farthest-corner,
-    #009688 0,
-    #009688 6.6px,
+    #31313a 0,
+    #31313a 6.6px,
     transparent 7px
   );
   transition: -webkit-transform 0.1s linear;
@@ -654,8 +654,8 @@ h6 {
   background-color: transparent;
   background-image: -moz-radial-gradient(
     circle farthest-corner,
-    #009688 0,
-    #009688 6.6px,
+    #31313a 0,
+    #31313a 6.6px,
     transparent 7px
   );
   box-shadow: none;
@@ -711,7 +711,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -729,7 +729,7 @@ h6 {
   width: auto;
   height: 19px;
   border-radius: 19px;
-  background-color: #dc5236;
+  background-color: #fe3824;
   color: #fff;
   text-align: center;
   font-size: 16px;
@@ -741,7 +741,7 @@ h6 {
   display: none;
 }
 .notification--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   background-color: #e91e63;
@@ -750,7 +750,7 @@ h6 {
   color: #fff;
 }
 .toolbar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -783,8 +783,8 @@ h6 {
   height: 44px;
   padding-left: 0;
   padding-right: 0;
-  background: #61c2a2;
-  color: #333;
+  background: #fafafa;
+  color: #1f1f21;
   box-shadow: none;
   font-weight: 400;
   width: 100%;
@@ -793,17 +793,22 @@ h6 {
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #bbb, #bbb 100%);
+  background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .toolbar {
-    background-image: linear-gradient(0deg, #bbb, #bbb 50%, transparent 50%);
+    background-image: linear-gradient(
+      0deg,
+      #b2b2b2,
+      #b2b2b2 50%,
+      transparent 50%
+    );
   }
 }
 .toolbar__bg {
-  background: #61c2a2;
+  background: #fafafa;
 }
 .toolbar__item {
   box-sizing: border-box;
@@ -865,13 +870,13 @@ h6 {
   line-height: 44px;
   font-size: 17px;
   font-weight: 500;
-  color: #333;
+  color: #1f1f21;
 }
 .toolbar__title {
   line-height: 44px;
   font-size: 17px;
   font-weight: 500;
-  color: #333;
+  color: #1f1f21;
   margin: 0;
   padding: 0;
   overflow: visible;
@@ -880,7 +885,7 @@ h6 {
   width: 100%;
 }
 .bottom-bar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -906,12 +911,12 @@ h6 {
   height: 44px;
   padding-left: 0;
   padding-right: 0;
-  background: #61c2a2;
-  color: #333;
+  background: #fafafa;
+  color: #1f1f21;
   box-shadow: none;
   font-weight: 400;
   border-bottom: none;
-  border-top: 1px solid #bbb;
+  border-top: 1px solid #b2b2b2;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -920,13 +925,18 @@ h6 {
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: top;
-  background-image: linear-gradient(180deg, #bbb, #bbb 100%);
+  background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bottom-bar {
-    background-image: linear-gradient(180deg, #bbb, #bbb 50%, transparent 50%);
+    background-image: linear-gradient(
+      180deg,
+      #b2b2b2,
+      #b2b2b2 50%,
+      transparent 50%
+    );
   }
 }
 .bottom-bar__line-height {
@@ -960,7 +970,7 @@ h6 {
   border-bottom: 0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   padding: 0;
-  background-color: #61c2a2;
+  background-color: #fff;
   background-size: 0;
 }
 .toolbar--noshadow {
@@ -970,24 +980,24 @@ h6 {
 }
 .toolbar--material__left,
 .toolbar--material__right {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 20px;
   font-weight: 500;
-  color: #fff;
+  color: #31313a;
   height: 56px;
   min-width: 72px;
   width: auto;
   line-height: 56px;
 }
 .toolbar--material__center {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 20px;
   font-weight: 500;
-  color: #fff;
+  color: #31313a;
   height: 56px;
   width: auto;
   -webkit-box-flex: 1;
@@ -1026,7 +1036,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1046,7 +1056,7 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
@@ -1058,7 +1068,7 @@ h6 {
   transition: none;
 }
 .button:active {
-  background-color: #1d617a;
+  background-color: #0076ff;
   transition: none;
   opacity: 0.2;
 }
@@ -1073,17 +1083,17 @@ h6 {
 }
 .button--outline {
   background-color: transparent;
-  border: 1px solid #1d617a;
-  color: #1d617a;
+  border: 1px solid #0076ff;
+  color: #0076ff;
 }
 .button--outline:active {
-  background-color: #bbd0d7;
-  border: 1px solid #1d617a;
-  color: #1d617a;
+  background-color: #b3d6ff;
+  border: 1px solid #0076ff;
+  color: #0076ff;
   opacity: 1;
 }
 .button--outline:hover {
-  border: 1px solid #1d617a;
+  border: 1px solid #0076ff;
   transition: 0;
 }
 .button--light {
@@ -1114,7 +1124,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1134,7 +1144,7 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
@@ -1142,7 +1152,7 @@ h6 {
   border: 1px solid transparent;
   box-shadow: none;
   background: 0 0;
-  color: #1d617a;
+  color: #0076ff;
   border: none;
 }
 .button--quiet:disabled,
@@ -1163,7 +1173,7 @@ h6 {
   border: none;
   transition: none;
   opacity: 0.2;
-  color: #1d617a;
+  color: #0076ff;
 }
 .button--cta {
   position: relative;
@@ -1177,7 +1187,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1197,12 +1207,12 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
   border: none;
-  background-color: #1d617a;
+  background-color: #25a6d9;
   color: #fff;
 }
 .button--cta:hover {
@@ -1213,7 +1223,7 @@ h6 {
 }
 .button--cta:active {
   color: #fff;
-  background-color: #1d617a;
+  background-color: #25a6d9;
   transition: none;
   opacity: 0.2;
 }
@@ -1233,7 +1243,7 @@ h6 {
   text-align: center;
 }
 .button--large:active {
-  background-color: #1d617a;
+  background-color: #0076ff;
   transition: none;
   opacity: 0.2;
   transition: none;
@@ -1262,7 +1272,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1282,7 +1292,7 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
@@ -1295,13 +1305,13 @@ h6 {
   background: 0 0;
   border: 1px solid transparent;
   box-shadow: none;
-  color: #1d617a;
+  color: #0076ff;
   text-align: center;
 }
 .button--large--quiet:active {
   transition: none;
   opacity: 0.2;
-  color: #1d617a;
+  color: #0076ff;
   background: 0 0;
   border: 1px solid transparent;
   box-shadow: none;
@@ -1330,7 +1340,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1350,12 +1360,12 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
   border: none;
-  background-color: #1d617a;
+  background-color: #25a6d9;
   color: #fff;
   font-size: 17px;
   font-weight: 500;
@@ -1373,7 +1383,7 @@ h6 {
 }
 .button--large--cta:active {
   color: #fff;
-  background-color: #1d617a;
+  background-color: #25a6d9;
   transition: none;
   opacity: 0.2;
 }
@@ -1395,7 +1405,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1415,13 +1425,13 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   min-height: 36px;
@@ -1432,7 +1442,7 @@ h6 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   text-transform: uppercase;
-  background-color: #1d617a;
+  background-color: #2979ff;
   color: #fff;
   font-weight: 500;
   transition: background-color 0.25s linear;
@@ -1445,7 +1455,7 @@ h6 {
 .button--material:active {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
     0 3px 5px -1px rgba(0, 0, 0, 0.4);
-  background-color: #1d617a;
+  background-color: #2979ff;
   opacity: 0.9;
   transition: all 0.25s linear;
 }
@@ -1474,7 +1484,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1494,13 +1504,13 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   min-height: 36px;
@@ -1511,13 +1521,13 @@ h6 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   text-transform: uppercase;
-  background-color: #1d617a;
+  background-color: #2979ff;
   color: #fff;
   font-weight: 500;
   transition: background-color 0.25s linear;
   box-shadow: none;
   background-color: transparent;
-  color: #1d617a;
+  color: #2979ff;
   transition: all 0.25s linear;
 }
 .button--material--flat:hover {
@@ -1526,7 +1536,7 @@ h6 {
 .button--material--flat:focus {
   box-shadow: none;
   background-color: transparent;
-  color: #1d617a;
+  color: #2979ff;
   outline: 0;
   opacity: 1;
   border: none;
@@ -1538,7 +1548,7 @@ h6 {
   border: none;
   background-color: #999;
   background-color: rgba(153, 153, 153, 0.2);
-  color: #1d617a;
+  color: #2979ff;
   transition: all 0.25s linear;
 }
 .button--material--flat:disabled,
@@ -1551,7 +1561,7 @@ h6 {
   color: rgba(0, 0, 0, 0.26);
 }
 .button-bar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1570,7 +1580,7 @@ h6 {
   border: none;
 }
 .button-bar__item {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1583,16 +1593,14 @@ h6 {
   box-sizing: border-box;
 }
 .button-bar__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   border-radius: 0;
   background-color: transparent;
-  color: #1272e0;
-  color: rgba(18, 114, 224, 0.77);
-  border: 1px solid #1272e0;
-  border: 1px solid rgba(18, 114, 224, 0.77);
+  color: #0076ff;
+  border: 1px solid #0076ff;
   border-top-width: 1px;
   border-bottom-width: 1px;
   border-right-width: 1px;
@@ -1618,20 +1626,17 @@ h6 {
   outline: 0;
 }
 :checked + .button-bar__button {
-  background-color: #1272e0;
-  background-color: rgba(18, 114, 224, 0.77);
+  background-color: #0076ff;
   color: #fff;
   transition: none;
 }
 .button-bar__button:active,
 :active + .button-bar__button {
-  background-color: #b8d5f6;
-  background-color: rgba(184, 213, 246, 0.77);
-  border: 0 solid #1272e0;
-  border: 0 solid rgba(18, 114, 224, 0.77);
-  border-top: 1px solid rgba(18, 114, 224, 0.77);
-  border-bottom: 1px solid rgba(18, 114, 224, 0.77);
-  border-right: 1px solid rgba(18, 114, 224, 0.77);
+  background-color: #b3d6ff;
+  border: 0 solid #0076ff;
+  border-top: 1px solid #0076ff;
+  border-bottom: 1px solid #0076ff;
+  border-right: 1px solid #0076ff;
   font-size: 13px;
   width: 100%;
   transition: none;
@@ -1645,7 +1650,7 @@ h6 {
   border-radius: 0 4px 4px 0;
 }
 .segment {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1664,7 +1669,7 @@ h6 {
   border: none;
 }
 .segment__item {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1699,16 +1704,14 @@ h6 {
   appearance: none;
 }
 .segment__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   border-radius: 0;
   background-color: transparent;
-  color: #0b4a92;
-  color: rgba(11, 74, 146, 0.77);
-  border: 1px solid #0b4a92;
-  border: 1px solid rgba(11, 74, 146, 0.77);
+  color: #0076ff;
+  border: 1px solid #0076ff;
   border-top-width: 1px;
   border-bottom-width: 1px;
   border-right-width: 1px;
@@ -1735,20 +1738,17 @@ h6 {
   outline: 0;
 }
 :active + .segment__button {
-  background-color: #b6c9de;
-  background-color: rgba(182, 201, 222, 0.77);
-  border: 0 solid #0b4a92;
-  border: 0 solid rgba(11, 74, 146, 0.77);
-  border-top: 1px solid rgba(11, 74, 146, 0.77);
-  border-bottom: 1px solid rgba(11, 74, 146, 0.77);
-  border-right: 1px solid rgba(11, 74, 146, 0.77);
+  background-color: #b3d6ff;
+  border: 0 solid #0076ff;
+  border-top: 1px solid #0076ff;
+  border-bottom: 1px solid #0076ff;
+  border-right: 1px solid #0076ff;
   font-size: 13px;
   width: 100%;
   transition: none;
 }
 :checked + .segment__button {
-  background-color: #0b4a92;
-  background-color: rgba(11, 74, 146, 0.77);
+  background-color: #0076ff;
   color: #fff;
   transition: none;
 }
@@ -1766,7 +1766,7 @@ h6 {
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
 }
 .segment--material__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 14px;
@@ -1799,7 +1799,7 @@ h6 {
   border-width: 0;
 }
 .tabbar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1814,7 +1814,7 @@ h6 {
   margin: 0;
   padding: 0;
   height: 49px;
-  background-color: #fff;
+  background-color: #fafafa;
   border-top: 1px solid #ccc;
   width: 100%;
 }
@@ -1830,7 +1830,7 @@ h6 {
   }
 }
 .tabbar__item {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1863,7 +1863,7 @@ h6 {
   appearance: none;
 }
 .tabbar__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1914,7 +1914,7 @@ h6 {
   height: 28px;
 }
 .tabbar__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1950,7 +1950,7 @@ h6 {
   padding: 0;
 }
 :checked + .tabbar__button {
-  color: #1d617a;
+  color: #0076ff;
   background-color: transparent;
   box-shadow: none;
   border-top: none;
@@ -2011,7 +2011,7 @@ h6 {
 }
 :checked + .tabbar--top-border__button {
   background-color: transparent;
-  border-bottom: 4px solid #1d617a;
+  border-bottom: 4px solid #0076ff;
 }
 .tabbar__border {
   position: absolute;
@@ -2019,23 +2019,22 @@ h6 {
   left: 0;
   width: 0;
   height: 4px;
-  background-color: #1d617a;
+  background-color: #0076ff;
 }
 .tabbar--material {
   background: 0 0;
-  background-color: #009688;
+  background-color: #fff;
   border-bottom-width: 0;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.14),
     0 3px 5px -2px rgba(0, 0, 0, 0.12), 0 5px 1px -4px rgba(0, 0, 0, 0.2);
 }
 .tabbar--material__button {
   background-color: transparent;
-  color: #fff;
-  color: rgba(255, 255, 255, 0.6);
+  color: #31313a;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -2047,7 +2046,7 @@ h6 {
   bottom: 0;
   position: absolute;
   margin-top: -2px;
-  background-color: #fff;
+  background-color: #31313a;
 }
 :checked + .tabbar--material__button:after {
   width: 100%;
@@ -2055,26 +2054,27 @@ h6 {
 }
 :checked + .tabbar--material__button {
   background-color: transparent;
-  color: #fff;
+  color: #31313a;
 }
 .tabbar--material__item:not([ripple]):active {
-  background-color: #26a69a;
+  background-color: #31313a;
+  background-color: rgba(49, 49, 58, 0.1);
 }
 .tabbar--material__border {
   height: 2px;
-  background-color: #fff;
+  background-color: #31313a;
 }
 .tabbar--material__icon {
   font-size: 22px !important;
   line-height: 36px;
 }
 .tabbar--material__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
 .tabbar--material__label:first-child {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   letter-spacing: 0.015em;
@@ -2085,14 +2085,13 @@ h6 {
   font-size: 10px;
 }
 .toolbar-button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   padding: 4px 10px;
   letter-spacing: 0;
-  color: #073469;
-  color: rgba(7, 52, 105, 0.81);
+  color: #0076ff;
   background-color: #000;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 2px;
@@ -2121,15 +2120,14 @@ h6 {
   transition: none;
 }
 .toolbar-button--outline {
-  border: 1px solid #073469;
-  border: 1px solid rgba(7, 52, 105, 0.81);
+  border: 1px solid #0076ff;
   margin: auto 8px;
   padding-left: 6px;
   padding-right: 6px;
 }
 .toolbar-button--material {
   font-size: 22px;
-  color: #333;
+  color: #1e88e5;
   display: inline-block;
   padding: 0 12px;
   height: 100%;
@@ -2154,8 +2152,7 @@ h6 {
   height: 44px;
   line-height: 44px;
   padding-left: 8px;
-  color: #073469;
-  color: rgba(7, 52, 105, 0.81);
+  color: #0076ff;
   background-color: #000;
   background-color: rgba(0, 0, 0, 0);
   display: inline-block;
@@ -2176,7 +2173,7 @@ h6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
-  fill: rgba(7, 52, 105, 0.81);
+  fill: #0076ff;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
@@ -2184,7 +2181,7 @@ h6 {
 }
 .back-button--material {
   font-size: 22px;
-  color: #333;
+  color: #1e88e5;
   display: inline-block;
   padding: 0 12px;
   height: 100%;
@@ -2203,7 +2200,7 @@ h6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
-  fill: #333;
+  fill: #1e88e5;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
@@ -2221,7 +2218,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2238,7 +2235,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2297,7 +2294,7 @@ h6 {
   opacity: 0;
 }
 :checked + .checkbox__checkmark:before {
-  background: #1d617a;
+  background: #0076ff;
   border: none;
 }
 :checked + .checkbox__checkmark:after {
@@ -2320,7 +2317,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2381,7 +2378,7 @@ h6 {
   width: 11px;
   height: 4px;
   background: 0 0;
-  border: 2px solid #1d617a;
+  border: 2px solid #0076ff;
   border-top: none;
   border-right: none;
   border-radius: 0;
@@ -2409,7 +2406,7 @@ h6 {
 }
 .checkbox--material {
   line-height: 18px;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   overflow: visible;
@@ -2559,7 +2556,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2579,7 +2576,7 @@ h6 {
   width: 11px;
   height: 4px;
   background: 0 0;
-  border: 2px solid #1d617a;
+  border: 2px solid #0076ff;
   border-top: none;
   border-right: none;
   border-radius: 0;
@@ -2604,7 +2601,7 @@ h6 {
 }
 .radio-button--material {
   line-height: 22px;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -2631,8 +2628,8 @@ h6 {
     -webkit-transform 0.1s ease-out;
 }
 .radio-button--material__input:checked:before {
-  box-shadow: 0 0 0 14px #009688;
-  background-color: #009688;
+  box-shadow: 0 0 0 14px #37474f;
+  background-color: #37474f;
 }
 .radio-button--material__input:active:before {
   opacity: 0.15;
@@ -2669,7 +2666,7 @@ h6 {
 }
 :checked + .radio-button--material__checkmark:before {
   background: 0 0;
-  border: 2px solid #009688;
+  border: 2px solid #37474f;
 }
 .radio-button--material__input + .radio-button__checkmark:after {
   background: #717171;
@@ -2679,7 +2676,7 @@ h6 {
 }
 :checked + .radio-button--material__checkmark:after {
   opacity: 1;
-  background: #009688;
+  background: #37474f;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
@@ -2706,7 +2703,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2715,19 +2712,19 @@ h6 {
   display: block;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
-  background-image: linear-gradient(#333, #333), linear-gradient(#333, #333);
+  background-image: linear-gradient(#ccc, #ccc), linear-gradient(#ccc, #ccc);
   background-size: 100% 1px, 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom, top;
   border: none;
-  background-color: #dbefe1;
+  background-color: #fff;
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .list {
-    background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%),
-      linear-gradient(180deg, #333, #333 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%),
+      linear-gradient(180deg, #ccc, #ccc 50%, transparent 50%);
   }
 }
 .list-item {
@@ -2750,7 +2747,7 @@ h6 {
   align-items: center;
   padding: 0 0 0 14px;
   margin: 0 0 -1px 0;
-  color: #333;
+  color: #1f1f21;
   transition: background-color 0.2s linear;
 }
 .list-item__top {
@@ -2784,13 +2781,13 @@ h6 {
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #333, #333 100%);
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .list-item--expandable {
-    background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
   }
 }
 .list-item--expandable {
@@ -2861,13 +2858,13 @@ h6 {
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #333, #333 100%);
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .list-item__center {
-    background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
   }
 }
 .list-item__center {
@@ -2894,13 +2891,13 @@ h6 {
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #333, #333 100%);
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .list-item__right {
-    background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
   }
 }
 .list-item__right {
@@ -2916,22 +2913,22 @@ h6 {
   padding: 0 0 0 15px;
   font-size: 12px;
   font-weight: 500;
-  color: #333;
+  color: #1f1f21;
   min-height: 24px;
   line-height: 25px;
   text-transform: uppercase;
   position: relative;
-  background-color: #e6e6e6;
+  background-color: #eee;
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: top;
-  background-image: linear-gradient(0deg, #333, #333 100%);
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .list-header {
-    background-image: linear-gradient(180deg, #333, #333 50%, transparent 50%);
+    background-image: linear-gradient(180deg, #ccc, #ccc 50%, transparent 50%);
   }
 }
 .list--noborder {
@@ -2945,7 +2942,7 @@ h6 {
 }
 .list--inset {
   margin: 0 8px;
-  border: 1px solid #333;
+  border: 1px solid #ccc;
   border-radius: 4px;
   background-image: none;
 }
@@ -2986,11 +2983,11 @@ h6 {
   padding: 0 6px;
 }
 .list--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   background-image: none;
-  background-color: #dbefe1;
+  background-color: #fff;
 }
 .list-item--material {
   border: 0;
@@ -3087,7 +3084,7 @@ h6 {
   }
 }
 .list-header--material {
-  background: #dbefe1;
+  background: #fff;
   border: none;
   font-size: 14px;
   text-transform: none;
@@ -3124,8 +3121,8 @@ h6 {
 }
 .list-item--chevron:before,
 .list-item__expand-chevron {
-  border-right: 2px solid #e6e6e6;
-  border-bottom: 2px solid #e6e6e6;
+  border-right: 2px solid #c7c7cc;
+  border-bottom: 2px solid #c7c7cc;
   width: 7px;
   height: 7px;
   background-color: transparent;
@@ -3160,18 +3157,18 @@ h6 {
   background-image: none;
 }
 .list-item--longdivider {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
   border-bottom: none;
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #333, #333 100%);
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .list-item--longdivider {
-    background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
   }
 }
 .list-item--longdivider:last-of-type {
@@ -3199,7 +3196,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3216,7 +3213,7 @@ h6 {
   letter-spacing: 0.04em;
 }
 .list-title--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #757575;
@@ -3238,7 +3235,7 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3251,7 +3248,7 @@ h6 {
   background-color: #030303;
   background-color: rgba(3, 3, 3, 0.09);
   box-shadow: none;
-  color: #333;
+  color: #1f1f21;
   line-height: 1.3;
   padding: 0 8px 0 28px;
   margin: 0;
@@ -3301,7 +3298,7 @@ h6 {
   pointer-events: none;
 }
 .search-input--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   border-radius: 2px;
@@ -3327,7 +3324,7 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3335,7 +3332,7 @@ h6 {
   background-color: transparent;
   letter-spacing: 0;
   box-shadow: none;
-  color: #333;
+  color: #1f1f21;
   padding: 0;
   margin: 0;
   width: auto;
@@ -3387,7 +3384,7 @@ h6 {
 .text-input:invalid {
   border: none;
   background-color: transparent;
-  color: #333;
+  color: #1f1f21;
 }
 .text-input--underbar {
   box-sizing: border-box;
@@ -3401,7 +3398,7 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3409,7 +3406,7 @@ h6 {
   background-color: transparent;
   letter-spacing: 0;
   box-shadow: none;
-  color: #333;
+  color: #1f1f21;
   padding: 0;
   margin: 0;
   width: auto;
@@ -3419,7 +3416,7 @@ h6 {
   box-sizing: border-box;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
   border-radius: 0;
 }
 .text-input--underbar:disabled {
@@ -3428,7 +3425,7 @@ h6 {
   pointer-events: none;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 .text-input--underbar:disabled::-webkit-input-placeholder {
   border: none;
@@ -3461,10 +3458,10 @@ h6 {
 .text-input--underbar:invalid {
   border: none;
   background-color: transparent;
-  color: #333;
+  color: #1f1f21;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 .text-input--material {
   box-sizing: border-box;
@@ -3478,11 +3475,11 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #212121;
@@ -3501,7 +3498,7 @@ h6 {
   -webkit-transform: translate3d(0, 0, 0);
 }
 .text-input--material__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #afafaf;
@@ -3513,7 +3510,7 @@ h6 {
   pointer-events: none;
 }
 .text-input--material__label--active {
-  color: #009688;
+  color: #3d5afe;
   -webkit-transform: translate(0, -75%) scale(0.75);
   transform: translate(0, -75%) scale(0.75);
   -webkit-transform-origin: left top;
@@ -3524,7 +3521,7 @@ h6 {
     -webkit-transform 0.1s ease-in;
 }
 .text-input--material:focus {
-  background-image: linear-gradient(#009688, #009688),
+  background-image: linear-gradient(#3d5afe, #3d5afe),
     linear-gradient(to top, transparent 1px, #afafaf 1px);
   -webkit-animation: material-text-input-animate 0.3s forwards;
   animation: material-text-input-animate 0.3s forwards;
@@ -3571,7 +3568,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3582,9 +3579,9 @@ h6 {
   font-size: 16px;
   font-weight: 400;
   border-radius: 4px;
-  border: 1px solid #333;
-  background-color: #e6e6e6;
-  color: #333;
+  border: 1px solid #ccc;
+  background-color: #efeff4;
+  color: #1f1f21;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -3619,7 +3616,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3634,7 +3631,7 @@ h6 {
   border-radius: 4px;
   border: none;
   background-color: transparent;
-  color: #333;
+  color: #1f1f21;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -3674,7 +3671,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3696,7 +3693,7 @@ h6 {
   border-radius: 4px;
   background-color: #f4f4f4;
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-  color: #333;
+  color: #1f1f21;
 }
 .dialog-mask {
   padding: 0;
@@ -3720,7 +3717,7 @@ h6 {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .dialog--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-align: left;
@@ -3730,7 +3727,7 @@ h6 {
 .dialog-container--material {
   border-radius: 2px;
   background-color: #fff;
-  color: #333;
+  color: #1f1f21;
 }
 .dialog-mask--material {
   background-color: #000;
@@ -3751,7 +3748,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3774,7 +3771,7 @@ h6 {
   overflow: hidden;
 }
 .alert-dialog-title {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3806,7 +3803,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3833,8 +3830,7 @@ h6 {
   height: 44px;
   line-height: 44px;
   outline: 0;
-  color: #1867c2;
-  color: rgba(24, 103, 194, 0.81);
+  color: #0076ff;
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
@@ -3938,17 +3934,17 @@ h6 {
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
 }
 .alert-dialog-title--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-align: left;
   font-size: 20px;
   font-weight: 500;
   padding: 0 24px;
-  color: #212121;
+  color: #31313a;
 }
 .alert-dialog-content--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-align: left;
@@ -3958,7 +3954,8 @@ h6 {
   padding: 0 24px;
   margin: 24px 0 10px 0;
   min-height: 0;
-  color: #727272;
+  color: #31313a;
+  color: rgba(49, 49, 58, 0.85);
 }
 .alert-dialog-footer--material {
   display: block;
@@ -3969,7 +3966,7 @@ h6 {
   line-height: 1;
 }
 .alert-dialog-button--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-transform: uppercase;
@@ -3988,7 +3985,7 @@ h6 {
   margin: 8px 8px 8px 0;
   box-sizing: border-box;
   min-width: 50px;
-  color: #009688;
+  color: #37474f;
 }
 @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
@@ -4068,7 +4065,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4124,7 +4121,7 @@ h6 {
 .popover--material__content {
   background-color: #fafafa;
   border-radius: 2px;
-  color: #333;
+  color: #1f1f21;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
@@ -4136,7 +4133,7 @@ h6 {
   height: 2px;
   display: block;
   width: 100%;
-  background-color: #b6b6b6;
+  background-color: transparent;
   background-clip: padding-box;
   margin: 0;
   overflow: hidden;
@@ -4145,8 +4142,7 @@ h6 {
 .progress-bar__primary,
 .progress-bar__secondary {
   position: absolute;
-  background-color: #1867c2;
-  background-color: rgba(24, 103, 194, 0.81);
+  background-color: #0076ff;
   top: 0;
   bottom: 0;
   transition: width 0.3s linear;
@@ -4154,15 +4150,13 @@ h6 {
   border-radius: 4px;
 }
 .progress-bar__secondary {
-  background-color: #1867c2;
-  background-color: rgba(24, 103, 194, 0.4);
+  background-color: #65adff;
   z-index: 0;
 }
 .progress-bar--indeterminate:before {
   content: "";
   position: absolute;
-  background-color: #1867c2;
-  background-color: rgba(24, 103, 194, 0.81);
+  background-color: #0076ff;
   top: 0;
   left: 0;
   bottom: 0;
@@ -4176,8 +4170,7 @@ h6 {
 .progress-bar--indeterminate:after {
   content: "";
   position: absolute;
-  background-color: #1867c2;
-  background-color: rgba(24, 103, 194, 0.81);
+  background-color: #0076ff;
   top: 0;
   left: 0;
   bottom: 0;
@@ -4248,24 +4241,24 @@ h6 {
 }
 .progress-bar--material {
   height: 4px;
-  background-color: #e0e0e0;
+  background-color: transparent;
   border-radius: 0;
 }
 .progress-bar--material__primary,
 .progress-bar--material__secondary {
-  background-color: #009688;
+  background-color: #37474f;
   border-radius: 0;
 }
 .progress-bar--material__secondary {
-  background-color: #80cbc4;
+  background-color: #548ba7;
   z-index: 0;
 }
 .progress-bar--material.progress-bar--indeterminate:before {
-  background-color: #009688;
+  background-color: #37474f;
   border-radius: 0;
 }
 .progress-bar--material.progress-bar--indeterminate:after {
-  background-color: #009688;
+  background-color: #37474f;
   border-radius: 0;
 }
 .progress-circular {
@@ -4287,16 +4280,16 @@ h6 {
   stroke-miterlimit: 10;
 }
 .progress-circular__background {
-  stroke: #ddd;
+  stroke: transparent;
 }
 .progress-circular__primary {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
-  stroke: rgba(24, 103, 194, 0.81);
+  stroke: #0076ff;
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .progress-circular__secondary {
-  stroke: rgba(24, 103, 194, 0.81);
+  stroke: #65adff;
 }
 .progress-circular--indeterminate {
   -webkit-animation: progress__rotate 2s linear infinite;
@@ -4357,13 +4350,13 @@ h6 {
   stroke-width: 9%;
 }
 .progress-circular--material__background {
-  stroke: #dbdbdb;
+  stroke: transparent;
 }
 .progress-circular--material__primary {
-  stroke: #009688;
+  stroke: #37474f;
 }
 .progress-circular--material__secondary {
-  stroke: #80cbc4;
+  stroke: #548ba7;
 }
 button.fab,
 ons-fab.fab,
@@ -4379,7 +4372,7 @@ ons-speed-dial-item.fab {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4397,7 +4390,7 @@ ons-speed-dial-item.fab {
   color: #fff;
   vertical-align: middle;
   text-align: center;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 50%;
   overflow: hidden;
@@ -4408,7 +4401,8 @@ button.fab:active,
 ons-fab.fab:active,
 ons-speed-dial-item.fab:active {
   box-shadow: 0 3px 6 rgba(0, 0, 0, 0.12);
-  background-color: #1d617a;
+  background-color: #0076ff;
+  background-color: rgba(0, 118, 255, 0.7);
   transition: all 0.2s ease;
   box-shadow: 0 0 6 rgba(0, 0, 0, 0.12);
 }
@@ -4457,7 +4451,7 @@ ons-speed-dial-item.fab--material {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4475,13 +4469,13 @@ ons-speed-dial-item.fab--material {
   color: #fff;
   vertical-align: middle;
   text-align: center;
-  background-color: #1d617a;
+  background-color: #0076ff;
   border: 0 solid currentColor;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
   transition: all 0.1s linear;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   width: 56px;
@@ -4489,8 +4483,8 @@ ons-speed-dial-item.fab--material {
   text-decoration: none;
   font-size: 25px;
   line-height: 56px;
-  color: #fff;
-  background-color: #1d617a;
+  color: #31313a;
+  background-color: #fff;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.4);
   transition: all 0.2s ease-in-out;
@@ -4500,7 +4494,8 @@ ons-fab.fab--material:active,
 ons-speed-dial-item.fab--material:active {
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
-  background-color: #1d617a;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.75);
   transition: all 0.2s ease;
 }
 button.fab--material:focus,
@@ -4624,7 +4619,7 @@ ons-fab.fab--bottom__center {
   line-height: normal;
   box-sizing: border-box;
   background-clip: padding-box;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4656,7 +4651,7 @@ ons-fab.fab--bottom__center {
   line-height: normal;
   box-sizing: border-box;
   background-clip: padding-box;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4678,7 +4673,7 @@ ons-fab.fab--bottom__center {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4688,8 +4683,8 @@ ons-fab.fab--bottom__center {
   font-size: 17px;
   height: 32px;
   line-height: 32px;
-  border-color: #333;
-  color: #333;
+  border-color: #ccc;
+  color: #1f1f21;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -4748,16 +4743,16 @@ ons-fab.fab--bottom__center {
 .select-input:invalid {
   border: none;
   background-color: transparent;
-  color: #333;
+  color: #1f1f21;
 }
 .select-input[multiple] {
   height: 64px;
 }
 .select-input--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  color: #333;
+  color: #1f1f21;
   font-size: 15px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAxMCA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0My4yICgzOTA2OSkgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+c2VsZWN0LWFsbG93PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9InNlbGVjdCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Imlvcy1zZWxlY3QiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xOTguMDAwMDAwLCAtMTE0LjAwMDAwMCkiIGZpbGw9IiM3NTc1NzUiPgogICAgICAgICAgICA8ZyBpZD0ibWVudS1iYXItKy1vcGVuLW1lbnUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyMy4wMDAwMDAsIDEwMC4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJtZW51LWJhciI+CiAgICAgICAgICAgICAgICAgICAgPHBvbHlnb24gaWQ9InNlbGVjdC1hbGxvdyIgcG9pbnRzPSI3NSAxNCA4MCAxOSA4NSAxNCI+PC9wb2x5Z29uPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=),
     linear-gradient(to top, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.12) 50%);
@@ -4770,7 +4765,7 @@ ons-fab.fab--bottom__center {
   transform: translate3d(0, 0, 0);
 }
 .select-input--material__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #000;
@@ -4831,7 +4826,7 @@ ons-fab.fab--bottom__center {
 }
 .select-input--underbar {
   border: none;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 .select-input--underbar:disabled {
   opacity: 0.3;
@@ -4841,7 +4836,7 @@ ons-fab.fab--bottom__center {
   background-color: transparent;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 .select-input--underbar:disabled::-webkit-input-placeholder {
   border: none;
@@ -4874,13 +4869,13 @@ ons-fab.fab--bottom__center {
 .select-input--underbar:invalid {
   border: none;
   background-color: transparent;
-  color: #333;
+  color: #1f1f21;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 .action-sheet {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4896,7 +4891,7 @@ ons-fab.fab--bottom__center {
   height: 56px;
   font-size: 20px;
   text-align: center;
-  color: #1d617a;
+  color: #0076ff;
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0;
@@ -5018,7 +5013,7 @@ ons-fab.fab--bottom__center {
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
 }
 .action-sheet-title--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   border-radius: 0;
@@ -5036,7 +5031,7 @@ ons-fab.fab--bottom__center {
   border-radius: 0;
 }
 .action-sheet-button--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   border-radius: 0;
@@ -5077,7 +5072,7 @@ ons-fab.fab--bottom__center {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .card {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5091,6 +5086,7 @@ ons-fab.fab--bottom__center {
   text-align: left;
   word-wrap: break-word;
 }
+
 .card__content {
   margin: 0;
   font-size: 14px;
@@ -5098,7 +5094,7 @@ ons-fab.fab--bottom__center {
   color: #030303;
 }
 .card__title {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5114,7 +5110,7 @@ ons-fab.fab--bottom__center {
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -5125,14 +5121,14 @@ ons-fab.fab--bottom__center {
   color: rgba(0, 0, 0, 0.54);
 }
 .card--material__title {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 24px;
   margin: 8px 0 12px 0;
 }
 .toast {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5194,13 +5190,13 @@ ons-fab.fab--bottom__center {
   padding: 16px 24px;
 }
 .toast--material__message {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   margin: 0 24px 0 0;
 }
 .toast--material__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #bbdefb;
