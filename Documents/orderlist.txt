@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</head>
+<body>
+
+    <ons-page id="orderlist-page">
+        <ons-toolbar>
+          <div class="vector"><ion-icon name="chevron-back"></ion-icon></div>
+ 
+          <div class="title font">My Order</div>
+        </ons-toolbar>
+          <div class="line"></div>
+          <p class="font" style="text-align: center;";">Deliver to</p>
+          <div class="location font"><ion-icon name="location"></ion-icon>cb2 @kmutt</div>
+          <div class="line2"></div>
+        <ons-card class="order">
+            <div class="storeName font"><h6>Cafe Amazon</h6> </div>
+            <div class="menu font"><p></p></div>
+        </ons-card>
+        
+        <ons-button class="confirm_Order font">Confirm Order</ons-button>
+    </ons-page>
+
+    <style>
+        .font{
+        font-family: Kanit;
+        }
+
+       .line{
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 2px;
+
+        background: #D8D8D8;
+        border: 1px solid rgba(151, 151, 151, 0.25);  
+
+       }
+
+       .line2{
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 120px;
+
+        background: #D8D8D8;
+        border: 1px solid rgba(151, 151, 151, 0.25);  
+       }
+
+       .vector{
+        margin-top: 8px;
+        margin-left: 30px;
+        margin-bottom: 2px;
+        font-size: 30px;
+       }
+
+       .title{
+        display: flex;
+        font-weight: 800;
+        font-size: 28px;
+        
+        background: linear-gradient(#1D617A,#61C2A2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 3px;
+        margin-left: 25px;
+        margin-bottom: 3px;
+       
+       }
+       .location{
+        font-size: medium;
+        display: flex;
+        width: max-content;
+        border: 1px solid gainsboro;
+        padding: 7px;
+        margin: 5px;
+        border-radius: 10px;
+        margin-left: 50%;
+
+       }
+ 
+        .order{
+        display: flex;
+        margin: auto;
+        margin-top: 150px;
+        display: flex;
+        width: 70%;
+        height: auto;
+        border: 1px ;
+        background-color: #E5E5E5;
+        border-radius: 20px;
+        }
+        
+
+        .confirm_Order{
+        display: flex;
+        margin: auto;
+        margin-top: 30%;
+        background-image: linear-gradient(to right,#1D617A,#61C2A2);
+        border-radius: 20px;
+        width: fit-content;
+        box-shadow: 1px 1px 1px grey;
+        
+       
+        
+    }
+    </style>
+
+    
+</body>
+</html>
