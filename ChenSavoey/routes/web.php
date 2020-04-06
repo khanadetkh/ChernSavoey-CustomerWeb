@@ -25,4 +25,5 @@ Route::get('shown', function () {
     return '<h1>Pakbung</h1>';
 });
 
-Route::get('welcome/controller', 'HelloController@showHello');
+//Route::get('welcome/controller', 'HelloController@showHello');
+Route::get('/phpfirebase_sdk', 'FirebaseController@index');
