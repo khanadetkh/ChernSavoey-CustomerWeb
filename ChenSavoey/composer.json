@@ -14,7 +14,9 @@
         "guzzlehttp/guzzle": "^6.3",
         "kreait/firebase-php": "4.0",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "google/cloud-firestore": "^1.8",
+        "kreait/firebase-php": "^4.33"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -61,4 +63,7 @@
             "@php artisan key:generate --ansi"
         ]
     }
+    
+        
+    
 }

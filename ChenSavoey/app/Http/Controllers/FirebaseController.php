@@ -16,9 +16,9 @@ class FirebaseController extends Controller
         $serviceAccount = ServiceAccount::fromJsonFile(__DIR__ . '/it60-42-choen-savoey-firebase-adminsdk-v79qo-91fb7ec681.json');
         $firebase = (new Factory)
             ->withServiceAccount($serviceAccount)
-            ->create();
-            //เริ่มเขียนตรงนี้นะ....
-            //1)สร้างตารางใหม่
+           ->create();
+        //เริ่มเขียนตรงนี้นะ....
+        //1)สร้างตารางใหม่
         $db = $firebase->getDatabase();
             $db->getReference('config/website')
             ->set([
