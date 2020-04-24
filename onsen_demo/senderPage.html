@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
+        type='text/css'>
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</head>
+
+<ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+
+
+
+<!-- <ons-page> -->
+<ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+
+<ons-page class="senderPage">
+
+    <!-- Header toolbar -->
+    <ons-toolbar>
+        <div class="vector">
+            <ion-icon name="chevron-back"></ion-icon>
+        </div>
+        <div class="title font">Order</div>
+
+        <ons-list-item class="right">
+            <div class="right">
+                <ons-switch></ons-switch>
+            </div>
+        </ons-list-item>
+    </ons-toolbar>
+
+
+    <div class="line"> </div>
+    <!-- icon="md-face" active-icon="md-face" -->
+
+    <ons-tabbar swipeable position="auto">
+        <ons-tab page="home.html" label="Home" badge="7" active>
+            <img src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/home.png" style="width: 8%;">
+        </ons-tab>
+        <ons-tab page="order.html" label="Order">
+            <img src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/bill.png" style="width: 8%;">
+        </ons-tab>
+    </ons-tabbar>
+
+
+
+    <!-- page1 home-->
+    <template id="home.html">
+        <ons-page id="Home">
+            <p style="text-align: center;">
+                This is the home page.
+            </p>
+        </ons-page>
+    </template>
+
+
+    <!-- page2 order-->
+
+    <template id="order.html">
+        <ons-page id="order">
+            <!-- <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'Select Shop'})"> -->
+            <!-- order1 -->
+
+            <ons-button id="order1">
+                <div class="storeName font">
+                    <ons-list-item>
+                        <table>
+                            <tr>
+                                <div class="left">
+                                    <img class="list-item__thumbnail"
+                                        src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/shop.png">
+                                </div>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Cafe Amazon
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>โกโก้เย็น</td>
+                                <td>1</td>
+                                <td>50 บาท</td>
+                            </tr>
+                            <tr>
+                                <td>กาแฟเย็น</td>
+                                <td>1</td>
+                                <td>60 บาท</td>
+                            </tr>
+                        </table>
+                    </ons-list-item>
+                </div>
+                <div class="menu font">
+                    <p></p>
+                </div>
+            </ons-button>
+
+
+
+            <!-- order2 -->
+            <ons-card onclick="" class="order2">
+                <div class="storeName font">
+                    <ons-list-item>
+                        <table>
+                            <tr>
+                                <div class="left">
+                                    <img class="list-item__thumbnail"
+                                        src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/shop.png">
+                                </div>
+                            </tr>
+                            <tr>
+                                <th>
+                                    D'ORO
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>ลาเต้</td>
+                                <td>1</td>
+                                <td>70 บาท</td>
+                            </tr>
+                            <tr>
+                                <td>แซนวิตแฮมชีส</td>
+                                <td>1</td>
+                                <td>55 บาท</td>
+                            </tr>
+                        </table>
+
+                    </ons-list-item>
+
+                </div>
+                <div class="menu font">
+                    <p></p>
+                </div>
+            </ons-card>
+
+        </ons-page>
+    </template>
+
+    <script>
+        document.addEventListener('init', function (event) {
+            var page = event.target;
+
+            if (page.id === 'order') {
+                page.querySelector('#push-button').onclick = function () {
+                    document.querySelector('#myNavigator').pushPage('orderConfirm.html', { data: { title: 'Page 2' } });
+                };
+            } else if (page.id === 'orderConfirm') {
+                page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- orderConfirm-page -->
+    <template id="orderConfirm.html">
+        <ons-toolbar>
+            <div class="vector">
+                <ion-icon name="chevron-back"></ion-icon>
+            </div>
+
+            <div class="title font">Order Confirm</div>
+        </ons-toolbar>
+        <div class="line"></div>
+
+
+        <ons-card class="order">
+            <div class="storeName font">
+                <div class="storeName font">
+                    <ons-list-item>
+                        <table>
+                            <tr>
+                                <div class="left">
+                                    <img class="list-item__thumbnail"
+                                        src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/shop.png">
+                                </div>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Cafe Amazon
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>โกโก้เย็น</td>
+                                <td>1</td>
+                                <td>50 บาท</td>
+                            </tr>
+                            <tr>
+                                <td>กาแฟเย็น</td>
+                                <td>1</td>
+                                <td>60 บาท</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>110</td>
+                            </tr>
+                        </table>
+                    </ons-list-item>
+                </div>
+            </div>
+        </ons-card>
+
+
+        <table>
+            <tr>
+                <td>
+                    <ons-button onclick="createAlertDialog()" class="confirm_Order font">
+                        <h5 style="font-weight: bold;">Confirm</h5>
+                    </ons-button>
+                </td>
+                <td>
+                    <ons-button onclick="notify()" class="ignore_Order font">
+                        <h5 style="font-weight: bold;">Ignore</h5>
+                    </ons-button>
+                </td>
+            </tr>
+        </table>
+</ons-page>
+
+<template id="alert-dialog.html">
+    <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+        <div class="alert-dialog-title">Alert</div>
+        <div class="alert-dialog-content">
+            Confirm your order ?
+        </div>
+        <div class="alert-dialog-footer">
+            <ons-alert-dialog-button onclick="hideAlertDialog()">Cancel</ons-alert-dialog-button>
+            <ons-alert-dialog-button onclick="hideAlertDialog()">OK</ons-alert-dialog-button>
+        </div>
+    </ons-alert-dialog>
+</template>
+</template>
+
+<script>
+    var createAlertDialog = function () {
+        var dialog = document.getElementById('my-alert-dialog');
+
+        if (dialog) {
+            dialog.show();
+        } else {
+            ons.createElement('alert-dialog.html', { append: true })
+                .then(function (dialog) {
+                    dialog.show();
+                });
+        }
+    };
+
+    var hideAlertDialog = function () {
+        document
+            .getElementById('my-alert-dialog')
+            .hide();
+    };
+
+    var notify = function () {
+        ons.notification.alert('Ignore your order ?');
+    };
+</script>
+
+
+
+
+
+<style>
+    .font {
+        font-family: Kanit;
+    }
+
+    .line {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 2px;
+
+        background: #D8D8D8;
+        border: 1px solid rgba(151, 151, 151, 0.25);
+
+    }
+
+    .vector {
+        margin-top: 8px;
+        margin-left: 30px;
+        margin-bottom: 2px;
+        font-size: 30px;
+    }
+
+    .title {
+        display: flex;
+        font-weight: 800;
+        font-size: 28px;
+
+        background: linear-gradient(#1D617A, #61C2A2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 3px;
+        margin-left: 25px;
+        margin-bottom: 3px;
+
+    }
+
+
+    .order {
+        display: flex;
+        margin: auto;
+        /* margin-top: 150px; */
+        display: flex;
+        width: 70%;
+        height: auto;
+        border: 1px;
+        background-color: #E5E5E5;
+        border-radius: 20px;
+    }
+
+    .confirm {
+        text-align: center;
+        margin-top: 30;
+    }
+
+    .font {
+        font-family: Kanit;
+    }
+
+    .line {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 2px;
+
+        background: #D8D8D8;
+        border: 1px solid rgba(151, 151, 151, 0.25);
+
+    }
+
+    .line2 {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 120px;
+
+        background: #D8D8D8;
+        border: 1px solid rgba(151, 151, 151, 0.25);
+    }
+
+    .vector {
+        margin-top: 8px;
+        margin-left: 30px;
+        margin-bottom: 2px;
+        font-size: 30px;
+    }
+
+    .title {
+        display: flex;
+        font-weight: 800;
+        font-size: 28px;
+
+        background: linear-gradient(#1D617A, #61C2A2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 3px;
+        margin-left: 25px;
+        margin-bottom: 3px;
+
+    }
+
+
+    .order {
+        display: flex;
+        margin: auto;
+        margin-top: 150px;
+        display: flex;
+        width: 80%;
+        height: auto;
+        border: 1px;
+        background-color: #E5E5E5;
+        border-radius: 20px;
+    }
+
+
+    .confirm_Order {
+
+        text-align: center !important;
+        font-weight: bold;
+        display: flex;
+        margin: auto;
+        margin-top: 30%;
+        background: #61C2A2;
+        border-radius: 20px;
+        width: fit-content;
+        height: 60px;
+        box-shadow: 1px 1px 1px grey;
+    }
+
+    .ignore_Order {
+        text-align: center !important;
+        font-weight: bold;
+        display: flex;
+        margin: auto;
+        margin-top: 30%;
+        background: #EB5757;
+        border-radius: 20px;
+        width: fit-content;
+        height: 60px;
+        box-shadow: 1px 1px 1px grey;
+    }
+
+
+    /* .confirm_Order {
+        display: flex;
+        margin: auto;
+        margin-top: 30%;
+        background-image: linear-gradient(to right, #1D617A, #61C2A2);
+        border-radius: 20px;
+        width: fit-content;
+        box-shadow: 1px 1px 1px grey;
+    } */
+</style>
+
+</html>
