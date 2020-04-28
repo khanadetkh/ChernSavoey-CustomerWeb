@@ -10,7 +10,11 @@
   <link rel="stylesheet" type="text/css" href="theme/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script src="js/main.js"></script>
-  
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+
 </head>
 
 <body>
@@ -26,14 +30,6 @@
 
   <template id="tabbar.html">
     <ons-page id="tabbar-page">
-      <ons-toolbar>
-        <div class="center">Home</div>
-        <div class="right">
-          <ons-toolbar-button onclick="fn.toggleMenu()">
-            <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-      </ons-toolbar>
       <ons-tabbar swipeable id="appTabbar" position="auto">
         <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
         <ons-tab label="Forms" icon="ion-edit" page="forms.html"></ons-tab>
@@ -168,43 +164,34 @@
       </style>
     </ons-page>
   </template>
-
+  <!-- เริ่มหน้าเลือกบทบาท -->
   <template id="home.html">
     <ons-page>
       <p class="intro">
-        This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
+        Please Select Role <br><br>
       </p>
-
+      <!-- เริ่มเขียน Sender Card -->
       <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
-        <div class="title">Pull Hook</div>
-        <div class="content">Simple "pull to refresh" functionality to update data.</div>
+        <div class="title">Sender</div>
+        <div class="content">เลือกสิ้ๆ</div>
       </ons-card>
+      <!-- เริ่มเขียน Customer Card -->
       <ons-card onclick="fn.pushPage({'id': 'dialogs.html', 'title': 'Dialogs'})">
-        <div class="title">Dialogs</div>
-        <div class="content">Components and utility methods to display many types of dialogs.</div>
-      </ons-card>
-      <ons-card onclick="fn.pushPage({'id': 'buttons.html', 'title': 'Buttons'})">
-        <div class="title">Buttons</div>
-        <div class="content">Different styles for buttons, floating action buttons and speed dials.</div>
-      </ons-card>
-      <ons-card onclick="fn.pushPage({'id': 'carousel.html', 'title': 'Carousel'})">
-        <div class="title">Carousel</div>
-        <div class="content">Customizable carousel that can be optionally fullscreen.</div>
-      </ons-card>
-      <ons-card onclick="fn.pushPage({'id': 'infiniteScroll.html', 'title': 'Infinite Scroll'})">
-        <div class="title">Infinite Scroll</div>
-        <div class="content">Two types of infinite lists: "Load More" and "Lazy Repeat".</div>
-      </ons-card>
-      <ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
-        <div class="title">Progress</div>
-        <div class="content">Linear progress, circular progress and spinners.</div>
+        <div class="title">Customer</div>
+        <div class="content">เลือกๆๆๆ</div>
       </ons-card>
 
       <style>
         .intro {
+          background: -webkit-linear-gradient(#1D617A, #61C2A2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           text-align: center;
           padding: 0 20px;
           margin-top: 40px;
+          font-weight: 800;
+          font-size: 28px;
+          line-height: 34px;
         }
 
         ons-card {
