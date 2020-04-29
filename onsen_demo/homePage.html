@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
+        type='text/css'>
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</head>
+
+<body>
+    < <ons-page id="homePage">
+       
+        <div class="toolbar toolbar--material">
+            <div class="toolbar__left toolbar--material__left">
+              <span class="toolbar-button toolbar-button--material">
+                <i class="zmdi zmdi-menu"></i>
+              </span>
+            </div>
+            <div class="toolbar__center toolbar--material__center">
+            Home Page
+            </div>
+            <div class="toolbar__right toolbar--material__right">
+              <span class="toolbar-button toolbar-button--material">
+                <i class="zmdi zmdi-search"></i>
+              </span>
+              <span class="toolbar-button toolbar-button--material">
+                <i class="zmdi zmdi-favorite"></i>
+              </span>
+              <span class="toolbar-button toolbar-button--material">
+                <i class="zmdi zmdi-more-vert"></i>
+              </span>
+            </div>
+          </div>
+        
+<!-- --------------------------------------------------------------------------------- -->
+        <ons-list-item>
+            <ons>
+                <img src="food1.jpg" class="imgStore">
+                StoreName
+                <a href="menuPage.html">
+                    <ons-button style="font-size: 20px;">
+                        <ion-icon name="log-in"></ion-icon>
+                        Enter
+                    </ons-button>
+                </a>
+            </ons>
+
+            <ons>
+                <img src="food1.jpg" class="imgStore">
+                StoreName
+                <a href="menuPage.html">
+                    <ons-button style="font-size: 20px;">
+                        <ion-icon name="log-in"></ion-icon>
+                        Enter
+                    </ons-button>
+                </a>
+            </ons>
+
+            <ons>
+                <img src="food1.jpg" class="imgStore">
+                StoreName
+                <a href="menuPage.html">
+                    <ons-button style="font-size: 20px;">
+                        <ion-icon name="log-in"></ion-icon>
+                        Enter
+                    </ons-button>
+                </a>
+            </ons>
+        </ons-list-item>
+
+        <ons-bottom-toolbar>
+            <a href="homePage.html">
+                <ons-button>
+                    <ion-icon name="home"></ion-icon>
+                    Home
+                </ons-button>
+            </a>
+
+            <a href="orderlistPage.html">
+                <ons-button>
+                    <ion-icon name="receipt"></ion-icon>
+                    OrderList
+                </ons-button>
+            </a>
+
+        </ons-bottom-toolbar>
+    </ons-page>
+</body>
+
+<style>
+    .imgStore {
+        width: 30%;
+        height: 30%;
+        margin-top: 5%;
+        margin-left: 25px;
+    }
+
+    .font {
+        font-family: Kanit;
+    }
+
+</style>
+
+</html>

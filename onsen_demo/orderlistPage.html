@@ -1,4 +1,3 @@
-q
 <!DOCTYPE html>
 <html>
 
@@ -16,33 +15,51 @@ q
   <ons-page id="orderlist-page">
     <ons-toolbar>
 
-      <a href="shopPage.html" class="backbtn">
+      <a href="menuPage.html" class="backbtn">
         <ion-icon name="chevron-back"></ion-icon>
       </a>
 
       <div class="title font">My Order</div>
-      
+
     </ons-toolbar>
-    <div class="line"></div>
+    <!-- <div class="line"></div> -->
     <p class="font" style="text-align: center;" ;>Deliver to</p>
     <div class="location font">
       <ion-icon name="location"></ion-icon>cb2 @kmutt
     </div>
-    <div class="line2"></div>
+    <!-- <div class="line2"></div> -->
 
-    <div>
-      <ons-card class="order">
-        <div class="storeName font">Cafe Amazon</div>
-        <div class="menu font">
+
+    <ons-card class="order">
+      <div class="storeName font">Cafe Amazon</div>
+      <!-- <div class="content font">
           <p>
-
+            Hello
           </p>
-        </div>
-      </ons-card>
-
-      <ons-button class="confirm_Order font">Confirm Order</ons-button>
+        </div> -->
+    </ons-card>
+    <ons-card class="totalorder">
+      <div>
+        total
+      </div>
+    </ons-card>
+    <ons-button class="confirm_Order font">Confirm Order</ons-button>
     </div>
 
+    <ons-bottom-toolbar>
+      <a href="homePage.html">
+        <ons-button>
+          <ion-icon name="home"></ion-icon>
+          Home
+        </ons-button>
+      </a>
+      <a href="orderlistPage.html">
+        <ons-button>
+          <ion-icon name="receipt"></ion-icon>
+          Orderlist
+        </ons-button>
+      </a>
+    </ons-bottom-toolbar>
 
   </ons-page>
 
