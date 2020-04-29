@@ -31,7 +31,7 @@
  * limitations under the License.
  *
  */
-@import url("https://fonts.googleapis.com/css?family=Athiti:400,700&display=swap&subset=thai");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&display=swap');
 html {
   height: 100%;
   width: 100%;
@@ -175,7 +175,7 @@ h6 {
   font-size: 18px;
 }
 .page {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -213,13 +213,13 @@ h6 {
   box-sizing: border-box;
 }
 .page--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   background-color: #e6e6e6;
 }
 .page--material__content {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-weight: 400;
@@ -229,7 +229,7 @@ h6 {
 .page__content h3,
 .page__content h4,
 .page__content h5 {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-weight: 500;
@@ -250,7 +250,7 @@ h6 {
 .page--material__content h3,
 .page--material__content h4,
 .page--material__content h5 {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-weight: 500;
@@ -711,7 +711,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -741,7 +741,7 @@ h6 {
   display: none;
 }
 .notification--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   background-color: #e91e63;
@@ -750,7 +750,7 @@ h6 {
   color: #fff;
 }
 .toolbar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -880,7 +880,7 @@ h6 {
   width: 100%;
 }
 .bottom-bar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -970,7 +970,7 @@ h6 {
 }
 .toolbar--material__left,
 .toolbar--material__right {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 20px;
@@ -982,7 +982,7 @@ h6 {
   line-height: 56px;
 }
 .toolbar--material__center {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 20px;
@@ -1026,7 +1026,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1114,7 +1114,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1177,7 +1177,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1262,7 +1262,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1330,7 +1330,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1395,7 +1395,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1421,7 +1421,7 @@ h6 {
   transition: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   min-height: 36px;
@@ -1474,7 +1474,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1500,7 +1500,7 @@ h6 {
   transition: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   min-height: 36px;
@@ -1551,7 +1551,7 @@ h6 {
   color: rgba(0, 0, 0, 0.26);
 }
 .button-bar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1570,7 +1570,7 @@ h6 {
   border: none;
 }
 .button-bar__item {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1583,7 +1583,7 @@ h6 {
   box-sizing: border-box;
 }
 .button-bar__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1645,7 +1645,7 @@ h6 {
   border-radius: 0 4px 4px 0;
 }
 .segment {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1664,7 +1664,7 @@ h6 {
   border: none;
 }
 .segment__item {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1699,7 +1699,7 @@ h6 {
   appearance: none;
 }
 .segment__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1766,7 +1766,7 @@ h6 {
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
 }
 .segment--material__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 14px;
@@ -1799,7 +1799,7 @@ h6 {
   border-width: 0;
 }
 .tabbar {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1830,7 +1830,7 @@ h6 {
   }
 }
 .tabbar__item {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1863,7 +1863,7 @@ h6 {
   appearance: none;
 }
 .tabbar__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1914,7 +1914,7 @@ h6 {
   height: 28px;
 }
 .tabbar__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2035,7 +2035,7 @@ h6 {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -2069,12 +2069,12 @@ h6 {
   line-height: 36px;
 }
 .tabbar--material__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
 .tabbar--material__label:first-child {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   letter-spacing: 0.015em;
@@ -2085,7 +2085,7 @@ h6 {
   font-size: 10px;
 }
 .toolbar-button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2221,7 +2221,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2238,7 +2238,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2320,7 +2320,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2409,7 +2409,7 @@ h6 {
 }
 .checkbox--material {
   line-height: 18px;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   overflow: visible;
@@ -2559,7 +2559,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2604,7 +2604,7 @@ h6 {
 }
 .radio-button--material {
   line-height: 22px;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -2706,7 +2706,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -2986,7 +2986,7 @@ h6 {
   padding: 0 6px;
 }
 .list--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   background-image: none;
@@ -3199,7 +3199,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3216,7 +3216,7 @@ h6 {
   letter-spacing: 0.04em;
 }
 .list-title--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #757575;
@@ -3238,7 +3238,7 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3301,7 +3301,7 @@ h6 {
   pointer-events: none;
 }
 .search-input--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   border-radius: 2px;
@@ -3327,7 +3327,7 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3401,7 +3401,7 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3478,11 +3478,11 @@ h6 {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #212121;
@@ -3501,7 +3501,7 @@ h6 {
   -webkit-transform: translate3d(0, 0, 0);
 }
 .text-input--material__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #afafaf;
@@ -3571,7 +3571,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3619,7 +3619,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3674,7 +3674,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3720,7 +3720,7 @@ h6 {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .dialog--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-align: left;
@@ -3751,7 +3751,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3774,7 +3774,7 @@ h6 {
   overflow: hidden;
 }
 .alert-dialog-title {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3806,7 +3806,7 @@ h6 {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -3938,7 +3938,7 @@ h6 {
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
 }
 .alert-dialog-title--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-align: left;
@@ -3948,7 +3948,7 @@ h6 {
   color: #212121;
 }
 .alert-dialog-content--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-align: left;
@@ -3969,7 +3969,7 @@ h6 {
   line-height: 1;
 }
 .alert-dialog-button--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   text-transform: uppercase;
@@ -4068,7 +4068,7 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4379,7 +4379,7 @@ ons-speed-dial-item.fab {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4457,7 +4457,7 @@ ons-speed-dial-item.fab--material {
   background: 0 0;
   border: none;
   line-height: normal;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4481,7 +4481,7 @@ ons-speed-dial-item.fab--material {
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
   transition: all 0.1s linear;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   width: 56px;
@@ -4624,7 +4624,7 @@ ons-fab.fab--bottom__center {
   line-height: normal;
   box-sizing: border-box;
   background-clip: padding-box;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4656,7 +4656,7 @@ ons-fab.fab--bottom__center {
   line-height: normal;
   box-sizing: border-box;
   background-clip: padding-box;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4678,7 +4678,7 @@ ons-fab.fab--bottom__center {
   vertical-align: top;
   outline: 0;
   line-height: 1;
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -4754,7 +4754,7 @@ ons-fab.fab--bottom__center {
   height: 64px;
 }
 .select-input--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #333;
@@ -4770,7 +4770,7 @@ ons-fab.fab--bottom__center {
   transform: translate3d(0, 0, 0);
 }
 .select-input--material__label {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #000;
@@ -4880,7 +4880,7 @@ ons-fab.fab--bottom__center {
   border-bottom: 1px solid #333;
 }
 .action-sheet {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5018,7 +5018,7 @@ ons-fab.fab--bottom__center {
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
 }
 .action-sheet-title--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   border-radius: 0;
@@ -5036,7 +5036,7 @@ ons-fab.fab--bottom__center {
   border-radius: 0;
 }
 .action-sheet-button--material {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   border-radius: 0;
@@ -5077,7 +5077,7 @@ ons-fab.fab--bottom__center {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .card {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5098,7 +5098,7 @@ ons-fab.fab--bottom__center {
   color: #030303;
 }
 .card__title {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5114,7 +5114,7 @@ ons-fab.fab--bottom__center {
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -5125,14 +5125,14 @@ ons-fab.fab--bottom__center {
   color: rgba(0, 0, 0, 0.54);
 }
 .card--material__title {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 24px;
   margin: 8px 0 12px 0;
 }
 .toast {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -5194,13 +5194,13 @@ ons-fab.fab--bottom__center {
   padding: 16px 24px;
 }
 .toast--material__message {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   margin: 0 24px 0 0;
 }
 .toast--material__button {
-  font-family: "Athiti";
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   color: #bbdefb;

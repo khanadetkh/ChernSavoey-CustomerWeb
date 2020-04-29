@@ -17,13 +17,13 @@ class FirebaseController extends Controller
         $firebase = (new Factory)
             ->withServiceAccount($serviceAccount)
             ->create();
-            //เริ่มเขียนตรงนี้นะ....
-            //1)สร้างตารางใหม่
+        //เริ่มเขียนตรงนี้นะ....
+        //1)สร้างตารางใหม่
         $db = $firebase->getDatabase();
             $db->getReference('config/website')
             ->set([
-                'id' => '1',
-                'Name' => 'Ravin W.',
+                'id' => '2',
+                'Name' => 'Khanadet.',
                 'E-mail' => 'admin.n@mail.kmutt.ac.th',
                 'Online' => 'Yes'
             ]);
