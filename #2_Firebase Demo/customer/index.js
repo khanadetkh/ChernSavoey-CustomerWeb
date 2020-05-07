@@ -14,23 +14,13 @@ var firestore = firebase.firestore();
 
 var docRef = firestore.doc("/Store/gixXindVOCKg6KqqD9MY");
 var table = document.querySelector('#tbresult');
-/* docRef.get().then(function(doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-        console.log(doc.data().address);
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
-});*/
 
-docRef.get().then((snapshot)=>{
-    snapshot.array.forEach(doc => {
+docRef.get().then(function(snapshot){
+    snapshot.forEach(function(doc){
         showStore(doc);
     });
 });
+
 
 
 
