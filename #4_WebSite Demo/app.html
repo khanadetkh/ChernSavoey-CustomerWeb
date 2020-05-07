@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-
+  <title>Demo</title>
 
   <!-- ห้ามยุ่ง -->
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" type="text/css" href="theme/onsen-css-components.min.css">
-  <!-- <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script> -->
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script src="js/main.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
@@ -18,8 +18,7 @@
 </head>
 
 <body>
-  <!-- อย่างยุ่งน้าาาา -->
-  <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+  <ons-navigator swipeable id="appNavigator" swipeable swipe-target-width="80px" page= "home.html">
     <ons-page>
       <ons-splitter id="appSplitter">
         <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="right" collapse="" width="260px">
@@ -166,22 +165,19 @@
       </style>
     </ons-page>
   </template>
-  <!-- Start Select Role page -->
+
+  <!-- เริ่มหน้าเลือกบทบาท -->
   <template id="home.html">
     <ons-page>
       <p class="intro">
         Please Select Role <br><br>
       </p>
       <!-- เริ่มเขียน Customer Card -->
-      <ons-card onclick="fn.pushPage({'id': 'customerPage.html', 'title': 'customerPage'})">
-        <div class="title">Customer</div>
-        <div class="content">เลือกๆๆๆ</div>
-      </ons-card>
+      <ons-button id="customer-button">
+        <p>Customer</p>
+      </ons-button>
       <!-- เริ่มเขียน Sender Card -->
-      <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
-        <div class="title">Sender</div>
-        <div class="content">เลือกสิ้ๆ</div>
-      </ons-card>
+
 
       <style>
         .intro {
@@ -196,114 +192,78 @@
           line-height: 34px;
         }
 
-        ons-card {
-          cursor: pointer;
-          color: #333;
+        #customer-button {
+          position: absolute;
+          width: 97px;
+          height: 100px;
+          left: 60px;
+          top: 270px;
+
+          background: #1D617A;
+          border-radius: 15px;
         }
 
-        .card__title,
-        .card--material__title {
-          font-size: 20px;
+        p {
+          text-align: center;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 42px;
         }
       </style>
     </ons-page>
   </template>
 
-  <!-- Start Customer -->
-  <template id="customerPage.html">
-    <ons-page id="customerPage">
+  <!-- customer page -->
+  <template id="customer.html">
+    <ons-page id="customer">
 
-      <div class="toolbar toolbar--material">
-        <div class="toolbar__left toolbar--material__left">
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-menu"></i>
-          </span>
-        </div>
-        <div class="toolbar__center toolbar--material__center">
-          Home Page
-        </div>
-        <div class="toolbar__right toolbar--material__right">
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-search"></i>
-          </span>
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-favorite"></i>
-          </span>
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-more-vert"></i>
-          </span>
-        </div>
-      </div>
-      <!-- --------------------------------------------------------------------------------- -->
-      <ons-list-item>
-        <ons>
-          <img src="food1.jpg" class="imgStore">
-          StoreName
-          <a href="menuPage.html">
-            <ons-button style="font-size: 20px;">
-              <ion-icon name="log-in"></ion-icon>
-              Enter
-            </ons-button>
-          </a>
-        </ons>
+  55555555
 
-        <ons>
-          <img src="food1.jpg" class="imgStore">
-          StoreName
-          <a href="menuPage.html">
-            <ons-button style="font-size: 20px;">
-              <ion-icon name="log-in"></ion-icon>
-              Enter
-            </ons-button>
-          </a>
-        </ons>
-
-        <ons>
-          <img src="food1.jpg" class="imgStore">
-          StoreName
-          <a href="menuPage.html">
-            <ons-button style="font-size: 20px;">
-              <ion-icon name="log-in"></ion-icon>
-              Enter
-            </ons-button>
-          </a>
-        </ons>
-      </ons-list-item>
-
-      <ons-bottom-toolbar>
-        <a href="homePage.html">
-          <ons-button>
-            <ion-icon name="home"></ion-icon>
-            Home
-          </ons-button>
-        </a>
-
-        <a href="orderlistPage.html">
-          <ons-button>
-            <ion-icon name="receipt"></ion-icon>
-            OrderList
-          </ons-button>
-        </a>
-
-      </ons-bottom-toolbar>
     </ons-page>
+  </template>
+
+
+
+
+  <script>
+    window.fn = {};
+  
+    window.fn.toggleMenu = function () {
+      document.getElementById('appSplitter').right.toggle();
+    };
+  
+    window.fn.loadView = function (index) {
+      document.getElementById('appTabbar').setActiveTab(index);
+      document.getElementById('sidemenu').close();
+    };
+  
+    window.fn.loadLink = function (url) {
+      window.open(url, '_blank');
+    };
+  
+    window.fn.pushPage = function (page, anim) {
+      if (anim) {
+        document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title }, animation: anim });
+      } else {
+        document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title } });
+      }
+    };
+  
+    // go to customer page
+    document.addEventListener('init', function(event) {
+    var page = event.target;
+  
+    if (page.id === 'home.html') {
+      page.querySelector('#customer-button').onclick = function() {
+        document.querySelector('#appNavigator').pushPage('customer.html', {data: {title: 'customer'}});
+      };
+    } else if (page.id === 'customer') {
+      page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+    }
+  });
+  </script>
 </body>
 
-<style>
-  .imgStore {
-    width: 30%;
-    height: 30%;
-    margin-top: 5%;
-    margin-left: 25px;
-  }
 
-  .font {
-    font-family: Kanit;
-  }
-</style>
-</ons-page>
-</template>
-
-</body>
 
 </html>

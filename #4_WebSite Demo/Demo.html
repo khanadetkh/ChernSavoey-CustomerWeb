@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+
+    <!-- ห้ามยุ่ง -->
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" type="text/css" href="theme/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script> -->
+
+</head>
+
+<body>
+    <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
+
+    <template id="home.html">
+        <ons-page id="home">
+
+            <p class="intro">
+                Please Select Role <br><br>
+            </p>
+            <!-- เริ่มเขียน Customer Card -->
+            <ons-button id="customer-button">
+                <p>Customer</p>
+            </ons-button>
+            <!-- เริ่มเขียน Sender Card -->
+            <style>
+                .intro {
+                  background: -webkit-linear-gradient(#1D617A, #61C2A2);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  text-align: center;
+                  padding: 0 20px;
+                  margin-top: 40px;
+                  font-weight: 800;
+                  font-size: 28px;
+                  line-height: 34px;
+                }
+        
+                #customer-button {
+                  position: absolute;
+                  width: 97px;
+                  height: 100px;
+                  left: 60px;
+                  top: 270px;
+        
+                  background: #1D617A;
+                  border-radius: 15px;
+                }
+        
+                p {
+                  text-align: center;
+                  font-weight: bold;
+                  font-size: 14px;
+                  line-height: 42px;
+                }
+              </style>
+            </ons-page>
+          </template>
+
+    <template id="customer.html">
+        <ons-page id="customer">
+            
+            <p>This is the second page.</p>
+
+            
+        </ons-page>
+    </template>
+
+</body>
+<script>
+    document.addEventListener('init', function (event) {
+        var page = event.target;
+
+        if (page.id === 'home') {
+            page.querySelector('#customer-button').onclick = function () {
+                document.querySelector('#myNavigator').pushPage('customer.html', { data: { title: 'customer' } });
+            };
+        } else if (page.id === 'customer') {
+            page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+        }
+    }); 
+</script>
+
+</html>
