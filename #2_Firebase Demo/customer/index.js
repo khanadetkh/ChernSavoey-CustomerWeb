@@ -11,27 +11,27 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 var firestore = firebase.firestore();
+const table = document.querySelector('#tbresult');
 
-var docRef = firestore.doc("/Store/gixXindVOCKg6KqqD9MY");
-var table = document.querySelector('#tbresult');
 
-docRef.get().then(function(snapshot){
-    snapshot.forEach(function(doc){
-        showStore(doc);
+    firestore.collection('Store').get().then((snapshot)=>{
+        snapshot.forEach((doc) =>{
+                    showStore(doc);
+                    // console.log(doc.data());
+        });
     });
-});
+    
 
 
 
-
-function showStore (doc) {
+function showStore(doc) {
     var row = table.insertRow(-1);
-    var cell1 = table.insertCell(0);
-    var cell2 = table.insertCell(1);
-    var cell3 = table.insertCell(2);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
     cell1.innerHTML = doc.data().address;
-    cell1.innerHTML = doc.data().geopoint;
-    cell1.innerHTML = doc.data().storeID;
-    cell1.innerHTML = doc.data().storeIMG;
-    cell1.innerHTML = doc.data().storeName;
+    cell2.innerHTML = doc.data().storeID;
+    cell3.innerHTML = doc.data().storeName;
+    cell4.innerHTML = doc.data().storeIMG;
 }
