@@ -17,37 +17,46 @@
 </head>
 
 <body>
-     <ons-page id="homePage">
-       
-        <div class="toolbar toolbar--material">
+    <ons-page id="homePage">
+
+        <ons-toolbar>
+            <!-- <a href="menuPage.html" class="backbtn">
+                <ion-icon name="chevron-back"></ion-icon>
+            </a> -->
+
+            <div class="title font">Home Page</div>
+
+        </ons-toolbar>
+
+        <!-- <div class="toolbar toolbar--material">
             <div class="toolbar__left toolbar--material__left">
-              <span class="toolbar-button toolbar-button--material">
-                <i class="zmdi zmdi-menu"></i>
-              </span>
+                <span class="toolbar-button toolbar-button--material">
+                    <i class="zmdi zmdi-menu"></i>
+                </span>
             </div>
             <div class="toolbar__center toolbar--material__center">
-            Home Page
+                Home Page
             </div>
             <div class="toolbar__right toolbar--material__right">
-              <span class="toolbar-button toolbar-button--material">
-                <i class="zmdi zmdi-search"></i>
-              </span>
-              <span class="toolbar-button toolbar-button--material">
-                <i class="zmdi zmdi-favorite"></i>
-              </span>
-              <span class="toolbar-button toolbar-button--material">
-                <i class="zmdi zmdi-more-vert"></i>
-              </span>
+                <span class="toolbar-button toolbar-button--material">
+                    <i class="zmdi zmdi-search"></i>
+                </span>
+                <span class="toolbar-button toolbar-button--material">
+                    <i class="zmdi zmdi-favorite"></i>
+                </span>
+                <span class="toolbar-button toolbar-button--material">
+                    <i class="zmdi zmdi-more-vert"></i>
+                </span>
             </div>
-          </div>
-        
-<!-- --------------------------------------------------------------------------------- -->  
+        </div> -->
+
+        <!-- --------------------------------------------------------------------------------- -->
 
 
-<ons-list-item>
+        <ons-list-item>
             <ons>
                 <img src="food1.jpg" class="imgStore">
-                <section id = "storeName"></section>
+                ร้านลุงหนุ่ม
                 <a href="menuPage.html">
                     <ons-button style="font-size: 20px;">
                         <ion-icon name="log-in"></ion-icon>
@@ -58,7 +67,7 @@
 
             <ons>
                 <img src="food1.jpg" class="imgStore">
-                StoreName
+                ร้านของทอด
                 <a href="menuPage.html">
                     <ons-button style="font-size: 20px;">
                         <ion-icon name="log-in"></ion-icon>
@@ -69,7 +78,7 @@
 
             <ons>
                 <img src="food1.jpg" class="imgStore">
-                StoreName
+                ร้านน้ำ
                 <a href="menuPage.html">
                     <ons-button style="font-size: 20px;">
                         <ion-icon name="log-in"></ion-icon>
@@ -111,6 +120,46 @@
         font-family: Kanit;
     }
 
+    .line {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 2px;
+
+        background: #D8D8D8;
+        border: 1px solid rgba(151, 151, 151, 0.25);
+
+    }
+
+    .line2 {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 120px;
+
+        background: #D8D8D8;
+        border: 1px solid rgba(151, 151, 151, 0.25);
+    }
+
+    .vector {
+        margin-top: 8px;
+        margin-left: 30px;
+        margin-bottom: 2px;
+        font-size: 30px;
+    }
+
+    .title {
+        display: flex;
+        font-weight: 800;
+        font-size: 28px;
+        background: linear-gradient(#1D617A, #61C2A2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 3px;
+        margin-left: 25px;
+        margin-bottom: 3px;
+
+    }
 </style>
 
 </html>
