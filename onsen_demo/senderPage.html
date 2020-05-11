@@ -39,28 +39,17 @@
     <!-- icon="md-face" active-icon="md-face" -->
 
     <ons-tabbar swipeable position="auto">
-        <ons-tab page="home.html" label="Home" badge="7" active>
-            <img src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/home.png" style="width: 8%;">
+        <ons-tab page="order.html" label="Order" badge="7" active>
+            <img src="bill.png" style="width: 8%;">
         </ons-tab>
-        <ons-tab page="order.html" label="Order">
-            <img src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/bill.png" style="width: 8%;">
+        <ons-tab page="senderHis.html" label="History">
+            <img src="history.png" style="width: 8%;">
         </ons-tab>
     </ons-tabbar>
 
 
 
-    <!-- page1 home-->
-    <template id="home.html">
-        <ons-page id="Home">
-            <p style="text-align: center;">
-                This is the home page.
-            </p>
-        </ons-page>
-    </template>
-
-
-    <!-- page2 order-->
-
+    <!-- page1 order-->
     <template id="order.html">
         <ons-page id="order">
             <!-- <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'Select Shop'})"> -->
@@ -74,8 +63,7 @@
                             <table>
                                 <tr>
                                     <div class="left">
-                                        <img class="list-item__thumbnail"
-                                            src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/shop.png">
+                                        <img class="list-item__thumbnail" src="shop.png">
                                     </div>
                                 </tr>
                                 <tr>
@@ -111,8 +99,7 @@
                             <table>
                                 <tr>
                                     <div class="left">
-                                        <img class="list-item__thumbnail"
-                                            src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/shop.png">
+                                        <img class="list-item__thumbnail" src="shop.png">
                                     </div>
                                 </tr>
                                 <tr>
@@ -143,6 +130,19 @@
         </ons-page>
     </template>
 
+
+
+
+    <!-- page2 etc-->
+    <template id="senderHis.html">
+        <ons-page id="History">
+            <p style="text-align: center;">
+                This is the history page.
+            </p>
+        </ons-page>
+    </template>
+
+
     <script>
         document.addEventListener('init', function (event) {
             var page = event.target;
@@ -159,261 +159,150 @@
 
 
 
-
-
-
-    <!-- orderConfirm-page -->
-    <template id="orderConfirm.html">
-        <ons-toolbar>
-            <div class="vector">
-                <ion-icon name="chevron-back"></ion-icon>
-            </div>
-
-            <div class="title font">Order Confirm</div>
-        </ons-toolbar>
-        <div class="line"></div>
-
-
-        <ons-card class="order">
-            <div class="storeName font">
-                <div class="storeName font">
-                    <ons-list-item>
-                        <table>
-                            <tr>
-                                <div class="left">
-                                    <img class="list-item__thumbnail"
-                                        src="file:///Users/pom/Documents/GitHub/SeniorProject2020/onsen_demo/img/shop.png">
-                                </div>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Cafe Amazon
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>โกโก้เย็น</td>
-                                <td>1</td>
-                                <td>50 บาท</td>
-                            </tr>
-                            <tr>
-                                <td>กาแฟเย็น</td>
-                                <td>1</td>
-                                <td>60 บาท</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td>110</td>
-                            </tr>
-                        </table>
-                    </ons-list-item>
-                </div>
-            </div>
-        </ons-card>
-
-
-        <table>
-            <tr>
-                <td>
-                    <ons-button onclick="createAlertDialog()" class="confirm_Order font">
-                        <h5 style="font-weight: bold;">Confirm</h5>
-                    </ons-button>
-                </td>
-                <td>
-                    <ons-button onclick="notify()" class="ignore_Order font">
-                        <h5 style="font-weight: bold;">Ignore</h5>
-                    </ons-button>
-                </td>
-            </tr>
-        </table>
-</ons-page>
-
-<template id="alert-dialog.html">
-    <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
-        <div class="alert-dialog-title">Alert</div>
-        <div class="alert-dialog-content">
-            Confirm your order ?
-        </div>
-        <div class="alert-dialog-footer">
-            <ons-alert-dialog-button onclick="hideAlertDialog()">Cancel</ons-alert-dialog-button>
-            <ons-alert-dialog-button onclick="hideAlertDialog()">OK</ons-alert-dialog-button>
-        </div>
-    </ons-alert-dialog>
-</template>
-</template>
-
-<script>
-    var createAlertDialog = function () {
-        var dialog = document.getElementById('my-alert-dialog');
-
-        if (dialog) {
-            dialog.show();
-        } else {
-            ons.createElement('alert-dialog.html', { append: true })
-                .then(function (dialog) {
-                    dialog.show();
-                });
+    <style>
+        .font {
+            font-family: Kanit;
         }
-    };
 
-    var hideAlertDialog = function () {
-        document
-            .getElementById('my-alert-dialog')
-            .hide();
-    };
+        .line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: 2px;
 
-    var notify = function () {
-        ons.notification.alert('Ignore your order ?');
-    };
-</script>
+            background: #D8D8D8;
+            border: 1px solid rgba(151, 151, 151, 0.25);
 
+        }
 
+        .vector {
+            margin-top: 8px;
+            margin-left: 30px;
+            margin-bottom: 2px;
+            font-size: 30px;
+        }
 
+        .title {
+            display: flex;
+            font-weight: 800;
+            font-size: 28px;
 
+            background: linear-gradient(#1D617A, #61C2A2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 3px;
+            margin-left: 25px;
+            margin-bottom: 3px;
 
-<style>
-    .font {
-        font-family: Kanit;
-    }
-
-    .line {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        top: 2px;
-
-        background: #D8D8D8;
-        border: 1px solid rgba(151, 151, 151, 0.25);
-
-    }
-
-    .vector {
-        margin-top: 8px;
-        margin-left: 30px;
-        margin-bottom: 2px;
-        font-size: 30px;
-    }
-
-    .title {
-        display: flex;
-        font-weight: 800;
-        font-size: 28px;
-
-        background: linear-gradient(#1D617A, #61C2A2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-top: 3px;
-        margin-left: 25px;
-        margin-bottom: 3px;
-
-    }
+        }
 
 
-    .order {
-        display: flex;
-        margin: auto;
-        /* margin-top: 150px; */
-        display: flex;
-        width: 70%;
-        height: auto;
-        border: 1px;
-        background-color: #E5E5E5;
-        border-radius: 20px;
-    }
+        .order {
+            display: flex;
+            margin: auto;
+            /* margin-top: 150px; */
+            display: flex;
+            width: 70%;
+            height: auto;
+            border: 1px;
+            background-color: #E5E5E5;
+            border-radius: 20px;
+        }
 
-    .confirm {
-        text-align: center;
-        margin-top: 30;
-    }
+        .confirm {
+            text-align: center;
+            margin-top: 30;
+        }
 
-    .font {
-        font-family: Kanit;
-    }
+        .font {
+            font-family: Kanit;
+        }
 
-    .line {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        top: 2px;
+        .line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: 2px;
 
-        background: #D8D8D8;
-        border: 1px solid rgba(151, 151, 151, 0.25);
+            background: #D8D8D8;
+            border: 1px solid rgba(151, 151, 151, 0.25);
 
-    }
+        }
 
-    .line2 {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        top: 120px;
+        .line2 {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: 120px;
 
-        background: #D8D8D8;
-        border: 1px solid rgba(151, 151, 151, 0.25);
-    }
+            background: #D8D8D8;
+            border: 1px solid rgba(151, 151, 151, 0.25);
+        }
 
-    .vector {
-        margin-top: 8px;
-        margin-left: 30px;
-        margin-bottom: 2px;
-        font-size: 30px;
-    }
+        .vector {
+            margin-top: 8px;
+            margin-left: 30px;
+            margin-bottom: 2px;
+            font-size: 30px;
+        }
 
-    .title {
-        display: flex;
-        font-weight: 800;
-        font-size: 28px;
+        .title {
+            display: flex;
+            font-weight: 800;
+            font-size: 28px;
 
-        background: linear-gradient(#1D617A, #61C2A2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-top: 3px;
-        margin-left: 25px;
-        margin-bottom: 3px;
+            background: linear-gradient(#1D617A, #61C2A2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 3px;
+            margin-left: 25px;
+            margin-bottom: 3px;
 
-    }
-
-
-    .order {
-        display: flex;
-        margin: auto;
-        margin-top: 150px;
-        display: flex;
-        width: 80%;
-        height: auto;
-        border: 1px;
-        background-color: #E5E5E5;
-        border-radius: 20px;
-    }
+        }
 
 
-    .confirm_Order {
-
-        text-align: center !important;
-        font-weight: bold;
-        display: flex;
-        margin: auto;
-        margin-top: 30%;
-        background: #61C2A2;
-        border-radius: 20px;
-        width: fit-content;
-        height: 60px;
-        box-shadow: 1px 1px 1px grey;
-    }
-
-    .ignore_Order {
-        text-align: center !important;
-        font-weight: bold;
-        display: flex;
-        margin: auto;
-        margin-top: 30%;
-        background: #EB5757;
-        border-radius: 20px;
-        width: fit-content;
-        height: 60px;
-        box-shadow: 1px 1px 1px grey;
-    }
+        .order {
+            display: flex;
+            margin: auto;
+            margin-top: 150px;
+            display: flex;
+            width: 80%;
+            height: auto;
+            border: 1px;
+            background-color: #E5E5E5;
+            border-radius: 20px;
+        }
 
 
-    /* .confirm_Order {
+        .confirm_Order {
+
+            text-align: center !important;
+            font-weight: bold;
+            display: flex;
+            margin: auto;
+            margin-top: 30%;
+            background: #61C2A2;
+            border-radius: 20px;
+            width: fit-content;
+            height: 60px;
+            box-shadow: 1px 1px 1px grey;
+        }
+
+        .ignore_Order {
+            text-align: center !important;
+            font-weight: bold;
+            display: flex;
+            margin: auto;
+            margin-top: 30%;
+            background: #EB5757;
+            border-radius: 20px;
+            width: fit-content;
+            height: 60px;
+            box-shadow: 1px 1px 1px grey;
+        }
+
+
+        /* .confirm_Order {
         display: flex;
         margin: auto;
         margin-top: 30%;
@@ -422,6 +311,6 @@
         width: fit-content;
         box-shadow: 1px 1px 1px grey;
     } */
-</style>
+    </style>
 
 </html>
