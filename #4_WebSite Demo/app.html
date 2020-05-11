@@ -18,252 +18,87 @@
 </head>
 
 <body>
-  <ons-navigator swipeable id="appNavigator" swipeable swipe-target-width="80px" page= "home.html">
-    <ons-page>
-      <ons-splitter id="appSplitter">
-        <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="right" collapse="" width="260px">
-        </ons-splitter-side>
-        <ons-splitter-content page="tabbar.html"></ons-splitter-content>
-      </ons-splitter>
-    </ons-page>
-  </ons-navigator>
+  <h1>Please Select Role</h1>
 
-  <!-- footter -->
-  <template id="tabbar.html">
-    <ons-page id="tabbar-page">
-      <ons-tabbar swipeable id="appTabbar" position="auto">
-        <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
-        <ons-tab label="Forms" icon="ion-edit" page="forms.html"></ons-tab>
-        <ons-tab label="Animations" icon="ion-film-marker" page="animations.html"></ons-tab>
-      </ons-tabbar>
-
-      <script>
-        ons.getScriptPage().addEventListener('prechange', function (event) {
-          if (event.target.matches('#appTabbar')) {
-            event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
-          }
-        });
-      </script>
-    </ons-page>
-  </template>
-
-  <template id="sidemenu.html">
-    <ons-page>
-      <div class="profile-pic">
-        <img src="https://monaca.io/img/logos/download_image_onsenui_01.png">
-      </div>
-
-      <ons-list-title>Access</ons-list-title>
-      <ons-list>
-        <ons-list-item onclick="fn.loadView(0)">
-          <div class="left">
-            <ons-icon fixed-width class="list-item__icon" icon="ion-home, material:md-home"></ons-icon>
-          </div>
-          <div class="center">
-            Home
-          </div>
-          <div class="right">
-            <ons-icon icon="fa-link"></ons-icon>
-          </div>
-        </ons-list-item>
-        <ons-list-item onclick="fn.loadView(1)">
-          <div class="left">
-            <ons-icon fixed-width class="list-item__icon" icon="ion-edit, material:md-edit"></ons-icon>
-          </div>
-          <div class="center">
-            Forms
-          </div>
-          <div class="right">
-            <ons-icon icon="fa-link"></ons-icon>
-          </div>
-        </ons-list-item>
-        <ons-list-item onclick="fn.loadView(2)">
-          <div class="left">
-            <ons-icon fixed-width class="list-item__icon" icon="ion-film-marker, material: md-movie-alt"></ons-icon>
-          </div>
-          <div class="center">
-            Animations
-          </div>
-          <div class="right">
-            <ons-icon icon="fa-link"></ons-icon>
-          </div>
-        </ons-list-item>
-      </ons-list>
-
-      <ons-list-title style="margin-top: 10px">Links</ons-list-title>
-      <ons-list>
-        <ons-list-item onclick="fn.loadLink('https://onsen.io/v2/docs/guide/js/')">
-          <div class="left">
-            <ons-icon fixed-width class="list-item__icon" icon="ion-document-text"></ons-icon>
-          </div>
-          <div class="center">
-            Docs
-          </div>
-          <div class="right">
-            <ons-icon icon="fa-external-link"></ons-icon>
-          </div>
-        </ons-list-item>
-        <ons-list-item onclick="fn.loadLink('https://github.com/OnsenUI/OnsenUI')">
-          <div class="left">
-            <ons-icon fixed-width class="list-item__icon" icon="ion-social-github"></ons-icon>
-          </div>
-          <div class="center">
-            GitHub
-          </div>
-          <div class="right">
-            <ons-icon icon="fa-external-link"></ons-icon>
-          </div>
-        </ons-list-item>
-        <ons-list-item onclick="fn.loadLink('https://community.onsen.io/')">
-          <div class="left">
-            <ons-icon fixed-width class="list-item__icon" icon="ion-chatboxes"></ons-icon>
-          </div>
-          <div class="center">
-            Forum
-          </div>
-          <div class="right">
-            <ons-icon icon="fa-external-link"></ons-icon>
-          </div>
-        </ons-list-item>
-        <ons-list-item onclick="fn.loadLink('https://twitter.com/Onsen_UI')">
-          <div class="left">
-            <ons-icon fixed-width class="list-item__icon" icon="ion-social-twitter"></ons-icon>
-          </div>
-          <div class="center">
-            Twitter
-          </div>
-          <div class="right">
-            <ons-icon icon="fa-external-link"></ons-icon>
-          </div>
-        </ons-list-item>
-      </ons-list>
-
-      <script>
-        ons.getScriptPage().onInit = function () {
-          // Set ons-splitter-side animation
-          this.parentElement.setAttribute('animation', ons.platform.isAndroid() ? 'overlay' : 'reveal');
-        };
-      </script>
-
-      <style>
-        .profile-pic {
-          width: 200px;
-          background-color: #fff;
-          margin: 20px auto 10px;
-          border: 1px solid #999;
-          border-radius: 4px;
-        }
-
-        .profile-pic>img {
-          display: block;
-          max-width: 100%;
-        }
-
-        ons-list-item {
-          color: #444;
-        }
-      </style>
-    </ons-page>
-  </template>
-
-  <!-- เริ่มหน้าเลือกบทบาท -->
-  <template id="home.html">
-    <ons-page>
-      <p class="intro">
-        Please Select Role <br><br>
-      </p>
-      <!-- เริ่มเขียน Customer Card -->
-      <ons-button id="customer-button">
+  <div class="role">
+    <a href="homePage.html">
+      <ons-button class="customer-button">
         <p>Customer</p>
       </ons-button>
-      <!-- เริ่มเขียน Sender Card -->
+    </a>
 
+    <a href="senderPage.html">
+      <ons-button class="sender-button">
+        <p>Sender</p>
+      </ons-button>
+  </div>
+  </a>
 
-      <style>
-        .intro {
-          background: -webkit-linear-gradient(#1D617A, #61C2A2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          text-align: center;
-          padding: 0 20px;
-          margin-top: 40px;
-          font-weight: 800;
-          font-size: 28px;
-          line-height: 34px;
-        }
-
-        #customer-button {
-          position: absolute;
-          width: 97px;
-          height: 100px;
-          left: 60px;
-          top: 270px;
-
-          background: #1D617A;
-          border-radius: 15px;
-        }
-
-        p {
-          text-align: center;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 42px;
-        }
-      </style>
-    </ons-page>
-  </template>
-
-  <!-- customer page -->
-  <template id="customer.html">
-    <ons-page id="customer">
-
-  55555555
-
-    </ons-page>
-  </template>
+  <a href="index.html">
+    <p style="margin-top: 300px;">Back</p>
+  </a>
 
 
 
 
-  <script>
-    window.fn = {};
-  
-    window.fn.toggleMenu = function () {
-      document.getElementById('appSplitter').right.toggle();
-    };
-  
-    window.fn.loadView = function (index) {
-      document.getElementById('appTabbar').setActiveTab(index);
-      document.getElementById('sidemenu').close();
-    };
-  
-    window.fn.loadLink = function (url) {
-      window.open(url, '_blank');
-    };
-  
-    window.fn.pushPage = function (page, anim) {
-      if (anim) {
-        document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title }, animation: anim });
-      } else {
-        document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title } });
-      }
-    };
-  
-    // go to customer page
-    document.addEventListener('init', function(event) {
-    var page = event.target;
-  
-    if (page.id === 'home.html') {
-      page.querySelector('#customer-button').onclick = function() {
-        document.querySelector('#appNavigator').pushPage('customer.html', {data: {title: 'customer'}});
-      };
-    } else if (page.id === 'customer') {
-      page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+
+  <style>
+    h1 {
+      font-family: kanit;
+      font-size: 30px;
+      text-align: center;
+      margin: auto;
+      margin-top: 3em;
+      margin-bottom: 5px;
+      background: linear-gradient(#1D617A, #61C2A2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-  });
-  </script>
+
+    .intro {
+      background: -webkit-linear-gradient(#1D617A, #61C2A2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 40px;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    .customer-button {
+      position: absolute;
+      width: 120px;
+      height: 100px;
+      left: 60px;
+      top: 270px;
+
+      background: #1D617A;
+      border-radius: 15px;
+    }
+
+    .sender-button {
+      margin-left: 160px;
+      position: absolute;
+      width: 120px;
+      height: 100px;
+      left: 60px;
+      top: 270px;
+
+      background: #61C2A2;
+      border-radius: 15px;
+    }
+
+    p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 42px;
+    }
+  </style>
+  </ons-page>
+  </template>
 </body>
-
-
 
 </html>
