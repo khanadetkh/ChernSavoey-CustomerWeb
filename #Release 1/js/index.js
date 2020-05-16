@@ -16,7 +16,7 @@ const firebaseConfig = {
   function Googlelogin() {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
-      window.location = "app.html";
+      window.location = "role.html";
       // ...
     }).catch(function (error) {
       var errorMessage = error.message;
