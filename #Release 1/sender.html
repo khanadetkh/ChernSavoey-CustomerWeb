@@ -26,54 +26,64 @@
   <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
   <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="css/util.css">
-  <link rel="stylesheet" type="text/css" href="css/customer.css">
+  <link rel="stylesheet" type="text/css" href="css/role.css">
   <!--===============================================================================================-->
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
   <!--===============================================================================================-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!--===============================================================================================-->
 
 </head>
 
 <body>
 
+  <div class="limiter">
+    <div class="container-login100">
+        
+      <div class="wrap-login100">
+
+        <span class="login100-form-title p-b-48">
+            
+          Hello Sender
+        </span>
 
 
-  <div class="container">
-    <!-- display shop -->
-    <table class="table table-borderless" id="tbresult">
-      <tr>
-      </tr>
-    </table>
-    <!-- bottom navbar -->
-    <nav class="navbar fixed-bottom">
-          <a class="nav-item nav-link" href="#"><i class="fas fa-hamburger"><br>Customer</i></a>
-          <a class="nav-item nav-link" href="#"><i class="fas fa-shopping-cart"><br>Cart</i></a>
-          <a class="nav-item nav-link" href="#"><i class="fas fa-bell"><br>Notification</i></a>
-    </nav>
+        <!-- customer btn -->
+        <div class="container-login100-form-btn">
+          <div class="wrap-login100-form-btn">
+            <div class="login100-form-bgbtn"></div>
+            <a href="customer.html" class="login100-form-btn">
+              Customer
+            </a>
+          </div>
+        </div>
+        <!-- sender btn -->
+        <div class="container-login100-form-btn">
+          <div class="wrap-login100-form-btn">
+            <div class="login100-form-bgbtn"></div>
+            <a href="sender.html" class="login100-form-btn">
+              Sender
+            </a>
+          </div>
+        </div>
 
+
+
+        <div class="text-center p-t-115">
+
+          <a class="txt2" href=""> <i class="fas fa-sign-out-alt"> logout</i>
+
+          </a>
+        </div>
+
+      </div>
+    </div>
   </div>
 
 
+  <div id="dropDownSelect1"></div>
 
-
-
-  <!--===============================================================================================-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <!--===============================================================================================-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <!--===============================================================================================-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
   <!--===============================================================================================-->
   <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
   <!--===============================================================================================-->
@@ -89,7 +99,7 @@
   <!--===============================================================================================-->
   <script src="vendor/countdowntime/countdowntime.js"></script>
   <!--===============================================================================================-->
-  <script src="js/customer.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

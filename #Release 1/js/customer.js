@@ -37,5 +37,3 @@ function showStore(doc) {
 
 
 }
-
-
