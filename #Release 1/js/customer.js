@@ -11,29 +11,54 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 var firestore = firebase.firestore();
-const table = document.querySelector('#tbresult');
+
+var products = [
+    {
+        id: 1,
+        img: 'images/lungnhom.jpg',
+        name: 'ลุงหนุ่ม Squre',
+        price: 3,
+        cart: false,
+        quantity: 1,
+        total: 0
+
+    },
+    {
+        id: 2,
+        img: 'images/lungnhom.jpg',
+        name: 'ร้านของทอด',
+        price: 4,
+        cart: false,
+        quantity: 1,
+        total: 0
+    },
+    {
+        id: 3,
+        img: 'images/lungnhom.jpg',
+        name: 'ร้านน้ำ',
+        price: 5,
+        cart: false,
+        quantity: 1,
+        total: 0
+
+    }
 
 
-firestore.collection('Store').get().then((snapshot) => {
-    snapshot.forEach((doc) => {
-        showStore(doc);
-    });
-});
+];
 
 
 
 
-function showStore(doc) {
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell1.innerHTML = doc.data().storeIMG;
-    cell2.innerHTML = doc.data().storeName;
-    let btn = document.createElement('button');
-    btn.textContent = 'Enter';
-    btn.setAttribute('class', 'btn btn-primary');
-    cell3.appendChild(btn);
-
-
-}
+(() => {
+    for (let index = 0; index < products.length; index++) {
+        document.getElementById('row1').innerHTML += `
+      <div class="card m-2 " style="width: 18rem;" >
+      <img src="${products[index].img}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${products[index].name}</h5>
+        <button class="btn btn-primary" onclick="add('${products[index].id}')">See More</button>
+      </div>
+    </div>
+      `
+    }
+})();
