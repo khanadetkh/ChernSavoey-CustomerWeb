@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salvandoelsemestre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!--===============================================================================================-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+    <!--===============================================================================================-->
+</head>
+<!-- SALVANDO EL SEMESTRE - YOUTUBE CHANNEL -->
+
+<body onload="render()">
+    <header>
+        <nav class="green accent-4">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo m-l-2">
+                    <i style="font-size:3rem!important;" class="material-icons">store</i> Organic Store
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <a href="cart.html">
+                            Shopping Cart <span id="cart_n"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="modal-trigger" href="#modal1">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+
+        <div class="container">
+            <br>
+            <h2 id="fruit">Product</h2>
+            <hr>
+            <div class="row" id="fruitDIV"></div>
+
+        </div>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/wow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

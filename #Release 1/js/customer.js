@@ -17,30 +17,17 @@ var products = [
         id: 1,
         img: 'images/lungnhom.jpg',
         name: 'ลุงหนุ่ม Squre',
-        price: 3,
-        cart: false,
-        quantity: 1,
-        total: 0
 
     },
     {
         id: 2,
-        img: 'images/lungnhom.jpg',
+        img: 'images/khongtod.jpg',
         name: 'ร้านของทอด',
-        price: 4,
-        cart: false,
-        quantity: 1,
-        total: 0
     },
     {
         id: 3,
-        img: 'images/lungnhom.jpg',
+        img: 'images/bbtea.jpg',
         name: 'ร้านน้ำ',
-        price: 5,
-        cart: false,
-        quantity: 1,
-        total: 0
-
     }
 
 
@@ -56,7 +43,8 @@ var products = [
       <img src="${products[index].img}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${products[index].name}</h5>
-        <button class="btn btn-primary" onclick="add('${products[index].id}')">See More</button>
+            <a  href="product.html">  <button class="btn btn-primary">
+            See More</button> </a>
       </div>
     </div>
       `

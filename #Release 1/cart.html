@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Ecommerce</title>
+</head>
+<body>
+    <header>
+        <nav class="green accent-4">
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo m-l-2">
+                    <i style="font-size:3rem!important;" class="material-icons">store</i> Organic Store
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                       <a href="#">Shopping Cart <span id="cart_n"></span></a> 
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+   
+        <div class="row" id="row2">
+          <table   >
+            <thead >
+              <tr >
+                <th >#</th>
+                <th >Remove</th>
+                <th >Image</th>
+                <th >Name</th>
+                <th >Quantity</th>
+                <th >Price</th>
+              </tr>
+            </thead>
+            <tbody id="tableProducts">
+    
+            </tbody>
+            <tfoot id="total"  >
+    
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <form autocomplete="off" id="formCart" class="col s12">
+                  
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">account_circle</i>
+                          <input required id="userName" type="text" class="validate">
+                          <label for="icon_prefix">First Name</label>
+                        </div>
+                       
+                     
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input required id="userEmail" type="email" class="validate">
+                            <label for="icon_prefix">E-mail</label>
+                          </div>
+                         
+                   
+                        <div class="input-field col s12">
+                           
+                            <select id="userSelect" class="browser-default">
+                                <option value="Credit Card 1">Credit Card 1</option>
+                                <option value="Credit Card 2">Credit Card 2</option>
+                                <option value="Credit Card 3">Credit Card 3</option>
+                              </select>
+                        </div>
+                      </div>
+                  <button class="btn  waves-effect waves-light"  type="submit" name="action">Submit
+                      <i class="material-icons right">send</i>
+                    </button>
+                 
+                </form>
+              </div>
+    
+    
+        </div>
+        
+      </div>
+    <!--END Modal Structure -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>
