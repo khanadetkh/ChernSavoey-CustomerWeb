@@ -43,7 +43,7 @@ var products = [
       <img src="${products[index].img}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${products[index].name}</h5>
-            <a  href="product.html">  <button class="btn btn-primary">
+            <a  href="products.html">  <button class="btn btn-primary">
             See More</button> </a>
       </div>
     </div>
