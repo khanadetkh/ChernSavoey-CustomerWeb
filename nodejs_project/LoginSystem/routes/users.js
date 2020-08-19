@@ -1,14 +1,21 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+// GET /users
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/register', function(req, res, next) {
+
+// /GET /users/register
+router.get('/register', function (req, res, next) {
   res.send('register');
 });
-router.get('/login', function(req, res, next) {
-  res.send('login ');
+
+// GET /users/login
+router.get('/login', function (req, res, next) {
+
+  res.status(200).json({
+    message: 'login success'
+  })
 });
 module.exports = router;
