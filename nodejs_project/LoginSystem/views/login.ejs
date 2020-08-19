@@ -1,114 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <title>home page</title>
 </head>
 
 <body>
-  <div class="container">
-    <%- include layout %>
-    <h2 align="center">Login Form</h2>
-    <%- messages() %>
-    <form class="form-group" action="/users/login" method="post">
-      <!-- <div class="form-group">
-        <label for="">Username:</label>
-        <input type="text" name="username" value="" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="">Password:</label>
-        <input type="password" name="password" value="" class="form-control">
-      </div>
-      <input type="submit" name="" value="Login" class="btn btn-success"> -->
-      <h1>เชิญเสวย</h1>
-    
-      <h6>CHERN SAVOEY</h6>
-   
-    <!-- <ons-page> -->
-      <div class="login font">
-        <p>
-          <ons-input id="username" class="inputlogin font" placeholder="Username" float></ons-input>
-        </p>
-        <p>
-          <ons-input id="password" class="inputlogin font" type="password" placeholder="Password" float></ons-input>
-        </p>
-        <p>
-          <ons-button class="signinbtn font" onclick="login()">Login</ons-button>
-        </p>
-      </div>
-    </form>
-  </div>
 
-  <style>
-    h1{
-   font-family: kanit;
-   font-size: 60px;
-   text-align: center;
-   margin: auto;
-   margin-top: 3em;
-   margin-bottom: 5px;
-   background: linear-gradient(#1D617A,#61C2A2);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   
- 
-   
- }
- h6{
-   font-family: kanit;
-   font-size: 14px;
-   text-align: center;
-   color: #1D617A;
-   text-indent: 80px;
- 
- }
-
- .login{
-   text-align: center;
- }
-
- .inputlogin{
-   background-color: rgb(255, 255, 255);
-   border-radius: 20px;
-   padding: 5px;
-   /* border: 2px solid rgb(216, 216, 216); */
-   box-shadow: 2px 2px 2px grey;
-
- }
-
- .text-input--material{
-   background-image: unset;
-   padding: 2px;
- }
-
- .signinbtn{
-   background-image: linear-gradient(to right,#1D617A,#61C2A2);
-   margin-top: 30px;
-   border-radius: 20px;
-   width: 7em;
-   letter-spacing: 1px;
-   box-shadow: 1px 1px 1px grey;
- }
-
- .font{
-   font-family: Kanit;
- }
- </style>
-  
-
+  <h1>Login Form</h1>
+  <p>My first paragraph.</p>
+  <%= title %>
 </body>
-<script type="text/javascript">
-  $('#messages').addClass("alert alert-danger");
-</script>
 
 </html>

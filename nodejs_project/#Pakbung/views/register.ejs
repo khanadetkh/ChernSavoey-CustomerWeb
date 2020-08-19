@@ -12,6 +12,7 @@
     <div class="container">
       <%- include('layout.ejs') %>
       <h2 align="center">Create Member</h2>
+      <!-- display if error -->
       <% if(locals.errors){ %>
       <ul class="alert alert-danger">
         <% Object.values(errors).forEach(function(error){%>

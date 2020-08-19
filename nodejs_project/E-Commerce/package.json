@@ -1,5 +1,5 @@
 {
-  "name": "pakbung",
+  "name": "e-commerce",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,11 +10,12 @@
     "debug": "~2.6.9",
     "ejs": "*",
     "express": "~4.16.1",
-    "express-message": "*",
+    "express-session": "*",
     "express-validator": "*",
-    "firebase": "^7.18.0",
-    "firebase-admin": "^9.1.0",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "mongodb": "*",
+    "monk": "*",
+    "morgan": "~1.9.1",
+    "stripe": "^7.8.0"
   }
 }

@@ -29,21 +29,22 @@ router.post('/register', function (req, res) {
   console.log(reg.body.password);
 })
 
-//Validation
-router.post('/register', [
-  check('email', 'กรุณาป้อนอีเมล').isEmail(),
-  check('name', 'กรุณาป้อนชื่อของท่าน').not().isEmpty(),
-  check('password', 'กรุณาป้อนรหัสผ่าน').not().isEmpty()
-], function (req, res, next) {
-  const result = validationResult(req);
-  var errors = result.errors;
-  //Validation Data
-  if (!result.isEmpty()) {
-    //Return error to views
-    res.render('register', {
-      errors: errors
-    })
-  };
+// //Validation
+// router.post('/register', [
+//   check('email', 'กรุณาป้อนอีเมล').isEmail(),
+//   check('name', 'กรุณาป้อนชื่อของท่าน').not().isEmpty(),
+//   check('password', 'กรุณาป้อนรหัสผ่าน').not().isEmpty()
+// ], function (req, res, next) {
+//   const result = validationResult(req);
+//   var errors = result.errors;
+//   //Validation Data
+//   if (!result.isEmpty()) {
+//     //Return error to views
+//     res.render('register', {
+//       errors: errors
+//     })
+//   })
+// };
 
 
-  module.exports = router;
+module.exports = router;
