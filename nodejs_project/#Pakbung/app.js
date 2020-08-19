@@ -13,10 +13,6 @@ var firebase = require("firebase/app");
 require("firebase/auth");
 require("firebase/firestore");
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-var firestore = firebase.firestore();
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
