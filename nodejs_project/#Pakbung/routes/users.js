@@ -1,15 +1,20 @@
 // -- Router
 var express = require("express");
 var router = express.Router();
+const user = require('../model/user');
 const { check, validationResult } = require("express-validator");
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/", async function (req, res, next) {
+
+  const result = await user.userLogin();
+  console.log(result);
+
   res.send("respond with a resource");
 });
 
 router.get("/register", function (req, res, next) {
-  res.render("register");
+  res.render("register", a);
 });
 
 router.get("/login", function (req, res, next) {
@@ -20,7 +25,7 @@ router.post('/register', [
   check('email', 'กรุณาป้อนอีเมล').isEmail(),
   check('name', 'กรุณาป้อนชื่อของท่าน').not().isEmpty(),
   check('password', 'กรุณาป้อนรหัสผ่าน').not().isEmpty()
-], function(req, res, next) {
+], function (req, res, next) {
   const result = validationResult(req);
   var errors = result.errors;
   //Validation Data
@@ -39,7 +44,7 @@ router.post('/register', [
       password: password,
       email: email
     });
-    User.createUser(newUser, function(err, user) {
+    User.createUser(newUser, function (err, user) {
       if (err) throw err
     });
     res.location('/');

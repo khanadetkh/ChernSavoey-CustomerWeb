@@ -6,15 +6,15 @@ var logger = require('morgan');
 
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
-const admin = require('firebase-admin');
+// const admin = require('firebase-admin');
 
-const serviceAccount = require('it60-42-choen-savoey-59a3efed1682.json');
+// const serviceAccount = require('./it60-42-choen-savoey-59a3efed1682.json');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount)
+// });
 
-const db = admin.firestore();
+// const db = admin.firestore();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
