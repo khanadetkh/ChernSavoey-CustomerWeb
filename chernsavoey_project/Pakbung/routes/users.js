@@ -7,13 +7,16 @@ const { check, validationResult } = require("express-validator");
 /* GET users listing. */
 router.get("/", async function (req, res, next) {
 
-  const result = await user.userRegister();
+  const result = await user.userLogin();
   console.log(result);
 
   res.send("respond with a resource");
 });
 
-router.get("/register", function (req, res, next) {
+router.get("/register", async function (req, res, next) {
+  const result = await user.userRegister();
+  console.log(result);
+
   res.render("register");
 });
 
