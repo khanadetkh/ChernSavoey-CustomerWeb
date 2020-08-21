@@ -17,7 +17,7 @@ const userRegister = async function () {
     //     email: email
     //   });
     const data = {
-        stringExample: name.,
+        stringExample: 'String',
         booleanExample: true,
         numberExample: 3.14159265,
         arrayExample: [5, true, 'hello'],

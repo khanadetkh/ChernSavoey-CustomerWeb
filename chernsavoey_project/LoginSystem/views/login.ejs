@@ -2,14 +2,134 @@
 <html>
 
 <head>
-  <title>home page</title>
+  <title>Login</title>
+  <!-- on-sen -->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 </head>
 
 <body>
 
-  <h1>Login Form</h1>
-  <p>My first paragraph.</p>
-  <%= title %>
+  <div class="container">
+    <!-- <%- include('layout.ejs') %> -->
+
+    <h1>เชิญเสวย</h1>
+    <h6>CHERN SAVOEY</h6>
+
+
+    <!-- display if error -->
+    <% if(locals.errors){ %>
+    <ul class="alert alert-danger">
+      <% Object.values(errors).forEach(function(error){%>
+      <li><%= error.msg %></li>
+      <%})%>
+    </ul>
+    <%}%>
+
+
+      <form action="/users/register" method="post">
+        <!-- มี filed 2 แบบ -->
+          <p>
+            <div id="username" align="center">
+          <!-- <input type="text" name="name" value="" class="form-control" placeholder="Username" float />  -->
+          <ons-input class="inputlogin font" id="username" placeholder="  Username" float></ons-input>
+          </div>
+          </p>
+        
+        <p>
+          <div id="password"  align="center">
+          <!-- <input type="password" name="password" value="" class="form-control" placeholder="Password" float/> -->
+            <ons-input id="password" class="inputlogin font" type="password" placeholder="  Password" float></ons-input>
+        </div>
+        </p>
+
+        <!-- <input type="submit" name="" value="Register" class="btn btn-primary" /> -->
+      </form>
+
+      <p align="center">
+        <ons-button class="loginbtn font" onclick="register()" >Login</ons-button>
+      </p>
+      
+
+
+
+      <style>
+        h1 {
+          font-family: kanit;
+          font-size: 60px;
+          text-align: center;
+          margin: auto;
+          margin-top: 170px;
+          margin-bottom: 5px;
+          background: linear-gradient(#1D617A, #61C2A2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+    
+        }
+    
+        h6 {
+          font-family: kanit;
+          font-size: 14px;
+          margin-top: 5px;
+          margin-bottom: 8%;
+          text-align: center;
+          color: #1D617A;
+          text-indent: 80px;
+    
+        }
+    
+        .login {
+          text-align: center;
+        }
+    
+        .inputlogin {
+          background-color: rgb(255, 255, 255);
+          border-radius: 20px;
+          padding: 5px;
+          /* border: 2px solid rgb(216, 216, 216); */
+          box-shadow: 2px 2px 2px grey;
+          width: 250px;
+    
+        }
+    
+        .text-input--material {
+          background-image: unset;
+          padding: 2px;
+        }
+    
+        .loginbtn {
+          background-image: linear-gradient(to right, #1D617A, #61C2A2);
+          margin-top: 30px;
+          border-radius: 20px;
+          width: 7em;
+          letter-spacing: 1px;
+          box-shadow: 1px 1px 1px grey;
+          text-align: center;
+        }
+
+        .font {
+          font-family: Kanit;
+        }
+      </style>
+
+<script>
+  var login = function () {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    if (username === 'bob' && password === 'secret') {
+      ons.notification.alert('Congratulations!');
+    } else {
+      ons.notification.alert('Incorrect username or password.');
+    }
+  };
+</script>
+
+  </body>
+</html>
 </body>
 
 </html>
