@@ -13,8 +13,11 @@ router.get("/", async function (req, res, next) {
   res.send("respond with a resource");
 });
 
-router.get("/register", function (req, res, next) {
-  res.render("register", a);
+router.get("/register", async function (req, res, next) {
+  const result = await user.userRegister();
+  console.log(result);
+
+  res.render("register");
 });
 
 router.get("/login", function (req, res, next) {
