@@ -4,6 +4,12 @@ var router = express.Router();
 const user = require('../model/user');
 const { check, validationResult } = require("express-validator");
 
+// var firebaseClient = require('firebase');
+// firebaseClient.initializeApp(config)
+// firebaseClient.auth().signInWithEmailAndPassword(req.body.email, req.body.password).catch(function(error){
+//     console.log(error);
+// })
+
 /* GET users listing. */
 router.get("/", async function (req, res, next) {
   res.send("respond with a resource");
@@ -13,8 +19,13 @@ router.get("/register", async function (req, res, next) {
   res.render("register");
 });
 
-router.get("/login", function (req, res, next) {
+router.post("/login", async function (req, res, next) {
   res.render("login");
+});
+
+router.post('/login',function(req,res){
+    var user = firebaseClient.auth().currentUser
+    console.log(user)
 });
 
 router.post('/register', [
