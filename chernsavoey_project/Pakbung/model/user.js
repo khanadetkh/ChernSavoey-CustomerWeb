@@ -9,6 +9,7 @@ const userLogin = async function () {
     return result
 }
 // <--สร้างฟังก์ชั่น Register-->
+<<<<<<< HEAD
 const userRegister = async function (name,password,email) {
   console.log(name,password,email);
   var User = module.exports = db.collection('users');
@@ -19,6 +20,30 @@ const userRegister = async function (name,password,email) {
       });
     return userSchema
     
+=======
+const userRegister = async function () {
+    const docRef = db.collection('users').doc('D7giGLR2cLUXoj7aWyVA');
+    // const result = await docRef.add({
+    //     username: name,
+    //     password: password,
+    //     email: email
+    //   });
+    const data = {
+        stringExample: name.,
+        booleanExample: true,
+        numberExample: 3.14159265,
+        arrayExample: [5, true, 'hello'],
+        nullExample: null,
+        objectExample: {
+          a: 5,
+          b: true
+        }
+      };
+      
+      const result = await docRef.set(data);
+      
+    return result
+>>>>>>> parent of d16aa1a3... [improve] Register System
 }
 
 module.exports.createUser = async function(newUser, callback) {
