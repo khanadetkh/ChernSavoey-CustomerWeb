@@ -6,17 +6,10 @@ const { check, validationResult } = require("express-validator");
 
 /* GET users listing. */
 router.get("/", async function (req, res, next) {
-
-  const result = await user.userLogin();
-  console.log(result);
-
   res.send("respond with a resource");
 });
 
 router.get("/register", async function (req, res, next) {
-  const result = await user.userRegister();
-  console.log(result);
-
   res.render("register");
 });
 
@@ -28,7 +21,7 @@ router.post('/register', [
   check('email', 'กรุณาป้อนอีเมล').isEmail(),
   check('name', 'กรุณาป้อนชื่อของท่าน').not().isEmpty(),
   check('password', 'กรุณาป้อนรหัสผ่าน').not().isEmpty()
-], function (req, res, next) {
+], async function (req, res, next) {
   const result = validationResult(req);
   var errors = result.errors;
   //Validation Data
@@ -42,15 +35,12 @@ router.post('/register', [
     var name = req.body.name;
     var password = req.body.password;
     var email = req.body.email;
-    var newUser = new User({
-      name: name,
-      password: password,
-      email: email
-    });
-    User.createUser(newUser, function (err, user) {
-      if (err) throw err
-    });
-    res.location('/');
+    const userRegis = await user.userRegister(name,password,email);
+    if (!userRegis) {
+      res.render('register', {
+        errors:[{msg :  "can't register"}]
+      })
+    }
     res.redirect('/');
   }
 });

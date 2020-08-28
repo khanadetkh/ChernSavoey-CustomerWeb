@@ -3,22 +3,27 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <!-- on-sen -->
+  <meta charset="utf-8">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> -->
+  <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 </head>
 
 <body>
+
   <%- include ("layout.ejs") %>
 
   <!-- Page Content -->
   <div class="container">
-
-    <div class="row">
+    <div class="d-flex justify-content-center">
 
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide my-4 " data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -45,8 +50,95 @@
           </a>
         </div>
 
-        <div class="row">
+        <!-- ----------------------------------------- -->
+        <!-- <ons-bottom-toolbar>
+          <a href="homePage.html">
+            <ons-button>
+              <ion-icon name="home"></ion-icon>
+              Home
+            </ons-button>
+          </a>
+          <a href="orderlistPage.html">
+            <ons-button>
+              <ion-icon name="receipt"></ion-icon>
+              Orderlist
+            </ons-button>
+          </a>
+        </ons-bottom-toolbar> -->
 
+
+        <!-- <ons-navigator id="myNavigator" page="home.html"></ons-navigator> -->
+
+        <!-- <div class="movie_list">
+          My List
+          <ons-carousel auto-refresh swipeable overscrollable item-width="150px">
+            <ons-carousel-item modifier="nodivider" id="Movie 1" onclick="openMovieDetails(this.id)">
+              <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+            </ons-carousel-item>
+            <ons-carousel-item modifier="nodivider" id="Movie 2" onclick="openMovieDetails(this.id)">
+              <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+            </ons-carousel-item>
+            <ons-carousel-item modifier="nodivider" id="Movie 3" onclick="openMovieDetails(this.id)">
+              <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+            </ons-carousel-item>
+            <ons-carousel-item modifier="nodivider" id="Movie 4" onclick="openMovieDetails(this.id)">
+              <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+            </ons-carousel-item>
+            <ons-carousel-item modifier="nodivider" id="Movie 5" onclick="openMovieDetails(this.id)">
+              <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+            </ons-carousel-item>
+          </ons-carousel>
+        </div> -->
+
+
+
+        <style type="text/css">
+          .carousel ons-carousel-item img {
+            width: 100%;
+            max-height: 190px
+          }
+
+          .cover-label {
+            text-align: center;
+            cursor: default;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+          }
+
+          ul li {
+            display: inline;
+            margin-right: 5px;
+          }
+
+          .circle {
+            font-size: 15px;
+            display: table-cell;
+            color: #999;
+
+          }
+
+          .circle_current {
+            color: white;
+          }
+
+          .movie_list {
+            margin: 10px;
+            height: 130px;
+            padding-top: 30px;
+          }
+
+          .movie_list img {
+            width: 90%
+          }
+        </style>
+        </ons-page>
+        </template>
+
+
+        <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -55,7 +147,8 @@
                   <a href="#">Item One</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                  aspernatur!
                 </p>
               </div>
               <div class="card-footer">
@@ -72,7 +165,8 @@
                   <a href="#">Item Two</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                  aspernatur!
                   Lorem ipsum dolor sit amet.</p>
               </div>
               <div class="card-footer">
@@ -89,7 +183,8 @@
                   <a href="#">Item Three</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                  aspernatur!
                 </p>
               </div>
               <div class="card-footer">
@@ -106,7 +201,8 @@
                   <a href="#">Item Four</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                  aspernatur!
                 </p>
               </div>
               <div class="card-footer">
@@ -123,7 +219,8 @@
                   <a href="#">Item Five</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                  aspernatur!
                   Lorem ipsum dolor sit amet.</p>
               </div>
               <div class="card-footer">
@@ -140,7 +237,8 @@
                   <a href="#">Item Six</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                  aspernatur!
                 </p>
               </div>
               <div class="card-footer">
@@ -157,7 +255,7 @@
 
     </div>
     <!-- /.row -->
-
+  </div>
   </div>
   <!-- /.container -->
 
