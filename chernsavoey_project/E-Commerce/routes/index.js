@@ -22,16 +22,16 @@ router.get('/menu', async function (req, res, next) {
 });
 
 //  หน้าเลือกร้าน
-router.get('/', async function (req, res, next) {
-   var name = req.body.name;
-   const shopName = await shop.displayShopName(name);
-   // if(!shopName) {
-   //    res.render('index');
-   }
-});
+// router.get('/', async function (req, res, next) {
+//    var name = req.body.name;
+//    const shopName = await shop.displayShopName(name);
+//    if(!shopName) {
+//       res.render('index');
+//    }
+// });
 
-router.post('/menu', async function (req, res, next) {
+// router.post('/menu', async function (req, res, next) {
 
-});
+// });
 
 module.exports = router;
