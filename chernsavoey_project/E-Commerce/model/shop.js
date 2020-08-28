@@ -1,10 +1,20 @@
 const db = require('./db');
 
+// const displayShopName = async function(){
+//     const docRef = db.collection('Store').doc('gixXindVOCKg6KqqD9MY');
+//     const result =  await docRef.get()
+//     return result
+// }
+
 const displayShopName = async function(){
-    const docRef = db.collection('Store').doc('gixXindVOCKg6KqqD9MY');
-    const result =  await docRef.get()
-    return result
-}
+    const storeList = [];
+       const docRef = db.collection('Store').doc('gixXindVOCKg6KqqD9MY');
+       const result =  await docRef.get().then(doc => {
+               storeList.push(doc.data());
+           });
+
+       return storeList
+   }
 
 const displayCategory = async function(){
     const docRef = db.collection('category').doc('iSaGWOmGNrM7NttXshol');

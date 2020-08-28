@@ -21,9 +21,17 @@ router.get('/menu', async function (req, res, next) {
    res.render('menu');
 });
 
+//  หน้าเลือกร้าน
 router.get('/', async function (req, res, next) {
-   res.render('index');
+   var name = req.body.name;
+   const shopName = await shop.displayShopName(name);
+   // if(!shopName) {
+   //    res.render('index');
+   }
 });
 
+router.post('/menu', async function (req, res, next) {
+
+});
 
 module.exports = router;
