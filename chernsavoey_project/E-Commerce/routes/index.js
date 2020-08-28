@@ -34,4 +34,7 @@ router.get('/menu', async function (req, res, next) {
 
 // });
 
+router.get('/orderList', async function (req, res, next) {
+   res.render('orderList');
+});
 module.exports = router;
