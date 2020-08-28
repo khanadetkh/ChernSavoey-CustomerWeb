@@ -16,8 +16,8 @@ var logger = require('morgan');
 
 // const db = admin.firestore();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./controller/index');
+var usersRouter = require('./controller/users');
 
 var app = express();
 
