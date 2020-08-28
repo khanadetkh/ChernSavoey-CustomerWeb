@@ -13,14 +13,6 @@
 <body>
     <%- include ("layout.ejs") %>
 
-    <!-- <div class="line"></div> -->
-    <p class="font" style="text-align: center;" ;>Deliver to</p>
-    <div class="location font">
-      <ion-icon name="location"></ion-icon>cb2 @kmutt
-    </div>
-    <!-- <div class="line2"></div> -->
-
-
     <ons-card class="order">
       <div class="storeName font">
         <div class="storeName font">
@@ -28,7 +20,7 @@
             <table>
               <tr>
                 <div class="left">
-                  <img class="list-item__thumbnail" src="shop.png">
+                  <img class="list-item__thumbnail" src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-vector-shop-icon-png-image_4184051.jpg">
                 </div>
               </tr>
               <tr>
@@ -38,33 +30,26 @@
               </tr>
               <tr>
                 <td>โกโก้เย็น</td>
-                <td>1</td>
                 <td>50 บาท</td>
               </tr>
               <tr>
                 <td>กาแฟเย็น</td>
-                <td>1</td>
                 <td>60 บาท</td>
               </tr>
+              
             </table>
           </ons-list-item>
+              <tr>
+                <td>total</td>
+                <td>110 บาท</td>
+              </tr>
         </div>
       </div>
     </ons-card>
 
-    <ons-card class="totalorder">
-      <div>
-        total
-      </div>
-      <div class="totalPrice">
-        110 Bath
-      </div>
-
+    <ons-card style="margin-block: initial;">
+        Status  : Success
     </ons-card>
-
-    <a href="orderConfirm.html">
-      <ons-button class="confirm_Order font">Confirm Order</ons-button>
-    </a>
     </div>
 
 

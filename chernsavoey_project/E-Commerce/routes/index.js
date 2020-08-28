@@ -37,4 +37,8 @@ router.get('/menu', async function (req, res, next) {
 router.get('/orderList', async function (req, res, next) {
    res.render('orderList');
 });
+
+router.get('/chat', async function (req, res, next) {
+   res.render('chat');
+});
 module.exports = router;
