@@ -27,8 +27,8 @@ router.get('/', async function (req, res, next) {
    const shopName = await shop.displayShopName(name);
    // if(!shopName) {
    //    res.render('index');
-   }
-});
+}
+);
 
 router.post('/menu', async function (req, res, next) {
 
