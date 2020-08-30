@@ -2,7 +2,7 @@
 
 ## [INT353 & INT450 Information Technology Project]
 #### Web Application for Shipping within King Mongkut's University of Technology Thonburi with a radius of less than 1 kilometer (เว็บแอปพลิเคชันสำหรับการจัดส่งสินค้าภายในมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ด้วยระยะทางรัศมีไม่เกิน 1 กิโลเมตร)
-[click to Chern Savoey Website](htttps://www.it60-42-choen-savoey.web.app)
+[click to Chern Savoey Website](https://it60-42-choen-savoey.web.app)
 
 ### รายชื่อสมาชิก
 * นายคณาเดช  คงสมบัติ รหัสนักศึกษา 60130500027 [natchanon.ksbb@mail.kmutt.ac.th]
