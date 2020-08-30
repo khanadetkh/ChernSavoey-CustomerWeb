@@ -22,6 +22,12 @@ const displayCategory = async function(){
     return result
 }
 
+const getAllShop = async function(){
+    const docRef = db.collection('Store')
+    const result = await docRef.get()
+    return result
+}
+
 module.exports = {
-    displayShopName, displayCategory
+    displayShopName, displayCategory,getAllShop
 }
