@@ -37,8 +37,9 @@
 ### Tools and Techniques
 * node.js
 * express.js
+* bootstrap
 * bcyptjs
-* passportjs
+* passport.js
 * firebase cloud firestore
 * firebase hosting
 * google cloud
