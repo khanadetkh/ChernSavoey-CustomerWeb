@@ -13,8 +13,12 @@ router.get("/register", async function (req, res, next) {
   res.render("register");
 });
 
-router.get("/login", function (req, res, next) {
+router.get("/login", async function (req, res, next) {
   res.render("login");
+});
+
+router.post("/login", async function (req, res, next) {
+  
 });
 
 router.post('/register', [
