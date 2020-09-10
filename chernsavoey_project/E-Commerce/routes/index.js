@@ -8,7 +8,7 @@ router.get('/', async function (req, res, next) {
    try {
       const shopList = await shop.getAllShop()
       console.log(shopList);
-       res.render('index', {shopList})
+      res.render('index', { shopList })
    } catch (error) {
       console.error(error);
    }
