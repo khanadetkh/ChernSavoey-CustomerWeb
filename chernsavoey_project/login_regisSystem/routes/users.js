@@ -5,26 +5,19 @@ const user = require('../model/user');
 const { check, validationResult } = require("express-validator");
 
 /* GET users listing. */
-router.get("/", async function (req, res, next) {
-  res.send("respond with a resource");
-});
 
+
+
+// register fn
 router.get("/register", async function (req, res, next) {
   res.render("register");
 });
 
-router.get("/login", async function (req, res, next) {
-  res.render("login");
-});
-
-router.post("/login", async function (req, res, next) {
-  
-});
 
 router.post('/register', [
-  check('email', 'กรุณาป้อนอีเมล').isEmail(),
-  check('name', 'กรุณาป้อนชื่อของท่าน').not().isEmpty(),
-  check('password', 'กรุณาป้อนรหัสผ่าน').not().isEmpty()
+  check('email', 'Please Input Your E-mail').isEmail(),
+  check('name', 'Please Input Username').not().isEmpty(),
+  check('password', 'Please Input Your Password').not().isEmpty()
 ], async function (req, res, next) {
   const result = validationResult(req);
   var errors = result.errors;

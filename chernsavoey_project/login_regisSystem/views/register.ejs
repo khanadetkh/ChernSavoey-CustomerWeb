@@ -5,6 +5,10 @@
   <title>Chern Savoey Demo V.2</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <!--===============================================================================================-->
   <link rel="icon" type="image/png" href="/images/icons/favicon.png" />
   <!--===============================================================================================-->
@@ -44,6 +48,16 @@
             <p> Register Form </p>
           </span>
 
+          <!-- display if error -->
+          <% if(locals.errors){ %>
+          <ul class="alert alert-danger alert-dismissible fade show" role="alert">
+            <% Object.values(errors).forEach(function(error){%>
+            <li><%= error.msg %></li>
+            <%})%>
+          </ul>
+          <%}%>
+
+
           <!-- input username -->
           <div class="wrap-input100 validate-input" data-validate="Valid username">
 
@@ -70,14 +84,23 @@
           <div class="container-login100-form-btn">
             <div class="wrap-login100-form-btn">
               <div class="login100-form-bgbtn"></div>
-              <!-- <button class="login100-form-btn">
-                Register
-              </button> -->
               <button type="submit" name="" value="Register" class="login100-form-btn">
                 Register
               </button> 
             </div>
+            <div class="text-center p-t-25">
+              <span class="txt1">
+                I have an account?
+              </span>
+  
+              <a class="txt2" href="../../">
+                Sign in
+              </a>
+            </div>
           </div>
+
+          
+          
         </form>
       </div>
     </div>
