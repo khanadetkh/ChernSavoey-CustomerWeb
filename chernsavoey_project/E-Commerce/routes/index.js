@@ -20,7 +20,13 @@ router.get('/cart', async function (req, res, next) {
 });
 
 router.get('/menu', async function (req, res, next) {
-   res.render('menu');
+   try {
+      const shopList = await shop.getAllShop()
+      console.log(shopList);
+      res.render('menu', { shopList })
+   } catch (error) {
+      console.error(error);
+   }
 });
 
 router.get('/orderList', async function (req, res, next) {
