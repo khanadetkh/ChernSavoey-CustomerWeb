@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
 
+  <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+  
+
 </head>
 
 <body>
@@ -11,12 +14,12 @@
   <%- include ("layout.ejs") %>
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container font">
     <div class="d-flex justify-content-center">
 
       <!-- /.col-lg-3 -->
 
-      <div class="col-lg-9">
+      <div class="col-lg-9" >
 
         <div id="carouselExampleIndicators" class="carousel slide my-4 " data-ride="carousel">
           <ol class="carousel-indicators">
@@ -58,19 +61,16 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="/menu"><%= item.data().storeName %></a>
+                  <a href="/menu" style="text-decoration:none"><%= item.data().storeName %></a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                  aspernatur!
+                <h5><%= item.data().storeType %></h5>
+                <p class="card-text"><%= item.data().address %>
                 </p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+            
             </div>
           </div>
 
@@ -93,5 +93,11 @@
   <!-- /.container -->
 
 </body>
+
+<style>
+  .font{
+    font-family: kanit;
+  }
+</style>
 
 </html>
