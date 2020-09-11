@@ -27,8 +27,16 @@ router.get('/orderList', async function (req, res, next) {
    res.render('orderList');
 });
 
+router.get('/inbox', async function (req, res, next) {
+   res.render('inbox');
+});
+
 router.get('/chat', async function (req, res, next) {
    res.render('chat');
+});
+
+router.get('/profile', async function (req, res, next) {
+   res.render('profile');
 });
 
 module.exports = router;
