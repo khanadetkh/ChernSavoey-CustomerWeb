@@ -7,24 +7,34 @@
   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
 <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 
 
 
 <nav class="navbar navbar-light bg-light">
   <p class="appname">เชิญเสวย</p>
+
   <form class="form-inline">
-    <button class="btn btn-outline-success my-2 my-sm-0"> <a href="/cart">Cart</a></button>
+    <div>
+      <a href="/cart" class="btn btn-warning">My Cart</a>
+
+    </div>
+
   </form>
 </nav>
 
 
-<div class="navbar fixed-bottom navbar-light bg-light">
+<div class="navbar fixed-bottom navbar-light bg-light" id="footer">
   <a href="/" class="active">Home</a>
   <a href="/orderList">My Order</a>
   <a href="/chat">Chat</a>
-  <a href="#contact">Profile</a>
+  <div style="margin-right: 15px;">
+    <img class="list-item__thumbnail" src="https://image.flaticon.com/icons/svg/860/860733.svg">
+  </div>
+
+</div>
+
 </div>
 
 <style>
@@ -32,10 +42,16 @@
     background-image: linear-gradient(to right, #1D617A, #61C2A2);
   }
 
+  #footer {
+    background-image: #333;
+  }
+
   .appname {
     font-family: kanit;
     font-size: 30px;
     text-indent: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     color: aliceblue;
   }
 
@@ -45,9 +61,7 @@
     text-indent: 20px;
   }
 
-  .btn {
-    background-color: aliceblue;
-  }
+
 
   .navbar fixed-bottom navbar-light bg-light {
 
@@ -64,9 +78,10 @@
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 8px 8px;
     text-decoration: none;
     font-size: 17px;
+    margin-left: 20px;
   }
 
   /* Change the color of links on hover */
@@ -75,11 +90,5 @@
     color: black;
   }
 
-  /* Add a color to the active/current link */
-  .navbar a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
+  */
 </style>
-
-</nav>
