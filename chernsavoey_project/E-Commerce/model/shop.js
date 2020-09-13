@@ -16,7 +16,7 @@ const getShop = async function () {
 
 //เรียกรายการเมนูจากแต่ละร้าน
 const getAllMenu = async function () {
-    const docRef = db.collection("store").where("storeName", "==", "Cafe Amazon")
+    const docRef = db.collection("store").doc('cafeAmazon').collection("menu")
     const result = await docRef.get()
     return result
 }
