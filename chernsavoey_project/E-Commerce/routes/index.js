@@ -12,16 +12,15 @@ router.get('/', async function (req, res, next) {
    } catch (error) {
       console.error(error);
    }
-
 })
 
 router.get('/cart', async function (req, res, next) {
    res.render('cart');
 });
 
-router.get('/menu', async function (req, res, next) {
+router.get('/menu/:storeName', async function (req, res, next) {
    try {
-      const shopList = await shop.getAllShop()
+      const shopList = await shop.getShop()
       console.log(shopList);
       res.render('menu', { shopList })
    } catch (error) {
