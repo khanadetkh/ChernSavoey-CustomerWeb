@@ -1,11 +1,17 @@
 var express = require('express');
-const shop = require('../model/shop');
-const menu = require('../model/shop');
-const { getAllShop } = require('../model/shop');
+const menu = require('../model/menu');
+const { getAllShop } = require('../model/menu');
 var router = express.Router();
 
-router.get('/menus/:storeName', async function (req, res, next) {
-    
- });
-
+router.get('/:storeName', async function (req, res, next) {
+    try {
+        const shopList = await menu.getShop()
+        console.log(shopList);
+        res.render('menu', { shopList })
+     } catch (error) {
+        console.error(error);
+     }
+  });
+ 
+ 
  module.exports = router;

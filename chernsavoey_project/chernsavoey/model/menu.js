@@ -1,11 +1,13 @@
 const db = require('./db');
 
-//เรียกร้านเดียวจากที่ลูกค้าเลือก
+// เรียกรายชื่อร้านทั้งหมดจากDatabase
 const getShop = async function () {
     const docRef = db.collection('store')
     const result = await docRef.get()
     return result
 }
+
+
 
 //เรียกรายการเมนูจากแต่ละร้าน
 // const getAllMenu = async function () {
@@ -21,5 +23,5 @@ const getShop = async function () {
 // }
 
 module.exports = {
-     getAllShop
+     getShop
 }

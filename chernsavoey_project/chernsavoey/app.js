@@ -31,10 +31,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/shops', shopsRouter);
 app.use('/menus',menuRouter);
-app.use('/menus',orderListRouter);
-app.use('/menus',inboxRouter);
-app.use('/menus',chatRouter);
-app.use('/menus',profileRouter);
+app.use('/orderList',orderListRouter);
+app.use('/inbox',inboxRouter);
+app.use('/chat',chatRouter);
+app.use('/profile',profileRouter);
 
 
 
