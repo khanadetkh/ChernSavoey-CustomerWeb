@@ -5,12 +5,18 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #00B7FF;
+    text-decoration:none; 
 }
 
 i {
   font-size: 50px;
 }
+
+.font{
+  font-family: kanit;
+}
+
 
 /* 
 ** Style Simple Ecommerce Theme for Bootstrap 4
