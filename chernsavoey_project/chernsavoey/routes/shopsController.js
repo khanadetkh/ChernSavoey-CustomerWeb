@@ -3,7 +3,7 @@ const shop = require('../model/shop');
 const { getAllShop } = require('../model/shop');
 var router = express.Router();
 
-/* GET home page. */
+/* GET shops page. */
 router.get('/shops', async function (req, res, next) {
    try {
       const shopList = await shop.getAllShop()
@@ -12,22 +12,13 @@ router.get('/shops', async function (req, res, next) {
    } catch (error) {
       console.error(error);
    }
-})
+});
 
 router.get('/cart', async function (req, res, next) {
    res.render('cart');
 });
 
-router.get('/menu/:storeName', async function (req, res, next) {
-   try {
-      const shopList = await shop.getAllMenu()
-      console.log(shopList);
-      res.render('menu', { shopList })
-   } catch (error) {
-      console.error(error);
-   }
-});
-
+//รอแยกแต่ละ controller
 router.get('/orderList', async function (req, res, next) {
    res.render('orderList');
 });
@@ -43,5 +34,6 @@ router.get('/chat', async function (req, res, next) {
 router.get('/profile', async function (req, res, next) {
    res.render('profile');
 });
+
 
 module.exports = router;
