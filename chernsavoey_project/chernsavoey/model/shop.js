@@ -7,10 +7,6 @@ const getAllShop = async function () {
     return result
 }
 
-
-
-
-
 module.exports = {
      getAllShop
 }
