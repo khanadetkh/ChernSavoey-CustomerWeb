@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="utf-8">
+ <!--===============================================================================================-->
+ <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+ <!--===============================================================================================-->
 
-  <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
-  
+
 
 </head>
 
@@ -19,7 +21,7 @@
 
       <!-- /.col-lg-3 -->
 
-      <div class="col-lg-9" >
+      <div class="col-lg-9">
 
         <div id="carouselExampleIndicators" class="carousel slide my-4 " data-ride="carousel">
           <ol class="carousel-indicators">
@@ -59,17 +61,13 @@
               <img class="card-img-top" src="<%= item.data().storeImg %>">
               <div class="card-body">
                 <h4 class="card-title">
-<<<<<<< HEAD
-                  <a href="/menus/<%= item.data().storeName %>" style="text-decoration:none"><%= item.data().storeName %></a>                
-=======
-                  <a href="/shops/menu" style="text-decoration:none"><%= item.data().storeName %></a>
->>>>>>> Ravin
+                  <a href="/menus/<%= item.data().storeId %>"
+                    style="text-decoration:none"><%= item.data().storeName %></a>
                 </h4>
                 <h5><%= item.data().storeType %></h5>
-                <p class="card-text"><%= item.data().address %>
-                </p>
+                <p class="card-text"><%= item.data().address %></p>
               </div>
-            
+
             </div>
           </div>
 
@@ -91,7 +89,7 @@
 </body>
 
 <style>
-  .font{
+  .font {
     font-family: kanit;
   }
 </style>
