@@ -4,11 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var shopsRouter = require('./routes/shops');
-
+//ดึง controller มาใช้
+var indexRouter = require('./routes/indexController');
+var usersRouter = require('./routes/usersController');
+var shopsRouter = require('./routes/shopsController');
+var menuRouter = require('./routes/menusController');
+var orderListRouter = require('./routes/orderListController');
+var inboxRouter = require('./routes/inboxController');
+var chatRouter = require('./routes/chatController');
+var profileRouter = require('./routes/profileController');
 
 var app = express();
 
@@ -22,9 +26,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//กำหนดตัวแปรให้ controller
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/shops', shopsRouter);
+app.use('/menus',menuRouter);
+app.use('/orderList',orderListRouter);
+app.use('/inbox',inboxRouter);
+app.use('/chat',chatRouter);
+app.use('/profile',profileRouter);
+
 
 
 

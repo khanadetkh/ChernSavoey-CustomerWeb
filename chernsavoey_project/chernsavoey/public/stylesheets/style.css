@@ -1,7 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap');
+
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  overflow: scroll;
+  font-family: kanit;
 }
 
 a {
@@ -13,16 +15,12 @@ i {
   font-size: 50px;
 }
 
-.font{
-  font-family: kanit;
-}
-
 
 /* 
 ** Style Simple Ecommerce Theme for Bootstrap 4
 ** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
 */
-/* .bloc_left_price {
+.bloc_left_price {
   color: #c01508;
   text-align: center;
   font-weight: bold;
@@ -70,4 +68,4 @@ i {
 }
 .pagination {
   margin-top: 20px;
-} */
+} 
