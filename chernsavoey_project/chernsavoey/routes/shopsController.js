@@ -7,10 +7,8 @@ var router = express.Router();
 router.get('/', async function (req, res, next) {
    try {
       const shopList = await shop.getAllShop()
-      let storeId = req.params.storeId;
-      console.log(storeId);
       console.log(shopList);
-      res.render('shop', { shopList,storeId })
+      res.render('shop', { shopList})
    } catch (error) {
       console.error(error);
    }
