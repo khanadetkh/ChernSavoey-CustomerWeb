@@ -2,8 +2,17 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <!-- Site meta -->
   <meta charset="utf-8">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title> <%= shopName %> </title>
+  <!-- CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <!--===============================================================================================-->
+
 </head>
 
 <body>
@@ -21,60 +30,55 @@
 
       <div class="col-lg-3">
         <!-- ชื่อร้าน -->
-          <h1 class="my-4"> ชื่อร้าน </h1>
-          
-      
-
         <div class="list-group">
-          <!-- Cateogory -->
-          <a href="#" class="list-group-item"> Category </a>
-
+          <h1 class="my-4"><%= shopName %></a>
         </div>
 
+        <!-- Cateogory -->
+        <div class="card bg-light mb-3">
+          <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+          <ul class="list-group category_block">
+            <% categoriesList.forEach((categories) => { %>
+            <li class="list-group-item"><a href="#"><%= categories.categoryName %></a></li>
+            <% }); %>
+          </ul>
+        </div>
       </div>
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
+        <div class="row">
+          <% menuList.forEach((menu) => { %>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="<%= menu.menuImg %>" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#"><%= menu.menuName %></a>
+                </h4>
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-
-          <div class="row">
-            <% menuList.forEach((menu) => { %>
-              <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="<%= menu.menuImg %>" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#"><%= menu.menuName %></a>
-                  </h4>
-
-                  <h5><%= menu.price %> บาท </h5>
-                  <p class="card-text"><%= menu.menuDetail %>
-                  </p>
-                  <button class="btn btn-success" type="submit" value="<%= menu.id %>  style="width: 90%;">+Add</button>
-                </div>
-
+                <h5><%= menu.price %> บาท </h5>
+                <p class="card-text"><%= menu.menuDetail %>
+                </p>
+                <button class="btn btn-success" type="submit" value="<%= menu.id %>  style=" width: 90%;">+Add</button>
               </div>
+
             </div>
-              <% }); %>
-              
-            
           </div>
-          <!-- /.row -->
+          <% }); %>
+
 
         </div>
-        <!-- /.col-lg-9 -->
+        <!-- /.row -->
 
       </div>
-      <!-- /.row -->
+      <!-- /.col-lg-9 -->
 
     </div>
-    <!-- /.container -->
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
 </body>
 
 </html>
