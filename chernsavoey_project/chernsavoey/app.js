@@ -15,6 +15,11 @@ var chatRouter = require('./routes/chatController');
 var profileRouter = require('./routes/profileController');
 var editProfileRouter = require('./routes/editProfileController');
 var cartRouter = require('./routes/cartController');
+var orderSenderRouter = require('./routes/orderSenderController');
+var inboxSenderRouter = require('./routes/inboxSenderController');
+var chatSenderRouter = require('./routes/chatSenderController');
+var homeSenderRouter = require('./routes/homeSenderController');
+
 
 var app = express();
 
@@ -39,6 +44,17 @@ app.use('/chat', chatRouter);
 app.use('/profile', profileRouter);
 app.use('/editProfile', editProfileRouter);
 app.use('/cart', cartRouter);
+app.use('/menus', menuRouter);
+app.use('/orderList', orderListRouter);
+app.use('/inbox', inboxRouter);
+app.use('/chat', chatRouter);
+app.use('/profile', profileRouter);
+app.use('/cart', cartRouter);
+app.use('/orderSender', orderSenderRouter);
+app.use('/inboxSender', inboxSenderRouter);
+app.use('/chatSender', chatSenderRouter);
+app.use('/homeSender', homeSenderRouter);
+
 
 
 
@@ -55,7 +71,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('500error');
 });
 
 module.exports = app;
