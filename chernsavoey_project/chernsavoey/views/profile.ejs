@@ -1,107 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <!-- <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script> -->
-
-
-
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
+        type='text/css'>
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </head>
 
 <body>
-  <%- include ("layout.ejs") %>
+    <%- include ("layout.ejs") %>
 
-  <div class="container" style="font-family: kanit;">
-    <h1>Edit Profile</h1>
-    <hr>
-    <div class="row">
-      <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-          <h6>Upload a different photo...</h6>
 
-          <input type="file" class="form-control">
-        </div>
-      </div>
-
-      <!-- edit form column -->
-      <div class="col-md-9 personal-info">
-        <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a>
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
-        </div>
-        <h3>Personal info</h3>
-
-        <form class="form-horizontal" role="form">
-          <div class="form-group">
-            <label style="margin-left: 15px;">First name: </label>
-            <label style="color: chocolate; font-weight: bold;">*</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
+    <ons-card class="frame" style="margin-top: 110px;">
+        <div class="profile" style="font-family: kanit;">
+            <div class="text-center">
+                <img src="//placehold.it/150" class="avatar img-circle" alt="avatar" style="border-radius: 8px;">
             </div>
-          </div>
-          <div class="form-group">
-            <label style="margin-left: 15px;">Last name:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
-            </div>
-          </div>
-          <div class="form-group">
-            <label style="margin-left: 15px;">Phone:</label>
-            <label style="color: chocolate; font-weight: bold;">*</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label style="margin-left: 15px;">Email:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
-            </div>
-          </div>
-          <div class="form-group">
             <br>
-          </div>
-          <div class="form-group">
-            <label style="margin-left: 15px;">Username:</label>
-            <label style="color: chocolate; font-weight: bold;">*</label>
-            <div class="col-md-8">
-              <input class="form-control" type="text" value="janeuser">
+            <div class="userName text-center">
+                <h3 class="userName">Pomsrr</h3>
             </div>
-          </div>
-          <div class="form-group">
-            <label style="margin-left: 15px;">Password:</label>
-            <label style="color: chocolate; font-weight: bold;">*</label>
-            <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
-            </div>
-          </div>
-          <div class="form-group">
-            <label style="margin-left: 15px;">Confirm password:</label>
-            <label style="color: chocolate; font-weight: bold;">*</label>
-            <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8" style="margin-bottom: 70px;">
-              <input type="button" class="btn btn-primary" value="Save Changes">
-              <span></span>
-              <input type="reset" class="btn btn-default" value="Cancel">
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <hr>
+            <div class="firstName">First Name: Sirirat</div>
+            <div class="lastName">Last Name: Tantanavipas</div>
 
+            <div class="phone">Tel: 089-071-8666</div>
+    </ons-card>
+    <br>
+    <br>
+
+    <a href="/editProfile">
+        <button type="button" class="btn btn-outline-dark">Edit Profile</button>
+    </a>
+
+
+
+
+
+    <style>
+        .font {
+            font-family: Kanit;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .frame {
+            display: flex;
+            margin: auto;
+            margin-top: 80px;
+            margin-bottom: 30px;
+            width: 70%;
+            height: auto;
+            border: 1px;
+            background-color: #E5E5E5;
+            border-radius: 20px;
+        }
+
+
+        .confirm_Order {
+            display: flex;
+            margin: auto;
+            margin-top: auto;
+            background-image: linear-gradient(to right, #1D617A, #61C2A2);
+            border-radius: 20px;
+            width: fit-content;
+            box-shadow: 1px 1px 1px grey;
+        }
+
+
+        .backbtn {
+            background-color: transparent;
+            border: none;
+            color: black;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            size: 10px;
+
+        }
+    </style>
 </body>
 
 </html>

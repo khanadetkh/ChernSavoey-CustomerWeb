@@ -13,6 +13,7 @@ var orderListRouter = require('./routes/orderListController');
 var inboxRouter = require('./routes/inboxController');
 var chatRouter = require('./routes/chatController');
 var profileRouter = require('./routes/profileController');
+var editProfileRouter = require('./routes/editProfileController');
 var cartRouter = require('./routes/cartController');
 
 var app = express();
@@ -31,22 +32,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/shops', shopsRouter);
-app.use('/menus',menuRouter);
-app.use('/orderList',orderListRouter);
-app.use('/inbox',inboxRouter);
-app.use('/chat',chatRouter);
-app.use('/profile',profileRouter);
-app.use('/cart',cartRouter);
+app.use('/menus', menuRouter);
+app.use('/orderList', orderListRouter);
+app.use('/inbox', inboxRouter);
+app.use('/chat', chatRouter);
+app.use('/profile', profileRouter);
+app.use('/editProfile', editProfileRouter);
+app.use('/cart', cartRouter);
 
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
