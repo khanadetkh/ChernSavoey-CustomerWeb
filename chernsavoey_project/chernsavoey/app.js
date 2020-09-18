@@ -13,6 +13,7 @@ var orderListRouter = require('./routes/orderListController');
 var inboxRouter = require('./routes/inboxController');
 var chatRouter = require('./routes/chatController');
 var profileRouter = require('./routes/profileController');
+var cartRouter = require('./routes/cartController');
 
 var app = express();
 
@@ -35,7 +36,7 @@ app.use('/orderList',orderListRouter);
 app.use('/inbox',inboxRouter);
 app.use('/chat',chatRouter);
 app.use('/profile',profileRouter);
-
+app.use('/cart',cartRouter);
 
 
 
