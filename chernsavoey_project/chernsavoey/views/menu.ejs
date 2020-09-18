@@ -20,14 +20,14 @@
     <div class="row">
 
       <div class="col-lg-3">
-        <% shopList.forEach( item => { %>
-          <h1 class="my-4"> <%= item.data().storeName %> </h1>
-          <% }) %>
+        <!-- ชื่อร้าน -->
+          <h1 class="my-4"> ชื่อร้าน </h1>
+          
       
 
         <div class="list-group">
-          
-          <a href="#" class="list-group-item"><%= item.data().storeName %></a>
+          <!-- Cateogory -->
+          <a href="#" class="list-group-item"> Category </a>
 
         </div>
 
@@ -44,27 +44,26 @@
           </ol>
 
           <div class="row">
-
-            <div class="col-lg-4 col-md-6 mb-4">
+            <% menuList.forEach((menu) => { %>
+              <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="<%= menu.menuImg %>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Name</a>
+                    <a href="#"><%= menu.menuName %></a>
                   </h4>
 
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                    aspernatur!
+                  <h5><%= menu.price %> บาท </h5>
+                  <p class="card-text"><%= menu.menuDetail %>
                   </p>
-                  <button type="button" class="btn btn-success" style="width: 90%;">+Add</button>
+                  <button class="btn btn-success" type="submit" value="<%= menu.id %>  style="width: 90%;">+Add</button>
                 </div>
 
               </div>
             </div>
-
-
-
+              <% }); %>
+              
+            
           </div>
           <!-- /.row -->
 
