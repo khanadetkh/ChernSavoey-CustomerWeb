@@ -60,14 +60,12 @@
         <div class="row">
           <!-- forEach fn ของรายละเอียดแต่ละร้าน -->
           <% shopList.forEach( item => { %>
-
-
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img class="card-img-top" src="<%= item.data().storeImg %>">
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="/menus/<%= item.data().storeId %>"
+                  <a href="/menus/<%= storeId %>"
                     style="text-decoration:none"><%= item.data().storeName %></a>
                 </h4>
                 <h5><%= item.data().storeType %></h5>

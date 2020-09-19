@@ -38,9 +38,13 @@
         <div class="card bg-light mb-3">
           <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
           <ul class="list-group category_block">
-            <% categoriesList.forEach((categories) => { %>
-            <li class="list-group-item"><a href="#"><%= categories.categoryName %></a></li>
-            <% }); %>
+           
+              <% categoriesList.forEach((categories) => { %>
+                <li class="list-group-item"><a
+                  href="/menus/<%= storeId %>/<%= categories.categoryId %>"><%= categories.categoryName %></a>
+                </li>
+              <% }); %>
+          
           </ul>
         </div>
       </div>
@@ -51,10 +55,10 @@
           <% menuList.forEach((menu) => { %>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<%= menu.menuImg %>" alt=""></a>
+              <img class="card-img-top" src="<%= menu.menuImg %>" alt="">
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"><%= menu.menuName %></a>
+                  <%= menu.menuName %>
                 </h4>
 
                 <h5><%= menu.price %> บาท </h5>
