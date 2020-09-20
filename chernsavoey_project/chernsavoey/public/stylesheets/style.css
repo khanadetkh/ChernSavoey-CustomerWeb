@@ -3,7 +3,7 @@
 
 
 body {
-  font-family: kanit;
+  font-family: kanit !important;
 }
 
 a {
@@ -15,6 +15,9 @@ i {
   font-size: 50px;
 }
 
+.d-flex.justify-content-center {
+  padding-bottom: 60px;
+}
 
 /* 
 ** Style Simple Ecommerce Theme for Bootstrap 4

@@ -63,7 +63,8 @@ app.use(session({
   secret: 'secret',
   resave: true,
   saveUninitialized: true,
-}))
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 

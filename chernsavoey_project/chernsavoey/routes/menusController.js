@@ -17,7 +17,7 @@ router.get("/:storeId", async (req, res) => {
 	const categoriesList = menuDetails.categories;
 	let categoriesFilter = [];
 	if (categoryId) {
-		// categoriesFilter = menuDetails.categories.filter((item) => item.category == categoryId)
+		categoriesFilter = menuDetails.categories.filter((item) => item.category == categoryId)
 		menuList = menuList.filter((item) => item.category == categoryId);
 	}
 	console.log(storeId);
@@ -27,7 +27,7 @@ router.get("/:storeId", async (req, res) => {
 	console.log(categoriesFilter);
 
 
-	res.render("menu", { storeId,shopName, menuList, categoriesList });
+	res.render("menu", { storeId,shopName, menuList, categoriesList,categoriesFilter});
 }
 );
 
@@ -45,7 +45,7 @@ router.get("/:storeId/:categoryId", async (req, res) => {
 	const categoriesList = menuDetails.categories;
 	let categoriesFilter = [];
 	if (categoryId) {
-		// categoriesFilter = menuDetails.categories.filter((item) => item.category == categoryId)
+		categoriesFilter = menuDetails.categories.filter((item) => item.category == categoryId)
 		menuList = menuList.filter((item) => item.category == categoryId);
 	}
 	console.log(storeId);
@@ -55,7 +55,7 @@ router.get("/:storeId/:categoryId", async (req, res) => {
 	console.log(categoriesFilter);
 
 
-	res.render("menu", { storeId,shopName, menuList, categoriesList });
+	res.render("menu", { storeId,shopName, menuList, categoriesList,categoriesFilter, });
 }
 );
 

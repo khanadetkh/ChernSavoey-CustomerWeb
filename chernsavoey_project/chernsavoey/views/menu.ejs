@@ -5,7 +5,7 @@
   <!-- Site meta -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title> <%= shopName %> </title>
+  <title> </title>
   <!-- CSS -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -16,20 +16,13 @@
 </head>
 
 <body>
-  <%- include ("layout.ejs") %>
+  <%- include ("layoutsearch.ejs") %>
 
   <!-- Page Content -->
   <div class="container">
-
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-12 my-sm-4" type="submit">Search</button>
-    </form>
-
     <div class="row">
-
       <div class="col-lg-3">
-        <!-- ชื่อร้าน -->
+        <!-- shopname -->
         <div class="list-group">
           <h1 class="my-4"><%= shopName %></a>
         </div>
@@ -38,18 +31,18 @@
         <div class="card bg-light mb-3">
           <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
           <ul class="list-group category_block">
-           
-              <% categoriesList.forEach((categories) => { %>
-                <li class="list-group-item"><a
-                  href="/menus/<%= storeId %>/<%= categories.categoryId %>"><%= categories.categoryName %></a>
-                </li>
-              <% }); %>
-          
+
+            <% categoriesList.forEach((categories) => { %>
+            <li class="list-group-item"><a
+                href="/menus/<%= storeId %>/<%= categories.categoryId %>"><%= categories.categoryName %></a>
+            </li>
+            <% }); %>
+
           </ul>
         </div>
       </div>
-      <!-- /.col-lg-3 -->
 
+      <!-- menus -->
       <div class="col-lg-9">
         <div class="row">
           <% menuList.forEach((menu) => { %>

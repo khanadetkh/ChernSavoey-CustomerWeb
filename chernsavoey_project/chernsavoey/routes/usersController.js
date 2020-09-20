@@ -43,6 +43,10 @@ router.post('/register', [
 
 // login fn
 router.get("/", async function (req, res, next) {
+  req.login(user, function(err) {
+    if (err) { return next(err); }
+    return res.redirect('/shops' + req.user.name);
+  });
   res.render("login");
 });
 

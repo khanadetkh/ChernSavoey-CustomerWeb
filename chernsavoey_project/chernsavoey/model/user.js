@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 // <--สร้างฟังก์ชั่น Register-->
 const userRegister = async function (name, password, email) {
   console.log(name, password, email);
-    // hash password
+  // hash password
   const hashpassword = await bcrypt.hash(password, 3)
   console.log(hashpassword);
 
