@@ -5,9 +5,6 @@ const user = require('../model/user');
 const { check, validationResult } = require("express-validator");
 
 /* GET users listing. */
-
-
-
 // register fn
 router.get("/register", async function (req, res, next) {
   res.render("register");
@@ -38,7 +35,7 @@ router.post('/register', [
         errors:[{msg :  "can't register"}]
       })
     }
-    res.redirect('/');
+    res.redirect('/shops');
   }
 });
 

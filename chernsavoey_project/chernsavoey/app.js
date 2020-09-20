@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //ดึง controller มาใช้
-var indexRouter = require('./routes/indexController');
+var indexRouter = require('./routes/loginController');
 var usersRouter = require('./routes/usersController');
 var shopsRouter = require('./routes/shopsController');
 var menuRouter = require('./routes/menusController');
@@ -58,7 +58,7 @@ app.use('/homeSender', homeSenderRouter);
 
 
 
-// catch 404 and forward to error handler
+// catch 404 and 500 forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
 });
