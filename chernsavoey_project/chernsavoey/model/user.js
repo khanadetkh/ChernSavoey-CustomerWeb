@@ -40,3 +40,4 @@ module.exports.comparePassword = async function (password, hash, callback) {
 module.exports = {
   userRegister
 }
+

@@ -1,6 +1,8 @@
 // -- Router
 var express = require("express");
 var router = express.Router();
+var passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
+
 const user = require('../model/user');
 const { check, validationResult } = require("express-validator");
 
@@ -29,14 +31,63 @@ router.post('/register', [
     var name = req.body.name;
     var password = req.body.password;
     var email = req.body.email;
-    const userRegis = await user.userRegister(name,password,email);
+    const userRegis = await user.userRegister(name, password, email);
     if (!userRegis) {
       res.render('register', {
-        errors:[{msg :  "can't register"}]
+        errors: [{ msg: "can't register" }]
       })
     }
     res.redirect('/shops');
   }
 });
+
+// login fn
+router.get("/", async function (req, res, next) {
+  res.render("login");
+});
+
+router.get('/logout', async function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+router.post('/', passport.authenticate('local', {
+  failureRedirect: '/',
+  failureFlash: true
+}),
+async function (req, res) {
+    req.flash("success", "ลงชื่อเข้าใช้เรียบร้อยแล้ว");
+    res.redirect('/shops');
+  });
+
+passport.serializeUser(async function (user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async function (id, done) {
+  User.getUserById(id, async function (err, user) {
+    done(err, user);
+  });
+});
+
+passport.use(new LocalStrategy(async function (name, password, done) {
+  User.getUserByName(name, async function (err, user) {
+    if (err) throw error;
+    if (!user) {
+      return done(null, false);
+    } else {
+      return done(null, user);
+    }
+    User.comparePassword(password, user.password, async function (err, isMatch) {
+      if (err) return err;
+      if (isMatch) {
+        return done(null, user);
+      } else {
+        return done(null, false);
+      }
+    });
+  });
+}));
+
 
 module.exports = router;
