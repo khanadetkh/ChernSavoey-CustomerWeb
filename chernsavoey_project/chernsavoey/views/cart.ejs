@@ -2,117 +2,110 @@
 <html>
 
 <head>
+  <!-- Site meta -->
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!------ Include the above in your HEAD tag ---------->
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title> </title>
+  <!-- CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <!--===============================================================================================-->
 </head>
 
-<%- include ("layout.ejs") %>
+<body>
+  <%- include ("layout.ejs") %>
 
-<div class="container mb-4">
-  <div class="row">
-    <div class="col-12">
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col"> </th>
-              <th scope="col">Product</th>
-              <th scope="col" class="text-center">Quantity</th>
-              <th scope="col" class="text-right">Price</th>
-              <th> </th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr>
-              <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-              <td>Product Name Dada</td>
-              <td>
-                <button class="btn btn-sm btn-success"><i class="fa fa-plus-square"></i> </button>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Product</th>
+                <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-right">Price</th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                <td>Product Name Dada</td>
+                <td>
+                  <button class="btn btn-sm btn-success"><i class="fa fa-plus-square"></i> </button>
                 <input class="form-control" type="text" value="1" style="display: inline;"/>
                 <button class="btn btn-sm btn-danger"><i class="fa fa-minus-square"></i> </button>
-               </td>
-              <td class="text-right">124,90 ฿</td>
-              <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-            </tr>
+                </td>
+                <td class="text-right">124,90 ฿</td>
+                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+              </tr>
 
-            <tr>
-              <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-              <td>Product Name Toto</td>
-              <td>
-                <button class="btn btn-sm btn-success"><i class="fa fa-plus-square"></i> </button>
-                <input class="form-control" type="text" value="1" style="display: inline;"/>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-minus-square"></i> </button>
-               </td>
-              <td class="text-right">33,90 ฿</td>
-              <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-            </tr>
-            <tr>
-
-              <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-              <td>Product Name Titi</td>
-              <td>
-                <button class="btn btn-sm btn-success"><i class="fa fa-plus-square"></i> </button>
-                <input class="form-control" type="text" value="1" style="display: inline;"/>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-minus-square"></i> </button>
-               </td>
-              <td class="text-right">70,00 ฿</td>
-              <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-            </tr>
-
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>Sub-Total</td>
-              <td class="text-right">255,90 ฿</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>Shipping</td>
-              <td class="text-right">6,90 ฿</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><strong>Total</strong></td>
-              <td class="text-right"><strong>346,90 ฿</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-
-    <div class="col mb-2">
-      <div class="row">
-        <div class="col-sm-12  col-md-6">
-          <a href="/shops"><button class="btn btn-block btn-light">Continue Shopping</button></a>
-        </div>
-        <div class="col-sm-12 col-md-6 text-right">
-          <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Sub-Total</td>
+                <td class="text-right">..... ฿</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Shipping</td>
+                <td class="text-right">5 ฿</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><strong>Total</strong></td>
+                <td class="text-right"><strong>.... ฿</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
+
+      <div class="col mb-2">
+        <div class="row">
+          <div class="col-sm-12  col-md-6">
+            <a href="/shops"><button class="btn btn-block btn-light">Continue Shopping</button></a>
+          </div>
+          <div class="col-sm-12 col-md-6 text-right">
+            <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
+
+</body>
+<script type="text/javascript">
+  //Plus & Minus for Quantity product
+  $(document).ready(function () {
+    var quantity = 1;
+
+    $('.quantity-right-plus').click(function (e) {
+      e.preventDefault();
+      var quantity = parseInt($('#quantity').val());
+      $('#quantity').val(quantity + 1);
+    });
+
+    $('.quantity-left-minus').click(function (e) {
+      e.preventDefault();
+      var quantity = parseInt($('#quantity').val());
+      if (quantity > 1) {
+        $('#quantity').val(quantity - 1);
+      }
+    });
+
+  });
+</script>
 
 </html>
-
-<style>
-  .form-control{
-    width: 20%;
-    text-align: center;
-    margin: auto;
-  }
- 
-</style>

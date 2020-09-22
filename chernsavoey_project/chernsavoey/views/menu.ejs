@@ -57,7 +57,11 @@
                 <h5><%= menu.price %> บาท </h5>
                 <p class="card-text"><%= menu.menuDetail %>
                 </p>
-                <button class="btn btn-success" type="submit" value="<%= menu.id %>  style=" width: 90%;">+Add</button>
+                <form class="form-group" action="/cart" method="post">
+                  <input type="hidden" name="menu_id" value="<%=menu.id%>">
+                  <input type="submit" name="" value="+Add" class="btn btn-success">
+                </form>
+
               </div>
 
             </div>
@@ -76,6 +80,7 @@
 
   </div>
   <!-- /.container -->
+  
 </body>
 
 </html>
