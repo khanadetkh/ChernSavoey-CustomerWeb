@@ -4,8 +4,10 @@ const db = require('./db');
 const getAllShop = async function () {
     const docRef = db.collection("store").orderBy("storeName", "asc");
     const result = await docRef.get();
-    return result
+    return result;
 }
+
+
 
 module.exports = {
      getAllShop

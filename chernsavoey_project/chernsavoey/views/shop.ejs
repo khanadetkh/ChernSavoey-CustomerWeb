@@ -59,17 +59,19 @@
         <!-- display shop -->
         <div class="row">
           <!-- forEach fn ของรายละเอียดแต่ละร้าน -->
-          <% shopList.forEach( item => { %>
+          <% getStore.forEach( item => { %>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <img class="card-img-top" src="<%= item.data().storeImg %>">
+              <img class="card-img-top" src="<%= item.storeImg %>">
               <div class="card-body">
+                
                 <h4 class="card-title">
-                  <a href="/menus/<%= storeId %>"
-                    style="text-decoration:none"><%= item.data().storeName %></a>
+                  <a href="/shops/<%= item.storeId %>"
+                    style="text-decoration:none"><%= item.storeName %></a>
                 </h4>
-                <h5><%= item.data().storeType %></h5>
-                <p class="card-text"><%= item.data().address %></p>
+                
+                <h5><%= item.storeType %></h5>
+                <p class="card-text"><%= item.address %></p>
               </div>
 
             </div>

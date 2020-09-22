@@ -19,6 +19,10 @@ i {
   padding-bottom: 60px;
 }
 
+.col-lg-4 col-md-6 mb-4{
+  margin: 60px !important;
+  padding: 60px !important;
+}
 /* 
 ** Style Simple Ecommerce Theme for Bootstrap 4
 ** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
@@ -77,4 +81,8 @@ i {
   width: 20% !important;
   text-align: center;
   margin: auto;
+}
+
+#menuList {
+  margin-top: 97px;
 }

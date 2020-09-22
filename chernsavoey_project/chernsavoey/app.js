@@ -13,7 +13,6 @@ var LocalStrategy=require('passport-local').Strategy;
 var indexRouter = require('./routes/usersController');
 var usersRouter = require('./routes/usersController');
 var shopsRouter = require('./routes/shopsController');
-var menuRouter = require('./routes/menusController');
 var orderListRouter = require('./routes/orderListController');
 var inboxRouter = require('./routes/inboxController');
 var chatRouter = require('./routes/chatController');
@@ -42,14 +41,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/shops', shopsRouter);
-app.use('/menus', menuRouter);
 app.use('/orderList', orderListRouter);
 app.use('/inbox', inboxRouter);
 app.use('/chat', chatRouter);
 app.use('/profile', profileRouter);
 app.use('/editProfile', editProfileRouter);
 app.use('/cart', cartRouter);
-app.use('/menus', menuRouter);
 app.use('/orderList', orderListRouter);
 app.use('/inbox', inboxRouter);
 app.use('/chat', chatRouter);
@@ -70,7 +67,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(require('connect-flash')());
-
 
 
 app.get('*',async function(req,res,next){
