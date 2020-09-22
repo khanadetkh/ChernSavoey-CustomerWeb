@@ -3,9 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var app = express();
+
+var session = require('express-session');
+var passport=require('passport');
+var LocalStrategy=require('passport-local').Strategy;
 
 //ดึง controller มาใช้
-var indexRouter = require('./routes/indexController');
+var indexRouter = require('./routes/usersController');
 var usersRouter = require('./routes/usersController');
 var shopsRouter = require('./routes/shopsController');
 var menuRouter = require('./routes/menusController');
@@ -21,7 +26,7 @@ var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
 
 
-var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -55,16 +60,32 @@ app.use('/inboxSender', inboxSenderRouter);
 app.use('/chatSender', chatSenderRouter);
 app.use('/homeSender', homeSenderRouter);
 
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(require('connect-flash')());
 
 
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.get('*',async function(req,res,next){
+    res.locals.user = req.user || null;
+    next();
+});
+
+
+// catch 404 and 500 forward to error handler
+app.use(async function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(async function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

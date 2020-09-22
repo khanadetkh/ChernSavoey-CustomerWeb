@@ -1,0 +1,277 @@
+{
+    "store": {
+        "D'Oro": {
+            "storeName": "D'Oro",
+            "address": "อาคารจอดรถ 14 ชั้น",
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/DSC_4412-840x561.jpg",
+            "storeType": "เครื่องดื่ม ของทานเล่น",
+            "subCollection": {}
+        },
+        "cafeAmazon": {
+            "menu": [
+                {
+                    "category": "1",
+                    "menuName": "Chocolate Frappe",
+                    "menuDetail": "ช็อกโกแลตปั่นสูตรพิเศษ รสชาติหวานมัน หอมกลิ่นช็อกโกแลต",
+                    "price": 55,
+                    "menuImg": "http://www.cafe-amazon.com/BackEnd/TempProducts/ff50d91ad8424b7f97d4abf01c2ce625.png"
+                },
+                {
+                    "price": "50",
+                    "category": "1",
+                    "menuDetail": "ช็อกโกแลตปั่นสูตรพิเศษ รสชาติหวานมัน หอมกลิ่นช็อกโกแลต",
+                    "menuName": "Cold chocolate",
+                    "menuImg": "http://www.cafe-amazon.com/BackEnd/TempProducts/1c64d4c4395348d1b9edb5f774f85aa2.png"
+                }
+            ],
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/IMG_8939-840x560.jpg",
+            "categories": [
+                {
+                    "categoryId": "1",
+                    "categoryName": "Milk / Chocolate"
+                },
+                {
+                    "categoryId": "2",
+                    "categoryName": "Coffee"
+                },
+                {
+                    "categoryName": "Premium coffee",
+                    "categoryId": "3"
+                },
+                {
+                    "categoryId": "4",
+                    "categoryName": "Tea"
+                },
+                {
+                    "categoryId": "5",
+                    "categoryName": "Health drink"
+                },
+                {
+                    "categoryName": "Juice / Smoothie",
+                    "categoryId": "6"
+                }
+            ],
+            "storeType": "เครื่องดื่ม กาแฟสด",
+            "address": "ข้างหอสมุด",
+            "storeName": "Café' Amazon",
+            "subCollection": {}
+        },
+        "choladaCoffee": {
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/DSC_4462-840x561.jpg",
+            "storeName": "กาแฟช่อลดา",
+            "storeType": "เครื่องดื่ม ของทานเล่น",
+            "address": "ภายในสำนักหอสมุด",
+            "subCollection": {}
+        },
+        "loongnhoom": {
+            "storeType": "เครื่องดื่ม อาหาร ของทานเล่น",
+            "address": "CB1",
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/IMG_8926-840x560.jpg",
+            "storeName": "ลุงหนุ่ม Squre",
+            "subCollection": {}
+        },
+        "sevenEleven": {
+            "storeName": "Seven-Eleven",
+            "storeType": "ร้านสะดวกซื้อ",
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/DSC_4903-840x561.jpg",
+            "address": "ข้างภาควิชาวิศวกรรมเคมี",
+            "subCollection": {}
+        },
+        "sevenEleven1": {
+            "storeName": "Seven-Eleven",
+            "storeType": "ร้านสะดวกซื้อ",
+            "address": "หอหญิง",
+            "storeImg": "https://lh3.googleusercontent.com/proxy/pBleZHiYGqBbOkzJiOkG8Zgn3qBRtjbKWmgxYWyFW-6SgUUrdL8rnQZPc8DwtDZ7nkjfATWf8-RVVIRVtdJyxiGMgOmx6XSekUSo9m3jyNaIqYJLTQ8KuEqV-Oip-MCu5w",
+            "subCollection": {}
+        }
+    },
+    "users": {
+        "7uG6agIaP2yUy6qSR9wJ": {
+            "password": "1234",
+            "username": "pom",
+            "email": "pom_brownie@hotmail.com",
+            "subCollection": {}
+        },
+        "HOZ91GEFE44o1ftYhtbB": {
+            "password": "1234",
+            "email": "natchanon.ksbb@mail.kmutt.ac.th",
+            "username": "Khanadet Kh.",
+            "subCollection": {}
+        },
+        "I2nFMvGljNUbmCY8w50y": {
+            "username": "ravin",
+            "email": "vinny_jan@hotmail.co.th",
+            "password": "vin11012542",
+            "subCollection": {}
+        },
+        "RVFMYzIprwnjCY4Dh6ax": {
+            "password": "123",
+            "username": "pom",
+            "email": "pom_brownie@hotmail.com",
+            "subCollection": {}
+        },
+        "UUHUxC2VPpS3AXZPSNIJ": {
+            "password": "1234",
+            "email": "natchanon.ksbb@mail.kmutt.ac.th",
+            "username": "Khanadet Kh.",
+            "subCollection": {}
+        },
+        "fikxj6cgqa3izKM2NUpS": {
+            "username": "pakbungncn",
+            "email": "pakbungncn@hotmail.com",
+            "password": "dddddd",
+            "subCollection": {}
+        },
+        "nfwApqIyhUd93MfdMio2": {
+            "username": "KhanadetKh",
+            "password": "1234567890",
+            "email": "pakbungncn@hotmail.com",
+            "subCollection": {}
+        },
+        "s7TQM5ua77bhb8Ut1Fm4": {
+            "password": "ppp",
+            "username": "pakbungncn",
+            "email": "pakbungncn@hotmail.com",
+            "subCollection": {}
+        }
+    }
+}
+
+{
+    "store": {
+        "D'Oro": {
+            "storeName": "D'Oro",
+            "storeType": "เครื่องดื่ม ของทานเล่น",
+            "address": "อาคารจอดรถ 14 ชั้น",
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/DSC_4412-840x561.jpg",
+            "subCollection": {}
+        },
+        "cafeAmazon": {
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/IMG_8939-840x560.jpg",
+            "menu": [
+                {
+                    "menuDetail": "ช็อกโกแลตปั่นสูตรพิเศษ รสชาติหวานมัน หอมกลิ่นช็อกโกแลต",
+                    "menuName": "Chocolate Frappe",
+                    "category": "1",
+                    "price": 55,
+                    "menuImg": "http://www.cafe-amazon.com/BackEnd/TempProducts/ff50d91ad8424b7f97d4abf01c2ce625.png"
+                },
+                {
+                    "category": "1",
+                    "price": "50",
+                    "menuImg": "http://www.cafe-amazon.com/BackEnd/TempProducts/1c64d4c4395348d1b9edb5f774f85aa2.png",
+                    "menuName": "Cold chocolate",
+                    "menuDetail": "ช็อกโกแลตปั่นสูตรพิเศษ รสชาติหวานมัน หอมกลิ่นช็อกโกแลต"
+                }
+            ],
+            "address": "ข้างหอสมุด",
+            "storeType": "เครื่องดื่ม กาแฟสด",
+            "categories": [
+                {
+                    "categoryId": "1",
+                    "categoryName": "Milk / Chocolate"
+                },
+                {
+                    "categoryId": "2",
+                    "categoryName": "Coffee"
+                },
+                {
+                    "categoryId": "3",
+                    "categoryName": "Premium coffee"
+                },
+                {
+                    "categoryId": "4",
+                    "categoryName": "Tea"
+                },
+                {
+                    "categoryName": "Health drink",
+                    "categoryId": "5"
+                },
+                {
+                    "categoryName": "Juice / Smoothie",
+                    "categoryId": "6"
+                }
+            ],
+            "storeName": "Café' Amazon",
+            "subCollection": {}
+        },
+        "choladaCoffee": {
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/DSC_4462-840x561.jpg",
+            "address": "ภายในสำนักหอสมุด",
+            "storeType": "เครื่องดื่ม ของทานเล่น",
+            "storeName": "กาแฟช่อลดา",
+            "subCollection": {}
+        },
+        "loongnhoom": {
+            "storeName": "ลุงหนุ่ม Squre",
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/IMG_8926-840x560.jpg",
+            "address": "CB1",
+            "storeType": "เครื่องดื่ม อาหาร ของทานเล่น",
+            "subCollection": {}
+        },
+        "sevenEleven": {
+            "storeImg": "https://bpuu.kmutt.ac.th/wp-content/uploads/2019/07/DSC_4903-840x561.jpg",
+            "address": "ข้างภาควิชาวิศวกรรมเคมี",
+            "storeType": "ร้านสะดวกซื้อ",
+            "storeName": "Seven-Eleven",
+            "subCollection": {}
+        },
+        "sevenEleven1": {
+            "storeName": "Seven-Eleven",
+            "storeImg": "https://lh3.googleusercontent.com/proxy/pBleZHiYGqBbOkzJiOkG8Zgn3qBRtjbKWmgxYWyFW-6SgUUrdL8rnQZPc8DwtDZ7nkjfATWf8-RVVIRVtdJyxiGMgOmx6XSekUSo9m3jyNaIqYJLTQ8KuEqV-Oip-MCu5w",
+            "address": "หอหญิง",
+            "storeType": "ร้านสะดวกซื้อ",
+            "subCollection": {}
+        }
+    },
+    "users": {
+        "7uG6agIaP2yUy6qSR9wJ": {
+            "username": "pom",
+            "password": "1234",
+            "email": "pom_brownie@hotmail.com",
+            "subCollection": {}
+        },
+        "HOZ91GEFE44o1ftYhtbB": {
+            "password": "1234",
+            "email": "natchanon.ksbb@mail.kmutt.ac.th",
+            "username": "Khanadet Kh.",
+            "subCollection": {}
+        },
+        "I2nFMvGljNUbmCY8w50y": {
+            "username": "ravin",
+            "email": "vinny_jan@hotmail.co.th",
+            "password": "vin11012542",
+            "subCollection": {}
+        },
+        "RVFMYzIprwnjCY4Dh6ax": {
+            "password": "123",
+            "email": "pom_brownie@hotmail.com",
+            "username": "pom",
+            "subCollection": {}
+        },
+        "UUHUxC2VPpS3AXZPSNIJ": {
+            "username": "Khanadet Kh.",
+            "email": "natchanon.ksbb@mail.kmutt.ac.th",
+            "password": "1234",
+            "subCollection": {}
+        },
+        "fikxj6cgqa3izKM2NUpS": {
+            "username": "pakbungncn",
+            "email": "pakbungncn@hotmail.com",
+            "password": "dddddd",
+            "subCollection": {}
+        },
+        "nfwApqIyhUd93MfdMio2": {
+            "email": "pakbungncn@hotmail.com",
+            "password": "1234567890",
+            "username": "KhanadetKh",
+            "subCollection": {}
+        },
+        "s7TQM5ua77bhb8Ut1Fm4": {
+            "password": "ppp",
+            "email": "pakbungncn@hotmail.com",
+            "username": "pakbungncn",
+            "subCollection": {}
+        }
+    }
+}
