@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var app = express();
+const APP_PORT = 5000
 
 var session = require('express-session');
 var passport=require('passport');
@@ -57,6 +58,8 @@ app.use('/inboxSender', inboxSenderRouter);
 app.use('/chatSender', chatSenderRouter);
 app.use('/homeSender', homeSenderRouter);
 
+app.use(express.static('public'))
+
 app.use(session({
   secret: 'secret',
   resave: true,
@@ -68,6 +71,15 @@ app.use(passport.session());
 
 app.use(require('connect-flash')());
 
+// เรียก port
+app.listen(APP_PORT, () => {
+  console.log(`App running on port ${APP_PORT}`)
+})
+
+// socket.io
+// io.on('connection', function (socket) {
+//   console.log('a user connected')
+// })
 
 app.get('*',async function(req,res,next){
     res.locals.user = req.user || null;
