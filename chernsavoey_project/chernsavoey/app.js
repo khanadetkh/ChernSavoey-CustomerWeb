@@ -3,10 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var app = express();
 
 var session = require('express-session');
 var passport=require('passport');
-// var LocalStrategy=require('passport-local').Strategy;
+var LocalStrategy=require('passport-local').Strategy;
 
 //ดึง controller มาใช้
 var indexRouter = require('./routes/usersController');
@@ -25,7 +26,7 @@ var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
 
 
-var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
