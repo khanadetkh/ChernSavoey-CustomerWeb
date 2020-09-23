@@ -61,7 +61,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
-  <div class="container">
+  <!-- <div class="container">
     <h2 id="title" class="section-header">PERSONAL DETAILS</h2>
 
     <form action="#" method="POST">
@@ -94,8 +94,8 @@
           <button class="btn btn-primary btn-purchase" type="submit">PLACE ORDER</button>
         </section>
     </form>
-  </div>
-  <!-- <div class="container">
+  </div> -->
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="table-responsive">
@@ -161,7 +161,7 @@
 
       </div>
     </div>
-  </div> -->
+  </div>
 
 </body>
 <script type="text/javascript">
@@ -227,131 +227,131 @@
 </script>
 
 <script>
-  const cartItems = document.querySelector(".cart-items");
-  const cartTotalPrice = document.querySelector(".cart-total-price");
+  // const cartItems = document.querySelector(".cart-items");
+  // const cartTotalPrice = document.querySelector(".cart-total-price");
 
-  let dishRows = [];
-
-
-  window.addEventListener
-    (
-      "load",
-      async () => {
-        const dishes = JSON.parse(sessionStorage.getItem("fo_dishes"));
-        if (dishes && dishes.length > 0) {
-          const details = await fetch
-            (
-              "/cart",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ dishes })
-              }
-            )
-            .then((allDetails) => allDetails.json());
-
-          for (let i = 0; i < details.dishRestDetails.length; i++) {
-            dishRows[i] = makeRow(details.dishRestDetails[i]);
-            cartItems.appendChild(dishRows[i]);
-          }
-        }
-
-        updateTotalPrice();
-      }
-    );
+  // let dishRows = [];
 
 
-  /* <div class="cart-row" data-dish-price="dvnd">
-    <span class="cart-item-title cart-column">pnr pasanda</span>
-    <span class="cart-item-title cart-column">Hotel</span>
-    <span class="cart-price cart-column">₹190</span>
-    <div class="cart-quantity cart-column">
-      <input class="cart-quantity-input" type="number" value="1">
-      <button class="btn btn-danger" type="button">Remove</button>
-    </div>
-  </div> */
+  // window.addEventListener
+  //   (
+  //     "load",
+  //     async () => {
+  //       const dishes = JSON.parse(sessionStorage.getItem("fo_dishes"));
+  //       if (dishes && dishes.length > 0) {
+  //         const details = await fetch
+  //           (
+  //             "/cart",
+  //             {
+  //               method: "POST",
+  //               headers: {
+  //                 "Content-Type": "application/json"
+  //               },
+  //               body: JSON.stringify({ dishes })
+  //             }
+  //           )
+  //           .then((allDetails) => allDetails.json());
+
+  //         for (let i = 0; i < details.dishRestDetails.length; i++) {
+  //           dishRows[i] = makeRow(details.dishRestDetails[i]);
+  //           cartItems.appendChild(dishRows[i]);
+  //         }
+  //       }
+
+  //       updateTotalPrice();
+  //     }
+  //   );
 
 
-  function makeRow(obj) {
-    const rowDiv = createElement("div.cart-row", null, {
-      "data-dish-price": obj.dishDetails.price
-    });
-
-    createElement("span.cart-item-title.cart-column", rowDiv, {
-      innerText: obj.dishDetails.name
-    });
-
-    createElement("span.cart-item-title.cart-column", rowDiv, {
-      innerText: obj.restDetails.name
-    });
-
-    createElement("span.cart-price.cart-column", rowDiv, {
-      innerText: "₹" + obj.dishDetails.price
-    });
+  // /* <div class="cart-row" data-dish-price="dvnd">
+  //   <span class="cart-item-title cart-column">pnr pasanda</span>
+  //   <span class="cart-item-title cart-column">Hotel</span>
+  //   <span class="cart-price cart-column">₹190</span>
+  //   <div class="cart-quantity cart-column">
+  //     <input class="cart-quantity-input" type="number" value="1">
+  //     <button class="btn btn-danger" type="button">Remove</button>
+  //   </div>
+  // </div> */
 
 
-    const div = createElement("div.cart-quantity.cart-column", rowDiv);
+  // function makeRow(obj) {
+  //   const rowDiv = createElement("div.cart-row", null, {
+  //     "data-dish-price": obj.dishDetails.price
+  //   });
 
-    createElement("input.cart-quantity-input", div, {
-      type: "number",
-      value: 1,
-      min: 1
-    }).addEventListener("change", updateTotalPrice);
+  //   createElement("span.cart-item-title.cart-column", rowDiv, {
+  //     innerText: obj.dishDetails.name
+  //   });
 
-    createElement("button.btn.btn-danger", div, {
-      type: "submit",
-      innerText: "Remove"
-    }).addEventListener("click", () => {
-      rowDiv.remove();
+  //   createElement("span.cart-item-title.cart-column", rowDiv, {
+  //     innerText: obj.restDetails.name
+  //   });
 
-      dishRows = dishRows.filter(e => !rowDiv.isSameNode(e));
-      updateTotalPrice();
-
-      const currSessionStorage = JSON.parse(sessionStorage.getItem("fo_dishes"));
-      const newSessionStorage = currSessionStorage.filter(id => obj.dishDetails.id != id);
-      sessionStorage.setItem("fo_dishes", JSON.stringify(newSessionStorage));
-    });
-
-    return rowDiv;
-  }
+  //   createElement("span.cart-price.cart-column", rowDiv, {
+  //     innerText: "₹" + obj.dishDetails.price
+  //   });
 
 
-  function createElement(selector, parent, attributes = {}) {
-    let classes = selector.split(".");
+  //   const div = createElement("div.cart-quantity.cart-column", rowDiv);
 
-    let tagAndId = classes.shift();
-    let [tag, id] = tagAndId.split("#");
+  //   createElement("input.cart-quantity-input", div, {
+  //     type: "number",
+  //     value: 1,
+  //     min: 1
+  //   }).addEventListener("change", updateTotalPrice);
 
-    let element = document.createElement(tag);
+  //   createElement("button.btn.btn-danger", div, {
+  //     type: "submit",
+  //     innerText: "Remove"
+  //   }).addEventListener("click", () => {
+  //     rowDiv.remove();
 
-    if (id)
-      element.id = id;
-    if (classes.length)
-      element.classList.add(...classes);
+  //     dishRows = dishRows.filter(e => !rowDiv.isSameNode(e));
+  //     updateTotalPrice();
 
-    if (parent)
-      parent.appendChild(element);
+  //     const currSessionStorage = JSON.parse(sessionStorage.getItem("fo_dishes"));
+  //     const newSessionStorage = currSessionStorage.filter(id => obj.dishDetails.id != id);
+  //     sessionStorage.setItem("fo_dishes", JSON.stringify(newSessionStorage));
+  //   });
 
-    for (let k in attributes)
-      if (k in element)
-        element[k] = attributes[k];
-      else
-        element.setAttribute(k, attributes[k]);
-
-    return element;
-  }
+  //   return rowDiv;
+  // }
 
 
-  function updateTotalPrice() {
-    let totalPrice = 0;
+  // function createElement(selector, parent, attributes = {}) {
+  //   let classes = selector.split(".");
 
-    for (let i = 0; i < dishRows.length; i++)
-      totalPrice += dishRows[i].dataset.dishPrice * dishRows[i].querySelector(".cart-quantity-input").value;
+  //   let tagAndId = classes.shift();
+  //   let [tag, id] = tagAndId.split("#");
 
-    cartTotalPrice.innerText = "₹" + totalPrice;
-  }
+  //   let element = document.createElement(tag);
+
+  //   if (id)
+  //     element.id = id;
+  //   if (classes.length)
+  //     element.classList.add(...classes);
+
+  //   if (parent)
+  //     parent.appendChild(element);
+
+  //   for (let k in attributes)
+  //     if (k in element)
+  //       element[k] = attributes[k];
+  //     else
+  //       element.setAttribute(k, attributes[k]);
+
+  //   return element;
+  // }
+
+
+  // function updateTotalPrice() {
+  //   let totalPrice = 0;
+
+  //   for (let i = 0; i < dishRows.length; i++)
+  //     totalPrice += dishRows[i].dataset.dishPrice * dishRows[i].querySelector(".cart-quantity-input").value;
+
+  //   cartTotalPrice.innerText = "₹" + totalPrice;
+  // }
 </script>
 
 
