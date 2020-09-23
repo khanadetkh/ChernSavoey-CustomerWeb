@@ -5,38 +5,20 @@ const db = require('../model/db');
 var router = express.Router();
 
 /* GET shops page. */
-// router.get('/', async function (req, res) {
-
-//       const shopList = await shop.getAllShop()
-//       console.log(shopList);
-
-//       const storeId = req.params.storeId;
-//       let getStoreId = [];
-//       if (storeId) {
-//             getStoreId = getAllShop.filter(storeId);
-//       }
-//       console.log("นี่คือ shopID" + getStoreId);
-
-//       res.render('shop', { storeId, shopList })
-// });
-
 router.get("/", async (req, res) => {
-            const getStore = await db
-                  .collection("store")
-                  .orderBy("storeName", "asc")
-                  .get().then((querySnapshot) => {
-                        let storeArr = [];
-                        querySnapshot.forEach((store) => storeArr.push({ storeId: store.id, ...store.data() }));
-				return storeArr;
-				}
-			);
-            console.log(getStore);
-		res.render("shop", { getStore });
-	}
+      const getStore = await db
+            .collection("store")
+            .orderBy("storeName", "asc")
+            .get().then((querySnapshot) => {
+                  let storeArr = [];
+                  querySnapshot.forEach((store) => storeArr.push({ storeId: store.id, ...store.data() }));
+                  return storeArr;
+            }
+            );
+      console.log(getStore);
+      res.render("shop", { getStore });
+}
 );
-
-
-
 
 // menuFucntion
 router.get("/:storeId", async (req, res) => {
@@ -94,5 +76,6 @@ router.get("/:storeId/:categoryId", async (req, res) => {
       res.render("menu", { storeId, shopName, menuList, categoriesList, categoriesFilter, });
 }
 );
+
 
 module.exports = router;

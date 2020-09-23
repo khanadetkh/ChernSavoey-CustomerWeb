@@ -26,7 +26,7 @@
         <div class="list-group">
           <h1 class="my-4"><%= shopName %></a>
         </div>
-
+     
         <!-- Cateogory -->
         <div class="card bg-light mb-3">
           <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
@@ -57,11 +57,8 @@
                 <h5><%= menu.price %> บาท </h5>
                 <p class="card-text"><%= menu.menuDetail %>
                 </p>
-                <form class="form-group" action="/cart" method="post">
-                  <input type="hidden" name="menu_id" value="<%=menu.id%>">
-                  <input type="submit" name="" value="+Add" class="btn btn-success">
-                </form>
-
+                <button class="get-data btn btn-success shop-item-button" type="submit" value="<%= menu.menuId %>">ADD
+                  TO CART</button>
               </div>
 
             </div>
@@ -81,6 +78,89 @@
   </div>
   <!-- /.container -->
   
+  <!-- Scripts -->
+  <script>
+    const button = document.querySelectorAll(".get-data");
+    const menuCount = document.querySelector("#menu-count");
+
+    let menuCounter = 0
+
+    let menus = JSON.parse(sessionStorage.getItem("fo_menus"));
+    let menusLength = 0;
+    if (menus != null)
+      menusLength = menus.length;
+    else
+      menus = [];
+
+    for (let i = 0; i < button.length; i++) {
+      button[i].addEventListener
+        (
+          "click",
+          () => {
+            let dishId = button[i].value;
+            // let isPresent = false;
+            // for(let j = 0; j < menusLength; j++)
+            // {
+            // 	if(dishId === menus[j])
+            // 	{
+            // 		isPresent = true;
+            // 		break;
+            // 	}
+            // }
+
+            // if(isPresent === false)
+            // {
+            // 	menus.push(dishId);
+            // 	button[i].innerHTML="ADDED";
+            // 	menuCounter++;
+            // 	menuCount.innerText = menuCounter;
+            // 	// button[i].disabled = true;
+            // 	sessionStorage.setItem("fo_menus", JSON.stringify(menus));
+            // }
+
+            if (button[i].innerText === "ADD TO CART") {
+              menus.push(dishId);
+              sessionStorage.setItem("fo_menus", JSON.stringify(menus));
+
+              menuCounter++;
+              menuCount.innerText = menuCounter;
+
+              button[i].innerText = "ADDED";
+            }
+            else {
+              menus = menus.filter(dish => dishId != dish);
+              sessionStorage.setItem("fo_menus", JSON.stringify(menus));
+
+              menuCounter--;
+              menuCount.innerText = menuCounter;
+
+              button[i].innerText = "ADD TO CART";
+            }
+          }
+        );
+    }
+
+    window.addEventListener
+      (
+        "load",
+        () => {
+          const menusArr = JSON.parse(sessionStorage.getItem("fo_menus"));
+
+          if (menusArr && menusArr.length > 0) {
+            for (let i = 0; i < button.length; i++) {
+              for (let j = 0; j < menusArr.length; j++) {
+                if (menusArr[j] === button[i].value) {
+                  button[i].innerHTML = "ADDED";
+                  menuCounter++;
+                }
+              }
+            }
+
+            menuCount.innerText = menuCounter;
+          }
+        }
+      );
+  </script>
 </body>
 
 </html>

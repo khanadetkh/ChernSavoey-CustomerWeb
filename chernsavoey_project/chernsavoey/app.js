@@ -25,7 +25,20 @@ var inboxSenderRouter = require('./routes/inboxSenderController');
 var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
 
-
+//กำหนดตัวแปรให้ controller
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/shops', shopsRouter);
+app.use('/orderList', orderListRouter);
+app.use('/inbox', inboxRouter);
+app.use('/chat', chatRouter);
+app.use('/profile', profileRouter);
+app.use('/editProfile', editProfileRouter);
+app.use('/cart', cartRouter);
+app.use('/orderSender', orderSenderRouter);
+app.use('/inboxSender', inboxSenderRouter);
+app.use('/chatSender', chatSenderRouter);
+app.use('/homeSender', homeSenderRouter);
 
 
 // view engine setup
@@ -38,25 +51,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//กำหนดตัวแปรให้ controller
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/shops', shopsRouter);
-app.use('/orderList', orderListRouter);
-app.use('/inbox', inboxRouter);
-app.use('/chat', chatRouter);
-app.use('/profile', profileRouter);
-app.use('/editProfile', editProfileRouter);
-app.use('/cart', cartRouter);
-app.use('/orderList', orderListRouter);
-app.use('/inbox', inboxRouter);
-app.use('/chat', chatRouter);
-app.use('/profile', profileRouter);
-app.use('/cart', cartRouter);
-app.use('/orderSender', orderSenderRouter);
-app.use('/inboxSender', inboxSenderRouter);
-app.use('/chatSender', chatSenderRouter);
-app.use('/homeSender', homeSenderRouter);
+
 
 app.use(express.static('public'))
 
