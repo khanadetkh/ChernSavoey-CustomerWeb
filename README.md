@@ -2,7 +2,24 @@
 
 ## [INT353 & INT450 Information Technology Project]
 #### Web Application for Shipping within King Mongkut's University of Technology Thonburi with a radius of less than 1 kilometer (เว็บแอปพลิเคชันสำหรับการจัดส่งสินค้าภายในมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ด้วยระยะทางรัศมีไม่เกิน 1 กิโลเมตร)
-[click to Chern Savoey Website](https://it60-42-choen-savoey.web.app)
+[click to Chern Savoey Website](https://chernsavoey.herokuapp.com/)
+
+### Start to Project
+
+```
+ git clone https://github.com/pakbungnatchanon/SeniorProject2020
+```
+```
+ cd SeniorProject2020
+```
+```
+ npm install
+```
+```
+ npm run start
+```
+> App running on port 8080 | [http://localhost:8080/](http://localhost:8080/)
+
 
 ### รายชื่อสมาชิก
 * นายคณาเดช  คงสมบัติ รหัสนักศึกษา 60130500027 [natchanon.ksbb@mail.kmutt.ac.th]
