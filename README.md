@@ -22,9 +22,12 @@
 
 
 ### รายชื่อสมาชิก
-* นายคณาเดช  คงสมบัติ รหัสนักศึกษา 60130500027 [natchanon.ksbb@mail.kmutt.ac.th] [Github : pakbungnatchanon](https://github.com/pakbungnatchanon)
-* นางสาวรวินท์  หวังวิศวาวิทย์ รหัสนักศึกษา 60130500076 [ravin.wang@mail.kmutt.ac.th] [Github : variin](https://github.com/variin)
-* นางสาวสิริรัตน์  ตันธนาวิภาส รหัสนักศึกษา 60130500096 [sirirat.t@mail.kmutt.ac.th] [Github : Pomsirirat](https://github.com/Pomsirirat)
+* นายคณาเดช  คงสมบัติ รหัสนักศึกษา 60130500027 
+   * [natchanon.ksbb@mail.kmutt.ac.th](natchanon.ksbb@mail.kmutt.ac.th) | [GitHub : pakbungnatchanon](https://github.com/pakbungnatchanon)
+* นางสาวรวินท์  หวังวิศวาวิทย์ รหัสนักศึกษา 60130500076 
+   * [ravin.wang@mail.kmutt.ac.th](ravin.wang@mail.kmutt.ac.th) | [GitHub : variin](https://github.com/variin)
+* นางสาวสิริรัตน์  ตันธนาวิภาส รหัสนักศึกษา 60130500096 
+   * [sirirat.t@mail.kmutt.ac.th](sirirat.t@mail.kmutt.ac.th) | [GitHub : Pomsirirat](https://github.com/Pomsirirat)
 
 ### อาจารย์ที่ปรึกษา
 1.	ดร. ตุลย์ ไตรยสรรค์ (อาจารย์ที่ปรึกษาหลัก)
