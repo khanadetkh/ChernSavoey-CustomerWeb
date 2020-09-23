@@ -59,7 +59,8 @@
 * express.js
 * bootstrap
 * bcyptjs
-* passport.js
+* passport.js ang OAUTH
 * firebase cloud firestore
-* firebase hosting
+* heroku
 * google cloud
+* google maps API
