@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var app = express();
-const APP_PORT = 5000
+const PORT = process.env.PORT || 8080
 
 var session = require('express-session');
 var passport=require('passport');
@@ -72,8 +72,8 @@ app.use(passport.session());
 app.use(require('connect-flash')());
 
 // เรียก port
-app.listen(APP_PORT, () => {
-  console.log(`App running on port ${APP_PORT}`)
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}`)
 })
 
 // socket.io

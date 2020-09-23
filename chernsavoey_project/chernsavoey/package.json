@@ -1,6 +1,11 @@
 {
-  "name": "e-commerce",
+  "name": "chernsavoey",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.4",
+    "yarn": "1.22.0"
+  },
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
@@ -35,5 +40,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
