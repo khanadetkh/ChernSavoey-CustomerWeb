@@ -11,6 +11,7 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
   <!--===============================================================================================-->
 </head>
 
@@ -54,38 +55,56 @@
             </a>
           </div>
 
-          <!-- display shop -->
-          <div class="row">
-            <!-- forEach fn ของรายละเอียดแต่ละร้าน -->
-            <% shopList.forEach( item => { %>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <img class="card-img-top" src="<%= item.data().storeImg %>">
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="/menus/<%= storeId %>" style="text-decoration:none"><%= item.data().storeName %></a>
-                  </h4>
-                  <h5><%= item.data().storeType %></h5>
-                  <p class="card-text"><%= item.data().address %></p>
+          <<<<<<< HEAD:chernsavoey_project/chernsavoey/views/shop.ejs <!-- display shop -->
+            <div class="row">
+              <!-- forEach fn ของรายละเอียดแต่ละร้าน -->
+              <% shopList.forEach( item => { %>
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <img class="card-img-top" src="<%= item.data().storeImg %>">
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="/menus/<%= storeId %>" style="text-decoration:none"><%= item.data().storeName %></a>
+                    </h4>
+                    <h5><%= item.data().storeType %></h5>
+                    <p class="card-text"><%= item.data().address %></p>
+                  </div>
+                  =======
+                  <!-- display shop -->
+                  <div class="row">
+                    <!-- forEach fn ของรายละเอียดแต่ละร้าน -->
+                    <% getStore.forEach( item => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <img class="card-img-top" src="<%= item.storeImg %>">
+                        <div class="card-body">
+
+                          <h4 class="card-title">
+                            <a href="/shops/<%= item.storeId %>" style="text-decoration:none"><%= item.storeName %></a>
+                          </h4>
+
+                          <h5><%= item.storeType %></h5>
+                          <p class="card-text"><%= item.address %></p>
+                        </div>
+                        >>>>>>> master:views/shop.ejs
+
+                      </div>
+                    </div>
+
+                    <% }) %>
+
+
+                  </div>
+                  <!-- /.row -->
+
                 </div>
+                <!-- /.col-lg-9 -->
 
               </div>
+              <!-- /.row -->
             </div>
-
-            <% }) %>
-
-
-          </div>
-          <!-- /.row -->
-
         </div>
-        <!-- /.col-lg-9 -->
-
-      </div>
-      <!-- /.row -->
-    </div>
-  </div>
-  <!-- /.container -->
+        <!-- /.container -->
 
 </body>
 

@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var app = express();
+const PORT = process.env.PORT || 8080
 
 var session = require('express-session');
 var passport=require('passport');
@@ -13,7 +14,6 @@ var LocalStrategy=require('passport-local').Strategy;
 var indexRouter = require('./routes/usersController');
 var usersRouter = require('./routes/usersController');
 var shopsRouter = require('./routes/shopsController');
-var menuRouter = require('./routes/menusController');
 var orderListRouter = require('./routes/orderListController');
 var inboxRouter = require('./routes/inboxController');
 var chatRouter = require('./routes/chatController');
@@ -25,7 +25,20 @@ var inboxSenderRouter = require('./routes/inboxSenderController');
 var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
 
-
+//กำหนดตัวแปรให้ controller
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/shops', shopsRouter);
+app.use('/orderList', orderListRouter);
+app.use('/inbox', inboxRouter);
+app.use('/chat', chatRouter);
+app.use('/profile', profileRouter);
+app.use('/editProfile', editProfileRouter);
+app.use('/cart', cartRouter);
+app.use('/orderSender', orderSenderRouter);
+app.use('/inboxSender', inboxSenderRouter);
+app.use('/chatSender', chatSenderRouter);
+app.use('/homeSender', homeSenderRouter);
 
 
 // view engine setup
@@ -38,27 +51,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//กำหนดตัวแปรให้ controller
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/shops', shopsRouter);
-app.use('/menus', menuRouter);
-app.use('/orderList', orderListRouter);
-app.use('/inbox', inboxRouter);
-app.use('/chat', chatRouter);
-app.use('/profile', profileRouter);
-app.use('/editProfile', editProfileRouter);
-app.use('/cart', cartRouter);
-app.use('/menus', menuRouter);
-app.use('/orderList', orderListRouter);
-app.use('/inbox', inboxRouter);
-app.use('/chat', chatRouter);
-app.use('/profile', profileRouter);
-app.use('/cart', cartRouter);
-app.use('/orderSender', orderSenderRouter);
-app.use('/inboxSender', inboxSenderRouter);
-app.use('/chatSender', chatSenderRouter);
-app.use('/homeSender', homeSenderRouter);
+
+
+app.use(express.static('public'))
 
 app.use(session({
   secret: 'secret',
@@ -71,7 +66,15 @@ app.use(passport.session());
 
 app.use(require('connect-flash')());
 
+// เรียก port
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}`)
+})
 
+// socket.io
+// io.on('connection', function (socket) {
+//   console.log('a user connected')
+// })
 
 app.get('*',async function(req,res,next){
     res.locals.user = req.user || null;

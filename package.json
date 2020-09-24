@@ -1,9 +1,13 @@
 {
-  "name": "e-commerce",
+  "name": "chernsavoey",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.4"
+  },
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node app.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -11,7 +15,7 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "*",
-    "express": "~4.16.1",
+    "express": "^4.16.4",
     "express-session": "*",
     "express-validator": "*",
     "firebase-admin": "^9.1.1",
@@ -29,9 +33,15 @@
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
     "passport-openid": "^0.4.0",
+    "pug": "^3.0.0",
+    "socket.io": "^2.3.0",
     "stripe": "^7.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
