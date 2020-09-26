@@ -126,3 +126,6 @@
 
     cartTotalPrice.innerText = "₹" + totalPrice;
   }
+
+
+

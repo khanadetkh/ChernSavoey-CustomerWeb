@@ -99,3 +99,8 @@ input#quantity.form-control{
 #menuList {
   margin-top: 97px;
 }
+
+.search {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

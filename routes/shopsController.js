@@ -76,9 +76,9 @@ router.get("/:storeId/:categoryId", async (req, res) => {
 }
 );
 
-router.get("/cart",(req, res) =>{
-	res.render("cart");
-	}
-);
+// router.get("/cart",(req, res) =>{
+// 	res.render("cart");
+// 	}
+// );
 
 module.exports = router;
