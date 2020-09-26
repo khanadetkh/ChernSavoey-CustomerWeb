@@ -83,6 +83,19 @@ i {
   margin: auto;
 }
 
+#number-deli.form-control{
+  width: 10% !important;
+  text-align: center;
+  margin: auto;
+}
+
+input#quantity.form-control{
+  width: 10% !important;
+  text-align: center;
+  margin: auto;
+}
+
+
 #menuList {
   margin-top: 97px;
 }
