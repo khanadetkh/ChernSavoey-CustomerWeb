@@ -58,48 +58,7 @@
 
 
 
-  <div class="container my-4">
-    <% if(cartList.length>0){ %>
-    <h3>ตะกร้าสินค้า</h3>
-    <table class="table my-3">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">ชื่อสินค้า</th>
-          <th scope="col">จำนวน</th>
-          <th scope="col">ราคา</th>
-          <th scope="col">รวม</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
 
-        <tr>
-          <% cartList.forEach((cart) => { %>
-          <td>
-            <img class="img_cart" src="<%= cart.menuImg %>" alt="" style="width: 100px;">
-          </td>
-          <th> <%= cart.menuName %> </th>
-          <td>
-            <button class="quantity-left-minus btn btn-danger btn-number">-</button>
-            <input style="width: 2rem; text-align: center;" id="quantity" name="quantity" value="<%= cart.qty %>">
-            <button class="quantity-right-plus btn btn-success btn-number">+</button>
-          </td>
-          <td> <%= cart.price %> </td>
-          <th> <%= cart.price*cart.qty %> </th>
-          <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-    <h2 align="right">ยอดชำระเงิน : </h2>
-    <% } else { %>
-    <div class="alert alert-danger">
-      ไม่มีสินค้าในตะกร้า
-    </div>
-    <% }%>
-
-  </div>
 </body>
 
 

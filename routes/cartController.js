@@ -2,25 +2,48 @@ var express = require('express');
 const db = require('../model/db');
 var router = express.Router();
 
+/* GET shops page. */
+router.get('/', async function (req, res, next) {
+    res.render('cart');
+});
 
-//แสดงรายการในตระกร้าสินค้าทั้งหมด
-// router.get("/", async function (req, res, next) {
-//     //ตะกร้าสินค้า
-//     req.session.cart = req.session.cart || {};
-//     let cart = req.session.cart; //ตะกร้าสินค้า
-//     let displayCart = { items: [], total: 0 };
-//     if (cart) {
-//         const total = 0;
-//         for (item in cartList) {
-//             displayCart.items.push(cartList[item]);
-//             total += (cartList[item].qty * cartList[item].price);
-//         }
-//         displayCart.total = total;
-//     }
-//     console.log(displayCart);
-//     res.render('cart', { displayCart });
-// });
+router.post('/orderDetails', async (req, res) => {
+    const menuArr = req.body.menus;
 
+    const details = [];
+    for (let i = 0; i < menuArr.length; i++) {
+        const menuId = menuArr[i];
+
+        //  let menuDetails = await db.collection("menu").add(menuDetails);
+        let menuDetails = await db
+            .collection("menu")
+            .doc(menuId)
+            .get()
+            .then((querySnapshot) => querySnapshot.data());
+
+
+        const storeId = menuDetails.store.id;
+
+        menuDetails = {
+            id: menuId,
+            name: menuDetails.menuName,
+            price: menuDetails.price
+        };
+
+        let storeDetails = await db
+            .collection("store")
+            .doc(storeId)
+            .get()
+            .then((querySnapshot) => querySnapshot.data());
+
+        storeDetails = { name: storeDetails.storeName };
+
+        details.push({ menuDetails, storeDetails });
+    }
+
+    res.status(200).send({ "menuStoreDetails": details });
+}
+);
 
 
 

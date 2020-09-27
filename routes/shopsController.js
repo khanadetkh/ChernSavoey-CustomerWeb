@@ -81,7 +81,7 @@ router.get("/:storeId/cart/:menuId", async function (req, res, next) {
       const menuId = req.params.menuId;
       const d = new Date();
       const t = d.getTime();
-      const order = t - 300;
+
       console.log(storeId);
       console.log(menuId);
       const menuDetails = await db.collection("store")
@@ -116,20 +116,7 @@ router.get("/:storeId/cart/:menuId", async function (req, res, next) {
 
 });
 
-//แสดงรายการในตระกร้าสินค้าทั้งหมด
-//  router.get("/cartList", async function (req, res, next) {
-//       let displayCart = { items: [], total: 0 };
-//       if (req.session.cartList) {
-//             const total = 0;
-//             for (item in cart) {
-//                   displayCart.items.push(cart[item]);
-//                   total += (cart[item].qty * cart[item].price);
-//             }
-//             displayCart.total = total;
-//       }
-//       console.log(cart);
-//       res.render('cart', { displayCart });
-//   });
+
 
 router.get("/cart", async function (req, res, next) {
       res.redirect("/cart")
