@@ -83,6 +83,28 @@ i {
   margin: auto;
 }
 
+#number-deli.form-control{
+  width: 10% !important;
+  text-align: center;
+  margin: auto;
+}
+
+input#quantity.form-control{
+  width: 20% !important;
+  text-align: center;
+  margin: auto;
+}
+
+
 #menuList {
   margin-top: 97px;
+}
+
+.search {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.input-group{
+  justify-content: center;
 }

@@ -1,6 +1,5 @@
 var express = require('express');
 const db = require('../model/db');
-// const { getAllShop } = require('../model/shop');
 
 var router = express.Router();
 
@@ -77,5 +76,9 @@ router.get("/:storeId/:categoryId", async (req, res) => {
 }
 );
 
+// router.get("/cart",(req, res) =>{
+// 	res.render("cart");
+// 	}
+// );
 
 module.exports = router;
