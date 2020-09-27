@@ -90,14 +90,15 @@ i {
 }
 
 input#quantity.form-control{
-  width: 20% !important;
+  width: auto !important;
   text-align: center;
   margin: auto;
 }
 
 
 #menuList {
-  margin-top: 97px;
+  margin-top: 50px;
+
 }
 
 .search {
@@ -107,4 +108,15 @@ input#quantity.form-control{
 
 .input-group{
   justify-content: center;
+}
+
+img {
+  width: "5% !important"; 
+  height: "5% !important";
+
+}
+
+#shopName{
+  padding: 10px !important;
+  padding-right: 100px !important;
 }

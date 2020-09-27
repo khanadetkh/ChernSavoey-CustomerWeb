@@ -7,16 +7,18 @@
   },
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "*",
-    "express": "^4.16.4",
-    "express-session": "*",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "express-validator": "*",
     "firebase-admin": "^9.1.1",
     "firestore-export-import": "^0.8.0",

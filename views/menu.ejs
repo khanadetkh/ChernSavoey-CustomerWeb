@@ -23,7 +23,7 @@
     <div class="row">
       <div class="col-lg-3">
         <!-- shopname -->
-        <div class="list-group">
+        <div class="list-group" id="shopName">
           <h1 class="my-4"><%= shopName %></a>
         </div>
 
@@ -56,8 +56,8 @@
                 <h5><%= menu.price %> บาท </h5>
                 <p class="card-text"><%= menu.menuDetail %>
                 </p>
-                <button class="get-data btn btn-success shop-item-button" type="submit" value="<%= menu.menuId %>">ADD
-                  TO CART</button>
+                <button class="get-data btn btn-success shop-item-button">
+                  <a href="/shops/<%= storeId %>/cart/<%=menu.menuId%>"> ADD TO CART </a></button>
               </div>
             </div>
           </div>
@@ -66,8 +66,8 @@
       </div>
     </div>
   </div>
-<!-- Scripts -->
-<script src="/javascripts/menu.js"></script>
+  <!-- Scripts -->
+  <script src="/javascripts/menu.js"></script>
 
 
 </body>

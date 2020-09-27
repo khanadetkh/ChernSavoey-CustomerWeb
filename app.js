@@ -38,7 +38,7 @@ app.use('/cart', cartRouter);
 app.use('/orderSender', orderSenderRouter);
 app.use('/inboxSender', inboxSenderRouter);
 app.use('/chatSender', chatSenderRouter);
-app.use('/homeSender', homeSenderRouter);
+app.use('/sender', homeSenderRouter);
 
 
 // view engine setup
@@ -51,7 +51,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.locals.descriptionText = function(text, length) {
+  return text.substring(0, length);
+}
 
+app.locals.formatMoney = function(number) {
+  return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+}
 
 app.use(express.static('public'))
 
@@ -61,8 +67,8 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use(require('connect-flash')());
 
