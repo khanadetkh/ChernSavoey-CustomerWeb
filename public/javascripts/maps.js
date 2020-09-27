@@ -5,48 +5,46 @@
     var myMarker;
     var myLatlng;
 
-    // function initializeGMap(lat, lng) {
-    //   myLatlng = new google.maps.LatLng(lat, lng);
-
-    //   var myOptions = {
-    //     zoom: 12,
-    //     zoomControl: true,
-    //     center: myLatlng,
-    //     mapTypeId: google.maps.MapTypeId.ROADMAP
-    //   };
-
-    //   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-    //   myMarker = new google.maps.Marker({
-    //     position: myLatlng
-    //   });
-    //   myMarker.setMap(map);
-    // }
-
     function initializeGMap() {
       var mapOptions = {
-        center: {lat: 13.847860, lng: 100.604274},
+        center: {lat: 13.652846, lng: 100.494029},
         zoom: 18,
       }
         
       var maps = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
-      
-      var marker = new google.maps.Marker({
-         position: new google.maps.LatLng(13.847616, 100.604736),
-         map: maps,
-         title: 'ถนน ลาดปลาเค้า',
-         icon: 'images/camping-icon.png',
-      });
-    
-      var info = new google.maps.InfoWindow({
-        content : '<div style="font-size: 25px;color: red">ThaiCreate.Com Camping</div>'
-      });
-    
-      google.maps.event.addListener(marker, 'click', function() {
-        info.open(maps, marker);
-      });
-    
+
+    infoWindow = new google.maps.InfoWindow;
+
+			// Try HTML5 geolocation.
+			if (navigator.geolocation) {
+			  navigator.geolocation.getCurrentPosition(function(position) {
+				var pos = {
+				  lat: position.coords.latitude,
+				  lng: position.coords.longitude
+				};
+
+				infoWindow.setPosition(pos);
+				infoWindow.setContent('Location found. lat: ' + position.coords.latitude + ', lng: ' + position.coords.longitude + ' ');
+				infoWindow.open(maps);
+				map.setCenter(pos);
+			  }, function() {
+				handleLocationError(true, infoWindow, map.getCenter());
+			  });
+			} else {
+			  // Browser doesn't support Geolocation
+			  handleLocationError(false, infoWindow, map.getCenter());
+			}
+			
     }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+                            'Error: The Geolocation service failed.' :
+                            'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+    }
+    
     // Re-init map before show modal
     $('#myModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget);
