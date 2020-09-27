@@ -2,70 +2,198 @@
 <html lang="en" dir="ltr">
 
 <head>
-   <!-- Site meta -->
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-   <title> </title>
-   <!-- CSS -->
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
-   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-   <!--===============================================================================================-->
+  <!-- Site meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title> </title>
+  <!-- CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <!--===============================================================================================-->
 
 </head>
 
 <body>
-<%- include ("layout.ejs") %>
+  <%- include ("layout.ejs") %>
+
+  <div class="col-md-4 col-xl-3 chat">
+    <div class="card mb-sm-3 mb-md-0 contacts_card">
+      <div class="card-body contacts_body">
+        <ui class="contacts">
+          <li class="active">
+            <div class="d-flex bd-highlight">
 
 
-  <ul class="list">
-    <a href="/chat" style="text-decoration: none;"><li class="list-item">
-      <div class="list-item__left">
-        <img class="list-item__thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwJCB8v/9zErgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAvSURBVFjD7c0BDQAACAMgtX+KJzWGm4MCdJK6MHVELBaLxWKxWCwWi8VisVj8MV7qBgI2A8rYpgAAAABJRU5ErkJggg==">
-      </div>
-  
-      <div class="list-item__center">
-        <div class="list-item__title">Alice</div>
-        <div class="list-item__subtitle">Description</div>
-      </div>
-  
-      <div class="list-item__right">
-        <i class="ion-ios-information list-item__icon"></i>
-      </div>
-    </li></a>
-  
-    <a href="/chat" style="text-decoration: none;"><li class="list-item">
-      <div class="list-item__left">
-        <img class="list-item__thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwJCB8v/9zErgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAvSURBVFjD7c0BDQAACAMgtX+KJzWGm4MCdJK6MHVELBaLxWKxWCwWi8VisVj8MV7qBgI2A8rYpgAAAABJRU5ErkJggg==">
-      </div>
-  
-      <div class="list-item__center">
-        <div class="list-item__title">Bob</div>
-        <div class="list-item__subtitle">Description</div>
-      </div>
-  
-      <div class="list-item__right">
-        <i class="ion-ios-information list-item__icon"></i>
-      </div>
-    </li></a> 
+              <div class="img_cont">
+                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+              </div>
+              <div class="user_info">
+                <a href="/chat" style="text-decoration: none;">
 
-    <a href="/chat" style="text-decoration: none;"><li class="list-item">
-      <div class="list-item__left">
-        <img class="list-item__thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwJCB8v/9zErgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAvSURBVFjD7c0BDQAACAMgtX+KJzWGm4MCdJK6MHVELBaLxWKxWCwWi8VisVj8MV7qBgI2A8rYpgAAAABJRU5ErkJggg==">
-      </div>
-  
-      <div class="list-item__center">
-        <div class="list-item__title">Bob</div>
-        <div class="list-item__subtitle">Description</div>
-      </div>
-  
-      <div class="list-item__right">
-        <i class="ion-ios-information list-item__icon"></i>
-      </div>
-    </li></a> 
+                  <div class="message" style="display: inline;">
+                    <span>Pukbung</span>
+                    <p>สวัสดีค้าบบบบบ</p>
+                    <div class="noti">
+                      <h5>3</h5>
+                    </div>
+                  </div>
 
-  </ul>
-                              
+              </div>
+            </div>
+          </li>
+          <li>
+
+
+
+
+            <div class="d-flex bd-highlight">
+              <div class="img_cont">
+                <img
+                  src="https://2.bp.blogspot.com/-8ytYF7cfPkQ/WkPe1-rtrcI/AAAAAAAAGqU/FGfTDVgkcIwmOTtjLka51vineFBExJuSACLcBGAs/s320/31.jpg"
+                  class="rounded-circle user_img">
+                <span class="online_icon offline"></span>
+              </div>
+              <div class="user_info">
+                <a href="/chat" style="text-decoration: none;">
+
+                  <div class="message" style="display: inline;">
+                    <span>Pomsrr</span>
+                    <p>confirm order kaaa</p>
+                    <div class="noti">
+                      <h5>1</h5>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </li>
+          <li>
+
+
+            <div class="d-flex bd-highlight">
+              <div class="img_cont">
+                <img src="https://i.pinimg.com/236x/0d/bc/ec/0dbcec50bba58561a90bcec3a3907f2b.jpg"
+                  class="rounded-circle user_img">
+                <span class="online_icon"></span>
+              </div>
+              <div class="user_info">
+                <a href="/chat" style="text-decoration: none;">
+
+                  <div class="message" style="display: inline;">
+                    <span>Ravin</span>
+                    <p>ยืนยัน รายการอาหารค่ะ</p>
+                    <div class="noti">
+                      <h5>2</h5>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+      </div>
+      </li>
+    </div>
+  </div>
+
+
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .noti {
+      background-color: darkgoldenrod;
+      color: black;
+      text-align: center;
+      border-radius: 10px;
+      width: 40px;
+      height: 30px;
+    }
+
+    .chat {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      height: 100%;
+      width: 100%;
+      border-radius: 15px !important;
+      /* background-color: rgba(170, 170, 170, 0.336) !important; */
+      border: 1px;
+      background-color: #E5E5E5;
+      border-radius: 20px;
+
+    }
+
+    .contacts_body {
+      padding: 0.75rem 0 !important;
+      overflow-y: auto;
+      white-space: nowrap;
+    }
+
+
+    .card-header {
+      border-radius: 15px 15px 0 0 !important;
+      border-bottom: 0 !important;
+    }
+
+    .card-footer {
+      border-radius: 0 0 15px 15px !important;
+      border-top: 0 !important;
+    }
+
+    .container {
+      align-content: center;
+    }
+
+    .contacts {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contacts li {
+      width: 100% !important;
+      padding: 5px 10px;
+      margin-bottom: 15px !important;
+    }
+
+    .active {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .user_img {
+      height: 70px;
+      width: 70px;
+      border: 1.5px solid #f5f6fa;
+
+    }
+
+    .user_info {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 15px;
+    }
+
+    .user_info span {
+      font-size: 20px;
+      color: black;
+    }
+
+    .user_info p {
+      font-size: 15px;
+      color: rgba(59, 59, 59, 0.61);
+    }
+
+    .video_cam {
+      margin-left: 50px;
+      margin-top: 5px;
+    }
+  </style>
 </body>
+
 </html>
