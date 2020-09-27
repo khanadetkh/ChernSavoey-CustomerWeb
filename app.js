@@ -25,6 +25,7 @@ var inboxSenderRouter = require('./routes/inboxSenderController');
 var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
 
+
 //กำหนดตัวแปรให้ controller
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
