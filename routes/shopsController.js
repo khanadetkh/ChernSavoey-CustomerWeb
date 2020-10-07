@@ -75,7 +75,7 @@ router.get("/:storeId/:categoryId", async (req, res) => {
 }
 );
 
-//add menus to cart
+//add menus to cart (database)
 router.get("/:storeId/cart/:menuId", async function (req, res, next) {
       const storeId = req.params.storeId;
       const menuId = req.params.menuId;
