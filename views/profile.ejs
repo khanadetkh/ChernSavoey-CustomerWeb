@@ -2,100 +2,36 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
-        type='text/css'>
-    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <head>
+        <!-- Site meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title> </title>
+        <!-- CSS -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+        <!--===============================================================================================-->
+      </head>
 </head>
 
 <body>
     <%- include ("layout.ejs") %>
-
-
-    <ons-card class="frame" style="margin-top: 110px;">
-        <div class="profile" style="font-family: kanit;">
-            <div class="text-center">
-
-                <img src="https://i.pinimg.com/236x/0d/bc/ec/0dbcec50bba58561a90bcec3a3907f2b.jpg"
-                    class="avatar img-circle" alt="avatar" style="border-radius: 8px;">
-            </div>
-            <br>
-            <div class="userName">
-                <h3 class="userName">Pomsrr</h3>
-            </div>
-            <div class="firstName" style="padding-right: 50px;">First Name: &nbsp &nbsp Sirirat</div>
-            <div class=" lastName" style="padding-right: 5px;">Last Name: &nbsp &nbsp Tantanavipas</div>
-
-            <div class="phone" style="padding-right: 50px;">Tel: &nbsp &nbsp089-071-8666</div>
-    </ons-card>
-    <br>
-    <br>
-
-    <a href="/editProfile">
-        <button type="button" class="btn btn-outline-dark">Edit Profile</button>
-    </a>
-
-
-
-
-
-    <style>
-        .font {
-            font-family: Kanit;
-        }
-
-        img {
-            width: 150px;
-            height: 160px;
-        }
-
-        .profile {
-            text-align: center;
-        }
-
-        .frame {
-            display: flex;
-            margin: auto;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            width: 70%;
-            height: auto;
-            border: 1px;
-            background-color: #E5E5E5;
-            border-radius: 20px;
-        }
-
-
-        .confirm_Order {
-            display: flex;
-            margin: auto;
-            margin-top: auto;
-            background-image: linear-gradient(to right, #1D617A, #61C2A2);
-            border-radius: 20px;
-            width: fit-content;
-            box-shadow: 1px 1px 1px grey;
-        }
-
-
-        .backbtn {
-            background-color: transparent;
-            border: none;
-            color: black;
-            padding: 16px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-            size: 10px;
-
-        }
-    </style>
+  
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<img src="<%= user.photos[0].value %>" class="img-responsive" alt="UserProfile_Photo"/>
+				<div class="userName">
+                    <h4 class="userName"><%= user.displayName %></h4>
+                </div>
+                <div class="firstName" style="padding-right: 50px;"><p>User ID: <%= user.id %></p></div>
+                <div class=" lastName" style="padding-right: 5px;"><p>E-mail: <%= user.emails[0].value %></p></div>
+                <div class="phone" style="padding-right: 50px;"><p>First Name: <%= user.name.givenName %></p></div>
+                <div class="phone" style="padding-right: 50px;"><p>Last Name: <%= user.name.familyName %></p></div>
+			</div>
+		</div>
+ 
 </body>
 
 </html>

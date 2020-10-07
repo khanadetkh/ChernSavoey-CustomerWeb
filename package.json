@@ -18,7 +18,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "ejs": "*",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "*",
@@ -46,7 +46,15 @@
     "nodemon": "^2.0.4"
   },
   "main": "app.js",
-  "author": "",
+  "author": "IT60-42 KMUTT",
   "license": "ISC",
-  "description": ""
+  "description": "![chsv_logo](https://www.img.in.th/images/e4313f5d47a3b321b52926793e2f1958.png)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakbungnatchanon/SeniorProject2020.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pakbungnatchanon/SeniorProject2020/issues"
+  },
+  "homepage": "https://github.com/pakbungnatchanon/SeniorProject2020#readme"
 }
