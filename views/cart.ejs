@@ -17,57 +17,51 @@
 
 <body>
   <%- include ("layout.ejs") %>
+  
+  <div class="input-group" style="width: 90%; margin-left:5%; top: 20px;">
+    <select class="custom-select" id="inputGroupSelect04" aria-label="select with button addon">
+      <option selected>Delivery To...</option>
+      <option value="1">N1 อาคารศูนย์ต้อนรับ (Welcome Center Building.)</option>
+      <option value="2">N2 อาคารสำนักงานอธิการบดี (Office of The President Building.)</option>
+      <option value="3">N3 อาคารภาควิชาเคมี (Department of Chemistry Building.)</option>
+      <option value="4">N4 อาคารภาควิชาฟิสิกส์-คณิตศาสตร์ (Department of Physics-Mathematics Building)</option>
+      <option value="5">N5 อาคารศูนย์เครื่องมือวิทยาศาสตร์เพื่อมาตรฐานและอุตสาหกรรม (Scientific Instrument Center for Standards and Industry Building)</option>
+      <option value="6">N6 อาคารภาควิชาจุลชีววิทยา (Department of Microbiology Building)</option>
+      <option value="7">N7 อาคารปฏิบัติการพื้นฐานทางวิทยาศาสตร์ (Fundamental Science Labolatory Building)</option>
+      <option value="8">N8 สถานีสูบน้ำ (Water Pump Station)</option>
+      <option value="9">N9 อาคารสถาบันวิทยาการหุ่นยนต์ภาคสนาม (Institute of Field Robotics Building)</option>
+      <option value="10">N10 อาคารสำนักหอสมุด (KMUTT Library Building)</option>
+      <option value="11">N11 อาคารคณะเทคโนโลยีสารสนเทศ (School of Infomation Technology Building)</option>
+      <option value="12">N12 อาคารอเนกประสงค์ (Utility Exchange Building)</option>
+      <option value="13">N13 อาคารเวิร์คช็อป แอนด์กรีนเฮ้าส์ (Workshop & Green House Building)</option>
+      <option value="14">N14 อาคารไฟฟ้าแรงสูง (Hi-Voltage Building)</option>
+      <option value="15">N15 อาคารเรียนและปฏิบัติการทางศิลปศาสตร์ (School of Liberal Arts Building)</option>
+      <option value="16">N16 อาคารเรียนรู้พหุวิทยาการ (Learning Exchange Building)</option>
+      <option value="17">N17 อาคารเรียนรวม 2 (classroom Building 2)</option>
+      <option value="18">N18 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 4 (Production Engineering Labolatory Building 4)</option>
+      <option value="19">N19 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 5 (Production Engineering Labolatory Building 5)</option>
+      <option value="20">N20 อาคารเรียนรวม 1 (classroom Building 1)</option>
 
-  <!-- Search form -->
-  <div class="search" style="text-align: center;">
-    <input id="delivery-to" class="form-control" type="text" placeholder="Delivery to . ." aria-label="Search"
-      style="display: inline;">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-lat='21.03'
-      data-lng='105.85'>
-      Location
-    </button>
+      <option value="21">S1 อาคารวิศวกรรมเครื่องกล 4 (Mechanical Engineering Building 4)</option>
+      <option value="22">S2 อาคารจอดรถ (Car Park Building 4)</option>
+      <option value="23">S3 อาคารสถาบันนวัตกรรมการเรียนรู้เฉลิมพระเกียรติ 80 พรรษา มูลนิธิไทยคม (Innovation Learning Institute of 80 Year Commemoration of King Rama IX)</option>
+      <option value="24">S4 อาคารวิศววัฒนะ (Engineering Building : Wissawa Wattana Building)</option>
+      <option value="25">S5 บ้านธรรมรักษา 2 (Dhammaraksa Residence Hall 2 : Male Dormitory)</option>
+      <option value="26">S6 บ้านธรรมรักษา 1 (Dhammaraksa Residence Hall 1 : Female Dormitory)</option>
+      <option value="27">S7 อาคารพัฒนาเด็กเล็ก มจธ. (KMUTT Child Development Building)</option>
+      <option value="28">S8 อาคารโรงประลองเทคโนโลยีและวัสดุ (Technology and Materials Workshop Building)</option>
+      <option value="29">S9 อาคารเรียนและปฏิบัติการคณะพลังงานสิ่งแวดล้อมและวัสดุ (School of Energy Environment and Materials Building)</option>
+      <option value="30">S10 อาคารกรีน โซไซตี้ มจธ. (KMUTT Green Society Building)</option>
+      <option value="31">S11 อาคารเรียนรวม 5 (Classroom Building 5)</option>
+      <option value="32">S12 อาคารเรียนรวม 4 (Classroom Building 4)</option>
+      <option value="33">S13 อาคารเรียนรวม 3 (Classroom Building 3)</option>
+      <option value="34">S14 อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (King Mongkut’s 190th Anniversary Memorial Building)</option>
+      <option value="35">S15 อาคารภาควิชาวิศวกรรมเคมี (Department of Chemical Engineering Building)</option>
+    </select>
+    <!-- <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">Button</button>
+    </div> -->
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-              aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-12 modal_body_map">
-              <div class="location-map" id="location-map">
-                <div style="width: 600px; height: 400px;" id="map_canvas"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="//maps.googleapis.com/maps/api/js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-
-
-
 </body>
-
-
-<!-- Scripts -->
-<script src="/javascripts/cart.js"></script>
-<script src="/javascripts/maps.js"></script>
-<script src="/javascripts/confirm_modal.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS88d4xprgWQAkXEJqw9FWfVP04tik8Os&callback=initMap" async
-  defer></script>
-</body>
-
 </html>
