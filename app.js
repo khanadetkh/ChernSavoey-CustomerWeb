@@ -8,8 +8,12 @@ const PORT = process.env.PORT || 8080
 app.listen(PORT, () => { console.log(`App running on port ${PORT}`) })
 const session = require('express-session');
 
+/*Filter Server and Require for Socket io*/ 
+const filter = express();
+const server = require('http').createServer(filter);
+const io = require('socket.io').listen(server);
 
-
+//use session
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'keyboard cat',
@@ -17,8 +21,6 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: true }
 }))
-
-
 
 //ดึง controller มาใช้
 var shopsRouter = require('./routes/shopsController');
@@ -68,7 +70,7 @@ app.use(async function (err, req, res, next) {
 });
 
 
-// 
+/* login */
 
 app.get('/', function (req, res) {
   res.render('login');
@@ -133,15 +135,11 @@ app.get('/logout', function (req, res) {
 
 
 //socket.io
-const socketio = require("socket.io");
-
-app.get("/mockupChat", (req, res) => {
-  res.render("index");
+app.get('/mockupChat', (req, res) => {
+  res.render('index');
 });
 
 // Initialize socket for the server
-const io = socketio();
-
 io.on("connection", socket => {
   console.log("New user connected");
 
