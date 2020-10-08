@@ -124,16 +124,6 @@ app.get('/auth/google/callback',
     res.redirect('/shops');
   });
 
-// route for logging out
-app.get('/logout', function (req, res) {
-  req.session.destroy(function (err) {
-    req.logout();
-    res.redirect('/');
-  });
-});
-
-
-
 //socket.io
 app.get('/mockupChat', (req, res) => {
   res.render('index');
@@ -159,5 +149,18 @@ io.on("connection", socket => {
     socket.broadcast.emit('typing', { username: socket.username })
   })
 });
+
+
+// route for logging out
+app.get('/logout', function (req, res) {
+  req.session.destroy(function (err) {
+    req.logout();
+    res.redirect('/');
+  });
+});
+
+
+
+
 
 module.exports = app;
