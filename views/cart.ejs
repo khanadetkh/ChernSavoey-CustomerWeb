@@ -19,7 +19,7 @@
   <%- include ("layout.ejs") %>
   
   <div class="input-group" style="width: 90%; margin-left:5%; top: 20px;">
-    <select class="custom-select" id="inputGroupSelect04" aria-label="select with button addon">
+    <select class="custom-select" id="location" aria-label="select with button addon">
       <option selected>Delivery To...</option>
       <option value="1">N1 อาคารศูนย์ต้อนรับ (Welcome Center Building.)</option>
       <option value="2">N2 อาคารสำนักงานอธิการบดี (Office of The President Building.)</option>
@@ -62,8 +62,29 @@
 
   <div class="form-group">
     <label style="margin-left:5%; margin-top: 35px;">Note to sender</label> 
-    <input type="text" class="form-control" style="font-size: smaller;" id="noteToSender" placeholder="e.g. Floor, Meet me at the lobby">
+    <input type="text" class="form-control"  style="font-size: smaller; width: 90%; margin-left:5%;"id="noteToSender" placeholder="e.g. Floor, Meet me at the lobby">
   </div>
 
+  <button type="submit" onclick="submitToCart()" class="btn btn-info center">Submit</button>
+
+  <p id ="hid-noteToSender"></p>
+  <p id ="hid-location"></p>
+
+  <input type="hidden" id="hid-noteToSender">
+  <input type="hidden" id="hid-location">
+
 </body>
+
+
+<script>
+  function submitToCart() {
+    var location = document.getElementById("location");
+    var noteToSender = document.getElementById("noteToSender").value;
+    var locationText = location.options[location.selectedIndex].text;
+
+    document.getElementById("hid-location").innerHTML= locationText; 
+    document.getElementById("hid-noteToSender").innerHTML= noteToSender;
+  }
+  </script>
+
 </html>
