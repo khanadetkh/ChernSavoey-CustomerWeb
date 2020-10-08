@@ -5,8 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var app = express();
 const PORT = process.env.PORT || 8080
-app.listen(PORT, () => {console.log(`App running on port ${PORT}`)})
+app.listen(PORT, () => { console.log(`App running on port ${PORT}`) })
 const session = require('express-session');
+
+
 
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
@@ -15,6 +17,8 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: true }
 }))
+
+
 
 //ดึง controller มาใช้
 var shopsRouter = require('./routes/shopsController');
@@ -66,66 +70,96 @@ app.use(async function (err, req, res, next) {
 
 // 
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.render('login');
 });
 
 var passport = require('passport');
 var userProfile;
- 
+
 app.use(passport.initialize());
 app.use(passport.session());
- 
+
 app.get('/profile', (req, res) => {
-  res.render('profile', {user: userProfile});
+  res.render('profile', { user: userProfile });
   console.log(userProfile);
 });
 app.get('/error', (req, res) => res.send("error logging in"));
- 
-passport.serializeUser(function(user, cb) {
+
+passport.serializeUser(function (user, cb) {
   cb(null, user);
 });
- 
-passport.deserializeUser(function(obj, cb) {
+
+passport.deserializeUser(function (obj, cb) {
   cb(null, obj);
 });
 
 
 /*  Google AUTH  */
- 
+
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const GOOGLE_CLIENT_ID = '208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com';
 const GOOGLE_CLIENT_SECRET = 'clU0mrAKbXhmzPl2ONsu1S3q';
 
 passport.use(new GoogleStrategy({
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback"
-  },
-  function(accessToken, refreshToken, profile, done) {
-      userProfile=profile;
-      return done(null, userProfile);
+  clientID: GOOGLE_CLIENT_ID,
+  clientSecret: GOOGLE_CLIENT_SECRET,
+  callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback"
+},
+  function (accessToken, refreshToken, profile, done) {
+    userProfile = profile;
+    return done(null, userProfile);
   }
 ));
- 
-app.get('/auth/google', 
-  passport.authenticate('google', { scope : ['profile', 'email'] }));
- 
-app.get('/auth/google/callback', 
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/error' }),
-  function(req, res) {
+  function (req, res) {
     // Successful authentication, redirect success.
     res.redirect('/shops');
   });
 
 // route for logging out
-app.get('/logout', function(req, res) {
-  req.session.destroy(function(err){
-      req.logout();
-      res.redirect('/');
+app.get('/logout', function (req, res) {
+  req.session.destroy(function (err) {
+    req.logout();
+    res.redirect('/');
   });
 });
 
 
+
+//socket.io
+const socketio = require("socket.io");
+
+app.get("/mockupChat", (req, res) => {
+  res.render("index");
+});
+
+// Initialize socket for the server
+const io = socketio();
+
+io.on("connection", socket => {
+  console.log("New user connected");
+
+  socket.username = "Anonymous"
+
+  socket.on("change_username", data => {
+    socket.username = data.username
+  })
+
+  // handle the new message event
+  socket.on("new_message", data => {
+    console.log("new messsage");
+    io.sockets.emit("receive_message", { message: data.message, username: socket.username })
+  })
+
+  socket.on('typing', data => {
+    socket.broadcast.emit('typing', { username: socket.username })
+  })
+});
 
 module.exports = app;
