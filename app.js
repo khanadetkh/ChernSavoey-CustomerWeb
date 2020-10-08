@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080
 app.listen(PORT, () => { console.log(`App running on port ${PORT}`) })
 const session = require('express-session');
 
-/*Filter Server and Require for Socket io*/ 
+/*Filter Server and Require for Socket io*/
 const filter = express();
 const server = require('http').createServer(filter);
 const io = require('socket.io').listen(server);
@@ -143,21 +143,21 @@ app.get('/mockupChat', (req, res) => {
 io.on("connection", socket => {
   console.log("New user connected");
 
-  socket.username = "Anonymous"
+  // socket.username = "Anonymous"
 
-  socket.on("change_username", data => {
-    socket.username = data.username
-  })
+  // socket.on("change_username", data => {
+  //   socket.username = data.username
+  // })
 
-  // handle the new message event
-  socket.on("new_message", data => {
-    console.log("new messsage");
-    io.sockets.emit("receive_message", { message: data.message, username: socket.username })
-  })
+  // // handle the new message event
+  // socket.on("new_message", data => {
+  //   console.log("new messsage");
+  //   io.sockets.emit("receive_message", { message: data.message, username: socket.username })
+  // })
 
-  socket.on('typing', data => {
-    socket.broadcast.emit('typing', { username: socket.username })
-  })
+  // socket.on('typing', data => {
+  //   socket.broadcast.emit('typing', { username: socket.username })
+  // })
 });
 
 module.exports = app;
