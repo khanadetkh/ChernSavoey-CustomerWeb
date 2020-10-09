@@ -62,10 +62,13 @@
 
   <div class="form-group">
     <label style="margin-left:5%; margin-top: 35px;">Note to sender</label> 
-    <input type="text" class="form-control"  style="font-size: smaller; width: 90%; margin-left:5%;"id="noteToSender" placeholder="e.g. Floor, Meet me at the lobby">
+    <input type="text" class="form-control"  style="font-size: smaller; margin-left:5%;"id="noteToSender" placeholder="e.g. Floor, Meet me at the lobby">
   </div>
 
-  <button type="submit" onclick="submitToCart()" class="btn btn-info center">Submit</button>
+
+
+  
+  <button type="submit" onclick="submitToCart()" class="btn btn-info center">Confirm Order</button>
 
   <p id ="hid-location"></p>
   <p id ="hid-noteToSender"></p>
@@ -86,5 +89,7 @@
     document.getElementById("hid-noteToSender").innerHTML= noteToSender;
   }
   </script>
+
+<!-- <script src="./routes/cartController"></script> -->
 
 </html>

@@ -3,10 +3,20 @@ const db = require('../model/db');
 var router = express.Router();
 
 /* GET shops page. */
-router.
-get('/', async function (req, res, next) {
+router.get('/', async function (req, res, next) {
     res.render('cart');
+
+// Add a new document with a generated id.
+// const res = await db.collection('location').add({
+//     locationName: hid-location,
+//     noteToSender: hid-noteToSender
+//   });
+  
+//   console.log('Added document with ID: ', res.id);
+
+
 });
+
 
 
 // router.post('/orderDetails', async (req, res) => {
