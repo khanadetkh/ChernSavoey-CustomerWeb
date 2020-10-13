@@ -1,22 +1,19 @@
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const socket = require('socket.io');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var app = express();
+const PORT = process.env.PORT || 8080
+app.listen(PORT, () => { console.log(`App running on port ${PORT}`) })
 const session = require('express-session');
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const passport = require('passport');
-
-const app = express();
 
 /*Filter Server and Require for Socket io*/
-const PORT = process.env.PORT || 8080
-const server = app.listen(PORT, () => { console.log(`App running on port ${PORT}`) })
-const io = socket(server);
+const filter = express();
+const server = require('http').createServer(filter);
+const io = require('socket.io').listen(server);
 
 //use session
-
-
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'keyboard cat',
@@ -26,16 +23,16 @@ app.use(session({
 }))
 
 //ดึง controller มาใช้
-const shopsRouter = require('./routes/shopsController');
-const orderListRouter = require('./routes/orderListController');
-const inboxRouter = require('./routes/inboxController');
-const chatRouter = require('./routes/chatController');
-const editProfileRouter = require('./routes/editProfileController');
-const cartRouter = require('./routes/cartController');
-const orderSenderRouter = require('./routes/orderSenderController');
-const inboxSenderRouter = require('./routes/inboxSenderController');
-const chatSenderRouter = require('./routes/chatSenderController');
-const homeSenderRouter = require('./routes/homeSenderController');
+var shopsRouter = require('./routes/shopsController');
+var orderListRouter = require('./routes/orderListController');
+var inboxRouter = require('./routes/inboxController');
+var chatRouter = require('./routes/chatController');
+var editProfileRouter = require('./routes/editProfileController');
+var cartRouter = require('./routes/cartController');
+var orderSenderRouter = require('./routes/orderSenderController');
+var inboxSenderRouter = require('./routes/inboxSenderController');
+var chatSenderRouter = require('./routes/chatSenderController');
+var homeSenderRouter = require('./routes/homeSenderController');
 
 
 //กำหนดตัวแปรให้ controller
@@ -79,8 +76,8 @@ app.get('/', function (req, res) {
   res.render('login');
 });
 
-
-let userProfile;
+var passport = require('passport');
+var userProfile;
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -102,7 +99,7 @@ passport.deserializeUser(function (obj, cb) {
 
 /*  Google AUTH  */
 
-
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const GOOGLE_CLIENT_ID = '208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com';
 const GOOGLE_CLIENT_SECRET = 'clU0mrAKbXhmzPl2ONsu1S3q';
 
@@ -127,6 +124,16 @@ app.get('/auth/google/callback',
     res.redirect('/shops');
   });
 
+// route for logging out
+app.get('/logout', function (req, res) {
+  req.session.destroy(function (err) {
+    req.logout();
+    res.redirect('/');
+  });
+});
+
+
+
 //socket.io
 app.get('/mockupChat', (req, res) => {
   res.render('index');
@@ -144,7 +151,7 @@ io.on("connection", socket => {
 
   // handle the new message event
   socket.on("new_message", data => {
-    console.log("new messsage" + data.message + ' '+ socket.username);
+    console.log("new messsage");
     io.sockets.emit("receive_message", { message: data.message, username: socket.username })
   })
 
@@ -152,15 +159,5 @@ io.on("connection", socket => {
     socket.broadcast.emit('typing', { username: socket.username })
   })
 });
-
-
-// route for logging out
-app.get('/logout', function (req, res) {
-  req.session.destroy(function (err) {
-    req.logout();
-    res.redirect('/');
-  });
-});
-
 
 module.exports = app;
