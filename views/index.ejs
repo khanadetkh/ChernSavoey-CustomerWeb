@@ -37,8 +37,7 @@
           </div>
         
         <div class="card">
-            <div class="card-header">Anonymous</div> 
-            <div class="card-body">
+            <div class="card-header">Anonymous
                 <div class="input-group">
                     <input type="text" class="form-control" id="username" placeholder="Change your username" />
                     <div class="input-group-append">
@@ -54,12 +53,15 @@
                 <div class="info"></div>
             </div>
 
+            </div> 
+            
 
-<ul class="messages"></ul>
+
+    <ul class="messages"></ul>
             <div class="bottom_wrapper clearfix">
                 <div class="message_input_wrapper">
-                    <input type="text" class="message_input" id="message" placeholder="Type your message here..." />
-                    <div class="input-group-append">
+                    <input type="text" class="message_input" id="message" placeholder="Type your message here...">
+                    <div class="input-group-append" >
                         <button class="btn btn-success" type="button" id="messageBtn">
                             Send
                         </button>
@@ -80,7 +82,37 @@
     * {
       box-sizing: border-box;
     }
-  
+    
+    .btn-warning{
+    width: 100px;
+    height: 38px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #E1A56D;
+    border: 2px solid #E1A56D;
+    color: #272525;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    text-align: center;
+    float: right;
+    }
+
+    .btn-success {
+      left: 110%;
+    width: 120px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #a3d063;
+    border: 2px solid #a3d063;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    text-align: center;
+    float: right;
+    }
+   
+    
     body {
       background-color: #edeff2;
       font-family: "Calibri", "Roboto", sans-serif;
