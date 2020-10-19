@@ -15,8 +15,6 @@ const server = app.listen(PORT, () => { console.log(`App running on port ${PORT}
 const io = socket(server);
 
 //use session
-
-
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'keyboard cat',
@@ -26,16 +24,16 @@ app.use(session({
 }))
 
 //ดึง controller มาใช้
-const shopsRouter = require('./routes/shopsController');
-const orderListRouter = require('./routes/orderListController');
-const inboxRouter = require('./routes/inboxController');
-const chatRouter = require('./routes/chatController');
-const editProfileRouter = require('./routes/editProfileController');
-const cartRouter = require('./routes/cartController');
-const orderSenderRouter = require('./routes/orderSenderController');
-const inboxSenderRouter = require('./routes/inboxSenderController');
-const chatSenderRouter = require('./routes/chatSenderController');
-const homeSenderRouter = require('./routes/homeSenderController');
+var shopsRouter = require('./routes/shopsController');
+var orderListRouter = require('./routes/orderListController');
+var inboxRouter = require('./routes/inboxController');
+var chatRouter = require('./routes/chatController');
+var editProfileRouter = require('./routes/editProfileController');
+var cartRouter = require('./routes/cartController');
+var orderSenderRouter = require('./routes/orderSenderController');
+var inboxSenderRouter = require('./routes/inboxSenderController');
+var chatSenderRouter = require('./routes/chatSenderController');
+var homeSenderRouter = require('./routes/homeSenderController');
 
 
 //กำหนดตัวแปรให้ controller
@@ -80,7 +78,7 @@ app.get('/', function (req, res) {
 });
 
 
-let userProfile;
+var userProfile;
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -127,9 +125,19 @@ app.get('/auth/google/callback',
     res.redirect('/shops');
   });
 
+// route for logging out
+app.get('/logout', function (req, res) {
+  req.session.destroy(function (err) {
+    req.logout();
+    res.redirect('/');
+  });
+});
+
+
+
 //socket.io
-app.get('/mockupChat', (req, res) => {
-  res.render('index');
+app.get('/chat', (req, res) => {
+  res.render('chat');
 });
 
 // Initialize socket for the server
@@ -144,7 +152,7 @@ io.on("connection", socket => {
 
   // handle the new message event
   socket.on("new_message", data => {
-    console.log("new messsage" + data.message + ' '+ socket.username);
+    console.log("new messsage");
     io.sockets.emit("receive_message", { message: data.message, username: socket.username })
   })
 
@@ -152,15 +160,5 @@ io.on("connection", socket => {
     socket.broadcast.emit('typing', { username: socket.username })
   })
 });
-
-
-// route for logging out
-app.get('/logout', function (req, res) {
-  req.session.destroy(function (err) {
-    req.logout();
-    res.redirect('/');
-  });
-});
-
 
 module.exports = app;

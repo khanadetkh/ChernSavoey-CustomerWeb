@@ -23,7 +23,7 @@
 
 ### รายชื่อสมาชิก
 * นายคณาเดช  คงสมบัติ รหัสนักศึกษา 60130500027 
-   * [natchanon.ksbb@mail.kmutt.ac.th](natchanon.ksbb@mail.kmutt.ac.th) | [GitHub : pakbungnatchanon](https://github.com/pakbungnatchanon)
+   * [natchanon.ksbb@mail.kmutt.ac.th](natchanon.ksbb@mail.kmutt.ac.th) | [GitHub : kndpakbung](https://github.com/kndpakbung)
 * นางสาวรวินท์  หวังวิศวาวิทย์ รหัสนักศึกษา 60130500076 
    * [ravin.wang@mail.kmutt.ac.th](ravin.wang@mail.kmutt.ac.th) | [GitHub : variin](https://github.com/variin)
 * นางสาวสิริรัตน์  ตันธนาวิภาส รหัสนักศึกษา 60130500096 
