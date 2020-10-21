@@ -135,8 +135,8 @@ app.get('/logout', function (req, res) {
 
 
 //socket.io
-app.get('/mockupChat', (req, res) => {
-  res.render('index');
+app.get('/chat', (req, res) => {
+  res.render('chat');
 });
 
 // Initialize socket for the server
