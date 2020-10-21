@@ -1,17 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var app = express();
-const PORT = process.env.PORT || 8080
-app.listen(PORT, () => { console.log(`App running on port ${PORT}`) })
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const socket = require('socket.io');
 const session = require('express-session');
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const passport = require('passport');
+
+const app = express();
 
 /*Filter Server and Require for Socket io*/
-const filter = express();
-const server = require('http').createServer(filter);
-const io = require('socket.io').listen(server);
+const PORT = process.env.PORT || 8080
+const server = app.listen(PORT, () => { console.log(`App running on port ${PORT}`) })
+const io = socket(server);
 
 //use session
 app.set('trust proxy', 1) // trust first proxy
@@ -76,7 +77,7 @@ app.get('/', function (req, res) {
   res.render('login');
 });
 
-var passport = require('passport');
+
 var userProfile;
 
 app.use(passport.initialize());
@@ -99,14 +100,13 @@ passport.deserializeUser(function (obj, cb) {
 
 /*  Google AUTH  */
 
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const GOOGLE_CLIENT_ID = '208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com';
 const GOOGLE_CLIENT_SECRET = 'clU0mrAKbXhmzPl2ONsu1S3q';
 
 passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback"
+  callbackURL: "http://localhost:8080/auth/google/callback"
 },
   function (accessToken, refreshToken, profile, done) {
     userProfile = profile;
