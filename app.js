@@ -36,6 +36,8 @@ var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
 var statusSenderRouter = require('./routes/statusSenderController');
 
+var updateStatusRouter = require('./routes/updateStatus_SenderController');
+
 
 //กำหนดตัวแปรให้ controller
 app.use('/shops', shopsRouter);
@@ -49,6 +51,8 @@ app.use('/inboxSender', inboxSenderRouter);
 app.use('/chatSender', chatSenderRouter);
 app.use('/sender', homeSenderRouter);
 app.use('/statusSender', statusSenderRouter);
+
+app.use('/updateStatus_Sender', updateStatusRouter);
 
 
 // view engine setup
