@@ -34,8 +34,6 @@ var orderSenderRouter = require('./routes/orderSenderController');
 var inboxSenderRouter = require('./routes/inboxSenderController');
 var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
-var statusSenderRouter = require('./routes/statusSenderController');
-
 var updateStatusRouter = require('./routes/updateStatus_SenderController');
 
 
@@ -50,8 +48,6 @@ app.use('/orderSender', orderSenderRouter);
 app.use('/inboxSender', inboxSenderRouter);
 app.use('/chatSender', chatSenderRouter);
 app.use('/sender', homeSenderRouter);
-app.use('/statusSender', statusSenderRouter);
-
 app.use('/updateStatus_Sender', updateStatusRouter);
 
 
@@ -112,20 +108,17 @@ const GOOGLE_CLIENT_SECRET = 'clU0mrAKbXhmzPl2ONsu1S3q';
 passport.use(new GoogleStrategy({
         clientID: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback"
+        callbackURL: "http://localhost:8080/auth/google/callback"
+
+    },
+    function(accessToken, refreshToken, profile, done) {
+        userProfile = profile;
+        return done(null, userProfile);
     },
     function(accessToken, refreshToken, profile, done) {
         userProfile = profile;
         return done(null, userProfile);
     }
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8080/auth/google/callback"
-},
-function(accessToken, refreshToken, profile, done) {
-    userProfile = profile;
-    return done(null, userProfile);
-}
 ));
 
 app.get('/auth/google',
