@@ -102,7 +102,6 @@ passport.deserializeUser(function(obj, cb) {
 
 /*  Google AUTH  */
 
-
 const GOOGLE_CLIENT_ID = '208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com';
 const GOOGLE_CLIENT_SECRET = 'clU0mrAKbXhmzPl2ONsu1S3q';
 
@@ -115,6 +114,14 @@ passport.use(new GoogleStrategy({
         userProfile = profile;
         return done(null, userProfile);
     }
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:8080/auth/google/callback"
+},
+function(accessToken, refreshToken, profile, done) {
+    userProfile = profile;
+    return done(null, userProfile);
+}
 ));
 
 app.get('/auth/google',
