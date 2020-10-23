@@ -17,10 +17,10 @@ const io = socket(server);
 //use session
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
 }))
 
 //ดึง controller มาใช้
@@ -34,6 +34,7 @@ var orderSenderRouter = require('./routes/orderSenderController');
 var inboxSenderRouter = require('./routes/inboxSenderController');
 var chatSenderRouter = require('./routes/chatSenderController');
 var homeSenderRouter = require('./routes/homeSenderController');
+var statusSenderRouter = require('./routes/statusSenderController');
 
 
 //กำหนดตัวแปรให้ controller
@@ -47,6 +48,7 @@ app.use('/orderSender', orderSenderRouter);
 app.use('/inboxSender', inboxSenderRouter);
 app.use('/chatSender', chatSenderRouter);
 app.use('/sender', homeSenderRouter);
+app.use('/statusSender', statusSenderRouter);
 
 
 // view engine setup
@@ -60,21 +62,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // error handler
-app.use(async function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use(async function(err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('500error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('500error');
 });
 
 
 /* login */
 
-app.get('/', function (req, res) {
-  res.render('login');
+app.get('/', function(req, res) {
+    res.render('login');
 });
 
 
@@ -84,17 +86,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/profile', (req, res) => {
-  res.render('profile', { user: userProfile });
-  console.log(userProfile);
+    res.render('profile', { user: userProfile });
+    console.log(userProfile);
 });
 app.get('/error', (req, res) => res.send("error logging in"));
 
-passport.serializeUser(function (user, cb) {
-  cb(null, user);
+passport.serializeUser(function(user, cb) {
+    cb(null, user);
 });
 
-passport.deserializeUser(function (obj, cb) {
-  cb(null, obj);
+passport.deserializeUser(function(obj, cb) {
+    cb(null, obj);
 });
 
 
@@ -105,60 +107,60 @@ const GOOGLE_CLIENT_ID = '208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.goo
 const GOOGLE_CLIENT_SECRET = 'clU0mrAKbXhmzPl2ONsu1S3q';
 
 passport.use(new GoogleStrategy({
-  clientID: GOOGLE_CLIENT_ID,
-  clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback"
-},
-  function (accessToken, refreshToken, profile, done) {
-    userProfile = profile;
-    return done(null, userProfile);
-  }
+        clientID: GOOGLE_CLIENT_ID,
+        clientSecret: GOOGLE_CLIENT_SECRET,
+        callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback"
+    },
+    function(accessToken, refreshToken, profile, done) {
+        userProfile = profile;
+        return done(null, userProfile);
+    }
 ));
 
 app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] }));
+    passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/error' }),
-  function (req, res) {
-    // Successful authentication, redirect success.
-    res.redirect('/shops');
-  });
+    passport.authenticate('google', { failureRedirect: '/error' }),
+    function(req, res) {
+        // Successful authentication, redirect success.
+        res.redirect('/shops');
+    });
 
 // route for logging out
-app.get('/logout', function (req, res) {
-  req.session.destroy(function (err) {
-    req.logout();
-    res.redirect('/');
-  });
+app.get('/logout', function(req, res) {
+    req.session.destroy(function(err) {
+        req.logout();
+        res.redirect('/');
+    });
 });
 
 
 
 //socket.io
 app.get('/chat', (req, res) => {
-  res.render('chat');
+    res.render('chat');
 });
 
 // Initialize socket for the server
 io.on("connection", socket => {
-  console.log("New user connected");
+    console.log("New user connected");
 
-  socket.username = "Anonymous"
+    socket.username = "Anonymous"
 
-  socket.on("change_username", data => {
-    socket.username = data.username
-  })
+    socket.on("change_username", data => {
+        socket.username = data.username
+    })
 
-  // handle the new message event
-  socket.on("new_message", data => {
-    console.log("new messsage");
-    io.sockets.emit("receive_message", { message: data.message, username: socket.username })
-  })
+    // handle the new message event
+    socket.on("new_message", data => {
+        console.log("new messsage");
+        io.sockets.emit("receive_message", { message: data.message, username: socket.username })
+    })
 
-  socket.on('typing', data => {
-    socket.broadcast.emit('typing', { username: socket.username })
-  })
+    socket.on('typing', data => {
+        socket.broadcast.emit('typing', { username: socket.username })
+    })
 });
 
 module.exports = app;
