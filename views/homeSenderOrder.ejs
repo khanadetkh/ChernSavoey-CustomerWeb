@@ -44,7 +44,7 @@
 
 
         <!-- Sweetalret2 script -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.2/sweetalert2.all.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script>
             function testSweet() {
                 Swal.fire({
@@ -68,8 +68,13 @@
                         ).then(() => {
                             const steps = Swal.mixin({
                                 confirmButtonText: 'Next &rarr;',
-                                showCancelButton: true,
-                                progressSteps: ['1', '2', '3', '4', '5']
+                                showCancelButton: false,
+                                progressSteps: ['1', '2', '3', '4', '5'],
+                                didOpen: (t) => {
+                                    if (Swal.getQueueStep() == 4) {
+                                        Swal.getConfirmButton().innerHTML = 'OK!'
+                                    }
+                                },
                             }).queue([{
                                 text: 'You are arrived at the shop',
                                 imageUrl: 'https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/javascripts%2FBest%20of%20Behance.gif?alt=media&token=286a5562-2633-4ed4-8a0f-62032c60fce6',
@@ -97,8 +102,9 @@
                             }, ])
 
                             steps.then((result) => {
+
                                 if (result.value) {
-                                    const answers = JSON.stringify(result.value)
+                                    // const answers = JSON.stringify(result.value)
                                     Swal.fire({
                                         title: 'Process Sucessful',
                                         imageUrl: 'https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/javascripts%2Fcheck-circle.gif?alt=media&token=48c6c548-6816-4bf7-8f23-06c09d58f0e6',
@@ -119,6 +125,11 @@
     <style>
         .card {
             top: 50px;
+        }
+        
+        .swal2-progress-steps .swal2-progress-step-line {
+            width: 2em;
+            /* height: 2em; */
         }
     </style>
 
