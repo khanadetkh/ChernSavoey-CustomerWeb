@@ -1,14 +1,44 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap');
-
+/*//////////////////////////////////////////////////////////////////
+/*
+Font Name: Anuphan
+Weights: 400, 500, 700
+*/
+@font-face {
+  font-family: "Anuphan";
+  src: url("../fonts/anuphan.woff2") format("woff2"),
+    url("../fonts/anuphan.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("../fonts/anuphan-medium.woff2") format("woff2"),
+    url("../fonts/anuphan-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("../fonts/anuphan-bold.woff2") format("woff2"),
+    url("../fonts/anuphan-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
 
 body {
-  font-family: kanit !important;
+  font-family: "Anuphan" !important;
 }
 
 a {
   color: #00B7FF;
-    text-decoration:none; 
+  text-decoration:none; 
 }
 
 i {
@@ -127,9 +157,19 @@ img {
   width: 100%;
 }
 
+.btn-menu a {
+  color: #ffffff;
+}
+.btn-menu a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
 @media only screen and (max-width: 760px), (min-width: 768px) and (max-width: 1024px) {
   /* ... */
   select {
       width: 150px;
   }
 }
+
