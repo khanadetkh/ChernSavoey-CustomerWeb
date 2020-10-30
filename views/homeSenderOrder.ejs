@@ -66,7 +66,21 @@
                             'You are confirm this order',
                             'success'
                         ).then(() => {
-                            const steps = Swal.mixin({
+
+                            //TODO: get sender id from user login
+                            const senderId = "123";
+                            const orderIdPath = window.location.pathname.split("/")
+                            const orderId = orderIdPath[2]
+                            console.log("Senddddd 1")
+
+                            fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
+                                .then((data) => {
+                                    console.log("Senddddd 2")
+                                    window.location.href = `/orderSender/${orderId}`;
+                                })
+                                .catch((err) => console.log('err ' + err))
+
+                            /*  const steps = Swal.mixin({
                                 confirmButtonText: 'Next &rarr;',
                                 showCancelButton: false,
                                 progressSteps: ['1', '2', '3', '4', '5'],
@@ -111,7 +125,7 @@
                                         confirmButtonText: 'Thank you!'
                                     })
                                 }
-                            })
+                            })*/
                         })
                     } else {
                         Swal.fire('', 'You are deny this order', 'error')
