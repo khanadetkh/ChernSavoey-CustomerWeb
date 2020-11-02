@@ -22,26 +22,86 @@
         <ul>
             <li>
                 <a>
-                    <!-- <img class="list-item__thumbnail" style="width: 50px; height: 60px;" src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-vector-shop-icon-png-image_4184051.jpg"> -->
                     <h2>Menu</h2>
-
-                    <h3>Cafe Amazon</h3>
-
-                    <table>
+                    <h2 style="color: rgb(68, 68, 75);">
+                        <% getOrder.forEach((order) => { %>
+                            Store : "
+                            <%= order.store%>
+                                <% }); %> "
+                    </h2>
+                    <table style="font-family: Kanit; color: dimgrey;">
                         <tr>
-                            <td>โกโก้เย็น</td>
-                            <td>50 บาท</td>
+                            <td>
+                                <div style="margin-left: 50px;">
+                                    Order
+                                </div>
+                            </td>
+                            <td>
+                                <div style="margin-left: 70px;">
+                                    Quantity
+                                </div>
+
+                            </td>
+                            <td>
+                                <div style="margin-left: 35px;">
+                                    Price
+                                </div>
+
+                            </td>
                         </tr>
-                        <tr>
-                            <td>กาแฟเย็น</td>
-                            <td>60 บาท</td>
-                        </tr>
+
                     </table>
+
+
+                    <% orderList.forEach((orderDetail)=> { %>
+
+                        <h5 class="card-title" style="font-size: 17px; display: inline;">
+                            <%= orderDetail.menuName %>
+                        </h5>
+
+                        <div class="menu" style="font-size:17px; text-align: center; display: inline;">
+                            <h3 class="card-text" style="display: inline;">
+                                <div style="margin-left: 25%; display: inline;">
+                                    <%= orderDetail.qty %>
+                                </div>
+                                <div style="margin-left: 25%; display: inline;">
+                                    <%= orderDetail.price %>
+                                </div>
+
+                            </h3>
+
+                        </div>
+                        <br>
+                        <br>
+
+                        <div style="text-align: center;">
+                            <% getOrder.forEach((order) => { %>
+
+                                Status :
+                                <%= order.status%>
+
+                                    <% }); %>
+                        </div>
+
+
+
+                        <!-- <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button> -->
+
+                        </div>
+                        </div>
+                        </div>
+                        <% }); %>
+                            </div>
+                            </div>
                 </a>
             </li>
         </ul>
 
         <style>
+            .cart-text {
+                font-size: 20px;
+            }
+            
             h2,
             h3 {
                 font-size: 100%;
@@ -59,15 +119,19 @@
                 padding: 3em;
             } */
             
+            p {
+                font-family: Kanit;
+            }
+            
             ul li a {
                 text-decoration: none;
                 background: rgb(233, 233, 166);
                 display: block;
-                height: 250px;
-                width: 250px;
+                height: 300px;
+                width: 330px;
                 padding: 1em;
-                margin-left: 40px;
-                margin-top: 25px;
+                margin-left: 10%;
+                margin-top: 5%;
                 box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
                 -moz-transition: -moz-transform .15s linear;
                 -o-transition: -o-transform .15s linear;
@@ -148,48 +212,9 @@
             }
         </style>
 
-        <ons-card class="order" style="margin-top: 110px;">
-            <div class="storeName font">
-                <div class="storeName font">
-                    <ons-list-item>
-                        <table>
-                            <tr>
-                                <div class="left">
-                                    <img class="list-item__thumbnail" src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-vector-shop-icon-png-image_4184051.jpg">
-                                </div>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Cafe Amazon
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>โกโก้เย็น</td>
-                                <td>50 บาท</td>
-                            </tr>
-                            <tr>
-                                <td>กาแฟเย็น</td>
-                                <td>60 บาท</td>
-                            </tr>
 
-                        </table>
-                    </ons-list-item>
-                    <tr>
-                        <td>total</td>
-                        <td>110 บาท</td>
-                    </tr>
-                </div>
-            </div>
-        </ons-card>
 
-        <div style="text-align: center;">
-            <% getOrder.forEach((order) => { %>
 
-                Status :
-                <%= order.status%>
-
-                    <% }); %>
-        </div>
 
 
 
@@ -283,99 +308,6 @@
 
             }
         </script>
-
-
 </body>
-<style>
-    .font {
-        font-family: Kanit;
-    }
-    
-    .line {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        top: 2px;
-        background: #D8D8D8;
-        border: 1px solid rgba(151, 151, 151, 0.25);
-    }
-    
-    .line2 {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        top: 120px;
-        background: #D8D8D8;
-        border: 1px solid rgba(151, 151, 151, 0.25);
-    }
-    
-    .vector {
-        margin-top: 8px;
-        margin-left: 30px;
-        margin-bottom: 2px;
-        font-size: 30px;
-    }
-    
-    .title {
-        display: flex;
-        font-weight: 800;
-        font-size: 28px;
-        background: linear-gradient(#1D617A, #61C2A2);
-        /* -webkit-background-clip: text; */
-        -webkit-text-fill-color: transparent;
-        margin-top: 3px;
-        margin-left: 25px;
-        margin-bottom: 3px;
-    }
-    
-    .location {
-        font-size: medium;
-        display: flex;
-        width: max-content;
-        border: 1px solid gainsboro;
-        padding: 7px;
-        margin: 5px;
-        border-radius: 10px;
-        margin-left: 50%;
-    }
-    
-    .order {
-        display: flex;
-        margin: auto;
-        margin-top: 80px;
-        margin-bottom: 30px;
-        width: 70%;
-        height: auto;
-        border: 1px;
-        background-color: #E5E5E5;
-        border-radius: 20px;
-    }
-    
-    .confirm_Order {
-        display: flex;
-        margin: auto;
-        margin-top: auto;
-        background-image: linear-gradient(to right, #1D617A, #61C2A2);
-        border-radius: 20px;
-        width: fit-content;
-        box-shadow: 1px 1px 1px grey;
-    }
-    
-    .backbtn {
-        background-color: transparent;
-        border: none;
-        color: black;
-        padding: 16px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        size: 10px;
-    }
-</style>
-
 
 </html>
