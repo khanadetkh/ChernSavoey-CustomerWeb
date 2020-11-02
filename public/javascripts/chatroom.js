@@ -1,4 +1,3 @@
-
 const socket = io.connect("http://localhost:8080");
 
 (function() {
@@ -9,9 +8,9 @@ const socket = io.connect("http://localhost:8080");
     usernameBtn.addEventListener('click', e => {
         console.log(username.value);
         socket.emit('change_username', { username: username.value })
-        curUsername.textContent = username.value 
+        curUsername.textContent = username.value
         username.value = ''
-    }) 
+    })
 
     let message = document.querySelector('#message');
     let messageBtn = document.querySelector('#messageBtn');
@@ -19,7 +18,7 @@ const socket = io.connect("http://localhost:8080");
 
     messageBtn.addEventListener('click', e => {
         console.log(message.value)
-        socket.emit('new_message', { message: message.value})
+        socket.emit('new_message', { message: message.value })
         message.value = ''
     })
     socket.on('connect', () => {
@@ -31,7 +30,7 @@ const socket = io.connect("http://localhost:8080");
         let listItem = document.createElement('li')
         listItem.textContent = data.username + ": " + data.message;
         listItem.classList.add('list-group-item');
-        messageList.appendChild(listItem) 
+        messageList.appendChild(listItem)
     })
 
     let info = document.querySelector('.info');
@@ -42,6 +41,6 @@ const socket = io.connect("http://localhost:8080");
 
     socket.on('typing', data => {
         info.textContent = data.username + " is typing..."
-        setTimeout(() => { info.textContent = ''}, 5000)
+        setTimeout(() => { info.textContent = '' }, 5000)
     })
 })();

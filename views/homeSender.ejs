@@ -2,92 +2,96 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <!-- Site meta -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title> </title>
-  <!-- CSS -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/senderstyle.css">
-  <!--===============================================================================================-->
+    <!-- Site meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title> </title>
+    <!-- CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/senderstyle.css">
+    <!--===============================================================================================-->
 
 </head>
 
 <%- include ("layoutSender.ejs") %>
 
-<body>
-  <a href="/shops">
-    <button class="button" style="vertical-align:middle"><span>Order Click </span></button>
-  </a>
+    <body>
+        <a href="/shops">
+            <button class="button" style="vertical-align:middle"><span>Order Click </span></button>
+        </a>
 
-  <div class="container">
-    <% getOrder.forEach((order) => { %>
-    <div class="card-deck">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= order.store %></h5>
-          <p class="card-text">Order id : <%= order.orderId %></p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"><%= order.hour %> | <%= order.userDate %></small>
-          <a href="/sender/<%= order.orderId %>" class="btn btn-info float-right">
+        <div class="container">
+            <% getOrder.forEach((order) => { %>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= order.store %>
+                            </h5>
+                            <p class="card-text">Order id :
+                                <%= order.orderId %>
+
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><%= order.hour %> | <%= order.userDate %></small>
+                            <a href="/sender/<%= order.orderId %>" class="btn btn-info float-right">
             See More
           </a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
         </div>
-      </div>
-    </div>
-    <% }); %>
-  </div>
-  <!-- Scripts -->
-  <script src="/javascripts/homeSender.js"></script>
-</body>
+        <!-- Scripts -->
+        <script src="/javascripts/homeSender.js"></script>
+    </body>
 
 
-<style>
- .button {
-    display: inline-block;
-    border-radius: 15px;
-    background-color: #F7CC6F ;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 18px;
-    width: 90%;
-    /* transition: all 0.5s; */
-    cursor: pointer;
-    margin: 5px;
-    margin-top: 90px;
-    margin-left: 5%;
-    
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
+    <style>
+        .button {
+            display: inline-block;
+            border-radius: 15px;
+            background-color: #F7CC6F;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 18px;
+            width: 90%;
+            /* transition: all 0.5s; */
+            cursor: pointer;
+            margin: 5px;
+            margin-top: 90px;
+            margin-left: 5%;
+        }
+        
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button:hover span {
+            padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
 
-</style>
 </html>
