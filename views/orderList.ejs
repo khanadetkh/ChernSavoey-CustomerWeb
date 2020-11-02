@@ -18,199 +18,229 @@
 
         <p id="hid-noteToSender"></p>
         <p id="hid-location"></p>
-
-        <ul>
-            <li>
-                <a>
-                    <h2>Menu</h2>
-                    <h2 style="color: rgb(68, 68, 75);">
-                        <% getOrder.forEach((order) => { %>
-                            Store : "
-                            <%= order.store%>
-                                <% }); %> "
-                    </h2>
-                    <table style="font-family: Kanit; color: dimgrey;">
-                        <tr>
-                            <td>
-                                <div style="margin-left: 50px;">
-                                    Order
-                                </div>
-                            </td>
-                            <td>
-                                <div style="margin-left: 70px;">
-                                    Quantity
-                                </div>
-
-                            </td>
-                            <td>
-                                <div style="margin-left: 35px;">
-                                    Price
-                                </div>
-
-                            </td>
-                        </tr>
-
-                    </table>
-
-
-                    <% orderList.forEach((orderDetail)=> { %>
-
-                        <h5 class="card-title" style="font-size: 17px; display: inline;">
-                            <%= orderDetail.menuName %>
-                        </h5>
-
-                        <div class="menu" style="font-size:17px; text-align: center; display: inline;">
-                            <h3 class="card-text" style="display: inline;">
-                                <div style="margin-left: 25%; display: inline;">
-                                    <%= orderDetail.qty %>
-                                </div>
-                                <div style="margin-left: 25%; display: inline;">
-                                    <%= orderDetail.price %>
-                                </div>
-
-                            </h3>
-
-                        </div>
-                        <br>
-                        <br>
-
-                        <div style="text-align: center;">
+        <div class="d-flex justify-content-center">
+            <ul>
+                <li>
+                    <a>
+                        <h2>Menu</h2>
+                        <h2 style="color: rgb(68, 68, 75);">
                             <% getOrder.forEach((order) => { %>
+                                Store : "
+                                <%= order.store%>
+                                    <% }); %> "
+                        </h2>
+                        <table style="font-family: Kanit; color: dimgrey;">
+                            <tr>
+                                <td>
+                                    <div style="margin-left: 50px;">
+                                        Order
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 60px;">
+                                        Quantity
+                                    </div>
 
-                                Status :
-                                <%= order.status%>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 35px;">
+                                        Price
+                                    </div>
 
-                                    <% }); %>
-                        </div>
+                                </td>
+                            </tr>
+
+                        </table>
 
 
+                        <% orderList.forEach((orderDetail)=> { %>
 
-                        <!-- <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button> -->
+                            <h5 class="card-title" style="font-size: 17px; display: inline;">
+                                <%= orderDetail.menuName %>
+                            </h5>
 
-                        </div>
-                        </div>
-                        </div>
-                        <% }); %>
+                            <div class="menu" style="font-size:17px; text-align: center; display: inline;">
+                                <h3 class="card-text" style="display: inline;">
+                                    <div style="margin-left: 25%; display: inline;">
+                                        <%= orderDetail.qty %>
+                                    </div>
+                                    <div style="margin-left: 25%; display: inline;">
+                                        <%= orderDetail.price %>
+                                    </div>
+
+                                </h3>
+
                             </div>
+                            <br>
+                            <br>
+                            <table style="font-family: Kanit;">
+                                <tr>
+                                    <td style="color: dimgrey;">
+                                        Delivery Fee
+                                    </td>
+                                    <td style="color: dimgrey;">
+                                        <div style="margin-left: 140px;">
+                                            10
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 80px;">
+                                            Total :
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 70px;">
+                                            ... Baht
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <br>
+
+                            <div style="text-align: center;">
+                                <% getOrder.forEach((order) => { %>
+
+                                    Status :
+                                    <%= order.status%>
+
+                                        <% }); %>
                             </div>
-                </a>
+
+
+
+                            <!-- <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button> -->
+
+        </div>
+        </div>
+        </div>
+        <% }); %>
+            </div>
+            </div>
+            </a>
             </li>
-        </ul>
+            </ul>
+            </div>
 
-        <style>
-            .cart-text {
-                font-size: 20px;
-            }
-            
-            h2,
-            h3 {
-                font-size: 100%;
-                font-weight: normal;
-                text-align: center;
-                font-family: Kanit;
-            }
-            
-            ul,
-            li {
-                list-style: none;
-            }
-            /* ul {
+
+            <style>
+                .cart-text {
+                    font-size: 20px;
+                }
+                
+                h2,
+                h3 {
+                    font-size: 100%;
+                    font-weight: normal;
+                    text-align: center;
+                    font-family: Kanit;
+                }
+                
+                ul,
+                li {
+                    list-style: none;
+                }
+                /* ul {
                 overflow: hidden;
                 padding: 3em;
             } */
-            
-            p {
-                font-family: Kanit;
-            }
-            
-            ul li a {
-                text-decoration: none;
-                background: rgb(233, 233, 166);
-                display: block;
-                height: 300px;
-                width: 330px;
-                padding: 1em;
-                margin-left: 10%;
-                margin-top: 5%;
-                box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-                -moz-transition: -moz-transform .15s linear;
-                -o-transition: -o-transform .15s linear;
-                -webkit-transition: -webkit-transform .15s linear;
-            }
-            
-            ul li {
-                margin: 1em;
-                float: left;
-            }
-            
-            ul li h2 {
-                font-size: 140%;
-                font-weight: bold;
-                padding-bottom: 10px;
-            }
-            
-            ul li p {
-                font-family: "Reenie Beanie", arial, sans-serif;
-                font-size: 180%;
-            }
-            
-            ul li a {
-                -webkit-transform: rotate(-6deg);
-                -o-transform: rotate(-6deg);
-                -moz-transform: rotate(-6deg);
-            }
-            
-            ul li:nth-child(even) a {
-                -o-transform: rotate(4deg);
-                -webkit-transform: rotate(4deg);
-                -moz-transform: rotate(4deg);
-                position: relative;
-                top: 5px;
-                background: #cfc;
-            }
-            
-            ul li:nth-child(3n) a {
-                -o-transform: rotate(-3deg);
-                -webkit-transform: rotate(-3deg);
-                -moz-transform: rotate(-3deg);
-                position: relative;
-                top: -5px;
-                background: #ccf;
-            }
-            
-            ul li:nth-child(5n) a {
-                -o-transform: rotate(5deg);
-                -webkit-transform: rotate(5deg);
-                -moz-transform: rotate(5deg);
-                position: relative;
-                top: -10px;
-            }
-            
-            ul li a:hover,
-            ul li a:focus {
-                box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                -webkit-transform: scale(1.25);
-                -moz-transform: scale(1.25);
-                -o-transform: scale(1.25);
-                position: relative;
-                z-index: 5;
-            }
-            
-            ol {
-                text-align: center;
-            }
-            
-            ol li {
-                display: inline;
-                padding-right: 1em;
-            }
-            
-            ol li a {
-                color: #fff;
-            }
-        </style>
+                
+                p {
+                    font-family: Kanit;
+                }
+                
+                ul li a {
+                    text-decoration: none;
+                    background: rgb(233, 233, 166);
+                    display: block;
+                    height: 300px;
+                    width: 320px;
+                    padding: 1em;
+                    margin-top: 30px;
+                    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+                    -moz-transition: -moz-transform .15s linear;
+                    -o-transition: -o-transform .15s linear;
+                    -webkit-transition: -webkit-transform .15s linear;
+                }
+                
+                ul li {
+                    margin: 1em;
+                    float: left;
+                }
+                
+                ul li h2 {
+                    font-size: 140%;
+                    font-weight: bold;
+                    padding-bottom: 10px;
+                }
+                
+                ul li p {
+                    font-family: "Reenie Beanie", arial, sans-serif;
+                    font-size: 180%;
+                }
+                
+                ul li a {
+                    -webkit-transform: rotate(-6deg);
+                    -o-transform: rotate(-6deg);
+                    -moz-transform: rotate(-6deg);
+                }
+                
+                ul li:nth-child(even) a {
+                    -o-transform: rotate(4deg);
+                    -webkit-transform: rotate(4deg);
+                    -moz-transform: rotate(4deg);
+                    position: relative;
+                    top: 5px;
+                    background: #cfc;
+                }
+                
+                ul li:nth-child(3n) a {
+                    -o-transform: rotate(-3deg);
+                    -webkit-transform: rotate(-3deg);
+                    -moz-transform: rotate(-3deg);
+                    position: relative;
+                    top: -5px;
+                    background: #ccf;
+                }
+                
+                ul li:nth-child(5n) a {
+                    -o-transform: rotate(5deg);
+                    -webkit-transform: rotate(5deg);
+                    -moz-transform: rotate(5deg);
+                    position: relative;
+                    top: -10px;
+                }
+                
+                ul li a:hover,
+                ul li a:focus {
+                    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                    -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                    -webkit-transform: scale(1.25);
+                    -moz-transform: scale(1.25);
+                    -o-transform: scale(1.25);
+                    position: relative;
+                    z-index: 5;
+                }
+                
+                ol {
+                    text-align: center;
+                }
+                
+                ol li {
+                    display: inline;
+                    padding-right: 1em;
+                }
+                
+                ol li a {
+                    color: #fff;
+                }
+            </style>
 
 
 
@@ -218,43 +248,43 @@
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        <script>
-            function testSweet() {
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    reverseButtons: true,
-                    showCancelButton: true,
-                    confirmButtonText: 'Confirm',
-                    confirmButtonColor: '#27AE60',
-                    cancelButtonColor: '#C0392B',
-                }).then((result) => {
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script>
+                function testSweet() {
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        reverseButtons: true,
+                        showCancelButton: true,
+                        confirmButtonText: 'Confirm',
+                        confirmButtonColor: '#27AE60',
+                        cancelButtonColor: '#C0392B',
+                    }).then((result) => {
 
-                    console.log(result)
+                        console.log(result)
 
-                    if (result.value) {
-                        Swal.fire(
-                            "",
-                            'You are confirm this order',
-                            'success'
-                        ).then(() => {
+                        if (result.value) {
+                            Swal.fire(
+                                "",
+                                'You are confirm this order',
+                                'success'
+                            ).then(() => {
 
-                            //TODO: get sender id from user login
-                            const senderId = "123";
-                            const orderIdPath = window.location.pathname.split("/")
-                            const orderId = orderIdPath[2]
-                            console.log("Senddddd 1")
+                                //TODO: get sender id from user login
+                                const senderId = "123";
+                                const orderIdPath = window.location.pathname.split("/")
+                                const orderId = orderIdPath[2]
+                                console.log("Senddddd 1")
 
-                            fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
-                                .then((data) => {
-                                    console.log("Senddddd 2")
-                                    window.location.href = `/orderSender/${orderId}`;
-                                })
-                                .catch((err) => console.log('err ' + err))
+                                fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
+                                    .then((data) => {
+                                        console.log("Senddddd 2")
+                                        window.location.href = `/orderSender/${orderId}`;
+                                    })
+                                    .catch((err) => console.log('err ' + err))
 
-                            /*  const steps = Swal.mixin({
+                                /*  const steps = Swal.mixin({
                                     confirmButtonText: 'Next &rarr;',
                                     showCancelButton: false,
                                     progressSteps: ['1', '2', '3', '4', '5'],
@@ -300,14 +330,14 @@
                                         })
                                     }
                                 })*/
-                        })
-                    } else {
-                        Swal.fire('', 'You are deny this order', 'error')
-                    }
-                })
+                            })
+                        } else {
+                            Swal.fire('', 'You are deny this order', 'error')
+                        }
+                    })
 
-            }
-        </script>
+                }
+            </script>
 </body>
 
 </html>
