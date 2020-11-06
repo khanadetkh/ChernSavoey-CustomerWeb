@@ -1,4 +1,7 @@
+const { Timestamp } = require("mongodb");
+
 const socket = io.connect("http://localhost:8080");
+
 
 (function() {
     let username = document.querySelector('#username');
@@ -44,3 +47,20 @@ const socket = io.connect("http://localhost:8080");
         setTimeout(() => { info.textContent = '' }, 5000)
     })
 })();
+
+function  sendMsg() {
+    const receiveId = '1';
+    const senderId = '2';
+    const message = document.getElementById("message").value;
+    console.log("message : " + message)
+    const orderId = "lxWWau90ExO2Xsijk71T";
+    const response = fetch(
+        `/orderList/${orderId}/chat`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ orderId, receiveId, senderId, message })
+        }
+    );
+}
