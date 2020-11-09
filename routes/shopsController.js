@@ -1,10 +1,12 @@
-var express = require('express');
+const express = require('express');
 const db = require('../model/db');
-
-var router = express.Router();
+const router = express.Router();
+// const passport = require("passport");
 
 /* GET shops page. */
-router.get("/", async (req, res) => {
+router.get("/",async (req, res) => {
+      const profile = sessionStorage.getItem('userProfile');
+      console.log("PROFILE======",profile);
       const getStore = await db
             .collection("store")
             .orderBy("storeName", "asc")
