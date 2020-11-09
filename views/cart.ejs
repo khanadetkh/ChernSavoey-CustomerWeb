@@ -65,11 +65,14 @@
     <input type="text" class="form-control"  style="font-size: smaller; margin-left:5%;"id="noteToSender" placeholder="e.g. Floor, Meet me at the lobby">
   </div>
 
+<<<<<<< Updated upstream
 
 
   
   <button type="submit" onclick="submitToCart()" class="btn btn-info center">Confirm Order</button>
 
+=======
+>>>>>>> Stashed changes
   <p id ="hid-location"></p>
   <p id ="hid-noteToSender"></p>
   
@@ -77,9 +80,48 @@
   <input type="hidden" id="hid-noteToSender">
   <input type="hidden" id="hid-location">
 
+  <!-- table of cart -->
+<div class="container mb-4">
+  <div class="row">
+      <div class="col-12">
+          <div class="table-responsive">
+            <form action="/shops/cart" method="POST">
+              <div id="details">
+              
+            
+              <section class="container content-section">
+                <h2 class="section-header">YOUR CART</h2>
+                
+                <div class="cart-row">
+                  <span class="cart-item cart-header cart-column">ITEM</span>
+                  <span class="cart-item cart-header cart-column">HOTEL</span>
+                  <span class="cart-price cart-header cart-column">PRICE</span>
+                  <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                </div>
+          
+                <div class="cart-items"></div>
+                  
+                <div class="cart-total">
+                  <strong class="cart-total-title">Total</strong>
+                  <span class="cart-total-price"></span>
+                </div>
+                <button class="btn btn-primary btn-purchase" type="submit">PLACE ORDER</button>
+              </section>
+            </form>
+          </div>
+      </div>
+      <div class="col mb-9">
+          <div class="row">
+              <div class="col-sm-6 col-md-2 text-right ">
+                  <button class="btn btn-lg btn-block btn-success text-uppercase float-right" type="submit" onclick="submitToCart()">Checkout</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 </body>
 
-
+<script src="/javascripts/cart.js"></script>
 <script>
   function submitToCart() {
     var location = document.getElementById("location");

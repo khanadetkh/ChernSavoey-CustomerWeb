@@ -29,11 +29,13 @@
 
         <!-- Cateogory -->
         <div class="card bg-light mb-3">
-          <div class="card-header text-white text-uppercase" style="background-image:linear-gradient(to right, #1d617a, #61c2a2);"><i class="fa fa-list"></i> Categories</div>
+          <div class="card-header text-white text-uppercase"
+            style="background-image:linear-gradient(to right, #1d617a, #61c2a2);"><i class="fa fa-list"></i> Categories
+          </div>
           <ul class="list-group category_block">
 
             <% categoriesList.forEach((categories) => { %>
-            <li class="list-group-item" ><a
+            <li class="list-group-item"><a
                 href="/shops/<%= storeId %>/<%= categories.categoryId %>"><%= categories.categoryName %></a>
             </li>
             <% }); %>
@@ -56,8 +58,13 @@
                 <h5><%= menu.price %> บาท </h5>
                 <p class="card-text"><%= menu.menuDetail %>
                 </p>
-                <button class="get-data btn btn-success shop-item-button"style="background-color :#61c2a2;">
-                  <a href="/shops/<%= storeId %>/cart/<%=menu.menuId%>" style="color: white; text-decoration: none;"> ADD TO CART </a></button>
+
+
+                <!-- <form class="form-group" action="/shops/<%= storeId %>/cart/<%= menu.menuId %>" method="post"> </form> -->
+                <button class="get-data btn btn-success shop-item-button" type="submit" value="<%= menu.menuId %>">ADD TO CART</button>
+                
+
+
               </div>
             </div>
           </div>
