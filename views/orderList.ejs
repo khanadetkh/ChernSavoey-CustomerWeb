@@ -18,218 +18,273 @@
 
         <p id="hid-noteToSender"></p>
         <p id="hid-location"></p>
-
-        <ul>
-            <li>
-                <a>
-                    <!-- <img class="list-item__thumbnail" style="width: 50px; height: 60px;" src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-vector-shop-icon-png-image_4184051.jpg"> -->
-                    <h2>Menu</h2>
-
-                    <h3>Cafe Amazon</h3>
-
-                    <table>
-                        <tr>
-                            <td>โกโก้เย็น</td>
-                            <td>50 บาท</td>
-                        </tr>
-                        <tr>
-                            <td>กาแฟเย็น</td>
-                            <td>60 บาท</td>
-                        </tr>
-                    </table>
-                </a>
-            </li>
-        </ul>
-
-        <style>
-            h2,
-            h3 {
-                font-size: 100%;
-                font-weight: normal;
-                text-align: center;
-                font-family: Kanit;
-            }
-            
-            ul,
-            li {
-                list-style: none;
-            }
-            /* ul {
-                overflow: hidden;
-                padding: 3em;
-            } */
-            
-            ul li a {
-                text-decoration: none;
-                background: rgb(233, 233, 166);
-                display: block;
-                height: 250px;
-                width: 250px;
-                padding: 1em;
-                margin-left: 40px;
-                margin-top: 25px;
-                box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-                -moz-transition: -moz-transform .15s linear;
-                -o-transition: -o-transform .15s linear;
-                -webkit-transition: -webkit-transform .15s linear;
-            }
-            
-            ul li {
-                margin: 1em;
-                float: left;
-            }
-            
-            ul li h2 {
-                font-size: 140%;
-                font-weight: bold;
-                padding-bottom: 10px;
-            }
-            
-            ul li p {
-                font-family: "Reenie Beanie", arial, sans-serif;
-                font-size: 180%;
-            }
-            
-            ul li a {
-                -webkit-transform: rotate(-6deg);
-                -o-transform: rotate(-6deg);
-                -moz-transform: rotate(-6deg);
-            }
-            
-            ul li:nth-child(even) a {
-                -o-transform: rotate(4deg);
-                -webkit-transform: rotate(4deg);
-                -moz-transform: rotate(4deg);
-                position: relative;
-                top: 5px;
-                background: #cfc;
-            }
-            
-            ul li:nth-child(3n) a {
-                -o-transform: rotate(-3deg);
-                -webkit-transform: rotate(-3deg);
-                -moz-transform: rotate(-3deg);
-                position: relative;
-                top: -5px;
-                background: #ccf;
-            }
-            
-            ul li:nth-child(5n) a {
-                -o-transform: rotate(5deg);
-                -webkit-transform: rotate(5deg);
-                -moz-transform: rotate(5deg);
-                position: relative;
-                top: -10px;
-            }
-            
-            ul li a:hover,
-            ul li a:focus {
-                box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                -webkit-transform: scale(1.25);
-                -moz-transform: scale(1.25);
-                -o-transform: scale(1.25);
-                position: relative;
-                z-index: 5;
-            }
-            
-            ol {
-                text-align: center;
-            }
-            
-            ol li {
-                display: inline;
-                padding-right: 1em;
-            }
-            
-            ol li a {
-                color: #fff;
-            }
-        </style>
-
-        <ons-card class="order" style="margin-top: 110px;">
-            <div class="storeName font">
-                <div class="storeName font">
-                    <ons-list-item>
-                        <table>
+        <div class="d-flex justify-content-center">
+            <ul>
+                <li>
+                    <a>
+                        <h2>Menu</h2>
+                        <h2 style="color: rgb(68, 68, 75);">
+                            <% getOrder.forEach((order) => { %>
+                                Store : "
+                                <%= order.store%>
+                                    <% }); %> "
+                        </h2>
+                        <table style="font-family: Kanit; color: dimgrey;">
                             <tr>
-                                <div class="left">
-                                    <img class="list-item__thumbnail" src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-vector-shop-icon-png-image_4184051.jpg">
-                                </div>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Cafe Amazon
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>โกโก้เย็น</td>
-                                <td>50 บาท</td>
-                            </tr>
-                            <tr>
-                                <td>กาแฟเย็น</td>
-                                <td>60 บาท</td>
+                                <td>
+                                    <div style="margin-left: 50px;">
+                                        Order
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 60px;">
+                                        Quantity
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 35px;">
+                                        Price
+                                    </div>
+
+                                </td>
                             </tr>
 
                         </table>
-                    </ons-list-item>
-                    <tr>
-                        <td>total</td>
-                        <td>110 บาท</td>
-                    </tr>
-                </div>
-            </div>
-        </ons-card>
 
-        <div style="text-align: center;">
-            <% getOrder.forEach((order) => { %>
 
-                Status :
-                <%= order.status%>
+                        <% orderList.forEach((orderDetail)=> { %>
 
-                    <% }); %>
+                            <h5 class="card-title" style="font-size: 17px; display: inline;">
+                                <%= orderDetail.menuName %>
+                            </h5>
+
+                            <div class="menu" style="font-size:17px; text-align: center; display: inline;">
+                                <h3 class="card-text" style="display: inline;">
+                                    <div style="margin-left: 25%; display: inline;">
+                                        <%= orderDetail.qty %>
+                                    </div>
+                                    <div style="margin-left: 25%; display: inline;">
+                                        <%= orderDetail.price %>
+                                    </div>
+
+                                </h3>
+
+                            </div>
+                            <br>
+                            <br>
+                            <table style="font-family: Kanit;">
+                                <tr>
+                                    <td style="color: dimgrey;">
+                                        Delivery Fee
+                                    </td>
+                                    <td style="color: dimgrey;">
+                                        <div style="margin-left: 140px;">
+                                            10
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 80px;">
+                                            Total :
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 70px;">
+                                            ... Baht
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <br>
+
+                            <div style="text-align: center;">
+                                <% getOrder.forEach((order) => { %>
+
+                                    Status :
+                                    <%= order.status%>
+
+                                        <% }); %>
+                            </div>
+
+
+
+                            <!-- <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button> -->
+
         </div>
+        </div>
+        </div>
+        <% }); %>
+            </div>
+            </div>
+            </a>
+            </li>
+            </ul>
+            </div>
+
+
+            <style>
+                .cart-text {
+                    font-size: 20px;
+                }
+                
+                h2,
+                h3 {
+                    font-size: 100%;
+                    font-weight: normal;
+                    text-align: center;
+                    font-family: Kanit;
+                }
+                
+                ul,
+                li {
+                    list-style: none;
+                }
+                /* ul {
+                overflow: hidden;
+                padding: 3em;
+            } */
+                
+                p {
+                    font-family: Kanit;
+                }
+                
+                ul li a {
+                    text-decoration: none;
+                    background: rgb(233, 233, 166);
+                    display: block;
+                    height: 300px;
+                    width: 320px;
+                    padding: 1em;
+                    margin-top: 30px;
+                    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+                    -moz-transition: -moz-transform .15s linear;
+                    -o-transition: -o-transform .15s linear;
+                    -webkit-transition: -webkit-transform .15s linear;
+                }
+                
+                ul li {
+                    margin: 1em;
+                    float: left;
+                }
+                
+                ul li h2 {
+                    font-size: 140%;
+                    font-weight: bold;
+                    padding-bottom: 10px;
+                }
+                
+                ul li p {
+                    font-family: "Reenie Beanie", arial, sans-serif;
+                    font-size: 180%;
+                }
+                
+                ul li a {
+                    -webkit-transform: rotate(-6deg);
+                    -o-transform: rotate(-6deg);
+                    -moz-transform: rotate(-6deg);
+                }
+                
+                ul li:nth-child(even) a {
+                    -o-transform: rotate(4deg);
+                    -webkit-transform: rotate(4deg);
+                    -moz-transform: rotate(4deg);
+                    position: relative;
+                    top: 5px;
+                    background: #cfc;
+                }
+                
+                ul li:nth-child(3n) a {
+                    -o-transform: rotate(-3deg);
+                    -webkit-transform: rotate(-3deg);
+                    -moz-transform: rotate(-3deg);
+                    position: relative;
+                    top: -5px;
+                    background: #ccf;
+                }
+                
+                ul li:nth-child(5n) a {
+                    -o-transform: rotate(5deg);
+                    -webkit-transform: rotate(5deg);
+                    -moz-transform: rotate(5deg);
+                    position: relative;
+                    top: -10px;
+                }
+                
+                ul li a:hover,
+                ul li a:focus {
+                    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                    -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                    -webkit-transform: scale(1.25);
+                    -moz-transform: scale(1.25);
+                    -o-transform: scale(1.25);
+                    position: relative;
+                    z-index: 5;
+                }
+                
+                ol {
+                    text-align: center;
+                }
+                
+                ol li {
+                    display: inline;
+                    padding-right: 1em;
+                }
+                
+                ol li a {
+                    color: #fff;
+                }
+            </style>
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        <script>
-            function testSweet() {
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    reverseButtons: true,
-                    showCancelButton: true,
-                    confirmButtonText: 'Confirm',
-                    confirmButtonColor: '#27AE60',
-                    cancelButtonColor: '#C0392B',
-                }).then((result) => {
 
-                    console.log(result)
 
-                    if (result.value) {
-                        Swal.fire(
-                            "",
-                            'You are confirm this order',
-                            'success'
-                        ).then(() => {
 
-                            //TODO: get sender id from user login
-                            const senderId = "123";
-                            const orderIdPath = window.location.pathname.split("/")
-                            const orderId = orderIdPath[2]
-                            console.log("Senddddd 1")
 
-                            fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
-                                .then((data) => {
-                                    console.log("Senddddd 2")
-                                    window.location.href = `/orderSender/${orderId}`;
-                                })
-                                .catch((err) => console.log('err ' + err))
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script>
+                function testSweet() {
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        reverseButtons: true,
+                        showCancelButton: true,
+                        confirmButtonText: 'Confirm',
+                        confirmButtonColor: '#27AE60',
+                        cancelButtonColor: '#C0392B',
+                    }).then((result) => {
 
-                            /*  const steps = Swal.mixin({
+                        console.log(result)
+
+                        if (result.value) {
+                            Swal.fire(
+                                "",
+                                'You are confirm this order',
+                                'success'
+                            ).then(() => {
+
+                                //TODO: get sender id from user login
+                                const senderId = "123";
+                                const orderIdPath = window.location.pathname.split("/")
+                                const orderId = orderIdPath[2]
+                                console.log("Senddddd 1")
+
+                                fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
+                                    .then((data) => {
+                                        console.log("Senddddd 2")
+                                        window.location.href = `/orderSender/${orderId}`;
+                                    })
+                                    .catch((err) => console.log('err ' + err))
+
+                                /*  const steps = Swal.mixin({
                                     confirmButtonText: 'Next &rarr;',
                                     showCancelButton: false,
                                     progressSteps: ['1', '2', '3', '4', '5'],
@@ -275,107 +330,14 @@
                                         })
                                     }
                                 })*/
-                        })
-                    } else {
-                        Swal.fire('', 'You are deny this order', 'error')
-                    }
-                })
+                            })
+                        } else {
+                            Swal.fire('', 'You are deny this order', 'error')
+                        }
+                    })
 
-            }
-        </script>
-
-
+                }
+            </script>
 </body>
-<style>
-    .font {
-        font-family: Kanit;
-    }
-    
-    .line {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        top: 2px;
-        background: #D8D8D8;
-        border: 1px solid rgba(151, 151, 151, 0.25);
-    }
-    
-    .line2 {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        top: 120px;
-        background: #D8D8D8;
-        border: 1px solid rgba(151, 151, 151, 0.25);
-    }
-    
-    .vector {
-        margin-top: 8px;
-        margin-left: 30px;
-        margin-bottom: 2px;
-        font-size: 30px;
-    }
-    
-    .title {
-        display: flex;
-        font-weight: 800;
-        font-size: 28px;
-        background: linear-gradient(#1D617A, #61C2A2);
-        /* -webkit-background-clip: text; */
-        -webkit-text-fill-color: transparent;
-        margin-top: 3px;
-        margin-left: 25px;
-        margin-bottom: 3px;
-    }
-    
-    .location {
-        font-size: medium;
-        display: flex;
-        width: max-content;
-        border: 1px solid gainsboro;
-        padding: 7px;
-        margin: 5px;
-        border-radius: 10px;
-        margin-left: 50%;
-    }
-    
-    .order {
-        display: flex;
-        margin: auto;
-        margin-top: 80px;
-        margin-bottom: 30px;
-        width: 70%;
-        height: auto;
-        border: 1px;
-        background-color: #E5E5E5;
-        border-radius: 20px;
-    }
-    
-    .confirm_Order {
-        display: flex;
-        margin: auto;
-        margin-top: auto;
-        background-image: linear-gradient(to right, #1D617A, #61C2A2);
-        border-radius: 20px;
-        width: fit-content;
-        box-shadow: 1px 1px 1px grey;
-    }
-    
-    .backbtn {
-        background-color: transparent;
-        border: none;
-        color: black;
-        padding: 16px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        size: 10px;
-    }
-</style>
-
 
 </html>

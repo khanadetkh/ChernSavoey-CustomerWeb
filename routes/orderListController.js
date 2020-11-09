@@ -1,12 +1,11 @@
-var express = require('express');
+const express = require('express');
 const { query } = require('express-validator');
 const db = require('../model/db');
-var router = express.Router();
+const router = express.Router();
 
 /* GET shops page. */
 
-
-router.get("/", async(req, res) => {
+router.get("/:orderId", async(req, res) => {
     const getOrder = await db
         .collection("cart")
         .orderBy("hour", "desc")
@@ -15,11 +14,6 @@ router.get("/", async(req, res) => {
             querySnapshot.forEach((cart) => orderArr.push({ orderId: cart.id, ...cart.data() }));
             return orderArr;
         });
-    console.log(getOrder);
-    res.render("orderList", { getOrder });
-});
-
-router.get("/:orderId", async(req, res) => {
     const orderId = req.params.orderId;
     const orderDetails = await db.collection("cart")
         .doc(orderId)
@@ -28,8 +22,11 @@ router.get("/:orderId", async(req, res) => {
     const orderList = orderDetails.detailOrder;
     console.log(orderId);
     console.log(orderList);
-    res.render("orderList", { orderList });
+    console.log(getOrder);
+    res.render("orderList", { getOrder, orderList, orderId });
 });
+
+
 
 
 
