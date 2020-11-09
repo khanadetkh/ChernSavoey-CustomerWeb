@@ -7,7 +7,7 @@ const socket = require('socket.io');
 const session = require('express-session');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passport = require('passport');
-
+const db = require('./model/db')
 const app = express();
 
 /*Filter Server and Require for Socket io*/
@@ -147,7 +147,6 @@ app.get('/logout', function(req, res) {
 });
 
 
-
 //socket.io
 app.get('/chat', (req, res) => {
     res.render('chat');
@@ -163,10 +162,14 @@ io.on("connection", socket => {
         socket.username = data.username
     })
 
-    // handle the new message event
-    socket.on("new_message", data => {
-        console.log("new messsage");
-        io.sockets.emit("receive_message", { message: data.message, username: socket.username })
+    // Order Id Channel
+    db.collection('cart').onSnapshot((snapshots) => {
+        snapshots.forEach((doc) => {
+            socket.on(doc.id, data => {
+                console.log(`Channel : ${doc.id} , ${data.message} - by ${socket.username}`)
+                socket.broadcast.emit(doc.id, { message: data.message, username: socket.username })
+            })
+        })
     })
 
     socket.on('typing', data => {

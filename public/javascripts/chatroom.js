@@ -1,13 +1,9 @@
-const { Timestamp } = require("mongodb");
-
 const socket = io.connect("http://localhost:8080");
-
+let username = document.querySelector('#username');
+let usernameBtn = document.querySelector('#usernameBtn');
+let curUsername = document.querySelector('.card-header');
 
 (function() {
-    let username = document.querySelector('#username');
-    let usernameBtn = document.querySelector('#usernameBtn');
-    let curUsername = document.querySelector('.card-header');
-
     usernameBtn.addEventListener('click', e => {
         console.log(username.value);
         socket.emit('change_username', { username: username.value })
@@ -18,20 +14,32 @@ const socket = io.connect("http://localhost:8080");
     let message = document.querySelector('#message');
     let messageBtn = document.querySelector('#messageBtn');
     let messageList = document.querySelector('#message-list');
+    const orderId = document.querySelector('#orderId').value;
 
     messageBtn.addEventListener('click', e => {
-        console.log(message.value)
-        socket.emit('new_message', { message: message.value })
+        console.log("On submit")
+
+        let listItem = document.createElement('li')
+        listItem.textContent = message.value;
+        listItem.classList.add('list-group-item');
+        listItem.style.textAlign = "right";
+        messageList.appendChild(listItem)
+
+        socket.emit(orderId, { message: message.value })
         message.value = ''
     })
     socket.on('connect', () => {
         console.log('successfully to server')
     })
 
-    socket.on('receive_message', data => {
-        console.log('from server ' + data)
+    socket.on(orderId, data => {
+        console.log(`on client from server ${orderId}  =>  ${data.message} - by ${data.username}`)
+
         let listItem = document.createElement('li')
         listItem.textContent = data.username + ": " + data.message;
+        if (data.username != username.value) {
+            listItem.style.textAlign = "left";
+        }
         listItem.classList.add('list-group-item');
         messageList.appendChild(listItem)
     })
@@ -47,21 +55,3 @@ const socket = io.connect("http://localhost:8080");
         setTimeout(() => { info.textContent = '' }, 5000)
     })
 })();
-
-function  sendMsg() {
-    const receiveId = '1';
-    const senderId = '2';
-    const message = document.getElementById("message").value;
-    console.log("message : " + message)
-    const orderId = "lxWWau90ExO2Xsijk71T";
-    const response = fetch(
-        `/orderList/${orderId}/chat`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ orderId, receiveId, senderId, message })
-        }
-    );
-
-}
