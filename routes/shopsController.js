@@ -5,8 +5,8 @@ const router = express.Router();
 
 /* GET shops page. */
 router.get("/",async (req, res) => {
-      const profile = sessionStorage.getItem('userProfile');
-      console.log("PROFILE======",profile);
+      
+      console.log("USER======",req.user);
       const getStore = await db
             .collection("store")
             .orderBy("storeName", "asc")

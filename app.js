@@ -5,7 +5,7 @@ const logger = require('morgan');
 const socket = require('socket.io');
 const session = require('express-session');
 const bodyParser = require('body-parser')
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const passport = require('passport');
 
 const app = express();
@@ -67,91 +67,17 @@ app.use(async function (err, req, res, next) {
     res.render("500error");
 });
 
-/* login */
 
-app.get("/" ,function (req, res) {
-    res.render("login");
-});
-
-let userProfile;
-
-app.get("/profile", (req, res) => {
-    res.render("profile", { user: userProfile });
-    console.log(userProfile);
-});
-app.get("/error", (req, res) => res.send("error logging in"));
-
-passport.serializeUser(function (user, cb) {
-    cb(null, user);
-});
-
-passport.deserializeUser(function (obj, cb) {
-    cb(null, obj);
-});
-
-/*  Google AUTH  */
-
-const GOOGLE_CLIENT_ID =
-    "208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
-const GOOGLE_CLIENT_SECRET = "clU0mrAKbXhmzPl2ONsu1S3q";
-
-passport.use(
-    new GoogleStrategy(
-        {
-            clientID: GOOGLE_CLIENT_ID,
-            clientSecret: GOOGLE_CLIENT_SECRET,
-            callbackURL: "http://localhost:8080/auth/google/callback",
-        },
-        function (accessToken, refreshToken, profile, done) {
-            // userProfile = profile;
-           
-            return done(null, userProfile);
-        }
-    )
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.get(
-    "/auth/google",
-    passport.authenticate("google", { scope: ["profile", "email"] })
-);
-
-app.get(
-    "/auth/google/callback",
-    passport.authenticate("google", { failureRedirect: "/" }),
-    function (req, res) {
-        // Successful authentication, redirect success.
-        console.log("Callback ---------------------------- ==> ", req.user)
-        req.session.profile = user
-        res.redirect("/shops");
-    }
-);
-
-//
-
-
-
-// route for logging out
-app.get("/logout", function (req, res) {
-    req.session.destroy(function (err) {
-        userProfile = null;
-        req.logout();
-        res.redirect("/");
-    });
-});
 
 //funtion middleware login
 function isLoggedIn(req, res, next) {
-    console.log("User-------------------------- ");
-    // const profile = sessionStorage.getItem('userProfile');
-    // if (req.session.profile && req.cookies.user_sid) {
+
+    if (req.session.profile && req.cookies.user_sid) {
         next();
-    // } else {
-    //     console.log('isNotLoggin')
-    //     res.redirect("/");
-    // }
+    } else {
+        console.log('isNotLoggin')
+        res.redirect("/");
+    }
 };
 
 //ดึง controller มาใช้
@@ -180,6 +106,77 @@ app.use("/chatSender", chatSenderRouter);
 app.use("/sender", homeSenderRouter);
 app.use("/updateStatus_Sender", updateStatusRouter);
 
+
+/* login */
+
+app.get("/" ,function (req, res) {
+    res.render("login");
+});
+
+let userProfile;
+
+app.get("/profile", (req, res) => {
+    res.render("profile", { user: req.user });
+    console.log(req.user);
+});
+app.get("/error", (req, res) => res.send("error logging in"));
+
+passport.serializeUser(function (user, cb) {
+    cb(null, user);
+});
+
+passport.deserializeUser(function (obj, cb) {
+    cb(null, obj);
+});
+
+/*  Google AUTH  */
+
+const GOOGLE_CLIENT_ID =
+    "208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
+const GOOGLE_CLIENT_SECRET = "clU0mrAKbXhmzPl2ONsu1S3q";
+
+passport.use(
+    new GoogleStrategy(
+        {
+            clientID: GOOGLE_CLIENT_ID,
+            clientSecret: GOOGLE_CLIENT_SECRET,
+            callbackURL: "http://localhost:8080/auth/google/callback",
+        },
+        function (accessToken, refreshToken, profile, done) {
+            return done(null, profile);
+        }
+    )
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+app.get("/auth/google/callback",passport.authenticate("google", { failureRedirect: "/" }),
+    function (req, res) {
+        // Successful authentication, redirect success.
+        console.log("Callback ---------------------------- ==> ", req.user)
+        req.session.profile = req.user;
+        res.redirect("/shops");
+    }
+);
+
+//
+
+
+
+// route for logging out
+app.get("/logout", function (req, res) {
+    req.session.destroy(function (err) {
+        userProfile = null;
+        req.logout();
+        res.redirect("/");
+    });
+});
 
 //socket.io
 app.get("/chat", (req, res) => {
