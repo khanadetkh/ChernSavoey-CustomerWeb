@@ -7,18 +7,13 @@ const session = require('express-session');
 const bodyParser = require('body-parser')
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const passport = require('passport');
-
+const db = require('./model/db')
 const app = express();
 
 //use bodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json({ limit: '50mb' }));
-// app.use(bodyParser.urlencoded({
-//     limit: '50mb',
-//     extended: true,
-//     parameterLimit: 50000
-// }));
+
 
 
 /*Filter Server and Require for Socket io*/
@@ -199,14 +194,15 @@ io.on("connection", (socket) => {
         socket.username = data.username;
     });
 
-    // handle the new message event
-    socket.on("new_message", (data) => {
-        console.log("new messsage");
-        io.sockets.emit("receive_message", {
-            message: data.message,
-            username: socket.username,
-        });
-    });
+    // Order Id Channel
+    db.collection('cart').onSnapshot((snapshots) => {
+        snapshots.forEach((doc) => {
+            socket.on(doc.id, data => {
+                console.log(`Channel : ${doc.id} , ${data.message} - by ${socket.username}`)
+                socket.broadcast.emit(doc.id, { message: data.message, username: socket.username })
+            })
+        })
+    })
 
     socket.on("typing", (data) => {
         socket.broadcast.emit("typing", { username: socket.username });

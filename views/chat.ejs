@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="message-box">
+            <div class="message-box message-box-box">
                 <ul class="list-group list-group-flush" id="message-list"></ul>
                 <div class="info"></div>
             </div>
@@ -58,9 +58,10 @@
         <ul class="messages"></ul>
         <div class="bottom_wrapper clearfix">
             <div class="message_input_wrapper">
+                <input type="hidden" id="orderId" value="<%= orderId %>">
                 <input type="text" class="message_input" id="message" placeholder="Type your message here...">
                 <div class="input-group-append">
-                    <button class="btn btn-success" type="button" id="messageBtn" onclick="sendMsg()">
+                    <button class="btn btn-success" type="button" id="messageBtn">
                             Send
                         </button>
                 </div>
@@ -77,6 +78,11 @@
     <script src="/javascripts/chatroom.js"></script>
 
     <style>
+        .message-box-box {
+            height: 300px;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
         /* width */
         
          ::-webkit-scrollbar {
