@@ -56,29 +56,50 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// error handler
-app.use(async function (err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get("env") === "development" ? err : {};
 
-    // render the error page
-    res.status(err.status || 500);
-    res.render("500error");
+
+/*  Google AUTH  */
+
+const GOOGLE_CLIENT_ID =
+    "208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
+const GOOGLE_CLIENT_SECRET = "clU0mrAKbXhmzPl2ONsu1S3q";
+
+passport.use(
+    new GoogleStrategy(
+        {
+            clientID: GOOGLE_CLIENT_ID,
+            clientSecret: GOOGLE_CLIENT_SECRET,
+            callbackURL: "http://localhost:8080/auth/google/callback",
+        },
+        function (accessToken, refreshToken, profile, done) {
+            return done(null, profile);
+        }
+    )
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(function (user, cb) {
+    cb(null, user);
 });
 
+passport.deserializeUser(function (obj, cb) {
+    cb(null, obj);
+});
 
+app.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
-//funtion middleware login
-function isLoggedIn(req, res, next) {
-
-    if (req.session.profile && req.cookies.user_sid) {
-        next();
-    } else {
-        console.log('isNotLoggin')
-        res.redirect("/");
+app.get("/auth/google/callback",passport.authenticate("google", { failureRedirect: "/" }),
+    function (req, res) {
+        // Successful authentication, redirect success.
+        console.log("Callback ---------------------------- ==> ", req.user)
+        req.session.profile = req.user;
+        res.redirect("/shops");
     }
-};
+);
 
 //ดึง controller มาใช้
 var shopsRouter = require("./routes/shopsController");
@@ -106,6 +127,30 @@ app.use("/chatSender", chatSenderRouter);
 app.use("/sender", homeSenderRouter);
 app.use("/updateStatus_Sender", updateStatusRouter);
 
+// error handler
+app.use(async function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get("env") === "development" ? err : {};
+
+    // render the error page
+    res.status(err.status || 500);
+    res.render("500error");
+});
+
+
+
+//funtion middleware login
+function isLoggedIn(req, res, next) {
+
+    if (req.session.profile && req.cookies.user_sid) {
+        next();
+    } else {
+        console.log('isNotLoggin')
+        res.redirect("/");
+    }
+};
+
 
 /* login */
 
@@ -116,54 +161,15 @@ app.get("/" ,function (req, res) {
 let userProfile;
 
 app.get("/profile", (req, res) => {
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>",req.user);
     res.render("profile", { user: req.user });
-    console.log(req.user);
+    
 });
 app.get("/error", (req, res) => res.send("error logging in"));
 
-passport.serializeUser(function (user, cb) {
-    cb(null, user);
-});
 
-passport.deserializeUser(function (obj, cb) {
-    cb(null, obj);
-});
 
-/*  Google AUTH  */
 
-const GOOGLE_CLIENT_ID =
-    "208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
-const GOOGLE_CLIENT_SECRET = "clU0mrAKbXhmzPl2ONsu1S3q";
-
-passport.use(
-    new GoogleStrategy(
-        {
-            clientID: GOOGLE_CLIENT_ID,
-            clientSecret: GOOGLE_CLIENT_SECRET,
-            callbackURL: "http://localhost:8080/auth/google/callback",
-        },
-        function (accessToken, refreshToken, profile, done) {
-            return done(null, profile);
-        }
-    )
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.get(
-    "/auth/google",
-    passport.authenticate("google", { scope: ["profile", "email"] })
-);
-
-app.get("/auth/google/callback",passport.authenticate("google", { failureRedirect: "/" }),
-    function (req, res) {
-        // Successful authentication, redirect success.
-        console.log("Callback ---------------------------- ==> ", req.user)
-        req.session.profile = req.user;
-        res.redirect("/shops");
-    }
-);
 
 //
 
