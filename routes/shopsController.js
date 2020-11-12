@@ -10,25 +10,25 @@ router.get("/cart", async function(req, res, next) {
 
 });
 
-router.post("/cart", async (req, res) => {
-	
-	const d = new Date();
-	const t = d.getTime();
-	const id = t - 300;
-	const data = {
-		order_id: id,
-		cus_name: req.body.name,
-		cus_phoneno: req.body.phoneno,
-		order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
-		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
-	
+router.post("/cart", async(req, res) => {
 
-	};
-	const orderRef = await firestore.collection("orders").add(data);
-	console.log('Set: ', orderRef);
-	res.redirect('/')
+    const d = new Date();
+    const t = d.getTime();
+    const id = t - 300;
+    const data = {
+        order_id: id,
+        cus_name: req.body.name,
+        cus_phoneno: req.body.phoneno,
+        order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
+        order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
 
-}); 
+
+    };
+    const orderRef = await firestore.collection("orders").add(data);
+    console.log('Set: ', orderRef);
+    res.redirect('/')
+
+});
 // menuFucntion
 router.get("/", async(req, res) => {
     const getStore = await db
@@ -81,6 +81,8 @@ router.get("/:storeId/:categoryId", async(req, res) => {
     const shopName = menuDetails.storeName;
     let menuList = menuDetails.menu;
     const categoriesList = menuDetails.categories;
+
+
     let categoriesFilter = [];
     if (categoryId) {
         categoriesFilter = menuDetails.categories.filter((item) => item.category == categoryId)

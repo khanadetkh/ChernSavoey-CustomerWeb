@@ -106,17 +106,19 @@ const chatSenderRouter = require("./routes/chatSenderController");
 const homeSenderRouter = require("./routes/homeSenderController");
 const updateStatusRouter = require("./routes/updateStatus_SenderController");
 const endpoints = require("./routes/endpoints.js");
+const myOrderSender = require("./routes/myOrderController");
 
 //กำหนดตัวแปรให้ controller
 app.use("/shops", isLoggedIn, shopsRouter);
-app.use("/orderList",isLoggedIn, orderListRouter);
-app.use("/inbox",isLoggedIn, inboxRouter);
-app.use("/chat",isLoggedIn, chatRouter);
-app.use("/orderSender",isLoggedIn, orderSenderRouter);
-app.use("/inboxSender",isLoggedIn, inboxSenderRouter);
-app.use("/chatSender",isLoggedIn, chatSenderRouter);
-app.use("/sender",isLoggedIn, homeSenderRouter);
-app.use("/updateStatus_Sender",isLoggedIn, updateStatusRouter);
+app.use("/orderList", isLoggedIn, orderListRouter);
+app.use("/inbox", isLoggedIn, inboxRouter);
+app.use("/chat", isLoggedIn, chatRouter);
+app.use("/orderSender", isLoggedIn, orderSenderRouter);
+app.use("/inboxSender", isLoggedIn, inboxSenderRouter);
+app.use("/chatSender", isLoggedIn, chatSenderRouter);
+app.use("/sender", isLoggedIn, homeSenderRouter);
+app.use("/updateStatus_Sender", isLoggedIn, updateStatusRouter);
+app.use("/myOrder", isLoggedIn, myOrderSender)
 app.use("/endpoints", endpoints);
 
 // error handler
@@ -161,8 +163,7 @@ app.get("/error", (req, res) => res.send("error logging in"));
 
 
 
-const GOOGLE_CLIENT_ID = '208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = 'clU0mrAKbXhmzPl2ONsu1S3q';
+
 
 passport.use(new GoogleStrategy({
         clientID: GOOGLE_CLIENT_ID,
