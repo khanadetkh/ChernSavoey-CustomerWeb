@@ -17,7 +17,7 @@
 
 <body>
   <%- include ("layout.ejs") %>
-  
+
   <div class="input-group" style="width: 90%; margin-left:5%; top: 20px;">
     <select class="custom-select" id="location" aria-label="select with button addon">
       <option selected>Delivery To...</option>
@@ -25,7 +25,8 @@
       <option value="2">N2 อาคารสำนักงานอธิการบดี (Office of The President Building.)</option>
       <option value="3">N3 อาคารภาควิชาเคมี (Department of Chemistry Building.)</option>
       <option value="4">N4 อาคารภาควิชาฟิสิกส์-คณิตศาสตร์ (Department of Physics-Mathematics Building)</option>
-      <option value="5">N5 อาคารศูนย์เครื่องมือวิทยาศาสตร์เพื่อมาตรฐานและอุตสาหกรรม (Scientific Instrument Center for Standards and Industry Building)</option>
+      <option value="5">N5 อาคารศูนย์เครื่องมือวิทยาศาสตร์เพื่อมาตรฐานและอุตสาหกรรม (Scientific Instrument Center for
+        Standards and Industry Building)</option>
       <option value="6">N6 อาคารภาควิชาจุลชีววิทยา (Department of Microbiology Building)</option>
       <option value="7">N7 อาคารปฏิบัติการพื้นฐานทางวิทยาศาสตร์ (Fundamental Science Labolatory Building)</option>
       <option value="8">N8 สถานีสูบน้ำ (Water Pump Station)</option>
@@ -38,101 +39,97 @@
       <option value="15">N15 อาคารเรียนและปฏิบัติการทางศิลปศาสตร์ (School of Liberal Arts Building)</option>
       <option value="16">N16 อาคารเรียนรู้พหุวิทยาการ (Learning Exchange Building)</option>
       <option value="17">N17 อาคารเรียนรวม 2 (classroom Building 2)</option>
-      <option value="18">N18 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 4 (Production Engineering Labolatory Building 4)</option>
-      <option value="19">N19 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 5 (Production Engineering Labolatory Building 5)</option>
+      <option value="18">N18 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 4 (Production Engineering Labolatory Building 4)
+      </option>
+      <option value="19">N19 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 5 (Production Engineering Labolatory Building 5)
+      </option>
       <option value="20">N20 อาคารเรียนรวม 1 (classroom Building 1)</option>
 
       <option value="21">S1 อาคารวิศวกรรมเครื่องกล 4 (Mechanical Engineering Building 4)</option>
       <option value="22">S2 อาคารจอดรถ (Car Park Building 4)</option>
-      <option value="23">S3 อาคารสถาบันนวัตกรรมการเรียนรู้เฉลิมพระเกียรติ 80 พรรษา มูลนิธิไทยคม (Innovation Learning Institute of 80 Year Commemoration of King Rama IX)</option>
+      <option value="23">S3 อาคารสถาบันนวัตกรรมการเรียนรู้เฉลิมพระเกียรติ 80 พรรษา มูลนิธิไทยคม (Innovation Learning
+        Institute of 80 Year Commemoration of King Rama IX)</option>
       <option value="24">S4 อาคารวิศววัฒนะ (Engineering Building : Wissawa Wattana Building)</option>
       <option value="25">S5 บ้านธรรมรักษา 2 (Dhammaraksa Residence Hall 2 : Male Dormitory)</option>
       <option value="26">S6 บ้านธรรมรักษา 1 (Dhammaraksa Residence Hall 1 : Female Dormitory)</option>
       <option value="27">S7 อาคารพัฒนาเด็กเล็ก มจธ. (KMUTT Child Development Building)</option>
       <option value="28">S8 อาคารโรงประลองเทคโนโลยีและวัสดุ (Technology and Materials Workshop Building)</option>
-      <option value="29">S9 อาคารเรียนและปฏิบัติการคณะพลังงานสิ่งแวดล้อมและวัสดุ (School of Energy Environment and Materials Building)</option>
+      <option value="29">S9 อาคารเรียนและปฏิบัติการคณะพลังงานสิ่งแวดล้อมและวัสดุ (School of Energy Environment and
+        Materials Building)</option>
       <option value="30">S10 อาคารกรีน โซไซตี้ มจธ. (KMUTT Green Society Building)</option>
       <option value="31">S11 อาคารเรียนรวม 5 (Classroom Building 5)</option>
       <option value="32">S12 อาคารเรียนรวม 4 (Classroom Building 4)</option>
       <option value="33">S13 อาคารเรียนรวม 3 (Classroom Building 3)</option>
-      <option value="34">S14 อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (King Mongkut’s 190th Anniversary Memorial Building)</option>
+      <option value="34">S14 อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (King Mongkut’s 190th Anniversary Memorial Building)
+      </option>
       <option value="35">S15 อาคารภาควิชาวิศวกรรมเคมี (Department of Chemical Engineering Building)</option>
     </select>
   </div>
 
   <div class="form-group">
-    <label style="margin-left:5%; margin-top: 35px;">Note to sender</label> 
-    <input type="text" class="form-control"  style="font-size: smaller; margin-left:5%;"id="noteToSender" placeholder="e.g. Floor, Meet me at the lobby">
+    <label style="margin-left:5%; margin-top: 35px;">Note to sender</label>
+    <input type="text" class="form-control" style="font-size: smaller; margin-left:5%;" id="noteToSender"
+      placeholder="e.g. Floor, Meet me at the lobby">
   </div>
 
-<<<<<<< Updated upstream
 
 
-  
+
   <button type="submit" onclick="submitToCart()" class="btn btn-info center">Confirm Order</button>
 
-=======
->>>>>>> Stashed changes
-  <p id ="hid-location"></p>
-  <p id ="hid-noteToSender"></p>
-  
- <!--เก็บค่า location & noteToCenter-->
+  <p id="hid-location"></p>
+  <p id="hid-noteToSender"></p>
+
+  <!--เก็บค่า location & noteToCenter-->
   <input type="hidden" id="hid-noteToSender">
   <input type="hidden" id="hid-location">
-
+  -----------------------------------------------------------------------------
   <!-- table of cart -->
-<div class="container mb-4">
-  <div class="row">
-      <div class="col-12">
-          <div class="table-responsive">
-            <form action="/shops/cart" method="POST">
-              <div id="details">
-              
-            
-              <section class="container content-section">
-                <h2 class="section-header">YOUR CART</h2>
-                
-                <div class="cart-row">
-                  <span class="cart-item cart-header cart-column">ITEM</span>
-                  <span class="cart-item cart-header cart-column">HOTEL</span>
-                  <span class="cart-price cart-header cart-column">PRICE</span>
-                  <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-                </div>
-          
-                <div class="cart-items"></div>
-                  
-                <div class="cart-total">
-                  <strong class="cart-total-title">Total</strong>
-                  <span class="cart-total-price"></span>
-                </div>
-                <button class="btn btn-primary btn-purchase" type="submit">PLACE ORDER</button>
-              </section>
-            </form>
-          </div>
-      </div>
-      <div class="col mb-9">
-          <div class="row">
-              <div class="col-sm-6 col-md-2 text-right ">
-                  <button class="btn btn-lg btn-block btn-success text-uppercase float-right" type="submit" onclick="submitToCart()">Checkout</button>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+  <div class="container">
+    <h2 id="title" class="section-header">PERSONAL DETAILS</h2>
+    <div id="details">
+      <p>NAME <br class="d-block d-sm-none"><input type="text" id="name" name="name"></p>
+      <p>PHONE NO.<br class="d-block d-sm-none"><input type="tel" id="phoneno" name="phoneno"></p>
+
+      <section class="container content-section">
+        <h2 class="section-header">YOUR CART</h2>
+
+        <div class="cart-row">
+          <span class="cart-item cart-header cart-column">pic</span>
+          <span class="cart-item cart-header cart-column">menu</span>
+          <span class="cart-price cart-header cart-column">PRICE</span>
+          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+
+        <div class="cart-items"></div>
+
+        <div class="cart-total">
+          <strong class="cart-ServiceCharge-title">Delivery Fee: </strong>
+          <span class="cart-ServiceCharge-price">฿10</span>
+
+        </div>
+
+        <div class="cart-total">
+          <strong class="cart-total-title">Total:</strong>
+          <span class="cart-total-price"></span>
+        </div>
+
+        <input value="PLACE ORDER" class="btn btn-primary btn-purchase" type="button" onclick="onPlace_Order()">
+      </section>
+    </div>
+    <script src="/javascripts/checkout.js"></script>
 </body>
 
-<script src="/javascripts/cart.js"></script>
+
 <script>
   function submitToCart() {
     var location = document.getElementById("location");
     var noteToSender = document.getElementById("noteToSender").value;
     var locationText = location.options[location.selectedIndex].text;
 
-    document.getElementById("hid-location").innerHTML= locationText; 
-    document.getElementById("hid-noteToSender").innerHTML= noteToSender;
+    document.getElementById("hid-location").innerHTML = locationText;
+    document.getElementById("hid-noteToSender").innerHTML = noteToSender;
   }
-  </script>
-
-<!-- <script src="./routes/cartController"></script> -->
+</script>
 
 </html>

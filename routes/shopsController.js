@@ -1,9 +1,35 @@
 const express = require('express');
 const db = require('../model/db');
 const router = express.Router();
-// const passport = require("passport");
+
 
 /* GET shops page. */
+
+router.get("/cart", async function(req, res, next) {
+    res.render("cart");
+
+});
+
+router.post("/cart", async (req, res) => {
+	
+	const d = new Date();
+	const t = d.getTime();
+	const id = t - 300;
+	const data = {
+		order_id: id,
+		cus_name: req.body.name,
+		cus_phoneno: req.body.phoneno,
+		order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
+		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
+	
+
+	};
+	const orderRef = await firestore.collection("orders").add(data);
+	console.log('Set: ', orderRef);
+	res.redirect('/')
+
+}); 
+// menuFucntion
 router.get("/", async(req, res) => {
     const getStore = await db
         .collection("store")
@@ -16,7 +42,6 @@ router.get("/", async(req, res) => {
     console.log(getStore);
     res.render("shop", { getStore });
 });
-// menuFucntion
 router.get("/:storeId", async(req, res) => {
     const storeId = req.params.storeId;
     const categoryId = req.params.categoryId;
@@ -70,103 +95,6 @@ router.get("/:storeId/:categoryId", async(req, res) => {
 
     res.render("menu", { storeId, shopName, menuList, categoriesList, categoriesFilter, });
 });
-
-
-//add menus to cart
-//add menus to cart (database)
-router.get("/:storeId/cart/:menuId", async function(req, res, next) {
-    const storeId = req.params.storeId;
-    const menuId = req.params.menuId;
-    const d = new Date();
-    const t = d.getTime();
-
-    console.log(storeId);
-    console.log(menuId);
-    const menuDetails = await db.collection("store")
-        .doc(storeId)
-        .get()
-        .then((querySnapshot) => querySnapshot.data());
-    const shopName = menuDetails.storeName;
-    let cartList = menuDetails.menu;
-    if (menuId) {
-        cartList = cartList.filter((item) => item.menuId == menuId);
-    }
-    console.log(storeId);
-    console.log(shopName);
-    console.log(cartList);
-
-    db.collection("cart").add({
-            store: shopName,
-            detailOrder: cartList,
-            userDate: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
-            hour: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
-            userYear: d.getFullYear(),
-
-
-        })
-        .then(function(db) {
-            console.log("Document written with ID: ", db.id);
-        })
-        .catch(function(error) {
-            console.error("Error adding document: ", error);
-        });
-    res.redirect("/shops/" + storeId)
-
-});
-
-
-
-router.get("/cart", async function(req, res, next) {
-    res.redirect("/cart")
-
-});
-
-router.post
-(	
-	"/cart",
-	async (req, res) =>
-	{
-            /*
-            dishArr
-            
-            */ 
-            
-            
-            const dishArr = req.body.dishes;
-
-		const details = [];
-		for(let i = 0; i < dishArr.length; i++)
-		{
-			const dishId = dishArr[i];
-			
-			let dishDetails = await firestore
-				.collection("dishes")
-				.doc(dishId)
-				.get()
-				.then((querySnapshot) => querySnapshot.data());
-
-			const rest_id = dishDetails.rest_id;
-
-			dishDetails = {
-				id: dishId,
-				name: dishDetails.name,
-				price: dishDetails.price
-			};
-			
-			let restDetails = await firestore
-				.collection("restaurants")
-				.doc(rest_id)
-				.get()
-				.then((querySnapshot) => querySnapshot.data());
-
-			restDetails = { name: restDetails.name };
-
-			details.push({ dishDetails, restDetails });
-		}
-
-		res.status(200).send({ "cart": details });
-	}
-);
 
 
 

@@ -31,7 +31,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        expires: 600000
+        expires: 600000000
     }
 }));
 
@@ -96,30 +96,28 @@ app.get("/auth/google/callback", passport.authenticate("google", { failureRedire
 );
 
 //ดึง controller มาใช้
-var shopsRouter = require("./routes/shopsController");
-var orderListRouter = require("./routes/orderListController");
-var inboxRouter = require("./routes/inboxController");
-var chatRouter = require("./routes/chatController");
-var editProfileRouter = require("./routes/editProfileController");
-var cartRouter = require("./routes/cartController");
-var orderSenderRouter = require("./routes/orderSenderController");
-var inboxSenderRouter = require("./routes/inboxSenderController");
-var chatSenderRouter = require("./routes/chatSenderController");
-var homeSenderRouter = require("./routes/homeSenderController");
-var updateStatusRouter = require("./routes/updateStatus_SenderController");
+const shopsRouter = require("./routes/shopsController");
+const orderListRouter = require("./routes/orderListController");
+const inboxRouter = require("./routes/inboxController");
+const chatRouter = require("./routes/chatController");
+const orderSenderRouter = require("./routes/orderSenderController");
+const inboxSenderRouter = require("./routes/inboxSenderController");
+const chatSenderRouter = require("./routes/chatSenderController");
+const homeSenderRouter = require("./routes/homeSenderController");
+const updateStatusRouter = require("./routes/updateStatus_SenderController");
+const endpoints = require("./routes/endpoints.js");
 
 //กำหนดตัวแปรให้ controller
 app.use("/shops", isLoggedIn, shopsRouter);
-app.use("/orderList", orderListRouter);
-app.use("/inbox", inboxRouter);
-app.use("/chat", chatRouter);
-app.use("/editProfile", editProfileRouter);
-app.use("/cart", cartRouter);
-app.use("/orderSender", orderSenderRouter);
-app.use("/inboxSender", inboxSenderRouter);
-app.use("/chatSender", chatSenderRouter);
-app.use("/sender", homeSenderRouter);
-app.use("/updateStatus_Sender", updateStatusRouter);
+app.use("/orderList",isLoggedIn, orderListRouter);
+app.use("/inbox",isLoggedIn, inboxRouter);
+app.use("/chat",isLoggedIn, chatRouter);
+app.use("/orderSender",isLoggedIn, orderSenderRouter);
+app.use("/inboxSender",isLoggedIn, inboxSenderRouter);
+app.use("/chatSender",isLoggedIn, chatSenderRouter);
+app.use("/sender",isLoggedIn, homeSenderRouter);
+app.use("/updateStatus_Sender",isLoggedIn, updateStatusRouter);
+app.use("/endpoints", endpoints);
 
 // error handler
 app.use(async function(err, req, res, next) {
