@@ -120,6 +120,7 @@ passport.use(new GoogleStrategy({
     },
     function(accessToken, refreshToken, profile, done) {
         userProfile = profile;
+
         return done(null, userProfile);
     },
     function(accessToken, refreshToken, profile, done) {
