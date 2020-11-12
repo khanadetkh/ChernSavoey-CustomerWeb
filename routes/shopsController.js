@@ -1,7 +1,7 @@
-var express = require('express');
+const express = require('express');
 const db = require('../model/db');
-
-var router = express.Router();
+const router = express.Router();
+// const passport = require("passport");
 
 /* GET shops page. */
 router.get("/", async(req, res) => {
@@ -71,6 +71,8 @@ router.get("/:storeId/:categoryId", async(req, res) => {
     res.render("menu", { storeId, shopName, menuList, categoriesList, categoriesFilter, });
 });
 
+
+//add menus to cart
 //add menus to cart (database)
 router.get("/:storeId/cart/:menuId", async function(req, res, next) {
     const storeId = req.params.storeId;
@@ -118,6 +120,55 @@ router.get("/cart", async function(req, res, next) {
     res.redirect("/cart")
 
 });
+
+router.post
+(	
+	"/cart",
+	async (req, res) =>
+	{
+            /*
+            dishArr
+            
+            */ 
+            
+            
+            const dishArr = req.body.dishes;
+
+		const details = [];
+		for(let i = 0; i < dishArr.length; i++)
+		{
+			const dishId = dishArr[i];
+			
+			let dishDetails = await firestore
+				.collection("dishes")
+				.doc(dishId)
+				.get()
+				.then((querySnapshot) => querySnapshot.data());
+
+			const rest_id = dishDetails.rest_id;
+
+			dishDetails = {
+				id: dishId,
+				name: dishDetails.name,
+				price: dishDetails.price
+			};
+			
+			let restDetails = await firestore
+				.collection("restaurants")
+				.doc(rest_id)
+				.get()
+				.then((querySnapshot) => querySnapshot.data());
+
+			restDetails = { name: restDetails.name };
+
+			details.push({ dishDetails, restDetails });
+		}
+
+		res.status(200).send({ "cart": details });
+	}
+);
+
+
 
 
 module.exports = router;
