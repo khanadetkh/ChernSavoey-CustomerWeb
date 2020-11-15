@@ -102,15 +102,20 @@ function updateTotalPrice() {
 
 	for (let i = 0; i < menuRows.length; i++) {
 		totalPrice +=
-		menuRows[i].dataset.menuPrice * menuRows[i].querySelector(".cart-quantity-input").value;
+			menuRows[i].dataset.menuPrice * menuRows[i].querySelector(".cart-quantity-input").value;
 		totalPriceandService = totalPrice + serviceCharge;
 	}
 	cartTotalPrice.innerText = "฿" + totalPriceandService;
 }
 
 async function onPlace_Order() {
-	const cus_name = document.getElementById("name").value;
+	const cus_note = document.getElementById("noteToSender").value;
 	const cus_phoneno = document.getElementById("phoneno").value;
+	const location = document.getElementById("location");
+	const locationText = location.options[location.selectedIndex].text;
+
+
+	document.getElementById("hid-location").innerHTML = locationText;
 
 	//menuArr
 	let restMenu = [];
@@ -121,12 +126,13 @@ async function onPlace_Order() {
 			price: menuRows[i].dataset.menuPrice,
 			qty: menuRows[i].querySelector(".cart-quantity-input").value || 1,
 			totalPrice:
-				menuRows[i].dataset.menuPrice *menuRows[i].querySelector(".cart-quantity-input").value,
+				menuRows[i].dataset.menuPrice * menuRows[i].querySelector(".cart-quantity-input").value,
 		});
 	}
 
+	console.log("Location  ", locationText);
 	console.log("restMenu  ", restMenu);
-	console.log("cus name  ", cus_name);
+	console.log("cus_note  ", cus_note);
 	console.log("phoneNo  ", cus_phoneno);
 
 	const response = await fetch(
@@ -137,18 +143,9 @@ async function onPlace_Order() {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ restMenu, cus_name, cus_phoneno }),
+			body: JSON.stringify({ restMenu, cus_note, cus_phoneno, locationText }),
 		}
 	);
 
 	console.log("response :", response);
 }
-
-function submitToCart() {
-    const location = document.getElementById("location");
-    const noteToSender = document.getElementById("noteToSender").value;
-    const locationText = location.options[location.selectedIndex].text;
-
-    document.getElementById("hid-location").innerHTML = locationText;
-    document.getElementById("hid-noteToSender").innerHTML = noteToSender;
-  }

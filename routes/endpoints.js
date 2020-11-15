@@ -30,8 +30,11 @@ router.post("/:storeId/order", async (req, res) => {
 	const restMenuArr = req.body.restMenu;
 	console.log(restMenuArr);
 
-	const cus_name = req.body.cus_name;
-	console.log(cus_name);
+	const cus_note = req.body.cus_note;
+	console.log(cus_note);
+
+	const location = req.body.locationText;
+	console.log(location);
 
 	const cus_phoneno = req.body.cus_phoneno;
 	console.log(cus_phoneno);
@@ -41,7 +44,8 @@ router.post("/:storeId/order", async (req, res) => {
 	const id = t - 300;
 	const data = {
 		order_id: id,
-		cus_name: cus_name,
+		note: cus_note,
+		Location: location,
 		cus_phoneno: cus_phoneno,
 		order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
 		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
