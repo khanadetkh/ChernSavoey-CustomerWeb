@@ -60,13 +60,12 @@ const GOOGLE_CLIENT_ID =
 const GOOGLE_CLIENT_SECRET = "clU0mrAKbXhmzPl2ONsu1S3q";
 
 passport.use(
-    new GoogleStrategy(
-        {
+    new GoogleStrategy({
             clientID: GOOGLE_CLIENT_ID,
             clientSecret: GOOGLE_CLIENT_SECRET,
             callbackURL: "http://localhost:8080/auth/google/callback",
         },
-        function (accessToken, refreshToken, profile, done) {
+        function(accessToken, refreshToken, profile, done) {
             return done(null, profile);
         }
     )
@@ -74,11 +73,11 @@ passport.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.serializeUser(function (user, cb) {
+passport.serializeUser(function(user, cb) {
     cb(null, user);
 });
 
-passport.deserializeUser(function (obj, cb) {
+passport.deserializeUser(function(obj, cb) {
     cb(null, obj);
 });
 
@@ -87,8 +86,8 @@ app.get(
     passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-app.get("/auth/google/callback",passport.authenticate("google", { failureRedirect: "/" }),
-    function (req, res) {
+app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/" }),
+    function(req, res) {
         // Successful authentication, redirect success.
         console.log("Callback ---------------------------- ==> ", req.user)
         req.session.profile = req.user;
@@ -107,21 +106,23 @@ const chatSenderRouter = require("./routes/chatSenderController");
 const homeSenderRouter = require("./routes/homeSenderController");
 const updateStatusRouter = require("./routes/updateStatus_SenderController");
 const endpoints = require("./routes/endpoints.js");
+const myOrderSender = require("./routes/myOrderController");
 
 //กำหนดตัวแปรให้ controller
 app.use("/shops", isLoggedIn, shopsRouter);
-app.use("/orderList",isLoggedIn, orderListRouter);
-app.use("/inbox",isLoggedIn, inboxRouter);
-app.use("/chat",isLoggedIn, chatRouter);
-app.use("/orderSender",isLoggedIn, orderSenderRouter);
-app.use("/inboxSender",isLoggedIn, inboxSenderRouter);
-app.use("/chatSender",isLoggedIn, chatSenderRouter);
-app.use("/sender",isLoggedIn, homeSenderRouter);
-app.use("/updateStatus_Sender",isLoggedIn, updateStatusRouter);
+app.use("/orderList", isLoggedIn, orderListRouter);
+app.use("/inbox", isLoggedIn, inboxRouter);
+app.use("/chat", isLoggedIn, chatRouter);
+app.use("/orderSender", isLoggedIn, orderSenderRouter);
+app.use("/inboxSender", isLoggedIn, inboxSenderRouter);
+app.use("/chatSender", isLoggedIn, chatSenderRouter);
+app.use("/sender", isLoggedIn, homeSenderRouter);
+app.use("/updateStatus_Sender", isLoggedIn, updateStatusRouter);
+app.use("/myOrder", isLoggedIn, myOrderSender)
 app.use("/endpoints", endpoints);
 
 // error handler
-app.use(async function (err, req, res, next) {
+app.use(async function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -147,16 +148,16 @@ function isLoggedIn(req, res, next) {
 
 /* login */
 
-app.get("/" ,function (req, res) {
+app.get("/", function(req, res) {
     res.render("login");
 });
 
 let userProfile;
 
 app.get("/profile", (req, res) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>",req.user);
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", req.user);
     res.render("profile", { user: req.user });
-    
+
 });
 app.get("/error", (req, res) => res.send("error logging in"));
 
@@ -164,13 +165,31 @@ app.get("/error", (req, res) => res.send("error logging in"));
 
 
 
+passport.use(new GoogleStrategy({
+        clientID: GOOGLE_CLIENT_ID,
+        clientSecret: GOOGLE_CLIENT_SECRET,
+        callbackURL: "http://localhost:8080/auth/google/callback"
+
+    },
+    function(accessToken, refreshToken, profile, done) {
+        userProfile = profile;
+
+        return done(null, userProfile);
+    },
+    function(accessToken, refreshToken, profile, done) {
+        userProfile = profile;
+        return done(null, userProfile);
+    }
+));
+
+
 //
 
 
 
 // route for logging out
-app.get("/logout", function (req, res) {
-    req.session.destroy(function (err) {
+app.get("/logout", function(req, res) {
+    req.session.destroy(function(err) {
         userProfile = null;
         req.logout();
         res.redirect("/");

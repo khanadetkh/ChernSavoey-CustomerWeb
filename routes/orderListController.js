@@ -5,6 +5,13 @@ const router = express.Router();
 
 /* GET shops page. */
 
+// เก็บ UserId
+router.get('/myOreder', async function(req, res, next) {
+
+    res.render('orderList');
+});
+
+
 router.post('/:orderId/chat', async function(req, res, next) {
     const orderId = req.params.orderId;
     const receiveId = req.body.receiveId; //ผู้รับข้อความ
@@ -39,12 +46,16 @@ router.post('/:orderId/chat', async function(req, res, next) {
     return res.status(200);
 });
 
+
 router.get('/:orderId/chat', async function(req, res, next) {
     const orderId = req.params.orderId;
     res.render('chat', { orderId });
 });
 
+
+
 router.get("/:orderId", async(req, res) => {
+
     const getOrder = await db
         .collection("cart")
         .orderBy("hour", "desc")
@@ -58,11 +69,22 @@ router.get("/:orderId", async(req, res) => {
         .doc(orderId)
         .get()
         .then((querySnapshot) => querySnapshot.data());
-    const orderList = orderDetails.detailOrder;
+    const orderList = orderDetails;
     console.log(orderId);
     console.log(orderList);
     console.log(getOrder);
-    res.render("orderList", { getOrder, orderList, orderId });
+
+    // statusfliter
+    let statusFilter = [];
+
+    // statusFilter = orderDetails.status.filter((item) => item.status)
+    orderList = orderList.filter((item) => item.status == "accepted");
+
+
+
+    res.render("orderList", { getOrder, orderList, orderId, statusFilter });
 });
+
+
 
 module.exports = router;
