@@ -1,7 +1,5 @@
 const express = require('express');
 const db = require('../model/db');
-
-
 const router = express.Router();
 
 
@@ -17,7 +15,8 @@ router.post("/:storeId/menuDetails", async (req, res) => {
 		.doc(storeId)
 		.get()
 		.then((querySnapshot) => querySnapshot.data());
-	const menuDetails = restDetail.menu.filter(menu => menuIdArr.indexOf(menu.id) > -1);
+	const menuDetails = restDetail.menu.filter(menu => menuIdArr.includes(menu.menuId));
+	console.log("----------------------*",menuDetails);
 	res.status(200).send({ "menuDetails": menuDetails });
 
 

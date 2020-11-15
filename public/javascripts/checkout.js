@@ -143,3 +143,12 @@ async function onPlace_Order() {
 
 	console.log("response :", response);
 }
+
+function submitToCart() {
+    const location = document.getElementById("location");
+    const noteToSender = document.getElementById("noteToSender").value;
+    const locationText = location.options[location.selectedIndex].text;
+
+    document.getElementById("hid-location").innerHTML = locationText;
+    document.getElementById("hid-noteToSender").innerHTML = noteToSender;
+  }
