@@ -5,6 +5,29 @@ const router = express.Router();
 
 /* GET shops page. */
 
+router.post('/:orderId/chat', async function(req, res, next) {
+    const orderId = req.params.orderId;
+    const receiveId = req.body.receiveId; //ผู้รับข้อความ
+    const senderId = req.body.senderId; //ผู้ส่งข้อความ
+    const message = req.body.message;
+    const d = new Date();
+
+
+    console.log(req.body);
+
+    const chatRef = db.collection('chat').doc(orderId).set({
+        receiveId: receiveId,
+        senderId: senderId,
+        message: message,
+        day: d
+
+    });
+
+
+
+    return res.status(200);
+});
+
 router.get("/:orderId", async(req, res) => {
     const getOrder = await db
         .collection("cart")
@@ -25,6 +48,8 @@ router.get("/:orderId", async(req, res) => {
     console.log(getOrder);
     res.render("orderList", { getOrder, orderList, orderId });
 });
+
+
 
 
 
