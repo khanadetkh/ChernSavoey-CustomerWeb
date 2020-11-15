@@ -12,20 +12,36 @@ router.post('/:orderId/chat', async function(req, res, next) {
     const message = req.body.message;
     const d = new Date();
 
-
+    const ref = db.collection('chat').doc(orderId)
     console.log(req.body);
 
-    const chatRef = db.collection('chat').doc(orderId).set({
-        receiveId: receiveId,
-        senderId: senderId,
-        message: message,
-        day: d
+    const chatRef = await ref.get().then((snapshot) => snapshot.data())
 
-    });
+    if (!chatRef.messages) {
+        await ref.set({
+            messages: []
+        })
+    }
+    let newChat = []
+    newChat = [...chatRef.messages, {
+        receiveId,
+        senderId,
+        message,
+        day: d,
+    }]
 
+    console.log("New Chat ", newChat)
 
+    await ref.update({
+        messages: newChat
+    })
 
     return res.status(200);
+});
+
+router.get('/:orderId/chat', async function(req, res, next) {
+    const orderId = req.params.orderId;
+    res.render('chat', { orderId });
 });
 
 router.get("/:orderId", async(req, res) => {
@@ -48,11 +64,5 @@ router.get("/:orderId", async(req, res) => {
     console.log(getOrder);
     res.render("orderList", { getOrder, orderList, orderId });
 });
-
-
-
-
-
-
 
 module.exports = router;
