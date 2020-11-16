@@ -39,9 +39,9 @@ function makeRow(obj) {
 		"data-menu-price": obj.price,
 	});
 
-	createElement("span.cart-item-title.cart-column", rowDiv, {
-		innerText: obj.menuName,
-	});
+	// createElement("img.cart-item-title.cart-column", rowDiv, {
+	// 	innerText: obj.menuImg,
+	// });
 
 	createElement("span.cart-item-title.cart-column", rowDiv, {
 		innerText: obj.menuName,
