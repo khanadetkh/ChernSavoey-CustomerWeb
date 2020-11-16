@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-
     <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
         type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -132,6 +131,14 @@
     </ul>
     </div>
 
+    <script type="text/javascript">
+        const currSessionStorage = sessionStorage.getItem("fo_menus");
+
+        if (!currSessionStorage) {
+            // handle if no order
+            window.location = "/myOrder/no-order"
+        }
+    </script>
 
     <style>
         .cart-text {

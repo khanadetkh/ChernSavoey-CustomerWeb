@@ -6,9 +6,16 @@ const router = express.Router();
 /* GET shops page. */
 
 // เก็บ UserId
-router.get('/myOreder', async function(req, res, next) {
+router.get('/', async function(req, res, next) {
 
     res.render('orderList');
+
+});
+
+router.get('/no-order', async function(req, res, next) {
+
+    res.render('noOrder');
+
 });
 
 
