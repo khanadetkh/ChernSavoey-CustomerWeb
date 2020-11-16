@@ -74,15 +74,15 @@ router.get("/:orderId", async(req, res) => {
     console.log(orderList);
     console.log(getOrder);
 
-    // statusfliter
-    let statusFilter = [];
+    // // statusfliter
+    // let statusFilter = [];
 
-    // statusFilter = orderDetails.status.filter((item) => item.status)
-    orderList = orderList.filter((item) => item.status == "accepted");
+    // // statusFilter = orderDetails.status.filter((item) => item.status)
+    // orderList = orderList.filter((item) => item.status == "accepted");
 
 
 
-    res.render("orderList", { getOrder, orderList, orderId, statusFilter });
+    res.render("orderList", { getOrder, orderList, orderId});
 });
 
 
