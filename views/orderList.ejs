@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
-        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
@@ -15,240 +14,282 @@
 <body>
     <%- include ("layout.ejs") %>
 
-    <% getOrder.forEach((order) => { %>
-    <div class="d-flex justify-content-center">
-        <ul>
-            <li>
-                <a>
-                    <h2>Menu</h2>
-                    <h2 style="color: rgb(68, 68, 75);">Store : <%= order.store%></h2>
+        <% getOrder.forEach((order) => { %>
+            <div class="d-flex justify-content-center">
+                <ul>
+                    <li>
+                        <a>
+                            <h2>Menu</h2>
+                            <h2 style="color: rgb(68, 68, 75);">Store :
+                                <%= order.store%>
+                            </h2>
 
-                    <!-- table head -->
-                    <table style="font-family: Kanit; color: dimgrey;">
-                        <tr>
-                            <td><div style="margin-left: 50px;">Menu</div></td>
-                            <td><div style="margin-left: 60px;">Quantity</div></td>
-                            <td><div style="margin-left: 35px;">Price</div></td>
-                        </tr>
-                    </table>
-
-
-                 
-                    <h5 class="card-title" style="font-size: 17px; display: inline;"> </h5>
-
-                        <div class="menu" style="font-size:17px; text-align: center; display: inline;">
-                            <h3 class="card-text" style="display: inline;">
-                                <div style="margin-left: 25%; display: inline;">
-
-                                </div>
-                                <div style="margin-left: 25%; display: inline;">
-
-                                </div>
-
-                            </h3>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <table style="font-family: Kanit;">
-                            <tr>
-                                <td style="color: dimgrey;">Delivery Fee</td>
-                                <td style="color: dimgrey;"><div style="margin-left: 140px;">10</div></td>
-                            </tr>
-                            <tr>
-                                <td><div style="margin-left: 80px;">Total :</div></td>
-                                <td><div style="margin-left: 70px;">... Baht</div></td>
-                            </tr>
-                        </table>
-
-                        <br>
-
-                        <div style="text-align: center;">
-
-                        </div>
+                            <!-- table head -->
+                            <table style="font-family: Kanit; color: dimgrey;">
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 50px;">Menu</div>
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 60px;">Quantity</div>
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 35px;">Price</div>
+                                    </td>
+                                </tr>
+                            </table>
 
 
 
-                        <!-- <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button> -->
+                            <h5 class="card-title" style="font-size: 17px; display: inline;"> </h5>
+
+                            <div class="menu" style="font-size:17px; text-align: center; display: inline;">
+                                <h3 class="card-text" style="display: inline;">
+                                    <div style="margin-left: 25%; display: inline;">
+
+                                    </div>
+                                    <div style="margin-left: 25%; display: inline;">
+
+                                    </div>
+
+                                </h3>
+                            </div>
+
+                            <br>
+                            <br>
+
+                            <table style="font-family: Kanit;">
+                                <tr>
+                                    <td style="color: dimgrey;">Delivery Fee</td>
+                                    <td style="color: dimgrey;">
+                                        <div style="margin-left: 140px;">10</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 80px;">Total :</div>
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 70px;">... Baht</div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <br>
+
+                            <div style="text-align: center;">
+
+                            </div>
+
+
+
+                            <!-- <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button> -->
                     </li>
                 </ul>
-             
-    </div>
 
-    <% }); %>
+            </div>
 
 
+            <br>
+            <br>
+
+            <div class="swal2-header">
+                <ul class="swal2-progress-steps" style="display: flex;">
+                    <li class="swal2-progress-step swal2-active-progress-step">1</li>
+                    <li class="swal2-progress-step-line"></li>
+                    <li class="swal2-progress-step">2</li>
+                    <li class="swal2-progress-step-line"></li>
+                    <li class="swal2-progress-step">3</li>
+                    <li class="swal2-progress-step-line"></li>
+                    <li class="swal2-progress-step">4</li>
+                    <li class="swal2-progress-step-line"></li>
+                    <li class="swal2-progress-step">5</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center;">
+                Status :
+                <%= order.status%>
+            </div>
+            <% }); %>
 
 
 
-    <script type="text/javascript">
-        const currSessionStorage = sessionStorage.getItem("fo_menus");
+                <script type="text/javascript">
+                    const currSessionStorage = sessionStorage.getItem("fo_menus");
 
-        if (!currSessionStorage) {
-            // handle if no order
-            window.location = "/myOrder/no-order"
-        }
-    </script>
+                    if (!currSessionStorage) {
+                        // handle if no order
+                        window.location = "/myOrder/no-order"
+                    }
+                </script>
 
-    <style>
-        .cart-text {
-            font-size: 20px;
-        }
-
-        h2,
-        h3 {
-            font-size: 100%;
-            font-weight: normal;
-            text-align: center;
-            font-family: Kanit;
-        }
-
-        ul,
-        li {
-            list-style: none;
-        }
-
-        /* ul {
+                <style>
+                    .swal2-progress-steps .swal2-progress-step-line {
+                        z-index: 10;
+                        flex-shrink: 0;
+                        width: 2.5em;
+                        height: .4em;
+                        margin: 0 -20px;
+                        background: #2778c4;
+                    }
+                    
+                    .cart-text {
+                        font-size: 20px;
+                    }
+                    
+                    h2,
+                    h3 {
+                        font-size: 100%;
+                        font-weight: normal;
+                        text-align: center;
+                        font-family: Kanit;
+                    }
+                    
+                    ul,
+                    li {
+                        list-style: none;
+                    }
+                    /* ul {
                 overflow: hidden;
                 padding: 3em;
             } */
-
-        p {
-            font-family: Kanit;
-        }
-
-        ul li a {
-            text-decoration: none;
-            background: rgb(233, 233, 166);
-            display: block;
-            height: 300px;
-            width: 320px;
-            padding: 1em;
-            margin-top: 30px;
-            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-            -moz-transition: -moz-transform .15s linear;
-            -o-transition: -o-transform .15s linear;
-            -webkit-transition: -webkit-transform .15s linear;
-        }
-
-        ul li {
-            margin: 1em;
-            float: left;
-        }
-
-        ul li h2 {
-            font-size: 140%;
-            font-weight: bold;
-            padding-bottom: 10px;
-        }
-
-        ul li p {
-            font-family: "Reenie Beanie", arial, sans-serif;
-            font-size: 180%;
-        }
-
-        ul li a {
-            -webkit-transform: rotate(-6deg);
-            -o-transform: rotate(-6deg);
-            -moz-transform: rotate(-6deg);
-        }
-
-        ul li:nth-child(even) a {
-            -o-transform: rotate(4deg);
-            -webkit-transform: rotate(4deg);
-            -moz-transform: rotate(4deg);
-            position: relative;
-            top: 5px;
-            background: #cfc;
-        }
-
-        ul li:nth-child(3n) a {
-            -o-transform: rotate(-3deg);
-            -webkit-transform: rotate(-3deg);
-            -moz-transform: rotate(-3deg);
-            position: relative;
-            top: -5px;
-            background: #ccf;
-        }
-
-        ul li:nth-child(5n) a {
-            -o-transform: rotate(5deg);
-            -webkit-transform: rotate(5deg);
-            -moz-transform: rotate(5deg);
-            position: relative;
-            top: -10px;
-        }
-
-        ul li a:hover,
-        ul li a:focus {
-            box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-            -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-            -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-            -webkit-transform: scale(1.25);
-            -moz-transform: scale(1.25);
-            -o-transform: scale(1.25);
-            position: relative;
-            z-index: 5;
-        }
-
-        ol {
-            text-align: center;
-        }
-
-        ol li {
-            display: inline;
-            padding-right: 1em;
-        }
-
-        ol li a {
-            color: #fff;
-        }
-    </style>
-
-
+                    
+                    p {
+                        font-family: Kanit;
+                    }
+                    
+                    ul li a {
+                        text-decoration: none;
+                        background: rgb(233, 233, 166);
+                        display: block;
+                        height: 300px;
+                        width: 320px;
+                        padding: 1em;
+                        margin-top: 30px;
+                        box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+                        -moz-transition: -moz-transform .15s linear;
+                        -o-transition: -o-transform .15s linear;
+                        -webkit-transition: -webkit-transform .15s linear;
+                    }
+                    
+                    ul li {
+                        margin: 1em;
+                        float: left;
+                    }
+                    
+                    ul li h2 {
+                        font-size: 140%;
+                        font-weight: bold;
+                        padding-bottom: 10px;
+                    }
+                    
+                    ul li p {
+                        font-family: "Reenie Beanie", arial, sans-serif;
+                        font-size: 180%;
+                    }
+                    
+                    ul li a {
+                        -webkit-transform: rotate(-6deg);
+                        -o-transform: rotate(-6deg);
+                        -moz-transform: rotate(-6deg);
+                    }
+                    
+                    ul li:nth-child(even) a {
+                        -o-transform: rotate(4deg);
+                        -webkit-transform: rotate(4deg);
+                        -moz-transform: rotate(4deg);
+                        position: relative;
+                        top: 5px;
+                        background: #cfc;
+                    }
+                    
+                    ul li:nth-child(3n) a {
+                        -o-transform: rotate(-3deg);
+                        -webkit-transform: rotate(-3deg);
+                        -moz-transform: rotate(-3deg);
+                        position: relative;
+                        top: -5px;
+                        background: #ccf;
+                    }
+                    
+                    ul li:nth-child(5n) a {
+                        -o-transform: rotate(5deg);
+                        -webkit-transform: rotate(5deg);
+                        -moz-transform: rotate(5deg);
+                        position: relative;
+                        top: -10px;
+                    }
+                    
+                    ul li a:hover,
+                    ul li a:focus {
+                        box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                        -webkit-transform: scale(1.25);
+                        -moz-transform: scale(1.25);
+                        -o-transform: scale(1.25);
+                        position: relative;
+                        z-index: 5;
+                    }
+                    
+                    ol {
+                        text-align: center;
+                    }
+                    
+                    ol li {
+                        display: inline;
+                        padding-right: 1em;
+                    }
+                    
+                    ol li a {
+                        color: #fff;
+                    }
+                </style>
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
-        function testSweet() {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                reverseButtons: true,
-                showCancelButton: true,
-                confirmButtonText: 'Confirm',
-                confirmButtonColor: '#27AE60',
-                cancelButtonColor: '#C0392B',
-            }).then((result) => {
 
-                console.log(result)
 
-                if (result.value) {
-                    Swal.fire(
-                        "",
-                        'You are confirm this order',
-                        'success'
-                    ).then(() => {
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                <script>
+                    function testSweet() {
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this!",
+                            icon: "warning",
+                            reverseButtons: true,
+                            showCancelButton: true,
+                            confirmButtonText: 'Confirm',
+                            confirmButtonColor: '#27AE60',
+                            cancelButtonColor: '#C0392B',
+                        }).then((result) => {
 
-                        //TODO: get sender id from user login
-                        const senderId = "123";
-                        const orderIdPath = window.location.pathname.split("/")
-                        const orderId = orderIdPath[2]
-                        console.log("Senddddd 1")
+                            console.log(result)
 
-                        fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
-                            .then((data) => {
-                                console.log("Senddddd 2")
-                                window.location.href = `/orderSender/${orderId}`;
-                            })
-                            .catch((err) => console.log('err ' + err))
+                            if (result.value) {
+                                Swal.fire(
+                                    "",
+                                    'You are confirm this order',
+                                    'success'
+                                ).then(() => {
 
-                        /*  const steps = Swal.mixin({
+                                    //TODO: get sender id from user login
+                                    const senderId = "123";
+                                    const orderIdPath = window.location.pathname.split("/")
+                                    const orderId = orderIdPath[2]
+                                    console.log("Senddddd 1")
+
+                                    fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
+                                        .then((data) => {
+                                            console.log("Senddddd 2")
+                                            window.location.href = `/orderSender/${orderId}`;
+                                        })
+                                        .catch((err) => console.log('err ' + err))
+
+                                    /*  const steps = Swal.mixin({
                     confirmButtonText: 'Next &rarr;',
                     showCancelButton: false,
                     progressSteps: ['1', '2', '3', '4', '5'],
@@ -294,14 +335,14 @@
                         })
                     }
                 })*/
-                    })
-                } else {
-                    Swal.fire('', 'You are deny this order', 'error')
-                }
-            })
+                                })
+                            } else {
+                                Swal.fire('', 'You are deny this order', 'error')
+                            }
+                        })
 
-        }
-    </script>
+                    }
+                </script>
 </body>
 
 </html>
