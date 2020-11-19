@@ -121,6 +121,11 @@ app.use("/updateStatus_Sender", isLoggedIn, updateStatusRouter);
 app.use("/myOrder", isLoggedIn, myOrder); //ฝั่งคนสั่ง for customer
 app.use("/endpoints", endpoints);
 
+// login shop
+const loginShop = require("./routes/loginShopController");
+app.use("/loginShop", loginShop);
+
+
 // error handler
 app.use(async function(err, req, res, next) {
     // set locals, only providing error in development
