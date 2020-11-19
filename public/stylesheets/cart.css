@@ -697,3 +697,15 @@ h2 {
   height: 670px;
   opacity: 0.6;
 }
+.custom-select{
+  width: 90%;
+  margin: auto;
+  top: 20px;
+}
+
+.detail{
+  width: 90%; 
+  margin-left:5%; 
+  margin-top: 40px;
+}
+

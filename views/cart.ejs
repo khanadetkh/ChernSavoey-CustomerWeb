@@ -25,8 +25,7 @@
 
 
     <div class="input-group">
-      <select class="custom-select" id="location" aria-label="select with button addon"
-        style="width: 90%; margin-left:5%; top: 20px;">
+      <select class="custom-select" id="location" aria-label="select with button addon">
         <option selected>Delivery To...</option>
         <option value="1">N1 อาคารศูนย์ต้อนรับ (Welcome Center Building.)</option>
         <option value="2">N2 อาคารสำนักงานอธิการบดี (Office of The President Building.)</option>
@@ -74,7 +73,7 @@
       <input type="hidden" id="hid-location">
       <p id="hid-location"></p>
     </div>
-    <div id="details" style="width: 90%; margin-left:5%; margin-top: 40px;">
+    <div id="details" class="detail">
 
 
       <h6>PHONE NO.</h6> <input type="tel" class="form-control" id="phoneno" name="phoneno" placeholder="024709850">
@@ -113,19 +112,6 @@
   </div>
   <script defer src="/javascripts/checkout.js"></script>
 
-  <div id="overlay">
-    <div class="spinner"></div>
-  </div>
-  
 </body>
-
-
-<script>
-  var overlay = document.getElementById("overlay");
-
-  window.addEventListener('load', function () {
-    overlay.style.display = 'none';
-  })
-</script>
 
 </html>
