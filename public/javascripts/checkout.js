@@ -148,4 +148,10 @@ async function onPlace_Order() {
 	);
 
 	console.log("response :", response);
+
+	Swal.fire(
+		'Order Confirm',
+		'Your order confirm.',
+		'success'
+	)
 }
