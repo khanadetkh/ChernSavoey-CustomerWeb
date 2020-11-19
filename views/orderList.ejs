@@ -21,9 +21,9 @@
                     <li>
                         <a>
                             <h2>Menu</h2>
-                            <h2 style="color: rgb(68, 68, 75);">Store :
+                            <div class="storeName">Store :
                                 <%= order.store%>
-                            </h2>
+                            </div>
 
                             <!-- table head -->
                             <table style="font-family: Kanit; color: dimgrey;">
@@ -74,10 +74,22 @@
                                     <td>
                                         <div style="margin-left: 70px;">... Baht</div>
                                     </td>
+
                                 </tr>
                             </table>
-
                             <br>
+                            <table style="font-family: Kanit;">
+                                <tr>
+                                    <td>
+                                        <div>Delivery to :</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>Description :</div>
+                                    </td>
+                                </tr>
+                            </table>
 
                             <div style="text-align: center;">
 
@@ -86,11 +98,7 @@
                 </ul>
 
             </div>
-
-
             <br>
-
-
             <div class="swal2-header">
                 <ul class="swal2-progress-steps" style="display: flex;">
                     <li class="swal2-progress-step <%= order.status == 'arrived' && 'swal2-active-progress-step' %>">1</li>
@@ -114,14 +122,23 @@
 
 
             <% }); %>
+                <table class="d-flex justify-content-center">
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-center">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/imgfood%2Frefresh.png?alt=media&token=83e4c139-4797-41b4-8a56-59b3e834779b" class="refresh" onclick="location.reload()" style="width: 55px; height: 55px;">
+                            </div>
+                        </td>
+                        <td>
+                            <div style="font-family: kanit; font-size: small; color: dimgrey; text-align: center; margin-left: 10px;">
+                                Please click the button <br> for refresh the page.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-                <div class="d-flex justify-content-center">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/imgfood%2Frefresh.png?alt=media&token=83e4c139-4797-41b4-8a56-59b3e834779b" class="refresh" onclick="location.reload()" style="width: 55px; height: 55px;">
-                </div>
 
-                <div style="font-family: kanit; font-size: small; color: dimgrey; text-align: center;">
-                    Please click the button <br> for refresh the page.
-                </div>
+
 
 
 
@@ -142,6 +159,14 @@
                         height: .4em;
                         margin: 0 -20px;
                         background: #2778c4;
+                    }
+                    
+                    .storeName {
+                        font-family: kanit;
+                        color: rgb(68, 68, 75);
+                        font-size: 20px;
+                        font-family: kanit;
+                        text-align: center;
                     }
                     
                     .cart-text {
