@@ -64,11 +64,14 @@ router.get("/:orderId", async(req, res) => {
             querySnapshot.forEach((cart) => orderArr.push({ orderId: cart.id, ...cart.data() }));
             return orderArr;
         });
+
     const orderId = req.params.orderId;
+
     const orderDetails = await db.collection("cart")
         .doc(orderId)
         .get()
         .then((querySnapshot) => querySnapshot.data());
+        
     const orderList = orderDetails;
     console.log(orderId);
     console.log(orderList);
