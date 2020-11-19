@@ -4,7 +4,31 @@ const db = require('../model/db');
 var router = express.Router();
 
 router.get('/:orderId', async function(req, res, next) {
-    res.render('orderSender');
+    console.log("------------" + req.params.orderId);
+    const getOrder = await db
+        .collection("cart")
+        .orderBy("hour", "desc")
+        .get().then((querySnapshot) => {
+            let orderArr = [];
+            querySnapshot.forEach((cart) => orderArr.push({ orderId: cart.id, ...cart.data() }));
+            return orderArr;
+        });
+    console.log("------------" + getOrder.length);
+
+    const orderId = req.params.orderId;
+
+    const orderDetails = await db.collection("cart")
+        .doc(orderId)
+        .get()
+        .then((querySnapshot) => querySnapshot.data());
+
+    const orderList = orderDetails;
+    console.log(orderId);
+    console.log(orderList);
+    console.log(getOrder);
+
+    res.render("orderSender", { getOrder, orderList, orderId });
+
 });
 
 router.get('/order/update/:orderId/:senderId/:status', async function(req, res) {
