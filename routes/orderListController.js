@@ -71,7 +71,7 @@ router.get("/:orderId", async(req, res) => {
         .doc(orderId)
         .get()
         .then((querySnapshot) => querySnapshot.data());
-        
+
     const orderList = orderDetails;
     console.log(orderId);
     console.log(orderList);
@@ -85,7 +85,7 @@ router.get("/:orderId", async(req, res) => {
 
 
 
-    res.render("orderList", { getOrder, orderList, orderId});
+    res.render("orderList", { getOrder, orderList, orderId });
 });
 
 

@@ -9,6 +9,7 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
 
+
 </head>
 
 <body>
@@ -92,28 +93,34 @@
 
 
             <br>
-            <br>
+
 
             <div class="swal2-header">
                 <ul class="swal2-progress-steps" style="display: flex;">
-                    <li class="swal2-progress-step swal2-active-progress-step">1</li>
+                    <li class="swal2-progress-step <%= order.status == 'arrived' && 'swal2-active-progress-step' %>">1</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step">2</li>
+                    <li class="swal2-progress-step <%= order.status == 'placed' && 'swal2-active-progress-step' %>">2</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step">3</li>
+                    <li class="swal2-progress-step <%= order.status == 'collected' && 'swal2-active-progress-step' %>">3</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step">4</li>
+                    <li class="swal2-progress-step <%= order.status == 'shipping' && 'swal2-active-progress-step' %>">4</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step">5</li>
+                    <li class="swal2-progress-step <%= order.status == 'success' && 'swal2-active-progress-step' %>">5</li>
                 </ul>
             </div>
 
-            <div style="text-align: center;">
+            <div style="text-align: center; font-family: kanit; font-size:20px">
                 Status :
                 <%= order.status%>
             </div>
 
             <% }); %>
+
+                <br>
+
+                <div class="d-flex justify-content-center">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/imgfood%2Frefresh.png?alt=media&token=83e4c139-4797-41b4-8a56-59b3e834779b" class="refresh" onclick="location.reload()" style="width: 55px; height: 55px;">
+                </div>
 
 
 
