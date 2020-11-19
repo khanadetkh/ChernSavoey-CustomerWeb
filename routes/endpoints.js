@@ -43,13 +43,15 @@ router.post("/:storeId/order", async (req, res) => {
 	const t = d.getTime();
 	const id = t - 300;
 	const data = {
-		order_id: id,
+		order_id: id, 
 		note: cus_note,
 		Location: location,
 		cus_phoneno: cus_phoneno,
 		order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
 		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
-		order_detail: restMenuArr
+		order_detail: restMenuArr,
+		userId: "mockup_ID",
+		status: "accepted"
 		// totalPrice: totalPrice
 	};
 	console.log(data);
