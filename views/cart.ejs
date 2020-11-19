@@ -18,102 +18,114 @@
 <body>
   <%- include ("layout.ejs") %>
 
-  
+
 
   <!-- table of cart -->
   <div class="container">
-   
 
-      <div class="input-group">
-        <select class="custom-select" id="location" aria-label="select with button addon" style="width: 90%; margin-left:5%; top: 20px;">
-          <option selected>Delivery To...</option>
-          <option value="1">N1 อาคารศูนย์ต้อนรับ (Welcome Center Building.)</option>
-          <option value="2">N2 อาคารสำนักงานอธิการบดี (Office of The President Building.)</option>
-          <option value="3">N3 อาคารภาควิชาเคมี (Department of Chemistry Building.)</option>
-          <option value="4">N4 อาคารภาควิชาฟิสิกส์-คณิตศาสตร์ (Department of Physics-Mathematics Building)</option>
-          <option value="5">N5 อาคารศูนย์เครื่องมือวิทยาศาสตร์เพื่อมาตรฐานและอุตสาหกรรม (Scientific Instrument Center for
-            Standards and Industry Building)</option>
-          <option value="6">N6 อาคารภาควิชาจุลชีววิทยา (Department of Microbiology Building)</option>
-          <option value="7">N7 อาคารปฏิบัติการพื้นฐานทางวิทยาศาสตร์ (Fundamental Science Labolatory Building)</option>
-          <option value="8">N8 สถานีสูบน้ำ (Water Pump Station)</option>
-          <option value="9">N9 อาคารสถาบันวิทยาการหุ่นยนต์ภาคสนาม (Institute of Field Robotics Building)</option>
-          <option value="10">N10 อาคารสำนักหอสมุด (KMUTT Library Building)</option>
-          <option value="11">N11 อาคารคณะเทคโนโลยีสารสนเทศ (School of Infomation Technology Building)</option>
-          <option value="12">N12 อาคารอเนกประสงค์ (Utility Exchange Building)</option>
-          <option value="13">N13 อาคารเวิร์คช็อป แอนด์กรีนเฮ้าส์ (Workshop & Green House Building)</option>
-          <option value="14">N14 อาคารไฟฟ้าแรงสูง (Hi-Voltage Building)</option>
-          <option value="15">N15 อาคารเรียนและปฏิบัติการทางศิลปศาสตร์ (School of Liberal Arts Building)</option>
-          <option value="16">N16 อาคารเรียนรู้พหุวิทยาการ (Learning Exchange Building)</option>
-          <option value="17">N17 อาคารเรียนรวม 2 (classroom Building 2)</option>
-          <option value="18">N18 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 4 (Production Engineering Labolatory Building 4)
-          </option>
-          <option value="19">N19 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 5 (Production Engineering Labolatory Building 5)
-          </option>
-          <option value="20">N20 อาคารเรียนรวม 1 (classroom Building 1)</option>
-    
-          <option value="21">S1 อาคารวิศวกรรมเครื่องกล 4 (Mechanical Engineering Building 4)</option>
-          <option value="22">S2 อาคารจอดรถ (Car Park Building 4)</option>
-          <option value="23">S3 อาคารสถาบันนวัตกรรมการเรียนรู้เฉลิมพระเกียรติ 80 พรรษา มูลนิธิไทยคม (Innovation Learning
-            Institute of 80 Year Commemoration of King Rama IX)</option>
-          <option value="24">S4 อาคารวิศววัฒนะ (Engineering Building : Wissawa Wattana Building)</option>
-          <option value="25">S5 บ้านธรรมรักษา 2 (Dhammaraksa Residence Hall 2 : Male Dormitory)</option>
-          <option value="26">S6 บ้านธรรมรักษา 1 (Dhammaraksa Residence Hall 1 : Female Dormitory)</option>
-          <option value="27">S7 อาคารพัฒนาเด็กเล็ก มจธ. (KMUTT Child Development Building)</option>
-          <option value="28">S8 อาคารโรงประลองเทคโนโลยีและวัสดุ (Technology and Materials Workshop Building)</option>
-          <option value="29">S9 อาคารเรียนและปฏิบัติการคณะพลังงานสิ่งแวดล้อมและวัสดุ (School of Energy Environment and
-            Materials Building)</option>
-          <option value="30">S10 อาคารกรีน โซไซตี้ มจธ. (KMUTT Green Society Building)</option>
-          <option value="31">S11 อาคารเรียนรวม 5 (Classroom Building 5)</option>
-          <option value="32">S12 อาคารเรียนรวม 4 (Classroom Building 4)</option>
-          <option value="33">S13 อาคารเรียนรวม 3 (Classroom Building 3)</option>
-          <option value="34">S14 อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (King Mongkut’s 190th Anniversary Memorial Building)
-          </option>
-          <option value="35">S15 อาคารภาควิชาวิศวกรรมเคมี (Department of Chemical Engineering Building)</option>
-        </select>
-        <input type="hidden" id="hid-location">
-        <p id="hid-location"></p>
-      </div>
-        <div id="details" style="width: 90%; margin-left:5%; margin-top: 40px;">
-         
-          
-          <h5>PHONE NO.</h5> <input type="tel" class="form-control" id="phoneno" name="phoneno" placeholder="024709850">
-          <h5>Note To Sender</h5> <input type="text" class="form-control" id="noteToSender" name="noteToSender" placeholder="e.g. Floor, Meet me at the lobby">
-         
-        </div>
-     
-   
-      <section class="container content-section">
-        <!-- <h2 class="section-header">YOUR CART</h2> -->
 
-        <div class="cart-row">
-   
-          <span class="cart-item cart-header cart-column">menu</span>
-          <span class="cart-price cart-header cart-column">PRICE</span>
-          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-        </div>
+    <div class="input-group">
+      <select class="custom-select" id="location" aria-label="select with button addon"
+        style="width: 90%; margin-left:5%; top: 20px;">
+        <option selected>Delivery To...</option>
+        <option value="1">N1 อาคารศูนย์ต้อนรับ (Welcome Center Building.)</option>
+        <option value="2">N2 อาคารสำนักงานอธิการบดี (Office of The President Building.)</option>
+        <option value="3">N3 อาคารภาควิชาเคมี (Department of Chemistry Building.)</option>
+        <option value="4">N4 อาคารภาควิชาฟิสิกส์-คณิตศาสตร์ (Department of Physics-Mathematics Building)</option>
+        <option value="5">N5 อาคารศูนย์เครื่องมือวิทยาศาสตร์เพื่อมาตรฐานและอุตสาหกรรม (Scientific Instrument Center for
+          Standards and Industry Building)</option>
+        <option value="6">N6 อาคารภาควิชาจุลชีววิทยา (Department of Microbiology Building)</option>
+        <option value="7">N7 อาคารปฏิบัติการพื้นฐานทางวิทยาศาสตร์ (Fundamental Science Labolatory Building)</option>
+        <option value="8">N8 สถานีสูบน้ำ (Water Pump Station)</option>
+        <option value="9">N9 อาคารสถาบันวิทยาการหุ่นยนต์ภาคสนาม (Institute of Field Robotics Building)</option>
+        <option value="10">N10 อาคารสำนักหอสมุด (KMUTT Library Building)</option>
+        <option value="11">N11 อาคารคณะเทคโนโลยีสารสนเทศ (School of Infomation Technology Building)</option>
+        <option value="12">N12 อาคารอเนกประสงค์ (Utility Exchange Building)</option>
+        <option value="13">N13 อาคารเวิร์คช็อป แอนด์กรีนเฮ้าส์ (Workshop & Green House Building)</option>
+        <option value="14">N14 อาคารไฟฟ้าแรงสูง (Hi-Voltage Building)</option>
+        <option value="15">N15 อาคารเรียนและปฏิบัติการทางศิลปศาสตร์ (School of Liberal Arts Building)</option>
+        <option value="16">N16 อาคารเรียนรู้พหุวิทยาการ (Learning Exchange Building)</option>
+        <option value="17">N17 อาคารเรียนรวม 2 (classroom Building 2)</option>
+        <option value="18">N18 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 4 (Production Engineering Labolatory Building 4)
+        </option>
+        <option value="19">N19 อาคารปฏิบัติการทางวิศวกรรมอุตสาหการ 5 (Production Engineering Labolatory Building 5)
+        </option>
+        <option value="20">N20 อาคารเรียนรวม 1 (classroom Building 1)</option>
 
-        <div class="cart-items"></div>
-
-        <div class="cart-total">
-          <strong class="cart-ServiceCharge-title">Delivery Fee: </strong>
-          <span class="cart-ServiceCharge-price">฿10</span>
-
-        </div>
-
-        <div class="cart-total">
-          <strong class="cart-total-title">Total:</strong>
-          <span class="cart-total-price"></span>
-        </div>
-
-        <input value="PLACE ORDER" class="btn btn-primary btn-purchase" type="button" onclick="onPlace_Order()">
-      </section>
+        <option value="21">S1 อาคารวิศวกรรมเครื่องกล 4 (Mechanical Engineering Building 4)</option>
+        <option value="22">S2 อาคารจอดรถ (Car Park Building 4)</option>
+        <option value="23">S3 อาคารสถาบันนวัตกรรมการเรียนรู้เฉลิมพระเกียรติ 80 พรรษา มูลนิธิไทยคม (Innovation Learning
+          Institute of 80 Year Commemoration of King Rama IX)</option>
+        <option value="24">S4 อาคารวิศววัฒนะ (Engineering Building : Wissawa Wattana Building)</option>
+        <option value="25">S5 บ้านธรรมรักษา 2 (Dhammaraksa Residence Hall 2 : Male Dormitory)</option>
+        <option value="26">S6 บ้านธรรมรักษา 1 (Dhammaraksa Residence Hall 1 : Female Dormitory)</option>
+        <option value="27">S7 อาคารพัฒนาเด็กเล็ก มจธ. (KMUTT Child Development Building)</option>
+        <option value="28">S8 อาคารโรงประลองเทคโนโลยีและวัสดุ (Technology and Materials Workshop Building)</option>
+        <option value="29">S9 อาคารเรียนและปฏิบัติการคณะพลังงานสิ่งแวดล้อมและวัสดุ (School of Energy Environment and
+          Materials Building)</option>
+        <option value="30">S10 อาคารกรีน โซไซตี้ มจธ. (KMUTT Green Society Building)</option>
+        <option value="31">S11 อาคารเรียนรวม 5 (Classroom Building 5)</option>
+        <option value="32">S12 อาคารเรียนรวม 4 (Classroom Building 4)</option>
+        <option value="33">S13 อาคารเรียนรวม 3 (Classroom Building 3)</option>
+        <option value="34">S14 อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (King Mongkut’s 190th Anniversary Memorial Building)
+        </option>
+        <option value="35">S15 อาคารภาควิชาวิศวกรรมเคมี (Department of Chemical Engineering Building)</option>
+      </select>
+      <input type="hidden" id="hid-location">
+      <p id="hid-location"></p>
     </div>
-    <script defer src="/javascripts/checkout.js"></script>
+    <div id="details" style="width: 90%; margin-left:5%; margin-top: 40px;">
+
+
+      <h6>PHONE NO.</h6> <input type="tel" class="form-control" id="phoneno" name="phoneno" placeholder="024709850">
+      <br />
+      <h6>Note To Sender</h6> <input type="text" class="form-control" id="noteToSender" name="noteToSender"
+        placeholder="e.g. Floor, Meet me at the lobby"> <br />
+
+    </div>
+
+
+    <section class="container content-section">
+      <!-- <h2 class="section-header">YOUR CART</h2> -->
+
+      <div class="cart-row">
+
+        <span class="cart-item cart-header cart-column">menu</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+      </div>
+
+      <div class="cart-items"></div>
+
+      <div class="cart-total">
+        <strong class="cart-ServiceCharge-title">Delivery Fee: </strong>
+        <span class="cart-ServiceCharge-price">฿10</span>
+
+      </div>
+
+      <div class="cart-total">
+        <strong class="cart-total-title">Total:</strong>
+        <span class="cart-total-price"></span>
+      </div>
+
+      <input value="PLACE ORDER" class="btn btn-primary btn-purchase" type="button" onclick="onPlace_Order()">
+    </section>
+  </div>
+  <script defer src="/javascripts/checkout.js"></script>
+
+  <div id="overlay">
+    <div class="spinner"></div>
+  </div>
+  
 </body>
 
 
 <script>
+  var overlay = document.getElementById("overlay");
 
+  window.addEventListener('load', function () {
+    overlay.style.display = 'none';
+  })
 </script>
 
 </html>
