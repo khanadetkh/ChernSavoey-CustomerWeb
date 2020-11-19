@@ -122,10 +122,11 @@ async function onPlace_Order() {
 
 	for (let i = 0; i < menuRows.length; i++) {
 		restMenu.push({
-			id: menuRows[i].dataset.menuId,
+			menuId: menuRows[i].dataset.menuId,
+			menuName: menuRows[i].dataset.menuName,
 			price: menuRows[i].dataset.menuPrice,
 			qty: menuRows[i].querySelector(".cart-quantity-input").value || 1,
-			totalPrice:
+			price:
 				menuRows[i].dataset.menuPrice * menuRows[i].querySelector(".cart-quantity-input").value,
 		});
 	}
