@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-// const firestoreService = require('firestore-export-import');
+const firestoreService = require('firestore-export-import');
 const serviceAccount = require('./it60-42-choen-savoey-59a3efed1682.json');
 
 // const appName = '[DEFAULT]';

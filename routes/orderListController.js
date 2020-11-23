@@ -74,7 +74,7 @@ router.get("/:orderId", async(req, res) => {
 
     const orderList = orderDetails;
     console.log(orderId);
-    console.log(orderList);
+    console.log("=====> ",orderList);
     console.log(getOrder);
 
     res.render("orderList", { getOrder, orderList, orderId });
