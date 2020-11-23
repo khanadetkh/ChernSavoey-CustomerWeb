@@ -104,7 +104,6 @@ const orderSenderRouter = require("./routes/orderSenderController");
 const inboxSenderRouter = require("./routes/inboxSenderController");
 const chatSenderRouter = require("./routes/chatSenderController");
 const homeSenderRouter = require("./routes/homeSenderController");
-const updateStatusRouter = require("./routes/updateStatus_SenderController");
 const endpoints = require("./routes/endpoints.js");
 const myOrder = require("./routes/myOrderController");
 
@@ -117,7 +116,6 @@ app.use("/orderSender", isLoggedIn, orderSenderRouter);
 app.use("/inboxSender", isLoggedIn, inboxSenderRouter);
 app.use("/chatSender", isLoggedIn, chatSenderRouter);
 app.use("/sender", isLoggedIn, homeSenderRouter);
-app.use("/updateStatus_Sender", isLoggedIn, updateStatusRouter);
 app.use("/myOrder", isLoggedIn, myOrder); //ฝั่งคนสั่ง for customer
 app.use("/endpoints", endpoints);
 
