@@ -21,10 +21,8 @@
                     <li>
                         <a>
                             <h2>Menu</h2>
-                            <div class="storeName">Store :
-                                <%= order.store%>
-                            </div>
-
+                            <div class="storeName">Store :<%= order.store%></div>
+                            <% }); %>
                             <!-- table head -->
                             <table style="font-family: Kanit; color: dimgrey;">
                                 <tr>
@@ -38,25 +36,17 @@
                                         <div style="margin-left: 35px;">Price</div>
                                     </td>
                                 </tr>
-
                             </table>
-
-
-
-                            <h5 class="card-title" style="font-size: 17px; display: inline;"> </h5>
-
+                            
+                            
                             <div class="menu" style="font-size:17px; text-align: center; display: inline;">
+                                <h5 class="card-title" style="font-size: 17px; display: inline;">เอสเพรสโซ่ร้อน</h5>
                                 <h3 class="card-text" style="display: inline;">
-                                    <div style="margin-left: 25%; display: inline;">
-
-                                    </div>
-                                    <div style="margin-left: 25%; display: inline;">
-
-                                    </div>
-
+                                    <div style="margin-left: 25%; display: inline;">1</div>
+                                    <div style="margin-left: 25%; display: inline;">50</div>
                                 </h3>
                             </div>
-
+                            
                             <br>
                             <br>
 
@@ -72,7 +62,7 @@
                                         <div style="margin-left: 80px;">Total :</div>
                                     </td>
                                     <td>
-                                        <div style="margin-left: 70px;">... Baht</div>
+                                        <div style="margin-left: 70px;">50 Baht</div>
                                     </td>
 
                                 </tr>
@@ -81,17 +71,17 @@
                             <table style="font-family: Kanit;">
                                 <tr>
                                     <td>
-                                        <div>Delivery to :</div>
+                                        <div>Delivery to : N11 อาคารคณะเทคโนโลยีสารสนเทศ. School of Information Technology Building</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div>Description :</div>
+                                        <div>Description : หวานน้อย</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div>Sender Name :</div>
+                                        <div>Sender Name : Khanadet Kh.</div>
                                     </td>
                                 </tr>
                             </table>
@@ -104,6 +94,7 @@
 
             </div>
             <br>
+            <% getOrder.forEach((order) => { %>
             <div class="swal2-header">
                 <ul class="swal2-progress-steps" style="display: flex;">
                     <li class="swal2-progress-step <%= order.status == 'arrived' && 'swal2-active-progress-step' %>">1</li>
@@ -117,16 +108,16 @@
                     <li class="swal2-progress-step <%= order.status == 'success' && 'swal2-active-progress-step' %>">5</li>
                 </ul>
             </div>
-
+            
             <div style="text-align: center; font-family: kanit; font-size:20px;">
                 Status :
                 <%= order.status%>
             </div>
-
-            <br>
-
-
             <% }); %>
+            <br>
+            
+            
+          
                 <table class="d-flex justify-content-center">
                     <tr>
                         <td>

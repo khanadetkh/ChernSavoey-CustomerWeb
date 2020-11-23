@@ -7,15 +7,11 @@ const router = express.Router();
 
 // เก็บ UserId
 router.get('/', async function(req, res, next) {
-
     res.render('orderList');
-
 });
 
 router.get('/no-order', async function(req, res, next) {
-
     res.render('noOrder');
-
 });
 
 

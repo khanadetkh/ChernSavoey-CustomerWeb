@@ -119,26 +119,22 @@ app.use("/sender", isLoggedIn, homeSenderRouter);
 app.use("/myOrder", isLoggedIn, myOrder); //ฝั่งคนสั่ง for customer
 app.use("/endpoints", endpoints);
 
-// login shop
-const loginShop = require("./routes/loginShopController");
-app.use("/loginShop", loginShop);
-
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     // render the error page
     if (err) {
-      console.log("APP Error =>>>>> ",err);
-      res.status(err.status || 500);
-      res.render('500error');
-  
-    } 
+        console.log("APP Error =>>>>> ", err);
+        res.status(err.status || 500);
+        res.render('500error');
+
+    }
     next()
-  
-  });
+
+});
 
 
 
