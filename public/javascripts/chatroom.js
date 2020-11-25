@@ -1,6 +1,12 @@
 const socket = io.connect("http://localhost:8080");
 const username = document.querySelector('#username');
 // const usernameBtn = document.querySelector('#usernameBtn');
+const chat = JSON.parse(sessionStorage.getItem("chat"));
+
+var element = document.getElementsByClassName("message-box-box");
+element.scrollTop = element.scrollHeight ;
+
+
 
 (function() {
     
@@ -9,6 +15,7 @@ const username = document.querySelector('#username');
     let messageBtn = document.querySelector('#messageBtn');
     let messageList = document.querySelector('#message-list');
     const orderId = document.querySelector('#orderId').value;
+
 
     messageBtn.addEventListener('click', e => {
         console.log("On submit")

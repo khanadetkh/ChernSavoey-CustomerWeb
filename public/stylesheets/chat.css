@@ -30,19 +30,7 @@
     box-sizing: border-box;
 }
 
-.btn-warning {
-    width: 100px;
-    height: 38px;
-    display: inline-block;
-    border-radius: 50px;
-    background-color: #E1A56D;
-    border: 2px solid #E1A56D;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.2s linear;
-    text-align: center;
-    float: right;
-}
+
 
 .btn-success {
     left: 110%;
@@ -59,10 +47,7 @@
     float: right;
 }
 
-body {
-    background-color: #edeff2;
-    font-family: "Calibri", "Roboto", sans-serif;
-}
+
 
 .chat_window {
     position: absolute;
@@ -77,46 +62,10 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     background-color: #f8f8f8;
     overflow: hidden;
+    
 }
 
-.top_menu {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px 0 15px;
-    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-}
 
-.top_menu .buttons {
-    margin: 3px 0 0 20px;
-    position: absolute;
-}
-
-.top_menu .buttons .button {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-    position: relative;
-}
-
-.top_menu .buttons .button.close {
-    background-color: #f5886e;
-}
-
-.top_menu .buttons .button.minimize {
-    background-color: #fdbf68;
-}
-
-.top_menu .buttons .button.maximize {
-    background-color: #a3d063;
-}
-
-.top_menu .title {
-    text-align: center;
-    color: #bcbdc0;
-    font-size: 20px;
-}
 
 .messages {
     position: relative;
@@ -124,7 +73,7 @@ body {
     padding: 20px 10px 0 10px;
     margin: 0;
     height: 347px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .messages .message {
