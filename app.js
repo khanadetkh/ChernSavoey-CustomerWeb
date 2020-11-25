@@ -95,31 +95,43 @@ app.get("/auth/google/callback", passport.authenticate("google", { failureRedire
 //ดึง controller มาใช้
 const shopsRouter = require("./routes/shopsController");
 const orderListRouter = require("./routes/orderListController");
+const inboxRouter = require("./routes/inboxController");
+const chatRouter = require("./routes/chatController");
+const orderSenderRouter = require("./routes/orderSenderController");
+const inboxSenderRouter = require("./routes/inboxSenderController");
+const chatSenderRouter = require("./routes/chatSenderController");
+const homeSenderRouter = require("./routes/homeSenderController");
 const endpoints = require("./routes/endpoints.js");
 const myOrder = require("./routes/myOrderController");
 
 //กำหนดตัวแปรให้ controller
 app.use("/shops", isLoggedIn, shopsRouter);
 app.use("/orderList", isLoggedIn, orderListRouter); //ฝั่งคนส่ง for sender
+app.use("/inbox", isLoggedIn, inboxRouter);
+app.use("/chat", isLoggedIn, chatRouter);
+app.use("/orderSender", isLoggedIn, orderSenderRouter);
+app.use("/inboxSender", isLoggedIn, inboxSenderRouter);
+app.use("/chatSender", isLoggedIn, chatSenderRouter);
+app.use("/sender", isLoggedIn, homeSenderRouter);
 app.use("/myOrder", isLoggedIn, myOrder); //ฝั่งคนสั่ง for customer
 app.use("/endpoints", endpoints);
 
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     // render the error page
     if (err) {
-      console.log("APP Error =>>>>> ",err);
-      res.status(err.status || 500);
-      res.render('500error');
-  
-    } 
+        console.log("APP Error =>>>>> ", err);
+        res.status(err.status || 500);
+        res.render('500error');
+
+    }
     next()
-  
-  });
+
+});
 
 
 
