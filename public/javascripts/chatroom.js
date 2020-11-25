@@ -1,15 +1,10 @@
 const socket = io.connect("http://localhost:8080");
 const username = document.querySelector('#username');
-const usernameBtn = document.querySelector('#usernameBtn');
+// const usernameBtn = document.querySelector('#usernameBtn');
 
 (function() {
-    username.addEventListener('click', e => {
-        console.log(username.value);
-        socket.emit('change_username', { username: username.value })
-        username.textContent = username.value
-        username.value = ''
-    })
-
+    
+    const username = document.querySelector('#username');
     let message = document.querySelector('#message');
     let messageBtn = document.querySelector('#messageBtn');
     let messageList = document.querySelector('#message-list');

@@ -189,10 +189,8 @@ app.get("/logout", function(req, res) {
 // Initialize socket for the server
 io.on("connection", (socket,req,res) => {
     console.log("New user connected");
-    socket.username = "Anonymous";
-
-    socket.on("change_username", (data) => {
-        socket.username = data.username;
+    socket.on("username", (req) => {
+        socket.username = req.user;
     });
 
     // Order Id Channel
