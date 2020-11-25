@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
+    <!-- CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chat.css">
+
+    <title>Real time Chat </title>
+
+</head>
+
+<%- include ("layout.ejs") %>
+
+    <div class="chat_window">
+        <div class="top_menu">
+            <a href="/chat">
+                <div class="buttons">
+                    <div class="button close"></div>
+            </a>
+            </div>
+            <div class="title">Chat</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><%= user.displayName %>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="username" placeholder="Change your username" value="<%= user.displayName %>"/>  
+                    <!-- <div class="input-group-append">
+                        <button class="btn btn-warning" type="button" id="usernameBtn">
+                            Change
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="message-box message-box-box">
+                <ul class="list-group list-group-flush" id="message-list"></ul>
+                <div class="info"></div>
+            </div>
+        </div>
+
+
+
+        <ul class="messages"></ul>
+        <div class="bottom_wrapper clearfix">
+            <div class="message_input_wrapper">
+                <input type="hidden" id="orderId" value="<%= orderId %>">
+                <input type="text" class="message_input" id="message" placeholder="Type your message here...">
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="button" id="messageBtn">
+                            Send
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.min.js" integrity="sha512-/WwtKR6NnHomLo0O4w9QKc1INTPEJs7ko6u2aBTA1paPldhPl8LtXsi7a35iEZ69+9P5dcgVNESG8hrP4Y2t3w==" crossorigin="anonymous"></script>
+
+    <script src="/javascripts/chatroom.js"></script>
+
+</html>

@@ -7,7 +7,6 @@ const router = express.Router();
 
 // เก็บ UserId
 router.get('/myOreder', async function(req, res, next) {
-
     res.render('orderList');
 });
 
@@ -48,14 +47,18 @@ router.post('/:orderId/chat', async function(req, res, next) {
 
 
 router.get('/:orderId/chat', async function(req, res, next) {
+    console.log("Callback ---------------------------- ==> ", req.user)
+    req.session.profile = req.user;
     const orderId = req.params.orderId;
-    res.render('chat', { orderId });
+    res.render('chat', {orderId, user:req.user});
 });
 
 
 
 router.get("/:orderId", async(req, res) => {
 
+    console.log("Callback ---------------------------- ==> ", req.user)
+    req.session.profile = req.user;
     const getOrder = await db
         .collection("cart")
         .orderBy("hour", "desc")

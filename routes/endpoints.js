@@ -24,6 +24,10 @@ router.post("/:storeId/menuDetails", async (req, res) => {
 );
 
 router.post("/:storeId/order", async (req, res) => {
+
+	console.log("Callback ---------------------------- ==> ", req.user)
+	req.session.profile = req.user;
+	
 	const storeId = req.params.storeId;
 	console.log(storeId);
 
@@ -50,7 +54,7 @@ router.post("/:storeId/order", async (req, res) => {
 		order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
 		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
 		order_detail: restMenuArr,
-		userId: "mockup_ID",
+		cuetomer: req.user,
 		status: "accepted"
 		// totalPrice: totalPrice
 	};

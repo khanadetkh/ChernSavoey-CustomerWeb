@@ -95,24 +95,12 @@ app.get("/auth/google/callback", passport.authenticate("google", { failureRedire
 //ดึง controller มาใช้
 const shopsRouter = require("./routes/shopsController");
 const orderListRouter = require("./routes/orderListController");
-const inboxRouter = require("./routes/inboxController");
-const chatRouter = require("./routes/chatController");
-const orderSenderRouter = require("./routes/orderSenderController");
-const inboxSenderRouter = require("./routes/inboxSenderController");
-const chatSenderRouter = require("./routes/chatSenderController");
-const homeSenderRouter = require("./routes/homeSenderController");
 const endpoints = require("./routes/endpoints.js");
 const myOrder = require("./routes/myOrderController");
 
 //กำหนดตัวแปรให้ controller
 app.use("/shops", isLoggedIn, shopsRouter);
 app.use("/orderList", isLoggedIn, orderListRouter); //ฝั่งคนส่ง for sender
-app.use("/inbox", isLoggedIn, inboxRouter);
-app.use("/chat", isLoggedIn, chatRouter);
-app.use("/orderSender", isLoggedIn, orderSenderRouter);
-app.use("/inboxSender", isLoggedIn, inboxSenderRouter);
-app.use("/chatSender", isLoggedIn, chatSenderRouter);
-app.use("/sender", isLoggedIn, homeSenderRouter);
 app.use("/myOrder", isLoggedIn, myOrder); //ฝั่งคนสั่ง for customer
 app.use("/endpoints", endpoints);
 
@@ -197,14 +185,10 @@ app.get("/logout", function(req, res) {
 });
 
 //socket.io
-app.get("/chat", (req, res) => {
-    res.render("chat");
-});
 
 // Initialize socket for the server
-io.on("connection", (socket) => {
+io.on("connection", (socket,req,res) => {
     console.log("New user connected");
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", req.user);
     socket.username = "Anonymous";
 
     socket.on("change_username", (data) => {
