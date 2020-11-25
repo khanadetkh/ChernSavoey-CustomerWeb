@@ -171,10 +171,6 @@ passport.use(new GoogleStrategy({
 ));
 
 
-//
-
-
-
 // route for logging out
 app.get("/logout", function(req, res) {
     req.session.destroy(function(err) {
