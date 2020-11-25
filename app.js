@@ -81,10 +81,7 @@ passport.deserializeUser(function(obj, cb) {
     cb(null, obj);
 });
 
-app.get(
-    "/auth/google",
-    passport.authenticate("google", { scope: ["profile", "email"] })
-);
+app.get("/auth/google",passport.authenticate("google", { scope: ["profile", "email"] }));
 
 app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/" }),
     function(req, res) {
@@ -128,7 +125,6 @@ app.use(function (err, req, res, next) {
 
 //funtion middleware login
 function isLoggedIn(req, res, next) {
-
     if (req.session.profile && req.cookies.user_sid) {
         next();
     } else {
@@ -196,7 +192,7 @@ app.get("/chat", (req, res) => {
 // Initialize socket for the server
 io.on("connection", (socket) => {
     console.log("New user connected");
-
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", req.user);
     socket.username = "Anonymous";
 
     socket.on("change_username", (data) => {
