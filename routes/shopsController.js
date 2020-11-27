@@ -43,27 +43,27 @@ router.get("/", async(req, res) => {
     res.render("shop", { getStore });
 });
 
-router.get("/:storeId", async(req, res) => {
-    const storeId = req.params.storeId;
+// router.get("/:storeId", async(req, res) => {
+//     const storeId = req.params.storeId;
 
-    const menuDetails = await db.collection("store")
-        .doc(storeId)
-        .get()
-        .then((querySnapshot) => querySnapshot.data());
+//     const menuDetails = await db.collection("store")
+//         .doc(storeId)
+//         .get()
+//         .then((querySnapshot) => querySnapshot.data());
 
-    const shopName = menuDetails.storeName;
-    let menuList = menuDetails.menu;
-    const categoriesList = menuDetails.categories;
+//     const shopName = menuDetails.storeName;
+//     let menuList = menuDetails.menu;
+//     const categoriesList = menuDetails.categories;
     
 
-    console.log(storeId);
-    console.log(shopName);
-    console.log(menuList);
-    console.log(categoriesList);
+//     console.log(storeId);
+//     console.log(shopName);
+//     console.log(menuList);
+//     console.log(categoriesList);
 
 
-    res.render("menu", { storeId, shopName, menuList, categoriesList});
-});
+//     res.render("menu", { storeId, shopName, menuList, categoriesList});
+// });
 
 
 
