@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:8080");
+const socket = io.connect("https://chernsavoey.herokuapp.com/");
 const username = document.querySelector('#username');
 // const usernameBtn = document.querySelector('#usernameBtn');
 const chat = JSON.parse(sessionStorage.getItem("chat"));
