@@ -56,31 +56,23 @@ router.get('/:orderId/chat', async function(req, res, next) {
 
 
 router.get("/:orderId", async(req, res) => {
-
-    console.log("Callback ---------------------------- ==> ", req.user)
-    req.session.profile = req.user;
-    const getOrder = await db
-        .collection("cart")
-        .orderBy("hour", "desc")
-        .get().then((querySnapshot) => {
-            let orderArr = [];
-            querySnapshot.forEach((cart) => orderArr.push({ orderId: cart.id, ...cart.data() }));
-            return orderArr;
-        });
-
     const orderId = req.params.orderId;
 
-    const orderDetails = await db.collection("cart")
+    const orderDetail = await db.collection("cart")
         .doc(orderId)
         .get()
         .then((querySnapshot) => querySnapshot.data());
-
-    const orderList = orderDetails;
+    const orderList = orderDetail.order_detail;
+    const location = orderDetail.Location;
+    const phoneno = orderDetail.cus_phoneno;
+    const senderName = orderDetail.senderId.user;
+    const shopName = orderDetail.shopName;
+    const totalprice = orderDetail.totalPrice; 
+    const notetosender = orderDetail.note; 
+    const orderStatus = orderDetail.status
     console.log(orderId);
-    console.log("=====> ",orderList);
-    console.log(getOrder);
-
-    res.render("orderList", { getOrder, orderList, orderId });
+    console.log(orderList);
+    res.render("orderList", {orderList,location,phoneno,senderName,shopName,totalprice,notetosender,orderStatus });
 });
 
 

@@ -17,70 +17,67 @@
 <body>
     <%- include ("layout.ejs") %>
     <div class="container font">
-        <div class="d-flex justify-content-center">
-            <ul>
-                <li>
-                    <a>
-                        <h2>Order</h2>
-                        <h2 class="storeName">Store :</h2>
-                        <!-- table head -->
-                    <table>
+        
+        <div class="container font">
+            <div class="d-flex justify-content-center">
+                <ul>
+                    <li>
+                        <a>
+                            <h2 class="storeName"><%= shopName %></h2>
+                            <!-- table head -->
+                        <table>
+                                <tr>
+                                    <td><div style="margin-left: 50px;">Menu</div></td>
+                                    <td><div style="margin-left: 60px;">Quantity</div></td>
+                                    <td><div style="margin-left: 35px;">Price</div></td>
+                                </tr>
+                            <% orderList.forEach((orderDetail) => { %>
+                                <tr>
+                                    <td><div style="margin-left: 10px;"><%= orderDetail.menuName %></div></td>
+                                    <td><div style="margin-left: 80px;"><%= orderDetail.qty %></div></td>
+                                    <td><div style="margin-left: 40px;"><%= orderDetail.price %></div></td>
+                                </tr>
+                            <% }); %>
                             <tr>
-                                <td><div style="margin-left: 50px;">Menu</div></td>
-                                <td><div style="margin-left: 60px;">Quantity</div></td>
-                                <td><div style="margin-left: 35px;">Price</div></td>
+                                <td colspan="2"  style="color: dimgrey;">Delivery Fee</td>
+                                <td style="color: dimgrey;">฿10</td>
                             </tr>
-                   
                             <tr>
-                                <td><div style="margin-left: 10px;">....</div></td>
-                                <td><div style="margin-left: 80px;">....</div></td>
-                                <td><div style="margin-left: 40px;">.....</div></td>
+                                <td colspan="2">Total :</div></td>
+                                <td><%= totalprice %></td>
                             </tr>
-                   
-                        <tr>
-                            <td colspan="2"  style="color: dimgrey;">Delivery Fee</td>
-                            <td style="color: dimgrey;">10 Baht</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Total :</div></td>
-                            <td>60 Baht</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">Delivery to : N11 อาคารคณะเทคโนโลยีสารสนเทศ. School of Information Technology Building</div></td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">Description : หวานน้อย</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">Customer Name : Sirirat t.</td>
-                        </tr>
-                    </table>
-                </li>
-            </ul>
-        </div>
+                            <tr>
+                                <td colspan="3">Delivery to : <%= location %></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Description : <%= notetosender %></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Sender Name : <%= senderName.displayName %></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Customer Tel. : <%= phoneno %></td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
             <br>
-            <% getOrder.forEach((order) => { %>
             <div class="swal2-header">
                 <ul class="swal2-progress-steps" style="display: flex;">
-                    <li class="swal2-progress-step <%= order.status == 'arrived' && 'swal2-active-progress-step' %>">1</li>
+                    <li class="swal2-progress-step <%= orderStatus  == 'arrived' && 'swal2-active-progress-step' %>">1</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= order.status == 'placed' && 'swal2-active-progress-step' %>">2</li>
+                    <li class="swal2-progress-step <%= orderStatus  == 'placed' && 'swal2-active-progress-step' %>">2</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= order.status == 'collected' && 'swal2-active-progress-step' %>">3</li>
+                    <li class="swal2-progress-step <%= orderStatus  == 'collected' && 'swal2-active-progress-step' %>">3</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= order.status == 'shipping' && 'swal2-active-progress-step' %>">4</li>
+                    <li class="swal2-progress-step <%= orderStatus  == 'shipping' && 'swal2-active-progress-step' %>">4</li>
                     <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= order.status == 'success' && 'swal2-active-progress-step' %>">5</li>
+                    <li class="swal2-progress-step <%= orderStatus  == 'success' && 'swal2-active-progress-step' %>">5</li>
                 </ul>
             </div>
             
-            <div style="text-align: center; font-family: kanit; font-size:20px;">
-                Status :
-                <%= order.status%>
-            </div>
-            <% }); %>
-            <br>
-            
+            <div style="text-align: center; font-family: kanit; font-size:20px;">Status :<%= orderStatus%></div>
             
           
                 <table class="d-flex justify-content-center">
