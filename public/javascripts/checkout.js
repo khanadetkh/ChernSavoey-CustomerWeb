@@ -1,15 +1,18 @@
 const cartItems = document.querySelector(".cart-items");
 const cartTotalPrice = document.querySelector(".cart-total-price");
+const storeIdPathSplit = window.location.pathname.split("/")
+const storeIdPath = storeIdPathSplit[2];
+console.log(storeIdPath);
 
 let menuRows = [];
 
 window.addEventListener("load", async function onPlace_Order() {
     const menu = JSON.parse(sessionStorage.getItem("fo_menus"));
-
+   
     if (menu && menu.length > 0) {
         const response = await fetch(
-            //เปลี่ยนไอดีร้าน
-            `/endpoints/dOro/menuDetails`, {
+            
+            `/endpoints/${storeIdPath}/menuDetails`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -37,10 +40,6 @@ function makeRow(obj) {
         "data-menu-name": obj.menuName,
         "data-menu-price": obj.price,
     });
-
-    // createElement("img.cart-item-title.cart-column", rowDiv, {
-    // 	innerText: obj.menuImg,
-    // });
 
     createElement("span.cart-item-title.cart-column", rowDiv, {
         innerText: obj.menuName,
@@ -100,8 +99,7 @@ function updateTotalPrice() {
     let serviceCharge = 10;
 
     for (let i = 0; i < menuRows.length; i++) {
-        totalPrice +=
-            menuRows[i].dataset.menuPrice * menuRows[i].querySelector(".cart-quantity-input").value;
+        totalPrice += menuRows[i].dataset.menuPrice * menuRows[i].querySelector(".cart-quantity-input").value;
         totalPriceandService = totalPrice + serviceCharge;
     }
     cartTotalPrice.innerText = "฿" + totalPriceandService;
@@ -112,7 +110,7 @@ async function onPlace_Order() {
     const cus_phoneno = document.getElementById("phoneno").value;
     const location = document.getElementById("location");
     const locationText = location.options[location.selectedIndex].text;
-
+    const carttotalprice = cartTotalPrice.innerText
 
     document.getElementById("hid-location").innerHTML = locationText;
 
@@ -133,15 +131,16 @@ async function onPlace_Order() {
     console.log("restMenu  ", restMenu);
     console.log("cus_note  ", cus_note);
     console.log("phoneNo  ", cus_phoneno);
+    console.log("totalprice", carttotalprice);
 
     const response = await fetch(
         //เปลี่ยนไอดีร้าน
-        `/endpoints/dOro/order`, {
+        `/endpoints/${storeIdPath}/order`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ restMenu, cus_note, cus_phoneno, locationText }),
+            body: JSON.stringify({ restMenu, cus_note, cus_phoneno, locationText, carttotalprice }),
         }
     );
 

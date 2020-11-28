@@ -5,30 +5,13 @@ const router = express.Router();
 
 /* GET shops page. */
 
-router.get("/cart", async function(req, res, next) {
+router.get("/:storeId/cart", async function(req, res, next) {
+    const storeId = req.params.storeId;
+    console.log("storeId------------>",storeId)
     res.render("cart");
 
 });
 
-router.post("/cart", async(req, res) => {
-
-    const d = new Date();
-    const t = d.getTime();
-    const id = t - 300;
-    const data = {
-        order_id: id,
-        cus_name: req.body.name,
-        cus_phoneno: req.body.phoneno,
-        order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
-        order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
-
-
-    };
-    const orderRef = await firestore.collection("orders").add(data);
-    console.log('Set: ', orderRef);
-    res.redirect('/')
-
-});
 // menuFucntion
 router.get("/", async(req, res) => {
     const getStore = await db
@@ -42,31 +25,6 @@ router.get("/", async(req, res) => {
     console.log(getStore);
     res.render("shop", { getStore });
 });
-
-// router.get("/:storeId", async(req, res) => {
-//     const storeId = req.params.storeId;
-
-//     const menuDetails = await db.collection("store")
-//         .doc(storeId)
-//         .get()
-//         .then((querySnapshot) => querySnapshot.data());
-
-//     const shopName = menuDetails.storeName;
-//     let menuList = menuDetails.menu;
-//     const categoriesList = menuDetails.categories;
-    
-
-//     console.log(storeId);
-//     console.log(shopName);
-//     console.log(menuList);
-//     console.log(categoriesList);
-
-
-//     res.render("menu", { storeId, shopName, menuList, categoriesList});
-// });
-
-
-
 
 router.get("/:storeId/:categoryId", async(req, res) => {
     const storeId = req.params.storeId;
@@ -91,12 +49,7 @@ router.get("/:storeId/:categoryId", async(req, res) => {
     console.log(categoriesList);
     console.log(categoriesFilter);
 
-
     res.render("menu", { storeId, shopName, menuList, categoriesList, categoriesFilter });
 });
-
-
-
-
 
 module.exports = router;

@@ -14,5 +14,4 @@ router.get('/no-order', async function(req, res, next) {
     res.render('noOrder');
 });
 
-
 module.exports = router;

@@ -1,13 +1,25 @@
 const express = require('express');
 const db = require('../model/db');
+const url = require('url');
 const router = express.Router();
 
 
 router.post("/:storeId/menuDetails", async (req, res) => {
 
+	const path = url.parse(req.url).pathname
+	console.log("This is  pathname ===> ",path);
+
+	const splitPathname = path.split('/');
+	console.log("splitPathname==>",splitPathname);
+
+	const getShopPath = splitPathname[1];
+	console.log("ShopPath------>",getShopPath)
 
 	const storeId = req.params.storeId;
 	console.log(storeId);
+
+	
+
 	const menuIdArr = req.body.menu;
 
 	const restDetail = await db
@@ -17,7 +29,9 @@ router.post("/:storeId/menuDetails", async (req, res) => {
 		.then((querySnapshot) => querySnapshot.data());
 	const menuDetails = restDetail.menu.filter(menu => menuIdArr.includes(menu.menuId));
 	console.log("----------------------*",menuDetails);
-	res.status(200).send({ "menuDetails": menuDetails });
+	res.status(200).send({ "menuDetails": menuDetails,getShopPath });
+
+
 
 
 }
@@ -25,11 +39,28 @@ router.post("/:storeId/menuDetails", async (req, res) => {
 
 router.post("/:storeId/order", async (req, res) => {
 
+	const path = url.parse(req.url).pathname
+	console.log("This is  pathname ===> ",path);
+
+	const splitPathname = path.split('/');
+	console.log("splitPathname==>",splitPathname);
+
+	const getShopPath = splitPathname[1];
+	console.log("ShopPath------>",getShopPath)
+
 	console.log("Callback ---------------------------- ==> ", req.user)
 	req.session.profile = req.user;
 	
 	const storeId = req.params.storeId;
 	console.log(storeId);
+
+	const menuDetails = await db.collection("store")
+	.doc(storeId)
+	.get()
+	.then((querySnapshot) => querySnapshot.data());
+
+	const shopName = menuDetails.storeName;
+	console.log(shopName);
 
 	const restMenuArr = req.body.restMenu;
 	console.log(restMenuArr);
@@ -43,10 +74,14 @@ router.post("/:storeId/order", async (req, res) => {
 	const cus_phoneno = req.body.cus_phoneno;
 	console.log(cus_phoneno);
 
+	const total_price = req.body.carttotalprice;
+	console.log(total_price);
+
 	const d = new Date();
 	const t = d.getTime();
 	const id = t - 300;
 	const data = {
+		shopName: shopName,
 		order_id: id, 
 		note: cus_note,
 		Location: location,
@@ -54,9 +89,10 @@ router.post("/:storeId/order", async (req, res) => {
 		order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
 		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
 		order_detail: restMenuArr,
-		cuetomer: req.user,
-		status: "accepted"
-		// totalPrice: totalPrice
+		customer: req.user,
+		status: "accepted",
+		totalPrice:total_price
+
 	};
 	console.log(data);
 	const orderRef = await db.collection("cart").add(data);

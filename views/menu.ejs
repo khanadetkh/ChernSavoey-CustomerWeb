@@ -24,9 +24,7 @@
                 <div class="col-lg-3">
                     <!-- shopname -->
                     <div class="list-group" id="shopName">
-                        <h1 class="my-4">
-                            <%= shopName %>
-                                </a>
+                        <h1 class="my-4"><%= shopName %></h1>
                     </div>
 
                     <!-- Cateogory -->
@@ -45,6 +43,10 @@
 
                         </ul>
                     </div>
+                    <div class="d-flex justify-content-center" id="btn-cart">
+                    <a href="/shops/<%= storeId %>/cart" class="btn btn-primary"><img class="list-item__thumbnail" src="https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/javascripts%2Fshopping-cart.svg?alt=media&token=61d0d58d-a463-46c6-b2ab-f140ec969ba6"
+                        style="display: inline;"> GO TO CART</a>
+                    </div>
                 </div>
 
                 <!-- menus -->
@@ -54,6 +56,8 @@
                             <div class="col-lg-4 col-md-6 mb-4" id="menuList">
                                 <div class="card h-100">
                                     <img class="card-img-top" src="<%= menu.menuImg %>" alt="">
+                                    <img class="card-img-top" src="https://shopmgt-chernsavoey.herokuapp.com/addproduct/image/<%= menu.menuImg %>"
+                                alt="">
                                     <div class="card-body">
                                         <h4 class="card-title">
                                             <%= menu.menuName %>
