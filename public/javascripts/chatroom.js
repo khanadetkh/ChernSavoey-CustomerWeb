@@ -37,7 +37,7 @@ element.scrollTop = element.scrollHeight ;
         console.log(`on client from server ${orderId}  =>  ${data.message} - by ${data.username}`)
 
         let listItem = document.createElement('li')
-        listItem.textContent = data.username + ": " + data.message;
+        listItem.textContent = data.message;
         if (data.username != username.value) {
             listItem.style.textAlign = "left";
         }
@@ -52,7 +52,7 @@ element.scrollTop = element.scrollHeight ;
     })
 
     socket.on('typing', data => {
-        info.textContent = data.username + " is typing..."
+        info.textContent =  " is typing..."
         setTimeout(() => { info.textContent = '' }, 5000)
     })
 })();

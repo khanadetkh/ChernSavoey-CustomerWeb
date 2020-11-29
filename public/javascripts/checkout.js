@@ -171,7 +171,7 @@ async function onPlace_Order() {
                 const t = d.getTime();
                 const orderId = t - 300;
                 console.log("this is>>>>",orderId);
-                window.location.href = `/orderList/${orderId}`;
+                window.location.href = `/orderList`;
             })
         } else {
             Swal.fire('', 'You are deny this order', 'error')

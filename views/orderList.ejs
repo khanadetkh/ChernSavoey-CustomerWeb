@@ -67,6 +67,12 @@
                 </ul>
             </div>
             <br>
+            
+            <div class="d-flex justify-content-center">
+                <a href="<%=orderId%>/chat" type="button" class="btn btn-success" style="color: beige;">Chat with Sender</a>
+
+            </div>
+
             <div class="swal2-header">
                 <ul class="swal2-progress-steps" style="display: flex;">
                     <li class="swal2-progress-step <%= orderStatus  == 'arrived' && 'swal2-active-progress-step' %>">1</li>
@@ -81,7 +87,7 @@
                 </ul>
             </div>
             
-            <div style="text-align: center; font-family: kanit; font-size:20px;">Status :<%= orderStatus%></div>
+            <div style="text-align: center; font-family: kanit; font-size:20px;">Status :<%= orderStatus%>
             
           
                 <table class="d-flex justify-content-center">
@@ -98,7 +104,7 @@
                         </td>
                     </tr>
                 </table>
-
+            </div>
                 <script type="text/javascript">
                     const currSessionStorage = sessionStorage.getItem("fo_menus");
 

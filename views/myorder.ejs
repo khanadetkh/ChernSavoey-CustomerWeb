@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Site meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title> </title>
+    <!-- CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" type="text/css" href="/stylesheets/myorder.css">
+  
+
+</head>
+
+<%- include ("layout.ejs") %>
+
+<body>
+    
+    <div class="container">
+        <div class="list-group">
+            <% getOrder.forEach((order) => { %>
+           
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><%= order.shopName %></h5>
+                <small class="text-muted">Order ID : <%= order.order_id %></small>
+              </div>
+              <p class="mb-1">สถานที่ส่ง : <%= order.Location %></p>
+              <small class="text-muted"><%= order.order_Date %> | <%= order.order_Time %></small>
+              <a href="/orderList/<%= order.orderId %>" class="btn btn-success float-right">
+                See More
+            </a>
+            </div>
+            <% }); %>
+          </div>
+    </div>
+</body>
+
+
+</html>
