@@ -92,7 +92,7 @@ router.post("/:storeId/order", async (req, res) => {
 		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
 		order_detail: restMenuArr,
 		customer: req.user.displayName,
-		status: "accepted",
+		status: "waiting for sender",
 		totalPrice:total_price
 	});
 	console.log('Set: ', orderRef);
