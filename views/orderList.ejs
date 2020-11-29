@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="/images/favicon.png"/>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <title>My Order</title>
-    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
+        type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
@@ -17,7 +18,7 @@
 <body>
     <%- include ("layout.ejs") %>
     <div class="container font">
-        
+
         <div class="container font">
             <div class="d-flex justify-content-center">
                 <ul>
@@ -25,233 +26,252 @@
                         <a>
                             <h2 class="storeName"><%= shopName %></h2>
                             <!-- table head -->
-                        <table>
+                            <table>
                                 <tr>
-                                    <td><div style="margin-left: 50px;">Menu</div></td>
-                                    <td><div style="margin-left: 60px;">Quantity</div></td>
-                                    <td><div style="margin-left: 35px;">Price</div></td>
+                                    <td>
+                                        <div style="margin-left: 50px;">Menu</div>
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 60px;">Quantity</div>
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 35px;">Price</div>
+                                    </td>
                                 </tr>
-                            <% orderList.forEach((orderDetail) => { %>
+                                <% orderList.forEach((orderDetail) => { %>
                                 <tr>
-                                    <td><div style="margin-left: 10px;"><%= orderDetail.menuName %></div></td>
-                                    <td><div style="margin-left: 80px;"><%= orderDetail.qty %></div></td>
-                                    <td><div style="margin-left: 40px;"><%= orderDetail.price %></div></td>
+                                    <td>
+                                        <div style="margin-left: 10px;"><%= orderDetail.menuName %></div>
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 80px;"><%= orderDetail.qty %></div>
+                                    </td>
+                                    <td>
+                                        <div style="margin-left: 40px;"><%= orderDetail.price %></div>
+                                    </td>
                                 </tr>
-                            <% }); %>
-                            <tr>
-                                <td colspan="2"  style="color: dimgrey;">Delivery Fee</td>
-                                <td style="color: dimgrey;">฿10</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Total :</div></td>
-                                <td><%= totalprice %></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">Delivery to : <%= location %></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">Description : <%= notetosender %></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">Sender Name :   <% if(senderId =="Plase Wait"){ %>
-                                                                            No Sender
-                                                                        <% } else{ %>  
-                                                                     <%=senderId%>
-                                                                <% } %>
-                            </tr>
-                            <tr>
-                                <td colspan="3">Customer Tel. : <%= phoneno %></td>
-                            </tr>
-                        </table>
-                    </li>
-                </ul>
+                                <% }); %>
+                                <tr>
+                                    <td colspan="2" style="color: dimgrey;">Delivery Fee</td>
+                                    <td style="color: dimgrey;">฿10</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Total :
             </div>
-            <br>
-            
-            <div class="d-flex justify-content-center">
-                <a href="<%=orderId%>/chat" type="button" class="btn btn-success" style="color: beige;">Chat with Sender</a>
+            </td>
+            <td><%= totalprice %></td>
+            </tr>
+            <tr>
+                <td colspan="3">Delivery to : <%= location %></td>
+            </tr>
+            <tr>
+                <td colspan="3">Description : <%= notetosender %></td>
+            </tr>
+            <tr>
+                <td colspan="3">Sender Name : <% if(senderId =="Plase Wait"){ %>
+                    No Sender
+                    <% } else{ %>
+                    <%=senderId%>
+                    <% } %>
+            </tr>
+            <tr>
+                <td colspan="3">Customer Tel. : <%= phoneno %></td>
+            </tr>
+            </table>
+            </li>
+            </ul>
+        </div>
+        <br>
 
-            </div>
+        <div class="d-flex justify-content-center">
+            <a href="<%=orderId%>/chat" type="button" class="btn btn-success" style="color: beige;">Chat with Sender</a>
 
-            <div class="swal2-header">
-                <ul class="swal2-progress-steps" style="display: flex;">
-                    <li class="swal2-progress-step <%= orderStatus  == 'arrived' && 'swal2-active-progress-step' %>">1</li>
-                    <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= orderStatus  == 'placed' && 'swal2-active-progress-step' %>">2</li>
-                    <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= orderStatus  == 'collected' && 'swal2-active-progress-step' %>">3</li>
-                    <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= orderStatus  == 'shipping' && 'swal2-active-progress-step' %>">4</li>
-                    <li class="swal2-progress-step-line"></li>
-                    <li class="swal2-progress-step <%= orderStatus  == 'success' && 'swal2-active-progress-step' %>">5</li>
-                </ul>
-            </div>
-            
-            <div style="text-align: center; font-family: kanit; font-size:20px;">Status :<%= orderStatus%>
-            
-          
-                <table class="d-flex justify-content-center">
-                    <tr>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/imgfood%2Frefresh.png?alt=media&token=83e4c139-4797-41b4-8a56-59b3e834779b" class="refresh" onclick="location.reload()" style="width: 55px; height: 55px;">
-                            </div>
-                        </td>
-                        <td>
-                            <div style="font-family: kanit; font-size: small; color: dimgrey; text-align: center; margin-left: 10px;">
-                                Please click the button <br> for refresh the page.
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-                <script type="text/javascript">
-                    const currSessionStorage = sessionStorage.getItem("fo_menus");
+        </div>
 
-                    if (!currSessionStorage) {
-                        // handle if no order
-                        window.location = "/myOrder/no-order"
-                    }
-                </script>
+        <div class="swal2-header">
+            <ul class="swal2-progress-steps" style="display: flex;">
+                <li class="swal2-progress-step <%= orderStatus  == 'arrived' && 'swal2-active-progress-step' %>">1</li>
+                <li class="swal2-progress-step-line"></li>
+                <li class="swal2-progress-step <%= orderStatus  == 'placed' && 'swal2-active-progress-step' %>">2</li>
+                <li class="swal2-progress-step-line"></li>
+                <li class="swal2-progress-step <%= orderStatus  == 'collected' && 'swal2-active-progress-step' %>">3
+                </li>
+                <li class="swal2-progress-step-line"></li>
+                <li class="swal2-progress-step <%= orderStatus  == 'shipping' && 'swal2-active-progress-step' %>">4</li>
+                <li class="swal2-progress-step-line"></li>
+                <li class="swal2-progress-step <%= orderStatus  == 'success' && 'swal2-active-progress-step' %>">5</li>
+            </ul>
+        </div>
 
-                <style>
-                    .swal2-progress-steps .swal2-progress-step-line {
-                        z-index: 10;
-                        flex-shrink: 0;
-                        width: 2.5em;
-                        height: .4em;
-                        background: #2778c4;
-                    }
-                    
-                    .storeName {
-                        font-family: kanit;
-                        color: rgb(68, 68, 75);
-                        font-size: 20px;
-                        font-family: kanit;
-                        text-align: center;
-                    }
-                    
-                    .cart-text {
-                        font-size: 20px;
-                    }
-                    
-                    h2,
-                    h3 {
-                        font-size: 100%;
-                        font-weight: normal;
-                        text-align: center;
-                        font-family: Kanit;
-                    }
-                    
-                    ul,
-                    li {
-                        list-style: none;
-                    }
-                    /* ul {
+        <div style="text-align: center; font-family: kanit; font-size:20px;">Status :<%= orderStatus%>
+
+
+            <table class="d-flex justify-content-center">
+                <tr>
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/it60-42-choen-savoey.appspot.com/o/imgfood%2Frefresh.png?alt=media&token=83e4c139-4797-41b4-8a56-59b3e834779b"
+                                class="refresh" onclick="location.reload()" style="width: 55px; height: 55px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div
+                            style="font-family: kanit; font-size: small; color: dimgrey; text-align: center; margin-left: 10px;">
+                            Please click the button <br> for refresh the page.
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript">
+            const currSessionStorage = sessionStorage.getItem("fo_menus");
+
+            if (!currSessionStorage) {
+                // handle if no order
+                window.location = "/myOrder/no-order"
+            }
+        </script>
+
+        <style>
+            .swal2-progress-steps .swal2-progress-step-line {
+                z-index: 10;
+                flex-shrink: 0;
+                width: 2.5em;
+                height: .4em;
+                margin: 0 -30px;
+                background: #2778c4;
+            }
+
+            .storeName {
+                font-family: kanit;
+                color: rgb(68, 68, 75);
+                font-size: 20px;
+                font-family: kanit;
+                text-align: center;
+            }
+
+            .cart-text {
+                font-size: 20px;
+            }
+
+            h2,
+            h3 {
+                font-size: 100%;
+                font-weight: normal;
+                text-align: center;
+                font-family: Kanit;
+            }
+
+            ul,
+            li {
+                list-style: none;
+            }
+
+            /* ul {
                 overflow: hidden;
                 padding: 3em;
             } */
-                    
-                    p {
-                        font-family: Kanit;
-                    }
-                    
-                    ul li a {
-                        text-decoration: none;
-                        background: rgb(233, 233, 166);
-                        display: block;
-                        height: auto;
-                        width: 320px;
-                        padding: 1em;
-                        margin-top: 30px;
-                        box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-                        -moz-transition: -moz-transform .15s linear;
-                        -o-transition: -o-transform .15s linear;
-                        -webkit-transition: -webkit-transform .15s linear;
-                    }
-                    
-                    ul li {
-                        margin: 1em;
-                        float: left;
-                    }
-                    
-                    ul li h2 {
-                        font-size: 140%;
-                        font-weight: bold;
-                        padding-bottom: 10px;
-                    }
-                    
-                    ul li p {
-                        font-family: "Reenie Beanie", arial, sans-serif;
-                        font-size: 180%;
-                    }
-                    
-                    ul li a {
-                        -webkit-transform: rotate(-6deg);
-                        -o-transform: rotate(-6deg);
-                        -moz-transform: rotate(-6deg);
-                    }
-                    
-                    ul li:nth-child(even) a {
-                        -o-transform: rotate(4deg);
-                        -webkit-transform: rotate(4deg);
-                        -moz-transform: rotate(4deg);
-                        position: relative;
-                        top: 5px;
-                        background: #cfc;
-                    }
-                    
-                    ul li:nth-child(3n) a {
-                        -o-transform: rotate(-3deg);
-                        -webkit-transform: rotate(-3deg);
-                        -moz-transform: rotate(-3deg);
-                        position: relative;
-                        top: -5px;
-                        background: #ccf;
-                    }
-                    
-                    ul li:nth-child(5n) a {
-                        -o-transform: rotate(5deg);
-                        -webkit-transform: rotate(5deg);
-                        -moz-transform: rotate(5deg);
-                        position: relative;
-                        top: -10px;
-                    }
-                    
-                    ul li a:hover,
-                    ul li a:focus {
-                        box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-                        -webkit-transform: scale(1.25);
-                        -moz-transform: scale(1.25);
-                        -o-transform: scale(1.25);
-                        position: relative;
-                        z-index: 5;
-                    }
-                    
-                    ol {
-                        text-align: center;
-                    }
-                    
-                    ol li {
-                        display: inline;
-                        padding-right: 1em;
-                    }
-                    
-                    ol li a {
-                        color: #fff;
-                    }
-                    
-                    dl,
-                    ol,
-                    ul {
-                        margin-top: 0;
-                        margin-bottom: 0rem;
-                    }
-                </style>
 
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            p {
+                font-family: Kanit;
+            }
+
+            ul li a {
+                text-decoration: none;
+                background: rgb(233, 233, 166);
+                display: block;
+                height: auto;
+                width: 320px;
+                padding: 1em;
+                margin-top: 30px;
+                box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+                -moz-transition: -moz-transform .15s linear;
+                -o-transition: -o-transform .15s linear;
+                -webkit-transition: -webkit-transform .15s linear;
+            }
+
+            ul li {
+                margin: 1em;
+                float: left;
+            }
+
+            ul li h2 {
+                font-size: 140%;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+
+            ul li p {
+                font-family: "Reenie Beanie", arial, sans-serif;
+                font-size: 180%;
+            }
+
+            ul li a {
+                -webkit-transform: rotate(-6deg);
+                -o-transform: rotate(-6deg);
+                -moz-transform: rotate(-6deg);
+            }
+
+            ul li:nth-child(even) a {
+                -o-transform: rotate(4deg);
+                -webkit-transform: rotate(4deg);
+                -moz-transform: rotate(4deg);
+                position: relative;
+                top: 5px;
+                background: #cfc;
+            }
+
+            ul li:nth-child(3n) a {
+                -o-transform: rotate(-3deg);
+                -webkit-transform: rotate(-3deg);
+                -moz-transform: rotate(-3deg);
+                position: relative;
+                top: -5px;
+                background: #ccf;
+            }
+
+            ul li:nth-child(5n) a {
+                -o-transform: rotate(5deg);
+                -webkit-transform: rotate(5deg);
+                -moz-transform: rotate(5deg);
+                position: relative;
+                top: -10px;
+            }
+
+            ul li a:hover,
+            ul li a:focus {
+                box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+                -webkit-transform: scale(1.25);
+                -moz-transform: scale(1.25);
+                -o-transform: scale(1.25);
+                position: relative;
+                z-index: 5;
+            }
+
+            ol {
+                text-align: center;
+            }
+
+            ol li {
+                display: inline;
+                padding-right: 1em;
+            }
+
+            ol li a {
+                color: #fff;
+            }
+
+            dl,
+            ol,
+            ul {
+                margin-top: 0;
+                margin-bottom: 0rem;
+            }
+        </style>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
