@@ -63,7 +63,7 @@ passport.use(
     new GoogleStrategy({
             clientID: GOOGLE_CLIENT_ID,
             clientSecret: GOOGLE_CLIENT_SECRET,
-            callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback",
+            callbackURL: "http://localhost:8080/auth/google/callback",
         },
         function(accessToken, refreshToken, profile, done) {
             return done(null, profile);
@@ -87,6 +87,7 @@ app.get("/auth/google/callback", passport.authenticate("google", { failureRedire
     function(req, res) {
         // Successful authentication, redirect success.
         console.log("Callback ---------------------------- ==> ", req.user)
+        console.log("Callback ---------------------------- ==> ", req.user.displayName)
         req.session.profile = req.user;
         res.redirect("/shops");
     }
@@ -155,7 +156,7 @@ app.get("/error", (req, res) => res.send("error logging in"));
 passport.use(new GoogleStrategy({
         clientID: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: "https://chernsavoey.herokuapp.com/auth/google/callback"
+        callbackURL: "http://localhost:8080/auth/google/callback"
 
     },
     function(accessToken, refreshToken, profile, done) {

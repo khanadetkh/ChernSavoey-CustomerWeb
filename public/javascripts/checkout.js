@@ -8,17 +8,17 @@ let menuRows = [];
 
 window.addEventListener("load", async function onPlace_Order() {
     const menu = JSON.parse(sessionStorage.getItem("fo_menus"));
-   
+
     if (menu && menu.length > 0) {
         const response = await fetch(
-            
+
             `/endpoints/${storeIdPath}/menuDetails`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ menu }),
-            }
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ menu }),
+        }
         );
 
         const details = await response.json();
@@ -112,6 +112,8 @@ async function onPlace_Order() {
     const locationText = location.options[location.selectedIndex].text;
     const carttotalprice = cartTotalPrice.innerText
 
+
+
     document.getElementById("hid-location").innerHTML = locationText;
 
     //menuArr
@@ -136,19 +138,43 @@ async function onPlace_Order() {
     const response = await fetch(
         //เปลี่ยนไอดีร้าน
         `/endpoints/${storeIdPath}/order`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ restMenu, cus_note, cus_phoneno, locationText, carttotalprice }),
-        }
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ restMenu, cus_note, cus_phoneno, locationText, carttotalprice }),
+    }
     );
 
     console.log("response :", response);
 
-    Swal.fire(
-        'Order Confirm',
-        'Your order confirm.',
-        'success'
-    )
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        reverseButtons: true,
+        showCancelButton: true,
+        confirmButtonText: 'Confirm',
+        confirmButtonColor: '#27AE60',
+        cancelButtonColor: '#C0392B',
+    }).then((result) => {
+
+        console.log("this is result",result)
+
+        if (result.value) {
+            Swal.fire(
+                "",
+                'You are confirm this order',
+                'success'
+            ).then(() => {
+                const d = new Date();
+                const t = d.getTime();
+                const orderId = t - 300;
+                console.log("this is>>>>",orderId);
+                window.location.href = `/orderList/${orderId}`;
+            })
+        } else {
+            Swal.fire('', 'You are deny this order', 'error')
+        }
+    })
 }

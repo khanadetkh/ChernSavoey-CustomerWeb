@@ -8,9 +8,11 @@ const router = express.Router();
 router.get("/:storeId/cart", async function(req, res, next) {
     const storeId = req.params.storeId;
     console.log("storeId------------>",storeId)
-    res.render("cart");
+    res.render("cart",{storeId});
 
 });
+
+
 
 // menuFucntion
 router.get("/", async(req, res) => {

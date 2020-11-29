@@ -79,23 +79,22 @@ router.post("/:storeId/order", async (req, res) => {
 
 	const d = new Date();
 	const t = d.getTime();
-	const id = t - 300;
-	const data = {
+	const docid = t-300;
+	const orderRef = await db.collection("cart").doc(`${docid}`)
+	orderRef.set({
+		order_id: t-300,
 		shopName: shopName,
-		order_id: id, 
 		note: cus_note,
 		Location: location,
 		cus_phoneno: cus_phoneno,
+		senderId: "Plase Wait",
 		order_Date: d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear(),
 		order_Time: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(),
 		order_detail: restMenuArr,
-		customer: req.user,
+		customer: req.user.displayName,
 		status: "accepted",
 		totalPrice:total_price
-
-	};
-	console.log(data);
-	const orderRef = await db.collection("cart").add(data);
+	});
 	console.log('Set: ', orderRef);
 	res.redirect('/')
 

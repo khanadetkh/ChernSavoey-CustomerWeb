@@ -6,8 +6,8 @@ const router = express.Router();
 /* GET shops page. */
 
 // เก็บ UserId
-router.get('/myOreder', async function(req, res, next) {
-    res.render('orderList');
+router.get('/myOrder', async function(req, res, next) {
+    res.render('myorder');
 });
 
 
@@ -57,7 +57,6 @@ router.get('/:orderId/chat', async function(req, res, next) {
 
 router.get("/:orderId", async(req, res) => {
     const orderId = req.params.orderId;
-
     const orderDetail = await db.collection("cart")
         .doc(orderId)
         .get()
@@ -65,14 +64,14 @@ router.get("/:orderId", async(req, res) => {
     const orderList = orderDetail.order_detail;
     const location = orderDetail.Location;
     const phoneno = orderDetail.cus_phoneno;
-    const senderName = orderDetail.senderId.user;
+    const senderId = orderDetail.senderId;
     const shopName = orderDetail.shopName;
     const totalprice = orderDetail.totalPrice; 
     const notetosender = orderDetail.note; 
     const orderStatus = orderDetail.status
     console.log(orderId);
     console.log(orderList);
-    res.render("orderList", {orderList,location,phoneno,senderName,shopName,totalprice,notetosender,orderStatus });
+    res.render("orderList", {orderList,location,phoneno,senderId,shopName,totalprice,notetosender,orderStatus});
 });
 
 

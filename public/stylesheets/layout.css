@@ -27,14 +27,7 @@
     color: aliceblue;
 }
 
-.appname {
-    font-family: kanit;
-    font-size: 30px;
-    text-indent: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: aliceblue;
-}
+
 
 
 /* .col-lg-4.col-md-6.mb-4 {
@@ -64,9 +57,10 @@
     text-align: center;
     padding: 1px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 17pt;
     margin-left: 20px;
 }
+
 
 
 /* Change the color of links on hover */
